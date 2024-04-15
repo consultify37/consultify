@@ -84,11 +84,21 @@ export type User = {
   id: string
   name: string
   isCreating?: boolean
-  phone?: string,
-  email: string,
-  role: string,
-  roles: string[],
-  inactive: boolean,
+  phone?: string
+  email: string
+  role: string
+  roles: string[]
+  inactive: boolean
+  invoicePreference: string
+  address?: {
+    street: string
+    county: string
+    city: string
+  }
+  company?: {
+    name: string
+    identityNumber: string
+  }
   profilePic?: { 
     file: { fileName: string, fileId: string } 
     image: string 

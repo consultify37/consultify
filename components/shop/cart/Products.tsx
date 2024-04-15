@@ -5,19 +5,14 @@ import { useCartContext } from '../../../context/CartContext'
 import HeartButton from '../HeartButton'
 import { calculateCartTotal } from '../../../utils/calculateCartTotal'
 import ReactLoading from 'react-loading'
-import axios from 'axios'
 import { useAuthContext } from '../../../context/AuthContext'
-import Cookies from 'js-cookie'
-import toast from 'react-hot-toast'
-import { validateEmail } from '../../../utils/validateEmail'
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 type Props = {
   products: Product[]
 }
 
 const Products = ({ products }: Props) => {
-  const router = useRouter()
   const { currentUser } = useAuthContext()
   const { handleRemoveProduct } = useCartContext()
   const [isLoading, setIsLoading] = useState(false)
@@ -28,41 +23,7 @@ const Products = ({ products }: Props) => {
     setEmail(currentUser?.email ? currentUser.email : '')
   }, [currentUser])
 
-  const handleCheckout = async () => {
-    if ( !showInput && !currentUser ) {
-      setShowInput(true)
-      return
-    } else if (!currentUser && !email ) {
-      toast.error('Introudu adresa de email.') 
-      return
-    } else if ( !currentUser && !validateEmail(email) ) {
-      toast.error('Introudu o adresă de email validă.') 
-      return
-    }
-
-    setIsLoading(true)
-
-    const line_items = products.map((product) => ({ price: product.stripe_price_id, quantity: 1 }))
-
-    try {
-      const response = await axios.post('https://createcheckoutsession-75cxgdbjwq-ey.a.run.app', {
-        line_items,
-        customer_email: email,
-        metadata: { channel: 'unknown' },
-        success_url: 'https://www.consultify.ro/shop/success',
-        cancel_url: 'https://www.consultify.ro/shop/cart'
-      })
-
-      Cookies.set('cart_session_id', response.data.session_id)
-
-      router.replace(response.data.url)
-    } catch (e) {
-      toast.error('Ceva nu a mers bine. Încearcă din nou!')
-      console.log(e)
-    }
-
-    setIsLoading(false)
-  }
+  
 
   return (
     <div className="flex flex-col lg:flex-row">
@@ -169,12 +130,12 @@ const Products = ({ products }: Props) => {
           }
 
           { !isLoading ?
-            <button
-              onClick={handleCheckout}
+            <Link
+              href='/shop/detali-comanda'
               className='px-16 xl:px-20 py-3 lg:py-4 w-full bg-primary flex items-center justify-center rounded-full hover:scale-105 transition-all mt-6'
             >
               <p className='text-onPrimary font-semibold text-[14px]'>Plasează comanda</p>
-            </button> :
+            </Link> :
             <ReactLoading type="spin" color="#8717F8" width={32} height={32} className='mt-6' />
           }
         </div>
