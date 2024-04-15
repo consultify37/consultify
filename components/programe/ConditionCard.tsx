@@ -14,7 +14,7 @@ const ConditionCard = ({ index, condition }: Props) => {
       </div>
       <div className='flex flex-col'>
         <p className='text-onSecondary font-bold text-[18px] md:text-[24px]'>{ condition.condition }</p>
-        <p className='text-onSecondary text-[14px] md:text-[16px] mt-6'>{ condition.description }</p>
+        <p className='text-onSecondary text-[14px] md:text-[16px] mt-2'>{ condition.description }</p>
       </div>
     </div>
   )
