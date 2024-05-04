@@ -22,7 +22,7 @@ const About: NextPage = () => {
             <AboutHeader /> 
             <OurStory />
             <WhyUsAbout />
-            <Partners />
+            {/* <Partners /> */}
             <FAQAbout />
             <CTA
                 title="Aplică acum și transformă-ți <purple>proiectele<purple> în realitate cu Consultify!"
