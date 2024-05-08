@@ -22,7 +22,7 @@ type Props = {
   articles: Article[]
 }
 
-const Program = ({ program, products, articles }: Props) => {
+const ProgramPage = ({ program, products, articles }: Props) => {
   return (
     <>
       <Head>
@@ -66,7 +66,7 @@ const Program = ({ program, products, articles }: Props) => {
   )
 }
 
-export default Program
+export default ProgramPage
 
 export const getStaticPaths = async () => {
   const programeRef = query(collection(db, 'programe-fonduri'), where('site', '==', process.env.SITE))
