@@ -74,6 +74,8 @@ const SlideHomepage = () => {
       await addDoc(collection(db, 'slides-homepage'), { link, file: result, image: `https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/${result.fileName}`, site: process.env.SITE })  
 
       setSlides(slides => [{ link, image: newImage!, file: null}, ...slides])
+      setLink("")
+      setNewImage(null)
     } catch (e) {
       console.log(e)
       toast.error('Ceva nu a mers bine, încearcă din nou!')
