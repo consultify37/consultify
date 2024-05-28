@@ -76,6 +76,7 @@ const SlideHomepage = () => {
       setSlides(slides => [{ link, image: newImage!, file: null}, ...slides])
       setLink("")
       setNewImage(null)
+      toast.success('Slide adăugat cu succes!')
     } catch (e) {
       console.log(e)
       toast.error('Ceva nu a mers bine, încearcă din nou!')
