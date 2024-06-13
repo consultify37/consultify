@@ -120,7 +120,7 @@ const Footer = () => {
 
             <div className='w-full mt-5 text-center px-7 md:px-12'>
                 <p className='text-[#8717F8] text-[16px] font-normal border-t-[3px] border-[#260056] py-4 px-4 md:px-0'>
-                    Copyright © 2023 Consultify | Toate drepturile sunt rezervate.
+                    Copyright © 2020-2024 Consultify | Toate drepturile sunt rezervate.
                     {/* | Made with love by &nbsp; */}
                     {/* <Link href='https://marize.io' className="hover:text-[#8817f89b]" target='_blank'>Marize</Link> */}
                 </p>
