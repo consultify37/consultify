@@ -32,6 +32,7 @@ const BlogPost = ({ article, articles }: Props) => {
                 <meta name="description" content={article.description}></meta>
                 <meta name="author" content={article.author}></meta>
             </Head>
+            <p className="hidden -my-4"></p>
             <div className="relative">
                 <Image
                     className="w-full h-[70vh] lg:h-[95vh] object-cover"
