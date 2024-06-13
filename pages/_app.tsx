@@ -11,6 +11,7 @@ import { useRouter } from 'next/router'
 import { AuthContext } from '../context/AuthContext'
 import { CartContext } from '../context/CartContext'
 import { FavoritesContext } from '../context/FavoritesContext'
+import Cookies from 'js-cookie'
 
 function useNormalScrollRoutes() {
   const router = useRouter()
@@ -44,6 +45,30 @@ export default function App({ Component, pageProps }: AppProps) {
         })
       })
   }, [router.events])
+
+  useEffect(() => {
+    const channel = Cookies.get('channel') 
+
+    if (!channel) {
+      const referrer = document.referrer
+
+      if ( referrer.includes('facebook.com') || referrer.includes('instagram.com') || referrer.includes('tiktok.com') ) {
+        Cookies.set('channel', 'social-media')
+      } 
+
+      if ( referrer.includes('mail.google.com') || referrer.includes('mail.yahoo.com') ) {
+        Cookies.set('channel', 'email')
+      }
+
+      if ( referrer.includes('youtube.com') ) {
+        Cookies.set('channel', 'youtube')
+      }
+
+      if ( referrer.includes('google.com') ) {
+        Cookies.set('channel', 'google')
+      }
+    }
+  }, [])
 
   return (
     <AuthContext>
