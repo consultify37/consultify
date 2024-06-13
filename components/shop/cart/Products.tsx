@@ -132,7 +132,7 @@ const Products = ({ products }: Props) => {
           { !isLoading ?
             <Link
               href='/shop/detali-comanda'
-              className='px-16 xl:px-20 py-3 lg:py-4 w-full bg-primary flex items-center justify-center rounded-full hover:scale-105 transition-all mt-6'
+              className='py-3 lg:py-4 w-full bg-primary flex items-center justify-center rounded-full hover:scale-105 transition-all mt-6'
             >
               <p className='text-onPrimary font-semibold text-[14px]'>Plasează comanda</p>
             </Link> :
