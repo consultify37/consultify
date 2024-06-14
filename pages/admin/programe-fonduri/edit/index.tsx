@@ -73,7 +73,7 @@ const EditProgram = ({ categories }: { categories: string[] }) => {
         site: process.env.SITE,
         bulletPoints,
         categorie,
-        status: status ? status != 'NULL' : null,
+        status: status != 'NULL' ? status : null,
         title,
         text1,
         text2,
