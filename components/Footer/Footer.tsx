@@ -59,7 +59,7 @@ const Footer = () => {
                             <Link href='/politica-cookie' className='font-semibold text-[#8717F8] text-[16px]'>Politica Cookies</Link>
                         </li>
                         <li>
-                            <Link target="_blank" href='/files/Politica de confidentialitate.pdf' className='font-semibold text-[#8717F8] text-[16px]'>Politica de  Confidențialitate</Link>
+                            <Link href='/politica-confidentialitate' className='font-semibold text-[#8717F8] text-[16px]'>Politica de  Confidențialitate</Link>
                         </li>
                     </ul>
                 </div>
