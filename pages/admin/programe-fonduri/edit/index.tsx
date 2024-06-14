@@ -19,6 +19,7 @@ const EditProgram = ({ categories }: { categories: string[] }) => {
   const router = useRouter()
   const [bulletPoints, setBulletPoints] = useState< string[] >([])
   const [categorie, setCategorie] = useState< string | null >(null)
+  const [status, setStatus] = useState< string | null >(null)
   const [title, setTitle] = useState('')
   const [text1, setText1] = useState('')
   const [text2, setText2] = useState('')
@@ -33,6 +34,8 @@ const EditProgram = ({ categories }: { categories: string[] }) => {
   const [conditions, setConditions] = useState< Condition[] >([])
   const [faqs, setFaqs] = useState< Faq[] >([])
   const [isLoading, setIsLoading] = useState(false)
+
+  const statuses = ['NULL','PUBLICAT ÎN MONITORUL OFICIAL', 'LANSAT IN CONSULTARE PUBLICĂ', 'APEL DESCHIS', 'APEL ÎNCHIS']
 
   const handleUpload = async (e: any) => {
     setIsLoading(true)
@@ -70,6 +73,7 @@ const EditProgram = ({ categories }: { categories: string[] }) => {
         site: process.env.SITE,
         bulletPoints,
         categorie,
+        status: status ? status != 'NULL' : null,
         title,
         text1,
         text2,
@@ -127,9 +131,17 @@ const EditProgram = ({ categories }: { categories: string[] }) => {
         <div className='flex flex-row mt-8 mb-16'>
           <div className='flex flex-col w-[calc(50%-32px)] min-w-[220px] max-w-[480px] mr-8 xl:mr-16'>
             <Dropdown 
+              placeholder='Selectează categoria'
               values={categories}
               selectedValue={categorie}
               setSelectedValue={setCategorie}
+            />
+            <Dropdown 
+              placeholder='Selectează status'
+              values={statuses}
+              selectedValue={status}
+              setSelectedValue={setStatus}
+              id='toggle_dropdown0'
             />
             <BulletPointsContainer 
               bulletPoints={bulletPoints}

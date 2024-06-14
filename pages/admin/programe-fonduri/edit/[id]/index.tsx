@@ -26,6 +26,7 @@ const EditProgram = ({ categories, program }: Props) => {
   const router = useRouter()
   const [bulletPoints, setBulletPoints] = useState< string[] >(program.bulletPoints ? program.bulletPoints : [])
   const [categorie, setCategorie] = useState< string | null >(program.categorie ? program.categorie : null)
+  const [status, setStatus] = useState< string | null >(program.status ? program.status : null)
   const [title, setTitle] = useState(program.title ? program.title : '')
   const [text1, setText1] = useState(program.text1 ? program.text1 : '')
   const [text2, setText2] = useState(program.text2 ? program.text2 : '')
@@ -40,6 +41,8 @@ const EditProgram = ({ categories, program }: Props) => {
   const [conditions, setConditions] = useState< Condition[] >(program.conditions ? program.conditions : [])
   const [faqs, setFaqs] = useState< Faq[] >(program.faqs ? program.faqs : [])
   const [isLoading, setIsLoading] = useState(false)
+
+  const statuses = ['NULL', 'PUBLICAT ÎN MONITORUL OFICIAL', 'LANSAT IN CONSULTARE PUBLICĂ', 'APEL DESCHIS', 'APEL ÎNCHIS']
 
   const oldImaginePrincipala = program.imaginePrincipala && program.imaginePrincipala.file ? program.imaginePrincipala : null
   const oldBackgroundImage = program.backgroundImage && program.backgroundImage.file ? program.backgroundImage : null
@@ -86,6 +89,7 @@ const EditProgram = ({ categories, program }: Props) => {
         site: process.env.SITE,
         bulletPoints,
         categorie,
+        status: status ? status != 'NULL' : null,
         title,
         text1,
         text2,
@@ -142,10 +146,18 @@ const EditProgram = ({ categories, program }: Props) => {
       <form onSubmit={handleUpload}>
         <div className='flex flex-row mt-8 mb-16'>
           <div className='flex flex-col w-[calc(50%-32px)] min-w-[220px] max-w-[480px] mr-8 xl:mr-16'>
-            <Dropdown 
+          <Dropdown 
+              placeholder='Selectează categoria'
               values={categories}
               selectedValue={categorie}
               setSelectedValue={setCategorie}
+            />
+            <Dropdown 
+              placeholder='Selectează status'
+              values={statuses}
+              selectedValue={status}
+              setSelectedValue={setStatus}
+              id='toggle_2'
             />
             <BulletPointsContainer 
               bulletPoints={bulletPoints}

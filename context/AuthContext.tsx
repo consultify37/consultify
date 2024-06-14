@@ -61,7 +61,7 @@ export const AuthContext = ({ children }: Props) => {
   if ( isLoadingAuth && pathname?.includes('/admin') ) {
     return (
       <div className='relative w-full h-screen flex items-center justify-center' style={{height: '100vh'}}>
-        <ReactLoading type="spin" color="#0F52FF" width={32} height={32} />
+        <ReactLoading type="spin" color="#8717F8" width={32} height={32} />
       </div>
     )
   }

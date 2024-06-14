@@ -27,7 +27,8 @@ export type Category = {
 export type Program = {
   id: string
   bulletPoints: string[]
-  categorie: string
+  categorie: string 
+  status: string | null
   title: string
   text1: string
   text2: string

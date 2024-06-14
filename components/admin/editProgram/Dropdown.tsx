@@ -4,18 +4,20 @@ type Props = {
   values: string[]
   selectedValue: string | null
   setSelectedValue: React.Dispatch<React.SetStateAction<string | null>>
+  placeholder: string
+  id?: string
 }
 
-const Dropdown = ({ values, selectedValue, setSelectedValue }: Props) => {
+const Dropdown = ({ values, selectedValue, setSelectedValue, placeholder, id }: Props) => {
   const [toggle, setToggle] = useState(false)
 
   return (
     <div className='w-full min-w-[220px] max-w-[480px] mb-8'>
-      <input aria-hidden="true" type="checkbox" name="toggle_dropdown" id="toggle_dropdown" className="hidden peer z-[11]" checked={toggle} onChange={() => setToggle(toggle => !toggle)}></input>
+      <input aria-hidden="true" type="checkbox" id={ id ? id : 'toggle_dropdown'} className="hidden peer z-[11]" checked={toggle} onChange={() => setToggle(toggle => !toggle)}></input>
       <div className='relative'>
-        <label role="button" htmlFor="toggle_dropdown" aria-label="dropdown" id="dropdown">
+        <label role="button" htmlFor={ id ? id : 'toggle_dropdown'} aria-label="dropdown" id="dropdown">
           <div className='flex flex-row w-full items-center justify-between bg-secondary border-secondary border-2 rounded-xl p-4 px-6 shadow-md z-[11]'> 
-            <p className='text-white font-semibold'>{ selectedValue ? selectedValue : 'Selectează categoria' }</p>
+            <p className='text-white font-semibold'>{ selectedValue ? selectedValue : placeholder }</p>
             <svg width="14" height="6" viewBox="0 0 11 5" fill="none" xmlns="http://www.w3.org/2000/svg" 
               aria-hidden='true' id='chevron-down'
               className='transition duration-300'
