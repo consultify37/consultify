@@ -73,7 +73,7 @@ export default function Programe({categories, programe, articles, products }: Pr
                 <div className="md:px-8">
                     {
                         programe.filter((program) => program.categorie == category || category == 'Toate').filter((program, index) => (index >= page*4 && index < (page+1)*4) ).map((program, index) => (
-                            <FonduriComponent program={program} index={index} key={program.id +index} />
+                            <FonduriComponent program={program} index={index} key={program.id +index} length={programe.length - 4*page} />
                         ))
                     }
                 </div>

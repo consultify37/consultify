@@ -9,7 +9,7 @@ type Props = {
 
 const NewsContainer = ({cardRef, carouselRef, articles}: Props) => {
     return(
-        <div className='flex gap-4 mt-5 overflow-x-auto w-full scrollbar-none' ref={carouselRef}>
+        <div className='flex gap-4 mt-5 overflow-x-auto w-full scrollbar-none items-stretch pb-4' ref={carouselRef}>
             {
                 articles.map((article, index) =>
                     <div 

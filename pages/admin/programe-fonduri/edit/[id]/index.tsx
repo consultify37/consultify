@@ -42,7 +42,7 @@ const EditProgram = ({ categories, program }: Props) => {
   const [faqs, setFaqs] = useState< Faq[] >(program.faqs ? program.faqs : [])
   const [isLoading, setIsLoading] = useState(false)
 
-  const statuses = ['NULL', 'PUBLICAT ÎN MONITORUL OFICIAL', 'LANSAT IN CONSULTARE PUBLICĂ', 'APEL DESCHIS', 'APEL ÎNCHIS']
+  const statuses = ['NULL', 'PUBLICAT ÎN MONITORUL OFICIAL', 'LANSAT ÎN CONSULTARE PUBLICĂ', 'APEL DESCHIS', 'APEL ÎNCHIS']
 
   const oldImaginePrincipala = program.imaginePrincipala && program.imaginePrincipala.file ? program.imaginePrincipala : null
   const oldBackgroundImage = program.backgroundImage && program.backgroundImage.file ? program.backgroundImage : null

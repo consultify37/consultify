@@ -74,18 +74,16 @@ export default function Testimoniale({ articles, categories, products }: Props) 
                     setSelectedValue={setSelectedCategory}
                 /> : <div className="-mt-2 md:-mt-8"></div>
                 }
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4 md:mt-12 px-1'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 gap-y-10 mt-4 md:mt-12 px-1'>
                 {
                     PaginationBlog(filteredPosts, page, 9).map(item =>
                         <Link 
                             href={`/blog/${item.id}`}
                             key={item.id}
                         >
-                            <article className='max-w-[350px] m-auto relative bg-[#F5F5F5] rounded-[16px] snap-center'>
-                                <div className="relative overflow-hidden h-64 rounded-[20px_20px_0_0] object-cover">
-                                    <Image src={item.mainImage.image} placeholder='blur' blurDataURL={item.mainImage.image} alt={item.title} width={300} height={300} className='w-full object-cover h-full'/>
-                                </div>
-                                <div className="p-2 pb-[10px]">
+                            <article className='max-w-[350px] m-auto relative bg-[#F5F5F5] rounded-[16px] snap-center shadow-lg flex flex-col h-full'>
+                                <Image src={item.mainImage.image} placeholder='blur' blurDataURL={item.mainImage.image} alt={item.title} width={300} height={300} className='w-full h-52 object-cover rounded-[20px_20px_0_0]'/>
+                                <div className="p-2 pb-[10px] flex flex-col h-full">
                                   <div className="flex flex-row items-center">
                                     <Image 
                                       src='/images/blog/clock.svg'
@@ -98,8 +96,8 @@ export default function Testimoniale({ articles, categories, products }: Props) 
                                   </div>
                                   <h3 className='text-secondary font-bold text-base pt-2'>{item.title}</h3>
                                   <p className="text-secondary pt-2">{item.description}</p>
-                                  <div className='flex items-center px-[2px] pt-2'>
-                                      <p className='text-[#828282] text-sm mr-12'>{item.formattedCreatedAt}</p>
+                                  <div className='flex items-center justify-between px-[2px] pt-2 mt-auto'>
+                                      <p className='text-[#828282] text-sm'>{item.formattedCreatedAt}</p>
                                       <p className="text-primary font-bold text-sm underline hover:scale-105 transition-all">Citește mai mult</p>
                                   </div>
                                 </div>

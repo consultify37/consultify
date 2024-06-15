@@ -23,19 +23,47 @@ type Props = {
 }
 
 const ProgramPage = ({ program, products, articles }: Props) => {
+  let infoColor
+  switch (program.status) {
+      case 'PUBLICAT ÎN MONITORUL OFICIAL':
+          infoColor = 'bg-orange-500'
+          break
+      case 'LANSAT ÎN CONSULTARE PUBLICĂ':
+          infoColor = 'bg-yellow-500'
+          break
+      case 'APEL DESCHIS':
+          infoColor = 'bg-green-500'
+          break
+      case 'APEL ÎNCHIS':
+          infoColor = 'bg-red-500'
+          break
+      default:
+          infoColor = ''
+  }
+
   return (
     <>
       <Head>
           <title>{`${process.env.SITE} | ${program.title2}`}</title>
       </Head>
       <section className="flex flex-col w-full pt-[140px] md:pt-40 pb-20 items-center px-7 md:px-[110px] xl:px-[160px] 2xl:px-[276px]">
-        <Image 
-          src={program.imaginePrincipala.image}
-          height={363}
-          width={1066}
-          alt='Imagine fonduri'
-          className='w-full h-auto rounded-3xl md:rounded-[38px]'
-        />
+        <div className='relative overflow-hidden'>
+          <Image 
+            src={program.imaginePrincipala.image}
+            height={363}
+            width={1066}
+            alt='Imagine fonduri'
+            className='w-full h-auto rounded-3xl md:rounded-[38px]'
+            unoptimized={true}
+          />
+          <div className={`absolute hidden sm:block top-10 -right-16 z-10 rotate-45 ${infoColor} w-[240px] p-2 px-[46px] shadow-black text-center shadow-lg`}>
+              <p className="text-white text-[12px] font-bold">
+                  { program.status == 'LANSAT ÎN CONSULTARE PUBLICĂ' ?
+                      <span>LANSAT ÎN <br />CONSULTARE PUBLICĂ</span> : program.status
+                  }
+              </p>
+          </div>
+        </div>
 
         <h1 className='text-primary text-[28px] md:text-[35px] font-extrabold pt-10 text-center'>
           { program.title2 }

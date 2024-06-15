@@ -35,7 +35,7 @@ const EditProgram = ({ categories }: { categories: string[] }) => {
   const [faqs, setFaqs] = useState< Faq[] >([])
   const [isLoading, setIsLoading] = useState(false)
 
-  const statuses = ['NULL','PUBLICAT ÎN MONITORUL OFICIAL', 'LANSAT IN CONSULTARE PUBLICĂ', 'APEL DESCHIS', 'APEL ÎNCHIS']
+  const statuses = ['NULL','PUBLICAT ÎN MONITORUL OFICIAL', 'LANSAT ÎN CONSULTARE PUBLICĂ', 'APEL DESCHIS', 'APEL ÎNCHIS']
 
   const handleUpload = async (e: any) => {
     setIsLoading(true)
