@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 export const formatter = (node: any, index: number) => {
-	console.log(node)
+
   if (node.type === 'tag' && node.name === 'img') {
 		return (
 			<Image 
@@ -95,7 +95,7 @@ export const formatter = (node: any, index: number) => {
 		)
 	} else if (node.type === 'tag' && node.name === 'ul'  ) {
 		return (
-			<ul className="list-disc ml-4">
+			<ul className="list-disc ml-4" key={index}>
 				{ node.children.map((node: any, index: number) => (
 					<li className="text-[14px] md:text-[16px]" key={index}>
 						{ node.children.length != 0 && node.children.map((node: any, index: number) => (
