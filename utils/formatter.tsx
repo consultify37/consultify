@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 export const formatter = (node: any, index: number) => {
+	console.log(node)
   if (node.type === 'tag' && node.name === 'img') {
 		return (
 			<Image 
@@ -30,7 +31,7 @@ export const formatter = (node: any, index: number) => {
 		return (
 			<h2
 				key={index}
-				className="text-[22px] md:text-[24px] font-semibold -my-4"
+				className="text-[22px] md:text-[24px] font-semibold"
 			>
 				{ node.children[0].type === 'text' ?
 					node.children[0].data :
@@ -42,7 +43,7 @@ export const formatter = (node: any, index: number) => {
 		return (
 			<h1
 				key={index}
-				className="text-[26px] md:text-[28px] font-semibold -my-4"
+				className="text-[26px] md:text-[28px] font-semibold"
 			>
 				{ 
 					node.children[0].type === 'text' ?
@@ -56,7 +57,7 @@ export const formatter = (node: any, index: number) => {
 		return (
 			<h3
 				key={index}
-				className="text-[18px] md:text-[20px] font-semibold -my-4"
+				className="text-[18px] md:text-[20px] font-semibold"
 			>
 				{ 
 					node.children[0].type === 'text' ?
@@ -67,9 +68,9 @@ export const formatter = (node: any, index: number) => {
 		)
   } else if (node.type === 'tag' && node.name === 'p'  ) {
 		return (
-			<p className="text-[14px] md:text-[16px]" key={Math.random()}>
-				{ node.children.length && node.children.map((node: any) => (
-						<span key={Math.random()}>
+			<p className="text-[14px] md:text-[16px]" key={index}>
+				{ node.children.length != 0 && node.children.map((node: any, index: number) => (
+						<span key={index}>
 							{ node.type === 'tag' && node.name === 'a' &&
 								<Link 
 									href={node.attribs.href} 
@@ -79,12 +80,49 @@ export const formatter = (node: any, index: number) => {
 									{ node.children[0].data }
 								</Link>
 							}
+							{ node.type === 'tag' && node.name === 'em' &&
+								<em>{node.children[0].data}</em>
+							}
+							{ node.type === 'tag' && node.name === 'strong' &&
+								<strong>{node.children[0].data}</strong>
+							}
 							{ node.type === 'text' &&
 								node.data
 							}
 						</span>
 				))}
 			</p>
+		)
+	} else if (node.type === 'tag' && node.name === 'ul'  ) {
+		return (
+			<ul className="list-disc ml-4">
+				{ node.children.map((node: any, index: number) => (
+					<li className="text-[14px] md:text-[16px]" key={index}>
+						{ node.children.length != 0 && node.children.map((node: any, index: number) => (
+								<span key={index}>
+									{ node.type === 'tag' && node.name === 'a' &&
+										<Link 
+											href={node.attribs.href} 
+											target="_blank" 
+											className="text-[14px] md:text-[16px] text-primary underline hover:scale-105 transition-all"
+										>
+											{ node.children[0].data }
+										</Link>
+									}
+									{ node.type === 'tag' && node.name === 'em' &&
+										<em>{node.children[0].data}</em>
+									}
+									{ node.type === 'tag' && node.name === 'strong' &&
+										<strong>{node.children[0].data}</strong>
+									}
+									{ node.type === 'text' &&
+										node.data
+									}
+								</span>
+						))}
+					</li>
+				)) }
+			</ul>
 		)
 	}
 }
