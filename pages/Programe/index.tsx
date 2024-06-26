@@ -95,9 +95,9 @@ export default function Programe({categories, programe, articles, products }: Pr
                     linkHref="/contact"
                 />
             </div>
-            <FeaturedProducts 
+            {/* <FeaturedProducts 
                 products={products}
-            />
+            /> */}
             <News
                 articles={articles}
             />

@@ -231,9 +231,9 @@ export default function Testimoniale({ articles, products }: Props) {
         linkText="Completează formularul!"
         linkHref="/contact"
       />
-      <FeaturedProducts 
+      {/* <FeaturedProducts 
         products={products}
-      />
+      /> */}
       <News
         articles={articles}
       />

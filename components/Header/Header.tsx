@@ -166,20 +166,27 @@ const Header = () => {
                   blog
                 </Link>
               </li>
-              <li
+              {/* <li
                 className={`w-full xl:w-auto p-2 pl-16 border-b-[1px] border-white xl:pl-18 xl:pl-0 xl:p-0 xl:border-0`}
               >
                 <Link href="/shop" className="font-semibold text-white text-[16px] hover:text-primary transition-all">
                   shop
                 </Link>
-              </li>
+              </li> */}
               <li
+                className={`w-full lg:w-auto p-2 pl-16 md:pl-18 lg:pl-0 lg:p-0 lg:border-0 lg:hover:scale-[1.05] lg:transition-all`}
+              >
+                <Link href="/contact" className="lg:font-semibold lg:bg-[#7000FF] lg:p-[14px] lg:px-8 lg:rounded-full lg:text-[#fff] font-semibold text-tertiary text-[16px]">
+                  contactează-ne
+                </Link>
+              </li>
+              {/* <li
                 className={`w-full xl:w-auto p-2 pl-16 border-b-[1px] border-white xl:pl-18 xl:pl-0 xl:p-0 xl:border-0`}
               >
                 <Link href="/contact" className="font-semibold text-white text-[16px] hover:text-primary transition-all">
                   contact
                 </Link>
-              </li>
+              </li> */}
               
               {/* <li
                 className={`xl:hidden w-full xl:w-auto p-2 pl-16`}
