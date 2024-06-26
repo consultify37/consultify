@@ -180,14 +180,15 @@ const Header = () => {
                   contact
                 </Link>
               </li>
-              <li
+              
+              {/* <li
                 className={`xl:hidden w-full xl:w-auto p-2 pl-16`}
               >
                 <Link href={ currentUser ? '/cont' : '/login' } className="font-semibold text-tertiary text-[16px] transition-all">
                   { currentUser ? 'cont' : 'login' }
                 </Link>
-              </li>
-              <li
+              </li> */}
+              {/* <li
                 className='relative hidden xl:block'
               >
                 <Link href={ currentUser ? '/cont' : '/login' } className="py-[14px] pl-8 pr-16 bg-primary rounded-full text-onPrimary font-semibold hover:scale-105 transition-all">
@@ -210,7 +211,7 @@ const Header = () => {
                       </div>
                     }
                 </Link>
-              </li>
+              </li> */}
               {/* <li
                 className={`${
                   toggle
