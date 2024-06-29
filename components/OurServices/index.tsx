@@ -33,7 +33,7 @@ export default function OurServices(){
                     <span className="sm:opacity-0 group-hover/card-1:opacity-100 transition-all duration-300 text-white bg-[#260056] text-xs lg:text-[16px] absolute bottom-0 right-0 py-2 px-4 lg:px-10 rounded-tl-2xl sm:rounded-tl-3xl rounded-br-2xl">Descoperă</span>
                 </Link>
                 <Link 
-                    href='/shop'
+                    href='#'
                     className="group/card-2 flex relative flex-row bg-[#F6EFFF] p-6 pb-10   rounded-3xl mb-8 hover:shadow-2xl cursor-pointer"
                 >
                     <div className="w-[-webkit-fill-available] max-w-[fit-content] flex items-center rounded-xl bg-[#A634FF] p-3 lg:p-4 h-[max-content] jutify-center mr-2">
