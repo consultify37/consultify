@@ -86,7 +86,7 @@ const Header = () => {
               />
             </Link>
             <div className="flex flex-row items-center xl:hidden z-[99]">
-              <Link
+              {/* <Link
                 href='/shop/cart'
                 className="p-[14px] lg:p-[16px] rounded-full bg-primary hover:scale-105 transition-all -mr-2 lg:-mr-0"
               >
@@ -104,7 +104,7 @@ const Header = () => {
                     </div>
                   }
                 </div>
-              </Link>
+              </Link> */}
               <input aria-hidden="true" type="checkbox" name="toggle_nav" id="toggle_nav" className="hidden peer" checked={toggle} onChange={() => setToggle(!toggle) }></input>
               <div 
                 className="relative flex items-center xl:hidden max-h-10"
