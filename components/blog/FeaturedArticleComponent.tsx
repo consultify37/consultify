@@ -20,8 +20,8 @@ const FeaturedArticleComponent = ({ duration, formattedCreatedAt, id, title, ima
         alt={title}
         className='rounded-3xl lg:w-[45%] h-72 object-cover lg:mr-8 xl:mr-12'
       />
-      <div className='lg:flex lg:flex-col lg:justify-between lg:py-4'>
-        <div className="flex flex-row items-center ml-1 mt-2">
+      <div className='lg:flex lg:flex-col lg:justify-between lg:py-1'>
+        <div className="flex flex-row items-center ml-1">
           <Image 
             src='/images/blog/clock.svg'
             width={24}
