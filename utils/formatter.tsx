@@ -1,6 +1,54 @@
 import Image from "next/image"
 import Link from "next/link"
 
+type Props = {
+	node: any
+}
+
+const LinkFormatter = ({ node }: Props) => {
+	return (
+		<Link 
+			href={node.attribs.href} 
+			target="_blank" 
+			className="text-[14px] md:text-[16px] text-primary underline hover:scale-105 transition-all"
+		>
+			{ node.type == 'text' ?
+				node.children[0].data :
+				<ElementFormatter node={node.children[0]} />
+			}
+		</Link>
+	)
+}
+
+const ElementFormatter = ({ node }: Props) => {
+	return (
+		<span>
+			{ node.type === 'tag' && node.name === 'a' &&
+				<LinkFormatter node={node} />
+			}
+			{ node.type === 'tag' && node.name === 'em' &&
+				<em>
+					{ node.type == 'text' ?
+						node.children[0].data :
+						<ElementFormatter node={node.children[0]} />
+					}
+				</em>
+			}
+			{ node.type === 'tag' && node.name === 'strong' &&
+				<strong>
+					{ node.type == 'text' ?
+						node.children[0].data :
+						<ElementFormatter node={node.children[0]} />
+					}
+				</strong>
+			}
+			{ node.type === 'text' &&
+				node.data
+			}
+		</span>
+	)
+} 
+
 export const formatter = (node: any, index: number) => {
 
   if (node.type === 'tag' && node.name === 'img') {
@@ -70,59 +118,33 @@ export const formatter = (node: any, index: number) => {
 		return (
 			<p className="text-[14px] md:text-[16px]" key={index}>
 				{ node.children.length != 0 && node.children.map((node: any, index: number) => (
-						<span key={index}>
-							{ node.type === 'tag' && node.name === 'a' &&
-								<Link 
-									href={node.attribs.href} 
-									target="_blank" 
-									className="text-[14px] md:text-[16px] text-primary underline hover:scale-105 transition-all"
-								>
-									{ node.children[0].data }
-								</Link>
-							}
-							{ node.type === 'tag' && node.name === 'em' &&
-								<em>{node.children[0].data}</em>
-							}
-							{ node.type === 'tag' && node.name === 'strong' &&
-								<strong>{node.children[0].data}</strong>
-							}
-							{ node.type === 'text' &&
-								node.data
-							}
-						</span>
+						<ElementFormatter node={node} key={index} />
 				))}
 			</p>
 		)
 	} else if (node.type === 'tag' && node.name === 'ul'  ) {
 		return (
-			<ul className="list-disc ml-4" key={index}>
+			<ul className="list-disc ml-4 -mt-1" key={index}>
 				{ node.children.map((node: any, index: number) => (
-					<li className="text-[14px] md:text-[16px]" key={index}>
+					<li className="text-[14px] md:text-[16px] mt-1" key={index}>
 						{ node.children.length != 0 && node.children.map((node: any, index: number) => (
-								<span key={index}>
-									{ node.type === 'tag' && node.name === 'a' &&
-										<Link 
-											href={node.attribs.href} 
-											target="_blank" 
-											className="text-[14px] md:text-[16px] text-primary underline hover:scale-105 transition-all"
-										>
-											{ node.children[0].data }
-										</Link>
-									}
-									{ node.type === 'tag' && node.name === 'em' &&
-										<em>{node.children[0].data}</em>
-									}
-									{ node.type === 'tag' && node.name === 'strong' &&
-										<strong>{node.children[0].data}</strong>
-									}
-									{ node.type === 'text' &&
-										node.data
-									}
-								</span>
+								<ElementFormatter node={node} key={index} />
 						))}
 					</li>
 				)) }
 			</ul>
+		)
+	} else if (node.type === 'tag' && node.name === 'ol'  ) {
+		return (
+			<ol className="list-decimal ml-4 -mt-1" key={index}>
+				{ node.children.map((node: any, index: number) => (
+					<li className="text-[14px] md:text-[16px] mt-1" key={index}>
+						{ node.children.length != 0 && node.children.map((node: any, index: number) => (
+								<ElementFormatter node={node} key={index} />
+						))}
+					</li>
+				)) }
+			</ol>
 		)
 	}
 }
