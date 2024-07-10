@@ -55,13 +55,16 @@ const AccountLayout = ({ children, pathName }: Props) => {
       </Head>
 
       <PageHeader title={currentUser && currentUser.name ? `Bine ai venit, ${ currentUser.name }` : 'Bine ai venit'}>
-        <p className='text-[rgba(255,255,255,0.75)] font-semibold z-10 mt-2 text-[16px] md:text-[22px]'>
-          {
-            currentUser && currentUser.invoicePreference ?
-            ( currentUser.invoicePreference == 'company' ? 'persoană juridică' : 'persoană fizică' ) :
-            null
-          }
-        </p>
+        {
+          currentUser ?
+          <p className='text-[rgba(255,255,255,0.75)] font-semibold z-10 mt-2 text-[16px] md:text-[22px]'>
+            {
+              currentUser.invoicePreference ?
+              ( currentUser.invoicePreference == 'company' ? 'persoană juridică' : 'persoană fizică' ) :
+              null
+            }
+          </p> : null
+        }
       </PageHeader>
 
       <div className='-mt-2 sm:mt-0 md:-mt-12 flex flex-col lg:flex-row px-7 md:px-[80px] xl:px-[140px] 2xl:px-[276px] pb-16 lg:pb-24'>
