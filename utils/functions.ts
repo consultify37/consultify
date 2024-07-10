@@ -36,7 +36,7 @@ export function Pagination(data: Product[], current: number, max: number) {
   return newdata;
 }
 
-export function PaginationBlog(data: Article[], current: number, max: number) {
+export function PaginationBlog(data: Article[] | any[], current: number, max: number) {
   const last = (current + 1) * max;
   const first = last - max;
   const newdata = data.slice(first, last);

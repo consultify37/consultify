@@ -5,6 +5,7 @@ import { db } from '../../../../firebase'
 import Head from 'next/head'
 import CategoryHeader from '../../../../components/shop/CategoryHeader'
 import ProductList from '../../../../components/shop/ProductList'
+import NewsLetter from '../../../../components/global/newsletter'
 
 type Props = {
   category: ProductCategory
@@ -27,6 +28,10 @@ const CategoryPage = ({ category, products }: Props) => {
           products={products}
         />
       </div>
+
+      <NewsLetter 
+        headingText='Abonează-te la newsletter! Rămâi la curent cu cele mai bune oferte!'
+      />
     </>
   )
 }
@@ -52,8 +57,7 @@ export const getServerSideProps = async (context: any) => {
 	
 	const products: Product[] = collectionSnap.docs.map((doc) => {
 		const { lastUpdated, ...data } = doc.data()
-
-		return ({ id: doc.id, ...data } as Product)
+		return ({ id: doc.id, lastUpdated: lastUpdated.seconds, ...data } as Product)
 	})
 
   return { props: { category, products }}

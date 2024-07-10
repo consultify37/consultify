@@ -4,6 +4,7 @@ import ShopItems from "../../components/shop/ShopItems"
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore"
 import { db } from "../../firebase"
 import { Product, ProductCategory } from "../../types"
+import NewsLetter from "../../components/global/newsletter"
 
 type Props = {
 	products: Product[]
@@ -20,6 +21,9 @@ const Shop = ({ categories, products }: Props) => {
 			<ShopItems 
 				categories={categories}
 				products={products}
+			/>
+			<NewsLetter 
+				headingText="Abonează-te la newsletter-ul nostru pentru noutăți și oferte exclusive!"
 			/>
 		</>
 	)

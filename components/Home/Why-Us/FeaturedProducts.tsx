@@ -7,9 +7,10 @@ import ProductCard from '../../shop/ProductCard'
 
 type Props = {
   products: Product[]
+  title?: string
 }
 
-const FeaturedProducts = ({ products }: Props) => {
+const FeaturedProducts = ({ products, title="Consultify vine în ajutorul tău cu produse digitale pentru scalarea afacerii tale" }: Props) => {
   const [scrollAmount, setScrollAmount] = useState(0)
   const [cardRef, setCardRef] = useState< any >([])
   const carouselRef = useRef<HTMLDivElement | null>(null)
@@ -34,7 +35,7 @@ const FeaturedProducts = ({ products }: Props) => {
     <div className="flex flex-col mt-16 lg:mt-32">
       <div className="flex justify-between w-full items-center">
         <h2 className="text-[15px] lg:text-[32px] mr-2 sm:max-w-[65%] lg:mr-32 xl:max-w-[65%] text-primary font-bold pl-7 md:pl-[80px] xl:pl-[140px] 2xl:pl-[276px]">
-          Inspirely vine în ajutorul tău cu produse digitale pentru scalarea afacerii tale
+          { title }
         </h2>
         <div className="flex flex-row pr-7 md:pr-[80px] xl:pr-[140px] 2xl:pr-[276px]">
           <span

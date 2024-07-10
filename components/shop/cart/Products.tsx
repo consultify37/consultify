@@ -62,7 +62,7 @@ const Products = ({ products }: Props) => {
                         {product.oldPrice} lei
                       </p>
                     }
-                    <p className='text-[18px] lg:text-[20px] font-bold text-price' >{ product.price }</p>
+                    <p className='text-[18px] lg:text-[20px] font-bold text-price' >{ product.price } lei</p>
                   </div>
 
                   <div className='flex flex-row items-center mt-6 lg:mt-4'>
@@ -87,7 +87,7 @@ const Products = ({ products }: Props) => {
                     {product.oldPrice} lei
                   </p>
                 }
-                <p className='text-[18px] lg:text-[20px] font-bold text-price' >{ product.price }</p>
+                <p className='text-[18px] lg:text-[20px] font-bold text-price' >{ product.price } lei</p>
               </div>
             </div>
           )) }

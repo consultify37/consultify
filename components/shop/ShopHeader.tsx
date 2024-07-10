@@ -3,7 +3,7 @@ import PageHeader from "../Header/PageHeader"
 
 const ShopHeader = () => {
     return (
-			<PageHeader title="Aici ai toate produsele ready made pe care le avem. Le pui în coș, achiți și magia se întâmplă.">
+			<PageHeader title="Explorează produsele noastre Ready-Made: Le pui în coș, achiți și magia se întâmplă!">
 				<Image
 					src="/images/Shop/shop-hexagon.svg"
 					width={130}

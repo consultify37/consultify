@@ -117,6 +117,7 @@ export type Product = {
   description2: string
   description3: string
   category: string
+  sells_number: number | undefined
   image: { 
     file: { fileName: string, fileId: string } 
     image: string 
@@ -124,7 +125,7 @@ export type Product = {
   reasons: string[]
   faqs: Faq[]
   title3: string
-  createdAt: Date
+  lastUpdated: number
   onSale: boolean
   file: { 
     file: { fileName: string, fileId: string } 
