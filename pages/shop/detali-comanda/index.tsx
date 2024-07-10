@@ -82,6 +82,7 @@ const OrderDetails = () => {
         customer_email: email,
         metadata: { 
           channel: channel ? channel : 'unknown', 
+          website: 'Consultify',
           invoice: JSON.stringify({
             invoicePreference,
             street,
