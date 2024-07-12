@@ -46,8 +46,6 @@ const AccountLayout = ({ children, pathName }: Props) => {
     router.replace('/login')
   }
 
-  console.log(currentUser)
-
   return (
     <>
       <Head>
