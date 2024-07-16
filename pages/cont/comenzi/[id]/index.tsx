@@ -12,6 +12,7 @@ import axios from 'axios'
 import toast from 'react-hot-toast'
 import ReactLoading from 'react-loading'
 import { theme } from '../../../../utils/theme'
+import FileSaver from 'file-saver'
 
 type Props = {
   id: string
@@ -37,13 +38,12 @@ const Order = ({ products, id, createdAt, totalPrice, invoice }: Props) => {
       })
 
       const linkSource = `data:application/pdf;base64,${response.data.invoice}`
-      const downloadLink: HTMLAnchorElement = document.getElementById("download-file") as HTMLAnchorElement
       const fileName = `factură ${invoice!.series}-${invoice!.number}.pdf`
 
-      downloadLink.href = linkSource
-      downloadLink.download = fileName
-      downloadLink.target = '_blank'
-      downloadLink.click()      
+      const res = await fetch(linkSource)
+      const blob = await res.blob()
+    
+      FileSaver.saveAs(blob, fileName)    
     } catch (e) {
       toast.error('Ceva nu a mers bine încearcă din nou!')
     }
@@ -78,7 +78,6 @@ const Order = ({ products, id, createdAt, totalPrice, invoice }: Props) => {
 
               { invoice && 
                 <div className='flex items-center h-[41px] justify-center mt-2 min-w-[180px] w-fit'>
-                  <a className='hidden' id='download-file'></a>
                   { !isLoading ?
                     <button 
                       onClick={handleDownloadInvoice}
