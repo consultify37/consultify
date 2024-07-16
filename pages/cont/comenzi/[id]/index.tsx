@@ -37,7 +37,7 @@ const Order = ({ products, id, createdAt, totalPrice, invoice }: Props) => {
       })
 
       const linkSource = `data:application/pdf;base64,${response.data.invoice}`
-      const downloadLink = document.createElement("a")
+      const downloadLink: HTMLAnchorElement = document.getElementById("download-file") as HTMLAnchorElement
       const fileName = `factură ${invoice!.series}-${invoice!.number}.pdf`
 
       downloadLink.href = linkSource
@@ -77,6 +77,7 @@ const Order = ({ products, id, createdAt, totalPrice, invoice }: Props) => {
 
               { invoice && 
                 <div className='flex items-center h-[41px] justify-center mt-2 min-w-[180px] w-fit'>
+                  <a className='hidden' id='download-file'></a>
                   { !isLoading ?
                     <button 
                       onClick={handleDownloadInvoice}
