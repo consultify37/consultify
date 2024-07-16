@@ -16,7 +16,7 @@ const Email = ({ currentUser, email, setEmail, setStep }: Props) => {
 
   return (
     <div className='flex flex-col items-center pt-28 lg:pt-36 mx-12'>
-      <p className='text-[22px] lg:text-[36px] text-secondary font-bold text-center'>Introdu adresa ta de email</p>
+      <p className='text-[22px] lg:text-[36px] text-secondary font-bold text-center'>Introdu adresa ta de email!</p>
 
       <form onSubmit={handleSubmit} className='flex flex-col items-center w-full mt-8'>
         <input 
@@ -37,7 +37,7 @@ const Email = ({ currentUser, email, setEmail, setStep }: Props) => {
           </button> 
       </form>
 
-      <p className='text-[#959595] text-[14px] text-center max-w-[400px] mt-12'>Poți plasa comanda și dacă nu ai un cont. După plasarea comenzii iți poți crea unul pentru a te bucura de beneficiile acestuia.</p>
+      <p className='text-[#959595] text-[14px] text-center max-w-[400px] mt-12'>Poți plasa comanda și dacă nu ai un cont. După plasarea comenzii, îți vom crea unul pentru a te bucura de beneficiile acestuia.</p>
     </div>
   )
 }

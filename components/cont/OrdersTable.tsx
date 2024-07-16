@@ -60,27 +60,29 @@ const OrdersTable = () => {
         </div>
       }
 
-      { !isLoading && orders.length != 0 &&
-        <table className='mt-6 w-full'>
-          <thead className='w-full'>
-            <tr className='bg-[#EDF0FF] border-2 border-[#EDF0FF] w-full'>
-              <th className='py-4 pl-4 text-start'>comanda</th>
-              <th className='py-4 text-start'>data</th>
-              <th className='py-4 text-start'>total</th>
-              <th className='py-4 text-start'>status</th>
-              <th className='py-4 text-start pr-4'></th>
-            </tr> 
-          </thead>
-          <tbody className=''>
-            { orders.map((order) => (
-              <OrderRow 
-                key={order.id}
-                order={order}
-              />
-            )) }
-          </tbody>
-        </table>
-      }
+      <div className='hidden lg:block'>
+        { !isLoading && orders.length != 0 &&
+          <table className='mt-6 w-full'>
+            <thead className='w-full'>
+              <tr className='bg-[#EDF0FF] border-2 border-[#EDF0FF] w-full'>
+                <th className='py-4 pl-4 text-start'>comanda</th>
+                <th className='py-4 text-start'>data</th>
+                <th className='py-4 text-start'>total</th>
+                <th className='py-4 text-start'>status</th>
+                <th className='py-4 text-start pr-4'></th>
+              </tr> 
+            </thead>
+            <tbody className=''>
+              { orders.map((order) => (
+                <OrderRow 
+                  key={order.id}
+                  order={order}
+                />
+              )) }
+            </tbody>
+          </table>
+        }
+      </div>
 
       { isLoading &&
         <div className='h-[40vh] w-full flex items-center justify-center'>

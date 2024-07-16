@@ -4,7 +4,7 @@ import { getColorForWhyChoose } from '../../utils/getColorForWhyChoose'
 
 const data = [
   { 
-    title: 'Documente disponibile non stop!',
+    title: 'Produse disponibile non stop!',
     svg: '/images/Shop/cart-info/time-twenty-four.svg' 
   },
   { 
@@ -19,8 +19,8 @@ const data = [
 
 const CartInfo = () => {
   return (
-    <div className='relative p-8 lg:p-12 py-12 lg:py-16 mt-12 lg:mt-24 bg-secondary rounded-[20px] lg:rounded-[35px] flex flex-col items-center'>
-      <h1 className='text-[20px] lg:text-[35px] font-bold text-onSecondary '>La inspirely te bucuri de:</h1>
+    <div className='relative p-8 lg:p-12 py-12 lg:py-16 mt-16 lg:mt-24 bg-secondary rounded-[20px] lg:rounded-[35px] flex flex-col items-center'>
+      <h1 className='text-[20px] lg:text-[35px] font-bold text-onSecondary '>La noi te bucuri de:</h1>
 
       <div className='flex flex-col lg:flex-row justify-between gap-16 mt-16 max-w-[960px] w-full'>
         <div className='flex flex-col items-center'>

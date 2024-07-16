@@ -28,7 +28,7 @@ const Comunicare = () => {
 
         <div className="mt-8 lg:mt-12 relative max-w-[560px]">
           <h2 className="text-secondary text-[16px] md:text-[26px] font-bold">
-            Alătură-te comunității noastre și fii la curent cu cele mai noi oportunități de finanțare!
+            Oferte și noutăți direct în inbox-ul tău: Abonează-te acum!
           </h2>
           <form 
             onSubmit={upload} 
@@ -43,7 +43,7 @@ const Comunicare = () => {
               onChange={(e) => setNewsletter(e.target.value)}
               value={newsletter}
             />
-            <button type="submit" className="text-onPrimary font-bold lg:absolute w-full mt-3 lg:mt-0 lg:right-0 z-30 transition-all hover:scale-[1.05] lg:w-44 lg:border-4 cursor-pointer lg:border-white bg-primary py-4 px-10 text-sm rounded-full">
+            <button type="submit" className="text-onPrimary font-bold lg:absolute w-full mt-3 lg:mt-0 lg:right-0 transition-all hover:scale-[1.05] lg:w-44 lg:border-4 cursor-pointer lg:border-white bg-primary py-4 px-10 text-sm rounded-full">
               Mă abonez
             </button>
           </form>

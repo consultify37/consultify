@@ -73,7 +73,7 @@ const AccountMenu = ({ pathName }: Props) => {
       <input aria-hidden="true" type="checkbox" name="toggle_dropdown" id="toggle_dropdown" className="hidden peer z-[11]" checked={toggle} onChange={() => setToggle(toggle => !toggle)}></input>
       <div className='relative'>
         <label role="button" htmlFor="toggle_dropdown" aria-label="dropdown" id="dropdown" className='lg:hidden'>
-          <div className='flex flex-row w-full items-center justify-between bg-[#FAFAFA] rounded-[10px] px-6 p-4 mb-4 shadow-sm z-[11]'> 
+          <div className='flex flex-row w-full items-center justify-between bg-[#FAFAFA] rounded-[10px] px-6 p-4 mb-4 shadow-md z-[11]'> 
             <div className='flex flex-row items-center'>
               <div className='bg-[#F2F4FF] rounded-[4px] w-8 h-8 flex items-center justify-center mr-6'>
                 <Image 
@@ -96,7 +96,7 @@ const AccountMenu = ({ pathName }: Props) => {
         </label>
 
         <div 
-          className='lg:hidden absolute top-[56px] pt-2 flex-col z-10 w-full bg-[#FAFAFA] rounded-b-[10px] shadow-sm pb-1'
+          className='lg:hidden absolute top-[56px] pt-2 flex-col z-10 w-full bg-[#FAFAFA] rounded-b-[10px] shadow-xl pb-1'
           id='dropdown-container'
           style={{visibility: toggle ? 'visible' : 'hidden'}}
         >

@@ -30,7 +30,7 @@ const OrderDetails = () => {
   const [city, setCity] = useState(currentUser && currentUser.address && currentUser.address.city ? currentUser.address.city : '')
   const [phone, setPhone] = useState(currentUser && currentUser.phone ? currentUser.phone : '')
   const [acceptTerms, setAcceptTerms] = useState(false)
-  const [newsletter, setNewsletter] = useState(false)
+  const [newsletter, setNewsletter] = useState(true)
 
   useEffect(() => {
     window.scrollTo({top: 0, behavior: 'instant'})
@@ -200,7 +200,7 @@ const OrderDetails = () => {
       </div>
 
       <NewsLetter 
-        headingText='Abonează-te la newsletter-ul nostru pentru noutăți și oferte exclusive!'
+        headingText='Oferte și noutăți direct în inbox-ul tău: Abonează-te acum!'
       />
     </>
   )

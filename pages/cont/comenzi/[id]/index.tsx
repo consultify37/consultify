@@ -59,14 +59,14 @@ const Order = ({ products, id, createdAt, totalPrice, invoice }: Props) => {
             href='/cont/comenzi'
             className='text-base font-semibold text-blue-600 underline underline-offset-1'
           >
-            înapoi la comenzi
+            Înapoi la comenzi
           </Link>
         </div>
 
         <div className='w-full mt-6 hidden lg:block'>
           <div className='bg-[#EDF0FF] rounded-t-lg border-2 border-[#EDF0FF]'>
             <div className='p-6 pb-4'>
-              <p className='text-[20px] font-bold text-secondary'>Detalii comanda {id}</p>
+              <p className='text-[20px] font-bold text-secondary'>Detalii comandă:</p>
               <div className='flex flex-row items-center mt-2'>
                 <p className='font-semibold text-[#04D200]'>confirmată</p>
                 <p className='text-[18px] font-semibold text-secondary mx-2'>·</p>
@@ -122,7 +122,7 @@ const Order = ({ products, id, createdAt, totalPrice, invoice }: Props) => {
 
         <div className='lg:hidden w-full'>
           <div className='flex flex-col bg-[#EDF0FF] rounded-[12px] p-6 mt-6'>
-            <p className='font-bold text-secondary'>Comanda { id }</p>
+            <p className='font-bold text-secondary'>Detalii Comandă:</p>
             <div className='flex flex-row items-center justify-between mt-2 w-full'>   
               <p className='font-semibold text-[#04D200]'>confirmată</p>
               <p className='font-semibold text-secondary'>{ createdAt }</p>

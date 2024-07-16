@@ -4,6 +4,7 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 import { Product } from '../../../types'
 import { backCarousel, nextCarousel } from '../../../utils/functions'
 import ProductCard from '../../shop/ProductCard'
+import Link from 'next/link'
 
 type Props = {
   products: Product[]
@@ -71,6 +72,13 @@ const FeaturedProducts = ({ products, title="Consultify vine în ajutorul tău c
           </div>
         ))}
       </div>
+
+      <Link
+        href='/shop'
+        className='py-3 lg:py-4 w-fit self-center px-16 bg-primary flex items-center justify-center rounded-full hover:scale-105 transition-all mt-8 lg:mt-12 lg:mb-6 mb-12'
+      >
+        <p className='text-onPrimary font-semibold text-[14px]'>Vezi toate produsele</p>
+      </Link>
     </div>
   )
 }

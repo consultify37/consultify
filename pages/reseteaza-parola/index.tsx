@@ -40,7 +40,7 @@ export default function Multumire() {
       onSubmit={resetPass}
       className="my-40 max-w-[500px] mx-6 sm:mx-auto rounded-3xl border-[2px] border-[#F2F4FF] flex flex-col items-center"
     >
-      <h1 className="lg:text-2xl text-xl text-center border-[#F2F4FF] w-full py-6 border-b-2 mb-6 text-[#260056] font-semibold mb-4">
+      <h1 className="lg:text-2xl text-xl text-center border-[#F2F4FF] w-full py-6 border-b-2 mb-6 text-[#260056] font-semibold">
         Resetează-ți parola
       </h1>
       <input

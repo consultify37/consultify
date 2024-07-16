@@ -23,7 +23,7 @@ const OrderCard = ({ order }: Props) => {
 
       <div className='flex flex-row items-center justify-between mt-3'>
         <p className='text-[14px] font-semibold text-secondary'>total</p>
-        <p className='text-[14px] font-semibold text-secondary'>{Math.round(total*100)/100}</p>
+        <p className='text-[14px] font-semibold text-secondary'>{Math.round(total*100)/100} lei</p>
       </div>
 
       <div className='flex flex-row items-center justify-between mt-3 mb-4'>
@@ -35,7 +35,7 @@ const OrderCard = ({ order }: Props) => {
         href={`/cont/comenzi/${order.id}`}
         className='text-[14px] font-semibold text-blue-600 underline underline-offset-1 self-center'
       >
-        vezi produse
+        vezi detalii comandă
       </Link>
     </div>
   )

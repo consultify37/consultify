@@ -206,22 +206,22 @@ const Details = ({ city, companyIdentityNumber, companyName, county, email, setS
 
           <div className='flex flex-col w-full bg-[#F2F4FF] p-6 px-4 max-w-[400px] self-end mt-8 rounded-[10px] gap-4'>
             <div className='flex flex-row w-full justify-between items-center text-[14px] lg:text-[16px] font-bold'>
-              <p>Sună la callcenter</p>
+              <p>Număr de telefon:</p>
               <Link href={`tel:0727 153 317`} className='text-[#0F52FF]'>0727 153 317</Link>
             </div>
             <div className='flex flex-row w-full justify-between items-center text-[14px] lg:text-[16px] font-bold'>
-              <p>Email reclamații</p>
+              <p>Email:</p>
               <Link href={`mailto:contact@consultify.ro`} className='text-[#0F52FF]'>contact@consultify.ro</Link>
             </div>
 
-            <p className='text-[14px] lg:text-[16px] font-bold'>Program callcenter</p>
+            <p className='text-[14px] lg:text-[16px] font-bold'>Program de lucru:</p>
 
             <div className='flex flex-row w-full justify-between items-center text-[14px] lg:text-[16px] '>
-              <p>Luni-Vineri</p>
+              <p>Luni-Vineri:</p>
               <p>10:00 - 18:00</p>
             </div>
             <div className='flex flex-row w-full justify-between items-center text-[14px] lg:text-[16px] '>
-              <p>Sâmbătă-Duminică</p>
+              <p>Sâmbătă-Duminică:</p>
               <p>Indisponibil</p>
             </div>
           </div>

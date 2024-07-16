@@ -52,7 +52,7 @@ const AccountLayout = ({ children, pathName }: Props) => {
         <title>{`${process.env.SITE} | ${menuItems.find((item) => item.pathName == pathName)?.name }`}</title>
       </Head>
 
-      <PageHeader title={currentUser && currentUser.name ? `Bine ai venit, ${ currentUser.name }` : 'Bine ai venit'}>
+      <PageHeader title={currentUser && currentUser.name ? `Bine ai venit, ${ currentUser.name }!` : 'Bine ai venit!'}>
         {
           currentUser ?
           <p className='text-[rgba(255,255,255,0.75)] font-semibold z-10 mt-2 text-[16px] md:text-[22px]'>

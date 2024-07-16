@@ -5,16 +5,16 @@ import Link from 'next/link'
 
 const items = [
   {
-    title: 'Ai totul într-un loc', 
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    title: 'Acces la Resurse și Servicii Exclusive', 
+    description: 'Prin crearea unui cont, vei avea acces la o gamă variată de servicii si produse digitale.💯'
   },
   {
-    title: 'Ai totul într-un loc', 
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    title: 'Management Simplificat al Comenzilor', 
+    description: 'Poți accesa istoricul achizițiilor, statusul comenzilor și detaliile de facturare oricând ai nevoie.🎉'
   },
   {
-    title: 'Ai totul într-un loc', 
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    title: 'Păstrarea Preferințelor și Personalizare', 
+    description: 'Contul tău păstrează preferințele și setările personale, oferindu-ți o experiență de utilizare personalizată.🙋🏼‍♀️'
   }
 ]
 
@@ -26,7 +26,7 @@ const Register = () => {
         title='De ce să îți creezi un cont nou?'
       />
 
-      <p className='text-secondary font-bold text-[20px] lg:text-[24px] text-center mt-12'>Creează un cont nou</p>
+      <p className='text-secondary font-bold text-[20px] lg:text-[24px] text-center mt-12'>Creează un cont nou!</p>
       <p className='text-secondary text-[18px] text-center font-semibold mt-3'>
         <span className='opacity-80'>Ai deja un cont? </span>
         <Link

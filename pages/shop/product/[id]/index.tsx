@@ -55,10 +55,10 @@ const ProductPage = ({ product, featuredProducts }: Props) => {
         />
 
         <div className='flex flex-col self-start lg:self-center'>
-          <h1 className='text-[18px] font-bold text-secondary mt-8 lg:mt-0 lg:text-[32px]'>{product.name}</h1>
+          <h1 className='text-[24px] font-bold text-secondary mt-8 lg:mt-0 lg:text-[32px]'>{product.name}</h1>
           <p className='text-[14px] text-secondary mt-2 lg:mt-4 lg:text-[16px]'>{ product.description}</p>
           <div className='flex flex-row items-center mt-4 lg:mt-6'>
-            <p className='text-[18px] lg:text-[36px] font-bold text-price mr-4' >{ product.price } lei</p>
+            <p className='text-[24px] lg:text-[36px] font-bold text-price mr-2' >{ product.price } lei</p>
             { product.onSale &&
               <p className="text-[#7C9EF8] text-[14px] lg:text-[16px] font-base opacity-90 line-through font-semibold">
                 {product.oldPrice} lei
@@ -91,19 +91,19 @@ const ProductPage = ({ product, featuredProducts }: Props) => {
         <p className='text-[18px] font-bold text-secondary mt-8 lg:mt-16 lg:text-[32px] self-start'>De ce să alegi produsul?</p>
         <div className='grid grid-cols-1 md:grid-cols-2 w-full mt-4 lg:mt-6 -mb-8 lg:mb-0'>
           <div className='flex flex-col'>
-            { product.reasons.filter((reason, index) => index%2 == 0).map((reason, index) => (
+            { product.reasons.slice(0, Math.floor(product.reasons.length/2)).map((reason, index) => (
               <Reason 
                 key={index}
-                index={index*2}
+                index={index}
                 reason={reason}
               />
             )) }
           </div>
           <div className='flex flex-col'>
-            { product.reasons.filter((reason, index) => index%2 == 0).map((reason, index) => (
+            { product.reasons.slice(Math.floor(product.reasons.length/2)).map((reason, index) => (
               <Reason 
                 key={index}
-                index={index*2+1}
+                index={index+Math.floor(product.reasons.length/2)}
                 reason={reason}
               />
             )) }

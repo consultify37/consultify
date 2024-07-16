@@ -28,7 +28,7 @@ const ForgotPassword = () => {
   if ( isSent ) {
     return (
       <div className='min-h-screen min-w-screen flex flex-col items-center justify-center px-7 md:px-[80px] xl:px-[140px] 2xl:px-[276px]'>
-        <h1 className='text-secondary text-center text-[20px] lg:text-[24px] font-bold'>Accesează link-ul trimis pe email pentru a-ți reseta parola</h1>
+        <h1 className='text-secondary text-center mt-24 text-[20px] lg:text-[24px] font-bold'>Accesează link-ul trimis pe email pentru a-ți reseta parola!</h1>
 
         <Link
           className='w-full lg:px-16 lg:w-fit self-center rounded-full py-4 bg-primary mt-12 hover:scale-105 transition-all'
@@ -43,7 +43,7 @@ const ForgotPassword = () => {
   return (
     <div className='min-h-screen min-w-screen flex flex-col items-center justify-center px-7 md:px-[80px] xl:px-[140px] 2xl:px-[276px]'>
       <div className='flex flex-col w-full items-center'>
-        <h1 className='text-[20px] lg:text-[24px] font-bold text-secondary'>Recuperează-ți parola</h1>
+        <h1 className='text-[20px] lg:text-[24px] font-bold text-secondary mt-24'>Recuperează-ți parola!</h1>
         <p className='text-[14px] lg:text-base text-[#5F5F5F] text-center mt-2 max-w-[400px]'>Introdu e-mailul asociat contului în câmpul de mai jos și resetează-ți parola.</p>
 
         <form 

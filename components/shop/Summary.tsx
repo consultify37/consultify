@@ -53,7 +53,7 @@ const Summary = ({ city, companyName, county, newsletter, products, email, invoi
       <div className='flex flex-col mt-6 lg:mt-8'>
         
         <div className='flex flex-col bg-[#F8F8F8] p-4 lg:p-6 mt-8 rounded-[10px] '>
-          <p className='text-[14px] lg:text-[20px] font-bold'>Livrare la adresa de email specificată cât și în contul tău de pe platforma { process.env.SITE }!</p>
+          <p className='text-[14px] lg:text-[20px] font-bold'>Livrare pe adresa de email specificată, cât și în contul tău de pe platforma noastră!</p>
           { products.map((product) => (
             <ProductBigCard key={product.id} product={product} />
             ))
@@ -74,7 +74,7 @@ const Summary = ({ city, companyName, county, newsletter, products, email, invoi
           className='w-4 h-4 min-w-[16px] border-secondary border-[1.5px] rounded-[4px] mr-2'
           style={{ background: acceptTerms ? '#260056' : 'transparent' }}
         ></div>
-        <p className='text-secondary font-bold text-[14px] lg:text-[16px] -mt-[2px]'>Sunt de acord cu <Link href='/termeni' target='_blank' className='underline'>Termenii și Condițiile</Link> de utilizare a {process.env.SITE}</p>
+        <p className='text-secondary font-bold text-[14px] lg:text-[16px] -mt-[2px]'>Sunt de acord cu <Link href='/termeni' target='_blank' className='underline'>termenii și condițiile</Link>.</p>
       </div>
 
       <div
