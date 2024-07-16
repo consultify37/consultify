@@ -42,6 +42,7 @@ const Order = ({ products, id, createdAt, totalPrice, invoice }: Props) => {
 
       downloadLink.href = linkSource
       downloadLink.download = fileName
+      downloadLink.target = '_blank'
       downloadLink.click()      
     } catch (e) {
       toast.error('Ceva nu a mers bine încearcă din nou!')
