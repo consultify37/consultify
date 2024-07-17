@@ -1,6 +1,5 @@
 import React from 'react'
 import SummaryCard from './SummaryCard'
-import Image from 'next/image'
 import { Product } from '../../types'
 import { calculateCartTotal } from '../../utils/calculateCartTotal'
 import Link from 'next/link'
