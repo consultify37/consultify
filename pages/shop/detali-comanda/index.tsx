@@ -92,7 +92,7 @@ const OrderDetails = () => {
     try {
       const channel = Cookies.get('channel')
 
-      const response = await axios.post('http://127.0.0.1:5001/inspirely-consultify-socialy-c/europe-west3/createCheckoutSession', {
+      const response = await axios.post('https://createcheckoutsession-75cxgdbjwq-ey.a.run.app', {
         line_items,
         customer_email: email,
         metadata: { 

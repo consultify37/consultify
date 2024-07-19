@@ -14,7 +14,7 @@ const VoucherForm = () => {
     setIsLoading(true)
 
     try {
-      const response = await axios.post('http://127.0.0.1:5001/inspirely-consultify-socialy-c/europe-west3/getDiscountCode', {
+      const response = await axios.post('https://getdiscountcode-75cxgdbjwq-ey.a.run.app', {
         code: userCode
       })
 
