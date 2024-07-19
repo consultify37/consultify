@@ -12,6 +12,8 @@ type CartContextType = {
   handleAddProduct: (product: Product) => void
   handleRemoveProduct: (product: Product) => void
   setSelectedProduct: Dispatch<SetStateAction<Product | null>>
+  setCoupon: Dispatch<any>
+  coupon: any
 }
 
 const Context = createContext<CartContextType | null>(null)
@@ -22,6 +24,7 @@ type Props = {
 
 export const CartContext = ({ children }: Props) => {
   const [cart, setCart] = useState< Product[] >([])
+  const [coupon, setCoupon] = useState< any | null >(null)
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
 
   const fetchCartProducts = async () => {
@@ -94,7 +97,7 @@ export const CartContext = ({ children }: Props) => {
 
   return(
     <Context.Provider 
-      value={{ cart, handleAddProduct, handleRemoveProduct, setSelectedProduct }}
+      value={{ cart, handleAddProduct, handleRemoveProduct, setSelectedProduct, coupon, setCoupon }}
     >
       {children}
       <Modal product={selectedProduct}/>

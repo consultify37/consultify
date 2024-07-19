@@ -5,6 +5,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { calculateCartTotal } from '../../utils/calculateCartTotal'
 import toast from 'react-hot-toast'
+import { useCartContext } from '../../context/CartContext'
+import { calculateCouponValue } from '../../utils/calculateCouponValue'
 
 type Props = {
   products: Product[]
@@ -30,6 +32,7 @@ type Props = {
 }
 
 const Details = ({ city, companyIdentityNumber, companyName, county, email, setStep, invoicePreference, name, phone, products, setCity, setCompanyIdentityNumber, setCompanyName, setCounty, setEmail, setInvoicePreference, setName, setPhone, setStreet, street }: Props) => {
+  const { coupon } = useCartContext()
   const [paymentMethod, setPaymentMethod] = useState(true)
 
   const handleForm = (e: any) => {
@@ -199,9 +202,23 @@ const Details = ({ city, companyIdentityNumber, companyName, county, email, setS
             }
 
             <div className='flex flex-row justify-between items-center mt-6 px-2'>
-              <p className='font-semibold'>Total:</p>
+              <p className='font-semibold'>{ coupon ? 'Subtotal' : 'Total' }:</p>
               <p className='font-semibold'>{ calculateCartTotal(products) } lei</p>
             </div>
+
+            { coupon &&
+              <>
+                <div className='flex flex-row justify-between items-center mt-2 mb-4 px-2'>
+                  <p className='font-semibold'>{ coupon.name } | {coupon.code}</p>
+                  <p className='font-semibold'>- { calculateCouponValue(calculateCartTotal(products), coupon).coupon } lei</p>
+                </div>
+
+                <div className='flex flex-row justify-between items-center pt-4 border-t px-2'>
+                  <p className='font-semibold'>Total:</p>
+                  <p className='font-semibold'>{ calculateCouponValue(calculateCartTotal(products), coupon).total } lei</p>
+                </div>
+              </>
+            }
           </div>
 
           <div className='flex flex-col w-full bg-[#F2F4FF] p-6 px-4 max-w-[400px] self-end mt-8 rounded-[10px] gap-4'>

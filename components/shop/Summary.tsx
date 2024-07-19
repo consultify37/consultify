@@ -5,6 +5,8 @@ import { calculateCartTotal } from '../../utils/calculateCartTotal'
 import Link from 'next/link'
 import ReactLoading from 'react-loading'
 import ProductBigCard from './ProductBigCard'
+import { useCartContext } from '../../context/CartContext'
+import { calculateCouponValue } from '../../utils/calculateCouponValue'
 
 type Props = {
   invoicePreferance: string
@@ -27,6 +29,8 @@ type Props = {
 }
 
 const Summary = ({ city, companyName, county, newsletter, products, email, invoicePreferance, setStep, setNewsletter, name, phone, street, handleCheckout, isLoading, setIsLoading, acceptTerms, setAcceptTerms }: Props) => {
+  const { coupon } = useCartContext()
+  
   return (
     <div className='pt-28 lg:pt-36 px-6 md:px-[80px] xl:px-[140px] 2xl:px-[276px] w-full pb-8 flex flex-col'>
       <h3 className='text-[18px] lg:text-[22px] font-bold text-secondary'>Sumar comandă</h3>
@@ -58,10 +62,24 @@ const Summary = ({ city, companyName, county, newsletter, products, email, invoi
             ))
           }
 
-          <div className='flex flex-row justify-between lg:text-[22px] font-bold items-center mt-4 lg:mt-6 px-2'>
-            <p className='font-semibold'>Total:</p>
+          <div className='flex flex-row justify-between items-center mt-6 px-2'>
+            <p className='font-semibold'>{ coupon ? 'Subtotal' : 'Total' }:</p>
             <p className='font-semibold'>{ calculateCartTotal(products) } lei</p>
           </div>
+
+          { coupon &&
+            <>
+              <div className='flex flex-row justify-between items-center mt-2 mb-4 px-2'>
+                <p className='font-semibold'>{ coupon.name } | {coupon.code}</p>
+                <p className='font-semibold'>- { calculateCouponValue(calculateCartTotal(products), coupon).coupon } lei</p>
+              </div>
+
+              <div className='flex flex-row justify-between items-center pt-4 border-t px-2'>
+                <p className='font-semibold'>Total:</p>
+                <p className='font-semibold'>{ calculateCouponValue(calculateCartTotal(products), coupon).total } lei</p>
+              </div>
+            </>
+          }
         </div>
       </div>
 

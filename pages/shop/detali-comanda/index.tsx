@@ -16,7 +16,7 @@ import Summary from '../../../components/shop/Summary'
 
 const OrderDetails = () => {
   const router = useRouter()
-  const { cart: products } = useCartContext()
+  const { cart: products, coupon } = useCartContext()
   const { currentUser } = useAuthContext()
   const [step, setStep] = useState(1)
 
@@ -92,7 +92,7 @@ const OrderDetails = () => {
     try {
       const channel = Cookies.get('channel')
 
-      const response = await axios.post('https://createcheckoutsession-75cxgdbjwq-ey.a.run.app', {
+      const response = await axios.post('http://127.0.0.1:5001/inspirely-consultify-socialy-c/europe-west3/createCheckoutSession', {
         line_items,
         customer_email: email,
         metadata: { 
@@ -109,11 +109,13 @@ const OrderDetails = () => {
             company: {
               name: companyName,
               identityNumber: companyIdentityNumber
-            }
+            },
+            coupon
           })
         },
         success_url: 'https://www.consultify.ro/shop/success',
-        cancel_url: 'https://www.consultify.ro/shop/cart'
+        cancel_url: 'https://www.consultify.ro/shop/cart',
+        coupon: coupon ? coupon.id : null
       })
 
       Cookies.set('cart_session_id', response.data.session_id)
