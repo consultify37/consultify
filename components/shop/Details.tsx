@@ -181,7 +181,7 @@ const Details = ({ city, companyIdentityNumber, companyName, county, email, setS
                     blurDataURL="/images/whyus-cart-image.png"
                     width={152}
                     height={264}
-                    className="w-[100px] h-auto lg:w-[120px] object-contain rounded-[12px]"
+                    className="w-[100px] h-auto lg:w-[120px] lg:h-[150px] object-contain rounded-[12px]"
                   />
                   <div className='flex flex-col lg:flex-row lg:items-center lg:justify-between w-full mt-2 ml-2 sm:mt-0 sm:ml-6'>
                     <p className='sm:text-[18px] font-bold text-secondary'>{ product.name }</p>

@@ -15,7 +15,7 @@ const ProductBigCard = ({ product }: Props) => {
           alt={''}
           width={152}
           height={264}
-          className="w-[100px] h-auto lg:w-[160px] object-contain rounded-[12px]"
+          className="w-[100px] h-auto lg:w-[160px] lg:h-[180px] object-contain rounded-[12px]"
         />
         <div className='flex flex-col-reverse lg:flex-row lg:items-center lg:justify-between w-full mt-2 ml-2 sm:mt-0 sm:ml-6'>
           <p className='sm:text-[18px] lg:text-[20px] font-bold text-secondary'>{ product.name }</p>
