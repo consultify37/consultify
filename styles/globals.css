@@ -51,7 +51,7 @@
   font-style: normal;
 }
 
-body{max-width: 2000px; margin: 0 auto;}
+body{margin: 0 auto;}
 .rec-arrow-right {
   background-image: url('/images/arrows/arrow-right.svg') !important;
   background-repeat: no-repeat !important;
