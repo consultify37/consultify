@@ -72,7 +72,7 @@ const ProductList = ({ products }: Props) => {
           ))}
       </select>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 w-full gap-8 mt-8 md:mt-10 max-w-[320px] sm:max-w-none'>
-        {
+        { products &&
           PaginationBlog(products.toSorted(sort), page, 12).map((item) => (
             <ProductCard
               key={item.id} 
