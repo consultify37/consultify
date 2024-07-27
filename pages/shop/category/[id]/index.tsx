@@ -44,8 +44,6 @@ export const getServerSideProps = async (context: any) => {
 
   const categorySnap = await getDoc(doc(db, 'product-categories', id))
 
-  throw 'salut'
-
   if ( !categorySnap.exists() ) {
     return {
       notFound: true

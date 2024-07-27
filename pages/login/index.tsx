@@ -52,7 +52,7 @@ const Login = () => {
     try{
       await signInWithEmailAndPassword(auth, email, password) 
       
-      router.replace('/cont')
+      router.replace('/cont/comenzi')
     } catch (e: any) {
       if ( e.code == 'auth/invalid-login-credentials' ) {
         toast.error('Email sau parolă invalide.')

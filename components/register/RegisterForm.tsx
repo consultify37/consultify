@@ -47,7 +47,7 @@ const RegisterForm = () => {
 
       subscribe && await addDoc(collection(db, 'newsletter'), { website: process.env.SITE, email })
 
-      router.replace('/cont')
+      router.replace('/cont/comenzi')
     } catch (e: any) {
       if ( e.message ) {
         e.code == 'auth/email-already-in-use' ? toast.error('Email deja folosit.') : toast.error(e.message)
