@@ -25,12 +25,11 @@ export const FavoritesContext = ({ children }: Props) => {
 
   const fetchFavoritesProducts = async () => {
     const stringifiedFavoritesIds = Cookies.get('favorites')
-
     try {
-      if ( stringifiedFavoritesIds ) {
+      if ( stringifiedFavoritesIds && stringifiedFavoritesIds != '[]' ) {
         setIsLoading(true)
         const FavoritesIds = JSON.parse( stringifiedFavoritesIds ).slice(0, 30)
-  
+        
         const docsRef = query(collection(db, 'products'), where(documentId(), 'in', FavoritesIds))
         const docsSnap = await getDocs(docsRef)
 
