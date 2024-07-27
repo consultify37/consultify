@@ -57,7 +57,7 @@ const ProductList = ({ products }: Props) => {
   return (
     <div className='flex flex-col items-center w-full'>
       <select 
-        className="bg-transparent text-secondary text-[16px] font-semibold outline-none mt-10 self-center sm:self-end cursor-pointer" 
+        className="bg-transparent text-secondary text-[16px] appearance-[menulist-button] font-semibold outline-none mt-10 self-center sm:self-end cursor-pointer" 
         name="categorie"
         onChange={(e) => setSelector(e.target.value)}
         value={selector}
