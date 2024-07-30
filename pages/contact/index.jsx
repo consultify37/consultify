@@ -26,6 +26,7 @@ export default function Contact() {
     const [isLoading, setIsLoading] = useState(false)
 
     const [isChecked, setIsChecked] = useState(false)
+    const [newsletter, setNewsletter] = useState(false)
     const [captchaVerified, setCaptchaVerified] = useState(false)
 
     const upload = async (e) => {
@@ -48,6 +49,7 @@ export default function Contact() {
             const collectionRef = collection(db, 'contactForms')
 
             await addDoc(collectionRef, { nume, prenume, firma, cui, telefon, email, nevoie, mesaj, website: process.env.SITE, createdAt: serverTimestamp() } )
+            newsletter && await addDoc(collection(db, 'newsletter'), { website: process.env.SITE, email: email })
 
             toast.success(`Mulțumim! Un reprezentant ${process.env.SITE} te va contacta în curând. 🚀`, { duration: 5000, style: { textAlign: 'center' } })
             setCui("")
@@ -277,11 +279,17 @@ export default function Contact() {
                             value={mesaj}
                         ></textarea>
                     </div>
-                    <div className="flex items-center justify-center mb-6 self-center ml-1">
+                    <div className="flex items-center self-start justify-center mb-6 ml-1">
                         <input 
                             checked={isChecked} onChange={(e) => setIsChecked(!isChecked) }
-                            id="link-checkbox" type="checkbox" className="w-4 cursor-pointer h-4 text-[#260056] rounded border-[2px] bg-[#F2F4FF] border-[#8717F8] outline-none" />
+                            id="link-checkbox" type="checkbox" className="w-4 min-w-[16px] cursor-pointer h-4 text-[#260056] rounded border-[2px] bg-[#F2F4FF] border-[#8717F8] outline-none" />
                         <label htmlFor="link-checkbox" className="ml-2 text-md font-bold text-[#260056]">Accept <Link href="/termeni" target="_blank" className="text-[#260056] underline">Termenii și Condițiile.</Link></label>
+                    </div>
+                    <div className="flex self-start justify-center mb-6 ml-1">
+                        <input 
+                            checked={newsletter} onChange={(e) => setNewsletter(!newsletter) }
+                            id="checkbox-newsletter" type="checkbox" className="w-4 min-w-[16px] cursor-pointer h-4 text-[#260056] rounded border-[2px] bg-[#F2F4FF] border-[#8717F8] outline-none" />
+                        <label htmlFor="checkbox-newsletter" className="ml-2 -mt-[3px] text-md font-bold text-[#260056]">Aboneaza-te la newsletter-ul nostru pentru a primi cele mai bune oferte!</label>
                     </div>
                     <div className="flex flex-col md:flex-row justify-center w-full items-center">
                         <ReCAPTCHA

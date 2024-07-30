@@ -158,7 +158,7 @@ const RegisterForm = () => {
           className='w-[14px] min-w-[14px] h-[14px] border-secondary border-[1.5px] rounded-[4px] mr-2'
           style={{ background: subscribe ? '#8717F8' : 'transparent' }}
         ></div>
-        <p className='text-secondary font-semibold text-[14px] -mt-[3px]'>Aboneaza-te la newsletter-ul nostru pentru a primi cele mai bune oferte!</p>
+        <p className='text-secondary font-semibold text-[14px] -mt-[3px]'>Abonează-te la newsletter-ul nostru pentru a primi cele mai bune oferte!</p>
       </div>
 
       { isLoading ? 
