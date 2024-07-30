@@ -49,7 +49,7 @@ export default function Contact() {
 
             await addDoc(collectionRef, { nume, prenume, firma, cui, telefon, email, nevoie, mesaj, website: process.env.SITE, createdAt: serverTimestamp() } )
 
-            toast.success(`Mulțumim! Un reprezentat ${process.env.SITE} te va contacta în curând. 🚀`, { duration: 5000, style: { textAlign: 'center' } })
+            toast.success(`Mulțumim! Un reprezentant ${process.env.SITE} te va contacta în curând. 🚀`, { duration: 5000, style: { textAlign: 'center' } })
             setCui("")
             setEmail("")
             setIsChecked(false)
@@ -161,21 +161,21 @@ export default function Contact() {
                 >
                     <h2 className="text-xl font-bold mb-10 md:text-2xl text-center">Hai să lucrăm împreună!</h2>
                     <div className="flex w-full flex-col items-center md:flex-row justify-between mb-6">
-                        <div className="flex flex-col w-full md:w-[47%] md:mr-2 mb-6 md:mb-0">
+                        <div className="flex flex-col w-full mb-6 md:mb-0">
                             <span className="text-md mb-2 font-semibold">
-                                Nume*
+                                Nume și prenume*
                             </span>
                             <input
                                 required 
                                 type="text"
                                 name="Nume"
                                 className="rounded-xl w-full border-[#8717F8] text-ms leading-6 border-2 p-[14px] outline-none" 
-                                placeholder="ex: Popescu"
+                                placeholder="ex: Popescu Andrei"
                                 onChange={(e) => setNume(e.target.value)}
                                 value={nume}
                             />
                         </div>
-                        <div className="flex flex-col w-full md:w-[47%]">
+                        {/* <div className="flex flex-col w-full md:w-[47%]">
                             <span className="text-md mb-2 font-semibold">
                                 Prenume*
                             </span>
@@ -188,7 +188,7 @@ export default function Contact() {
                                 onChange={(e) => setPrenume(e.target.value)}
                                 value={prenume}
                             />
-                        </div>
+                        </div> */}
                     </div>
                     <div className="flex w-full flex-col items-center justify-between mb-6">
                         <div className="flex flex-col w-full md:mr-2">
@@ -259,9 +259,9 @@ export default function Contact() {
                                 value={nevoie}
                             >
                                 <option value="Selectează aici" className="hidden">Selectează aici</option>
-                                <option value="Consultanță Fonduri Europene">Consultanță Fonduri Europene</option>
+                                <option value="Consultanță Fonduri Europene">Consultanță în Accesarea Fondurilor Europene</option>
                                 <option value="Implementare proiect">Implementare proiect câștigat</option>
-                                <option value="Colaborări & Angajări">Colaborări & Angajări</option>
+                                {/* <option value="Colaborări & Angajări">Colaborări & Angajări</option> */}
                             </select>
                         </div>
                     <div className="flex flex-col w-full my-6">

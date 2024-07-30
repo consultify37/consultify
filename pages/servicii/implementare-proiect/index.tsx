@@ -152,7 +152,7 @@ export default function PaginaProgram({ articles, products }: Props) {
                 </ul>
                 <div className='flex flex-row gap-2 md:gap-4 mt-6'>
                 <Link
-                    href="/shop" 
+                    href="#" 
                     className="bg-primary py-3 text-[#fff] flex justify-center items-center font-semibold rounded-[28.5px] px-8 sm:px-12 hover:scale-[1.05] transition-all"
                 >
                     Shop

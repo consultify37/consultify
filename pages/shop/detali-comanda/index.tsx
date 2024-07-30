@@ -202,7 +202,7 @@ const OrderDetails = () => {
       </div>
 
       <NewsLetter 
-        headingText='Oferte și noutăți direct în inbox-ul tău: Abonează-te acum!'
+        headingText={ step == 3 ? 'Nu rata niciun update! Abonează-te la newsletter-ul nostru!': 'Oferte și noutăți direct în inbox-ul tău: Abonează-te acum!'}
       />
     </>
   )

@@ -30,14 +30,14 @@ const Footer = () => {
                             <Link href='/testimoniale' className='font-semibold text-[#8717F8] text-[16px]'>Testimoniale</Link>
                         </li>
                         <li>
-                            <Link href='/contact' className='font-semibold text-[#8717F8] text-[16px]'>Contact</Link>
-                        </li>
-                        <li>
-                            <Link href='/' className='font-semibold text-[#8717F8] text-[16px]'>Blog</Link>
+                            <Link href='/blog' className='font-semibold text-[#8717F8] text-[16px]'>Blog</Link>
                         </li>
                         {/* <li>
-                            <Link href='/' className='font-semibold text-[#8717F8] text-[16px]'>Shop</Link>
+                            <Link href='/shop' className='font-semibold text-[#8717F8] text-[16px]'>Shop</Link>
                         </li> */}
+                        <li>
+                            <Link href='/contact' className='font-semibold text-[#8717F8] text-[16px]'>Contact</Link>
+                        </li>
                     </ul>
                 </div>
                 <div className='flex flex-col gap-1 lg:max-w-[20%]'>
@@ -108,7 +108,7 @@ const Footer = () => {
                             />
                         </Link>
 
-                        <Link href='https://www.tiktok.com/@consultifyro?_t=8hf9YsK4ZsX&_r=1' target="_blank">
+                        <Link href='https://www.tiktok.com/@consultify.ro?_t=8oJfgBL3I01&_r=1' target="_blank">
                             <Image
                                 src="/images/contact/tiktok.svg"
                                 alt="tiktok"

@@ -42,7 +42,7 @@ const Cart = ({ products: featuredProducts }: Props) => {
         <CartInfo />
       </div>
 
-      <NewsLetter headingText={cart.length && cart.length != 0 ? 'Abonează-te la newsletter-ul nostru pentru noutăți și oferte exclusive!' : 'Abonează-te la newsletter! Rămâi la curent cu cele mai bune oferte!'} />
+      <NewsLetter headingText={cart.length && cart.length != 0 ? 'Abonează-te la newsletter! Rămâi la curent cu cele mai bune oferte!' : 'Abonează-te la newsletter! Rămâi la curent cu cele mai bune oferte!'} />
     </>
   )
 }

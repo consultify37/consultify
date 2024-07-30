@@ -3,9 +3,10 @@ import React, { useState } from 'react'
 import toast from 'react-hot-toast'
 import ReactLoading from 'react-loading'
 import { useCartContext } from '../../../context/CartContext'
+import Image from 'next/image'
 
 const VoucherForm = () => {
-  const { setCoupon } = useCartContext()
+  const { setCoupon, coupon } = useCartContext()
   const [userCode, setUserCode] = useState('')
   const [isLoading, setIsLoading] = useState(false)
 
@@ -47,9 +48,14 @@ const VoucherForm = () => {
     setIsLoading(false)
   }
 
+  const removeCode = () => {
+    setCoupon(null)
+    toast.success('Voucher eliminat cu succes!')
+  } 
+
   return (
     <div className='rounded-[10px] border-2 border-[#F2F4FF] p-4 py-6 mt-8'>
-      <p className='text-secondary font-bold text-[18px]'>Adaugă un voucher cadou</p>
+      <p className='text-secondary font-bold text-[18px]'>Adaugă un voucher cadou:</p>
 
       <form onSubmit={applyCode} className='flex flex-col items-center'>
         <input 
@@ -60,6 +66,24 @@ const VoucherForm = () => {
           onChange={(e) => setUserCode(e.target.value) }
           required
         />
+
+        { coupon &&
+          <div className='w-full flex justify-between items-center mt-6'>
+            <p className='font-semibold text-secondary'>{ coupon.name } | { coupon.code }</p>
+            <button
+              type='button'
+              onClick={removeCode}
+            >
+              <Image
+                src='/images/x.svg'
+                width={32}
+                height={32}
+                alt='.'
+                className='w-3 h-3 -mt-[1px] hover:scale-105 transition-all'
+              />
+            </button>
+          </div>        
+        }
 
         <div className='flex items-center justify-center w-full h-[45px] lg:h-[53px] max-w-[400px] mt-6'>
           { isLoading ?

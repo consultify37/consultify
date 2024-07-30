@@ -14,6 +14,7 @@ import { formatDate } from "../../utils/formatDate"
 import { Article, ArticleCategory, Product } from "../../types"
 import FeaturedArticlesSection from "../../components/blog/FeaturedArticlesSection"
 import FeaturedProducts from "../../components/Home/Why-Us/FeaturedProducts"
+import { useRouter } from "next/navigation"
 
 type Props = {
   articles: Article[]
@@ -23,21 +24,24 @@ type Props = {
 
 export default function Testimoniale({ articles, categories, products }: Props) {
     const [page, setPage] = useState(0)
-    let maxPages = Math.ceil(articles.length/9)
+    const [maxPages, setMaxPages] = useState(Math.ceil(articles.length/9))
+    const router = useRouter()
   
     const [selectedCategory, setSelectedCategory] = useState<string>('toate')
     const [filteredPosts, setFilteredPosts] = useState(articles)
 
     useEffect(() => {
+        setPage(0)
         if (selectedCategory == 'toate') {
             setFilteredPosts(articles)
+            setMaxPages(Math.ceil(articles.length/9))
             return
         }
 
         let filteredData = articles.filter(article => article.category === selectedCategory)
-        // filteredData = [...filteredData, ...filteredData, ...filteredData, ...filteredData, ...filteredData, ...filteredData, ...filteredData, ...filteredData, ...filteredData]
+        setMaxPages(Math.ceil(filteredData.length/9))
         setFilteredPosts(filteredData)
-    }, [selectedCategory, articles])
+    }, [selectedCategory, articles, router])
 
   return (
     <>
@@ -45,7 +49,7 @@ export default function Testimoniale({ articles, categories, products }: Props) 
             <title>{`${process.env.SITE} | Blog`}</title>
         </Head>
         <PageHeader 
-            title="Află noutățile din business și nu numai"
+            title="Ultimele tendințe în Fonduri Europene și nu numai:"
         >
             <Image
                 src="/images/blog/Ellipse 19.svg"
@@ -107,14 +111,14 @@ export default function Testimoniale({ articles, categories, products }: Props) 
                 }
             </div>
             <div className='mt-8 md:mt-12 flex items-center justify-center w-full gap-2'>
-                <RiArrowLeftSLine size={24} onClick={() => setPage(0)} className={`${page === 0 ? 'text-[#CDCDCD]' : 'text-[#260056]'} cursor-pointer`} />
+                <RiArrowLeftSLine size={24} onClick={() => {setPage(0); scrollTo({top: 800, behavior: 'instant'})}} className={`${page === 0 ? 'text-[#CDCDCD]' : 'text-[#260056]'} cursor-pointer`} />
                 {
                     maxPages > 0 &&
                         Array.from({length: maxPages}, (_, i) =>
-                            <p key={i} onClick={() => setPage(i)} className={`${i === page ? 'bg-[#260056] text-white' : 'text-[#260056]'} cursor-pointer h-8 w-8 rounded-full flex items-center justify-center`}>{i+1}</p>
+                            <p key={i} onClick={() => {setPage(i); scrollTo({top: 800, behavior: 'instant'})}} className={`${i === page ? 'bg-[#260056] text-white' : 'text-[#260056]'} cursor-pointer h-8 w-8 rounded-full flex items-center justify-center`}>{i+1}</p>
                         )
                 }
-                <RiArrowRightSLine size={24} onClick={() => setPage(maxPages-1)} className={`${page === maxPages - 1 ? 'text-[#CDCDCD]' : 'text-[#260056]'} cursor-pointer`} />
+                <RiArrowRightSLine size={24} onClick={() => {setPage(maxPages-1); scrollTo({top: 800, behavior: 'instant'})}} className={`${page === maxPages - 1 ? 'text-[#CDCDCD]' : 'text-[#260056]'} cursor-pointer`} />
             </div>
         </section>
         {/* <FeaturedProducts 

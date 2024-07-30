@@ -22,8 +22,8 @@ const ProductCTA = ({ product }: Props) => {
       />
 
       <div className='flex flex-col w-full lg:mr-8'>
-        <h1 className='text-[24px] lg:text-[32px] font-bold text-onSecondary mt-6 lg:mt-0'>{product.name}</h1>
-        <div className='flex flex-row items-center mt-2 lg:mt-4 mb-6 lg:mb-8'>
+        <h1 className='text-[24px] lg:text-[32px] font-bold self-center lg:self-start text-onSecondary mt-6 lg:mt-0'>{product.name}</h1>
+        <div className='flex flex-row items-center self-center lg:self-start mt-2 lg:mt-4 mb-6 lg:mb-8'>
           <p className='text-[24px] lg:text-[32px] font-bold text-price mr-2' >{ product.price } lei</p>
           { product.onSale &&
             <p className="text-[#7C9EF8] text-[14px] font-base opacity-90 line-through font-semibold">

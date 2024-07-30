@@ -19,7 +19,7 @@ const RegisterForm = () => {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [termsAccepted, setTermsAccepted] = useState(false)
-  const [subscribe, setSubscribed] = useState(false)
+  const [subscribe, setSubscribed] = useState(true)
   const [isLoading, setIsLoading] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
   const [isVisible2, setIsVisible2] = useState(false)
@@ -138,7 +138,7 @@ const RegisterForm = () => {
         </div>
       </div>
 
-      <p className='text-[14px] font-semibold text-[#B9B9B9] mt-6'>Toate câmpurile sunt obligatorii</p>
+      <p className='text-[14px] font-semibold text-[#B9B9B9] mt-6'>Toate câmpurile sunt obligatorii!</p>
       <div
         className='flex flex-row items-center cursor-pointer w-fit mt-2'
         onClick={() => setTermsAccepted(!termsAccepted) }
@@ -147,7 +147,7 @@ const RegisterForm = () => {
           className='w-[14px] h-[14px] border-secondary border-[1.5px] rounded-[4px] mr-2'
           style={{ background: termsAccepted ? '#8717F8' : 'transparent' }}
         ></div>
-        <p className='text-secondary font-semibold text-[14px] pt-[2px]'>Sunt de acord cu <Link href='/termeni' target='_blank' className='text-blue-600 underline-offset-1 underline'>termenii și condițiile</Link></p>
+        <p className='text-secondary font-semibold text-[14px] pt-[2px]'>Sunt de acord cu <Link href='/termeni' target='_blank' className='text-blue-600 underline-offset-1 underline'>termenii și condițiile.</Link></p>
       </div>
 
       <div

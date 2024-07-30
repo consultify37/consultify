@@ -58,7 +58,7 @@ const FeaturedProducts = ({ products, title="Consultify vine în ajutorul tău c
         </div>
       </div>
       <div
-        className="flex gap-4 md:gap-5 xl:gap-6 items-stretch overflow-y-auto scrollbar-none pb-6 pt-6"
+        className="flex gap-4 md:gap-5 xl:gap-6 items-stretch overflow-y-auto scrollbar-none pb-6 pt-6 h-full"
         ref={carouselRef}
       >
         { products.map((item, index) => (
