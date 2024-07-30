@@ -48,7 +48,7 @@ export default function Contact() {
         try {
             const collectionRef = collection(db, 'contactForms')
 
-            await addDoc(collectionRef, { nume, prenume, firma, cui, telefon, email, nevoie, mesaj, website: process.env.SITE, createdAt: serverTimestamp() } )
+            await addDoc(collectionRef, { nume, prenume, firma, cui, telefon, email, subscribe: newsletter, nevoie, mesaj, website: process.env.SITE, createdAt: serverTimestamp() } )
             newsletter && await addDoc(collection(db, 'newsletter'), { website: process.env.SITE, email: email })
 
             toast.success(`Mulțumim! Un reprezentant ${process.env.SITE} te va contacta în curând. 🚀`, { duration: 5000, style: { textAlign: 'center' } })
