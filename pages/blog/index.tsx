@@ -8,13 +8,13 @@ import { PaginationBlog } from "../../utils/functions"
 import {RiArrowLeftSLine, RiArrowRightSLine} from 'react-icons/ri'
 import TabsComponent from "../../components/TabsComponent"
 import PageHeader from "../../components/Header/PageHeader"
-import { collection, getDocs, limit, orderBy, query, where } from "firebase/firestore"
+import { collection, endBefore, getDocs, limit, orderBy, query, startAfter, where } from "firebase/firestore"
 import { db } from "../../firebase"
 import { formatDate } from "../../utils/formatDate"
 import { Article, ArticleCategory, Product } from "../../types"
 import FeaturedArticlesSection from "../../components/blog/FeaturedArticlesSection"
-import FeaturedProducts from "../../components/Home/Why-Us/FeaturedProducts"
 import { useRouter } from "next/navigation"
+import Pagination from "../../components/blog/Pagination"
 
 type Props = {
   articles: Article[]
@@ -22,26 +22,137 @@ type Props = {
   products: Product[]
 }
 
-export default function Testimoniale({ articles, categories, products }: Props) {
-    const [page, setPage] = useState(0)
-    const [maxPages, setMaxPages] = useState(Math.ceil(articles.length/9))
-    const router = useRouter()
+let articlesPerPage = 9
+
+export default function Testimoniale({ articles: initialArticles, categories, products }: Props) {
+    const [page, setPage] = useState(1)
+    const [isLastPage, setIsLastPage] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
   
     const [selectedCategory, setSelectedCategory] = useState<string>('toate')
-    const [filteredPosts, setFilteredPosts] = useState(articles)
+    const [articles, setArticles] = useState<any[]>(initialArticles)
 
-    useEffect(() => {
-        setPage(0)
+    const next = async () => {
+        setIsLoading(true)
+
+        let collectionRef
         if (selectedCategory == 'toate') {
-            setFilteredPosts(articles)
-            setMaxPages(Math.ceil(articles.length/9))
-            return
+            collectionRef = query(collection(db, 'articles'), orderBy('index', 'desc'), startAfter(articles[articles.length-1].index), limit(articlesPerPage))
+        } else {
+            collectionRef = query(collection(db, 'articles'), orderBy('index', 'desc'), startAfter(articles[articles.length-1].index), where('category', '==', selectedCategory), limit(articlesPerPage))
         }
 
-        let filteredData = articles.filter(article => article.category === selectedCategory)
-        setMaxPages(Math.ceil(filteredData.length/9))
-        setFilteredPosts(filteredData)
-    }, [selectedCategory, articles, router])
+        const collectionSnap = await getDocs(collectionRef)
+        
+        const newArticles: Article[] = collectionSnap.docs.map((doc) => (
+          { id: doc.id, formattedCreatedAt: formatDate(new Date(doc.data().createdAt.seconds*1000)), ...doc.data() } as Article
+        ))
+    
+        const lastArticleRef = query(collection(db, 'articles'), orderBy('index', 'asc'), limit(1))
+        const lastArticle = await getDocs(lastArticleRef)
+    
+        if ( newArticles.length != 0 && !lastArticle.empty ) {
+          setIsLastPage(lastArticle.docs[0].id == newArticles[newArticles.length-1].id)
+        }
+        
+        setArticles(newArticles)
+        setPage(page+1)
+        window.scrollTo({top: 800, behavior: 'instant'})
+        setIsLoading(false)
+      }
+    
+      const previous = async () => {
+        setIsLoading(true)
+
+        let collectionRef
+        if (selectedCategory == 'toate' ) {
+            collectionRef = query(collection(db, 'articles'), orderBy('index', 'asc'), startAfter(articles[0].index), limit(articlesPerPage))
+        } else {
+            collectionRef = query(collection(db, 'articles'), orderBy('index', 'asc'), startAfter(articles[0].index), where('category', '==', selectedCategory), limit(articlesPerPage))
+        }
+    
+        const collectionSnap = await getDocs(collectionRef)
+        
+        const newArticles: Article[] = collectionSnap.docs.map((doc) => (
+          { id: doc.id, formattedCreatedAt: formatDate(new Date(doc.data().createdAt.seconds*1000)), ...doc.data() } as Article
+        ))
+    
+        const lastArticleRef = query(collection(db, 'articles'), orderBy('index', 'asc'), limit(1))
+        const lastArticle = await getDocs(lastArticleRef)
+    
+        if ( newArticles.length != 0 && !lastArticle.empty ) {
+          setIsLastPage(lastArticle.docs[0].id == newArticles[newArticles.length-1].id)
+        }
+        
+        setArticles(newArticles.reverse())
+        setPage(page-1)
+        window.scrollTo({top: 800, behavior: 'instant'})
+    
+        setIsLoading(false)
+      }
+
+    const fetchArticles = async () => {
+        setPage(1)
+
+        let ref
+        let lastArticleRef
+        if ( selectedCategory == 'toate' ) {
+            ref = query(collection(db, 'articles'), where('active', '==', true), orderBy('createdAt', 'desc'), limit(articlesPerPage))
+            lastArticleRef = query(collection(db, 'articles'), orderBy('index', 'asc'), limit(1))
+            // const ref = query(collection(db, 'articles'), where('active', '==', true), orderBy('createdAt', 'desc'), limit(articlesPerPage))
+            // const articlesSnap = await getDocs(ref)
+
+            // const newArticles = articlesSnap.docs.map((doc) => {
+            //     const { lastUpdated, createdAt, ...data } = doc.data()
+            //     return ({ id: doc.id, formattedCreatedAt: formatDate(new Date(createdAt.seconds*1000)), ...data }) 
+            // })
+
+            // const lastArticleRef = query(collection(db, 'articles'), orderBy('index', 'asc'), limit(1))
+            // const lastArticle = await getDocs(lastArticleRef)
+
+            // if ( newArticles.length != 0 && !lastArticle.empty ) {
+            //     setIsLastPage(lastArticle.docs[0].id == newArticles[newArticles.length-1].id)
+            // }
+
+            // setArticles(newArticles)
+            // return
+        } else {
+            ref = query(collection(db, 'articles'), where('active', '==', true), orderBy('createdAt', 'desc'), where('category', '==', selectedCategory), limit(articlesPerPage))
+            lastArticleRef = query(collection(db, 'articles'), orderBy('index', 'asc'), where('category', '==', selectedCategory), limit(1))
+        }
+
+        const articlesSnap = await getDocs(ref)
+
+        const newArticles = articlesSnap.docs.map((doc) => {
+            const { lastUpdated, createdAt, ...data } = doc.data()
+            return ({ id: doc.id, formattedCreatedAt: formatDate(new Date(createdAt.seconds*1000)), ...data }) 
+        })
+
+        const lastArticle = await getDocs(lastArticleRef)
+
+        if ( articles.length != 0 && !lastArticle.empty ) {
+            setIsLastPage(lastArticle.docs[0].id == newArticles[newArticles.length-1].id)
+        }
+
+        setArticles(newArticles)
+    } 
+
+    useEffect(() => {
+        fetchArticles()
+    }, [selectedCategory])
+
+    // useEffect(() => {
+    //     setPage(0)
+    //     if (selectedCategory == 'toate') {
+    //         setFilteredPosts(articles)
+    //         setMaxPages(Math.ceil(articles.length/9))
+    //         return
+    //     }
+
+    //     let filteredData = articles.filter(article => article.category === selectedCategory)
+    //     setMaxPages(Math.ceil(filteredData.length/9))
+    //     setFilteredPosts(filteredData)
+    // }, [selectedCategory, articles, router])
 
   return (
     <>
@@ -68,10 +179,10 @@ export default function Testimoniale({ articles, categories, products }: Props) 
         </PageHeader>
 
         <FeaturedArticlesSection 
-            articles={articles.filter((article) => article.featured).slice(0,8)}
+            articles={initialArticles.filter((article) => article.featured).slice(0,8)}
         />
         
-        <section className="flex flex-col gap-5 items-stretch justify-center px-7 md:px-[80px] xl:px-[140px] 2xl:px-[276px] mt-12 md:mt-12">
+        <section className="flex flex-col gap-5 w-full items-stretch justify-center px-7 md:px-[80px] xl:px-[140px] 2xl:px-[276px] mt-12 md:mt-12">
                 { categories.length >= 2 ?
                   <TabsComponent 
                     values={['toate', ...categories.map((category => category.category))]}
@@ -80,7 +191,7 @@ export default function Testimoniale({ articles, categories, products }: Props) 
                 }
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 gap-y-10 mt-4 md:mt-12 px-1'>
                 {
-                    PaginationBlog(filteredPosts, page, 9).map(item =>
+                    articles.map(item =>
                         <Link 
                             href={`/blog/${item.id}`}
                             key={item.id}
@@ -109,8 +220,17 @@ export default function Testimoniale({ articles, categories, products }: Props) 
                         </Link>                     
                     )
                 }
+
             </div>
-            <div className='mt-8 md:mt-12 flex items-center justify-center w-full gap-2'>
+
+            <Pagination 
+                lastPage={isLastPage}
+                next={next}
+                previous={previous}
+                page={page}
+                isLoading={isLoading}
+            />
+            {/* <div className='mt-8 md:mt-12 flex items-center justify-center w-full gap-2'>
                 <RiArrowLeftSLine size={24} onClick={() => {setPage(0); scrollTo({top: 800, behavior: 'instant'})}} className={`${page === 0 ? 'text-[#CDCDCD]' : 'text-[#260056]'} cursor-pointer`} />
                 {
                     maxPages > 0 &&
@@ -119,7 +239,7 @@ export default function Testimoniale({ articles, categories, products }: Props) 
                         )
                 }
                 <RiArrowRightSLine size={24} onClick={() => {setPage(maxPages-1); scrollTo({top: 800, behavior: 'instant'})}} className={`${page === maxPages - 1 ? 'text-[#CDCDCD]' : 'text-[#260056]'} cursor-pointer`} />
-            </div>
+            </div> */}
         </section>
         {/* <FeaturedProducts 
             products={products}
@@ -130,7 +250,7 @@ export default function Testimoniale({ articles, categories, products }: Props) 
 }
 
 export const getServerSideProps = async () => {
-    const articlesSnap = await  getDocs(query(collection(db, 'articles'), where('active', '==', true), orderBy('createdAt', 'desc')))
+    const articlesSnap = await  getDocs(query(collection(db, 'articles'), where('active', '==', true), orderBy('createdAt', 'desc'), limit(9)))
     const articles = articlesSnap.docs.map((doc) => {
         const { lastUpdated, createdAt, ...data } = doc.data()
         return ({ id: doc.id, formattedCreatedAt: formatDate(new Date(createdAt.seconds*1000)), ...data }) 
