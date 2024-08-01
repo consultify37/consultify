@@ -19,7 +19,7 @@ const Modal = ({ product }: Props) => {
     <>
       { product && 
         <div className='fixed inset-0 w-screen h-screen flex justify-center items-center bg-[rgba(0,0,0,0.4)] shadow-2xl z-[1000]'>
-          <div className='flex flex-col bg-white shadow-sm rounded-[18px] min-w-[320px]'>
+          <div className='flex flex-col bg-white shadow-sm rounded-[18px] min-w-[320px] mx-6'>
             <div className='flex flex-row items-center justify-between p-4 lg:p-6 border-b border-[#DAE0FF]'>
               <p className='lg:text-[20px] font-bold'>Produsul a fost adăugat în coș!</p>
 
