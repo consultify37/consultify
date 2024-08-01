@@ -26,7 +26,7 @@ export default function Contact() {
     const [isLoading, setIsLoading] = useState(false)
 
     const [isChecked, setIsChecked] = useState(false)
-    const [newsletter, setNewsletter] = useState(false)
+    const [newsletter, setNewsletter] = useState(true)
     const [captchaVerified, setCaptchaVerified] = useState(false)
 
     const upload = async (e) => {
