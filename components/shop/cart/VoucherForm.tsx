@@ -37,7 +37,7 @@ const VoucherForm = () => {
       toast.success('Voucher adăugat cu succes!')
     } catch (e: any) {
       if ( e.response && e.response.status == '404' ) {
-        toast.error('Codul introdus nu există.')
+        toast.error('Cod voucher invalid!')
       } else {
         toast.error('Ceva nu a mers bine. Încearcă din nou!')
         console.log(e)
