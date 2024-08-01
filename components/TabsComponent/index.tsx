@@ -66,7 +66,7 @@ const TabsComponent = ({ values, setSelectedValue }: Props) => {
         </label>
 
         <div 
-          className='absolute top-11 pt-2 flex-col z-10 w-full bg-[#F6EFFF] rounded-b-3xl shadow-lg pb-1'
+          className='absolute top-11 pt-2 flex-col z-50 w-full bg-[#F6EFFF] rounded-b-3xl shadow-xl pb-1'
           id='dropdown-container'
           style={{visibility: toggle ? 'visible' : 'hidden'}}
         >

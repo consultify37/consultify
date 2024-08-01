@@ -163,7 +163,7 @@ export default function Contact() {
                 >
                     <h2 className="text-xl font-bold mb-10 md:text-2xl text-center">Hai să lucrăm împreună!</h2>
                     <div className="flex w-full flex-col items-center md:flex-row justify-between mb-6">
-                        <div className="flex flex-col w-full mb-6 md:mb-0">
+                        <div className="flex flex-col w-full">
                             <span className="text-md mb-2 font-semibold">
                                 Nume și prenume*
                             </span>
