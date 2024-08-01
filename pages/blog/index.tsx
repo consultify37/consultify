@@ -13,7 +13,6 @@ import { db } from "../../firebase"
 import { formatDate } from "../../utils/formatDate"
 import { Article, ArticleCategory, Product } from "../../types"
 import FeaturedArticlesSection from "../../components/blog/FeaturedArticlesSection"
-import { useRouter } from "next/navigation"
 import Pagination from "../../components/blog/Pagination"
 
 type Props = {
@@ -99,23 +98,6 @@ export default function Testimoniale({ articles: initialArticles, categories, pr
         if ( selectedCategory == 'toate' ) {
             ref = query(collection(db, 'articles'), where('active', '==', true), orderBy('createdAt', 'desc'), limit(articlesPerPage))
             lastArticleRef = query(collection(db, 'articles'), orderBy('index', 'asc'), limit(1))
-            // const ref = query(collection(db, 'articles'), where('active', '==', true), orderBy('createdAt', 'desc'), limit(articlesPerPage))
-            // const articlesSnap = await getDocs(ref)
-
-            // const newArticles = articlesSnap.docs.map((doc) => {
-            //     const { lastUpdated, createdAt, ...data } = doc.data()
-            //     return ({ id: doc.id, formattedCreatedAt: formatDate(new Date(createdAt.seconds*1000)), ...data }) 
-            // })
-
-            // const lastArticleRef = query(collection(db, 'articles'), orderBy('index', 'asc'), limit(1))
-            // const lastArticle = await getDocs(lastArticleRef)
-
-            // if ( newArticles.length != 0 && !lastArticle.empty ) {
-            //     setIsLastPage(lastArticle.docs[0].id == newArticles[newArticles.length-1].id)
-            // }
-
-            // setArticles(newArticles)
-            // return
         } else {
             ref = query(collection(db, 'articles'), where('active', '==', true), orderBy('createdAt', 'desc'), where('category', '==', selectedCategory), limit(articlesPerPage))
             lastArticleRef = query(collection(db, 'articles'), orderBy('index', 'asc'), where('category', '==', selectedCategory), limit(1))
@@ -140,19 +122,6 @@ export default function Testimoniale({ articles: initialArticles, categories, pr
     useEffect(() => {
         fetchArticles()
     }, [selectedCategory])
-
-    // useEffect(() => {
-    //     setPage(0)
-    //     if (selectedCategory == 'toate') {
-    //         setFilteredPosts(articles)
-    //         setMaxPages(Math.ceil(articles.length/9))
-    //         return
-    //     }
-
-    //     let filteredData = articles.filter(article => article.category === selectedCategory)
-    //     setMaxPages(Math.ceil(filteredData.length/9))
-    //     setFilteredPosts(filteredData)
-    // }, [selectedCategory, articles, router])
 
   return (
     <>
