@@ -6,7 +6,7 @@ type Props = {
     faqs: Faq[]
 }
 
-const Faq = ({ faqs }: Props) => {
+const FaqPage = ({ faqs }: Props) => {
   const [selectedQuestion, setSelectedQuestion] = useState<number | null>(null)
 
   const handleSelectQuestion = (id: number) => {
@@ -51,4 +51,4 @@ const Faq = ({ faqs }: Props) => {
   )
 }
 
-export default Faq
+export default FaqPage

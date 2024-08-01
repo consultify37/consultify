@@ -4,6 +4,7 @@ import ProductCard from './ProductCard'
 import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri'
 import { PaginationBlog } from '../../utils/functions'
 import NewsLetter from '../global/newsletter'
+import Image from 'next/image'
 
 type Props = {
   products: Product[]
@@ -56,21 +57,32 @@ const ProductList = ({ products }: Props) => {
 
   return (
     <div className='flex flex-col items-center w-full'>
-      <select 
-        className="bg-transparent text-secondary text-[16px] appearance-[menulist-button] font-semibold outline-none mt-10 self-center sm:self-end cursor-pointer" 
-        name="categorie"
-        onChange={(e) => setSelector(e.target.value)}
-        value={selector}
-      >
-          {selections.map((selector) => (
-            <option 
-              key={selector.code}
-              value={selector.code} 
-            >
-              Sortează după: {selector.name}
-            </option>
-          ))}
-      </select>
+      <div className='flex items-center mt-10 self-center sm:self-end'>
+        <select 
+          className="bg-transparent text-secondary mr-2 appearance-none text-[16px] font-semibold outline-none cursor-pointer" 
+          name="categorie"
+          id='selector'
+          onChange={(e) => setSelector(e.target.value)}
+          value={selector}
+        >
+            {selections.map((selector) => (
+              <option 
+                key={selector.code}
+                value={selector.code} 
+              >
+                Sortează după: {selector.name}
+              </option>
+            ))}
+        </select>
+
+        <Image
+          src="/images/arrow-qa.svg"
+          width={16}
+          height={16}
+          alt='.'
+          className='w-[10px] h-[10px]'
+        />
+      </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 w-full gap-8 mt-8 md:mt-10 max-w-[320px] sm:max-w-none'>
         { products &&
           PaginationBlog(products.toSorted(sort), page, 12).map((item) => (
