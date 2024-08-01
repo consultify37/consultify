@@ -59,7 +59,7 @@ const ShopItem = ({
         </div>
       </div>
       <div
-        className="flex gap-4 md:gap-5 xl:gap-6 items-stretch overflow-y-auto scrollbar-none pb-6 pt-6"
+        className="flex gap-4 md:gap-5 xl:gap-6 items-stretch overflow-y-auto scrollbar-none pb-6 pt-6 h-full"
         ref={carouselRef}
       >
         <Link
@@ -81,13 +81,14 @@ const ShopItem = ({
             </h4>
         </Link>
         { products.map((item, index) => (
-          <ProductCard
-            key={item.id} 
-            cardRef={cardRef[index]}
-            hasMargin={index == products.length - 1}
-            product={item}
-            className="w-[280px] min-w-[280px]"
-          />
+          <div key={item.id} >
+            <ProductCard
+              cardRef={cardRef[index]}
+              hasMargin={index == products.length - 1}
+              product={item}
+              className="w-[280px] min-w-[280px]"
+            />
+          </div>
         ))}
       </div>
     </div>

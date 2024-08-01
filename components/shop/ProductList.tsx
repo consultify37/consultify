@@ -34,7 +34,7 @@ const ProductList = ({ products }: Props) => {
   const [page, setPage] = useState(0)
   const maxPages = Math.ceil(products.length/12)
 
-  const sort = (product1: Product, product2: Product) => {
+  const sortFn = (product1: Product, product2: Product) => {
     const product1_sells = product1.sells_number ? product1.sells_number : 0
     const product2_sells = product2.sells_number ? product2.sells_number : 0
 
@@ -85,7 +85,7 @@ const ProductList = ({ products }: Props) => {
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 w-full gap-8 mt-8 md:mt-10 max-w-[320px] sm:max-w-none'>
         { products &&
-          PaginationBlog(products.toSorted(sort), page, 12).map((item) => (
+          PaginationBlog(products.sort(sortFn), page, 12).map((item) => (
             <ProductCard
               key={item.id} 
               hasMargin={false}
