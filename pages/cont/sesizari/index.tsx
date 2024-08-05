@@ -72,7 +72,7 @@ const Sesizari = () => {
             onSubmit={upload}
         >
             <div className="flex w-full flex-col items-center sm:flex-row justify-between mb-6">
-                <div className="flex flex-col w-full mb-6 sm:mb-0">
+                <div className="flex flex-col w-full">
                     <span className="text-[14px] text-secondary mb-2 font-semibold">
                         Nume*
                     </span>
