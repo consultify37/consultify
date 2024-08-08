@@ -30,7 +30,9 @@ const AdminLayout = ({ children }: Props) => {
 
   const signout = async () => {
     setIsLoadingSignout(true)
+    router.push('/admin/login')
     await signOut(auth)
+    toast.success('Te-ai delogat cu succes!')
     setIsLoadingSignout(false)
   }
 

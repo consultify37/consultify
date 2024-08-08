@@ -146,7 +146,7 @@ export default function Contact() {
                                 className="z-[5] w-[24px] h-[24px] lg:w-[36px] lg:h-[36px]"
                             />
                         </Link>
-                        <Link href='https://www.tiktok.com/@consultifyro?_t=8hf9YsK4ZsX&_r=1' target="_blank" className="w-[-webkit-fill-available] max-w-[fit-content] ml-2 flex items-center rounded-full bg-[#fff] p-5 lg:p-4 h-[max-content] jutify-center mr-2 hover:scale-105 transition-all">
+                        <Link href='https://www.tiktok.com/@consultify.ro?_t=8oJfgBL3I01&_r=1' target="_blank" className="w-[-webkit-fill-available] max-w-[fit-content] ml-2 flex items-center rounded-full bg-[#fff] p-5 lg:p-4 h-[max-content] jutify-center mr-2 hover:scale-105 transition-all">
                             <Image
                                 src="/images/contact/tiktok.svg"
                                 alt="tiktok"
@@ -263,7 +263,7 @@ export default function Contact() {
                                 <option value="Selectează aici" className="hidden">Selectează aici</option>
                                 <option value="Consultanță Fonduri Europene">Consultanță în Accesarea Fondurilor Europene</option>
                                 <option value="Implementare proiect">Implementare proiect câștigat</option>
-                                {/* <option value="Colaborări & Angajări">Colaborări & Angajări</option> */}
+                                <option value="Colaborări & Angajări">Colaborări & Angajări</option>
                             </select>
                         </div>
                     <div className="flex flex-col w-full my-6">
