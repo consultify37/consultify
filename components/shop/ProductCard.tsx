@@ -49,7 +49,7 @@ const ProductCard = ({ cardRef, product, hasMargin, className }: Props) => {
               </s>
             )}{" "} 
           </p>
-          <h4 className="text-[#260056] font-bold text-base">
+          <h4 className="text-secondary font-bold text-base">
             {product.name}
           </h4>
         </div>
