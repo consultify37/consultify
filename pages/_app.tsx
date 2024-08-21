@@ -76,7 +76,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <CartContext>
         <FavoritesContext>
           <div className="flex flex-col">
-            { !pathname?.includes('/admin') ?
+            { !pathname?.includes('/admin') && !pathname?.includes('/formular') ?
               <>
                 <Analytics />
                 <TopBar />
@@ -88,7 +88,7 @@ export default function App({ Component, pageProps }: AppProps) {
               <Toaster />
               <CookiePolicy />
             </main>
-            { !pathname?.includes('/admin') ?
+            { !pathname?.includes('/admin') && !pathname?.includes('/formular') ?
               <Footer /> : null
             }
           </div>
