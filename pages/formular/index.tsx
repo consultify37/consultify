@@ -91,7 +91,7 @@ const Form = () => {
         website: process.env.SITE, 
         createdAt: serverTimestamp(),
         judet,
-        leadSource: 'formular',
+        leadSource: 'web form'
       })
 
       toast.success(`Mulțumim! Un reprezentant ${process.env.SITE} te va contacta în curând. 🚀`, { duration: 5000, style: { textAlign: 'center' } })
