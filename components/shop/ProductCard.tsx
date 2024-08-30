@@ -9,9 +9,10 @@ type Props = {
   product: Product
   hasMargin: boolean
   className?: string
+  isCategory?: boolean
 }
 
-const ProductCard = ({ cardRef, product, hasMargin, className }: Props) => {
+const ProductCard = ({ cardRef, product, hasMargin, className, isCategory=false }: Props) => {
   const { handleAddProduct } = useCartContext()
   const addToCart = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
@@ -24,7 +25,7 @@ const ProductCard = ({ cardRef, product, hasMargin, className }: Props) => {
       ref={cardRef ? cardRef : null}
       key={product.id}
       href={`/shop/product/${product.id}`}
-      className={`p-2 pb-4 bg-[#F2F4FF] rounded-[16px] h-full shadow-lg flex flex-col gap-6 snap-center ${ className ? className : ''}`}
+      className={`p-2 pb-4 bg-[#F2F4FF] rounded-[16px] shadow-lg flex flex-col gap-6 snap-center ${ className ? className : ''} ${ isCategory ? '' : 'h-full'}`}
       style={{marginRight: hasMargin ? 24 : 0}}
     >
       <div className="relative h-[250px]">
