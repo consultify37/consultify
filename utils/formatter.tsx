@@ -45,6 +45,10 @@ const ElementFormatter = ({ node }: Props) => {
 			{ node.type === 'text' &&
 				node.data
 			}
+			{
+				node.type === 'tag' && node.name == 'span' &&
+				node.children[0].data 
+			}
 		</span>
 	)
 } 
@@ -101,7 +105,6 @@ export const formatter = (node: any, index: number) => {
 			</h1>
 		)
   } else if (node.type === 'tag' && node.name === 'h3') {     
-		console.log(node)
 		return (
 			<h3
 				key={index}
