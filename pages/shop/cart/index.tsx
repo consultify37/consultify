@@ -2,7 +2,7 @@ import Head from "next/head"
 import React, { useState } from 'react'
 import FeaturedProducts from "../../../components/Home/Why-Us/FeaturedProducts"
 import { Product } from "../../../types"
-import { collection, getDocs, orderBy, query, where } from "firebase/firestore"
+import { collection, getDocs, limit, orderBy, query, where } from "firebase/firestore"
 import { db } from "../../../firebase"
 import NewsLetter from "../../../components/global/newsletter"
 import CartInfo from "../../../components/shop/CartInfo"
@@ -51,7 +51,7 @@ export default Cart
 
 export const getServerSideProps = async () => {
 
-  const collectionRef = query(collection(db, 'products'), where('active', '==', true), where('featured', '==', true), orderBy('lastUpdated', 'desc'))
+  const collectionRef = query(collection(db, 'products'), where('active', '==', true), where('featured', '==', true), orderBy('lastUpdated', 'desc'), limit(7))
 	const collectionSnap = await getDocs(collectionRef)
 	
 	const products: Product[] = collectionSnap.docs.map((doc) => {
