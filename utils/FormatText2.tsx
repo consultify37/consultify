@@ -5,19 +5,16 @@ type Props = {
   className: string
 }
 
-const FormatText = ({ text, className }: Props) => {
+const FormatText2 = ({ text, className }: Props) => {
   return (
     <>
       {
         text.split('\n').map((item, index) => (
-          <div key={index} className='self-start pt-1 md:pt-[6px]'>
             <p className={className} key={index}>{item}</p>
-            {/* { index != text.split('\n').length && item != "" && <br />} */}
-          </div>
         )) 
       }
     </>
   )
 }
 
-export default FormatText
+export default FormatText2

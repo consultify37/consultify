@@ -2,7 +2,7 @@ import Head from 'next/head'
 import React from 'react'
 import { Product } from '../../../../types'
 import { NextPageContext } from 'next'
-import { collection, doc, getDoc, getDocs, orderBy, query, where } from 'firebase/firestore'
+import { collection, doc, getDoc, getDocs, limit, orderBy, query, where } from 'firebase/firestore'
 import { db } from '../../../../firebase'
 import Image from 'next/image'
 import HowWorks from '../../../../components/shop/HowWorks'
@@ -15,6 +15,7 @@ import NewsLetter from '../../../../components/global/newsletter'
 import HeartButton from '../../../../components/shop/HeartButton'
 import Button from '../../../../components/shop/Button'
 import { useCartContext } from '../../../../context/CartContext'
+import FormatText2 from '../../../../utils/FormatText2'
 
 const items = [
   {
@@ -56,7 +57,11 @@ const ProductPage = ({ product, featuredProducts }: Props) => {
 
         <div className='flex flex-col self-start lg:self-center'>
           <h1 className='text-[24px] font-bold text-secondary mt-8 lg:mt-0 lg:text-[32px]'>{product.name}</h1>
-          <p className='text-[14px] text-secondary mt-2 lg:mt-4 lg:text-[16px]'>{ product.description}</p>
+          <FormatText2 
+            text={product.description}
+            className='text-[14px] text-secondary mt-2 lg:mt-4 lg:text-[16px]'
+          />
+          {/* <p className='text-[14px] text-secondary mt-2 lg:mt-4 lg:text-[16px]'>{ product.description}</p> */}
           <div className='flex flex-row items-center mt-4 lg:mt-6'>
             <p className='text-[24px] lg:text-[36px] font-bold text-price mr-2' >{ product.price } lei</p>
             { product.onSale &&
@@ -78,9 +83,13 @@ const ProductPage = ({ product, featuredProducts }: Props) => {
       </div>
 
       <div className='px-7 md:px-[80px] xl:px-[180px] 2xl:px-[276px] flex flex-col items-center'>
-        <p className='text-[18px] font-bold text-secondary mt-8 lg:mt-16 lg:text-[32px] self-start'>Descrierea produsului:</p>
-        <p className='text-[14px] text-secondary mt-2 lg:mt-6 lg:text-[16px] self-start mb-8 lg:mb-16'>{ product.description2 }</p>
-
+        <p className='text-[18px] font-bold text-secondary mt-8 lg:mt-16 lg:text-[32px] self-start mb-2 lg:mb-6'>Descrierea produsului:</p>
+        <FormatText2 
+          className='text-[14px] text-secondary lg:text-[16px] self-start pt-1 lg:pt-[6px]'
+          text={product.description2}
+        />
+        {/* <p className='text-[14px] text-secondary mt-2 lg:mt-6 lg:text-[16px] self-start mb-8 lg:mb-16'>{ product.description2 }</p> */}
+        <div className='mb-8 lg:mb-16'></div>
         <HowWorks 
           items={items}
           title='Cum funcționează?'
@@ -151,7 +160,7 @@ export const getServerSideProps = async (context: NextPageContext) => {
 
   const product = { id: productSnap.id, ...productSnap.data(), lastUpdated: null }
 
-  const collectionRef = query(collection(db, 'products'), where('active', '==', true), where('featured', '==', true), orderBy('lastUpdated', 'desc'))
+  const collectionRef = query(collection(db, 'products'), where('active', '==', true), where('featured', '==', true), orderBy('lastUpdated', 'desc'), limit(7))
 	const collectionSnap = await getDocs(collectionRef)
 	
 	const products: Product[] = collectionSnap.docs.map((doc) => {
