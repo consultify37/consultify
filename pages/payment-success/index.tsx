@@ -17,8 +17,8 @@ const Success = () => {
         <title>{`${process.env.SITE} | Plată efectuată`}</title>
       </Head>
       <div className='relative flex flex-col justify-center items-center min-h-screen p-7 lg:p-28 gap-2 lg:gap-4 text-center'>
-        <h1 className='lg:text-[32px] font-bold text-secondary mt-12'>Vă multumim! plata a fost inregistrată cu succes.</h1>
-        <h1 className='lg:text-[32px] font-bold text-secondary lg:max-w-[75%]'> Un Specialist in Consiliere Fonduri vă va contacta în curând pentru a stabili întâlnirea (online sau fizică).</h1>
+        <h1 className='lg:text-[32px] font-bold text-secondary mt-12'>Vă mulțumim! Plata a fost înregistrată cu succes.</h1>
+        <h1 className='lg:text-[32px] font-bold text-secondary lg:max-w-[75%]'>Un consultant în accesarea de Fonduri Nerambursabile va lua legătura cu dumneavoastră în curând pentru a stabili întâlnirea de consultanță (online sau fizică).</h1>
 
         <Link 
               href={'/testimoniale'}
