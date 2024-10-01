@@ -1,4 +1,5 @@
 import React from 'react'
+import FormatTextBold from './FormatTextBold'
 
 type Props = {
   text: string
@@ -10,7 +11,9 @@ const FormatText2 = ({ text, className }: Props) => {
     <>
       {
         text.split('\n').map((item, index) => (
-            <p className={className} key={index}>{item}</p>
+            <p className={className} key={index}>
+              <FormatTextBold text={item} />
+            </p>
         )) 
       }
     </>
