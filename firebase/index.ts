@@ -3,12 +3,12 @@ import { getAuth } from "firebase/auth"
 import { getFirestore } from "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBV4QBCcTwx_OwFPnl6vgRA7YoWL8fU4zw",
-  authDomain: "inspirely-consultify-socialy-c.firebaseapp.com",
-  projectId: "inspirely-consultify-socialy-c",
-  storageBucket: "inspirely-consultify-socialy-c.appspot.com",
-  messagingSenderId: "1092064110439",
-  appId: "1:1092064110439:web:091318515d55404a20f1c2"
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID
 }
 
 const app = initializeApp(firebaseConfig)
