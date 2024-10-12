@@ -14,6 +14,7 @@ import { formatDate } from "../../utils/formatDate"
 import { Article, ArticleCategory, Product } from "../../types"
 import FeaturedArticlesSection from "../../components/blog/FeaturedArticlesSection"
 import Pagination from "../../components/blog/Pagination"
+import FeaturedProducts from "../../components/Home/Why-Us/FeaturedProducts"
 
 type Props = {
   articles: Article[]
@@ -210,9 +211,9 @@ export default function Testimoniale({ articles: initialArticles, categories, pr
                 <RiArrowRightSLine size={24} onClick={() => {setPage(maxPages-1); scrollTo({top: 800, behavior: 'instant'})}} className={`${page === maxPages - 1 ? 'text-[#CDCDCD]' : 'text-[#260056]'} cursor-pointer`} />
             </div> */}
         </section>
-        {/* <FeaturedProducts 
+        <FeaturedProducts 
             products={products}
-        /> */}
+        />
       <NewsLetter headingText={'Alătură-te comunității noastre și fii la curent cu cele mai noi oportunități de finanțare!'} />
     </>
   )

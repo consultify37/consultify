@@ -83,9 +83,9 @@ const ProgramPage = ({ program, products, articles }: Props) => {
           linkHref="/contact"
         />
       </section>
-      {/* <FeaturedProducts 
+      <FeaturedProducts 
         products={products}
-      /> */}
+      />
       <News
         articles={articles}
       />

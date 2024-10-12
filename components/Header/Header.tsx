@@ -86,7 +86,7 @@ const Header = () => {
               />
             </Link>
             <div className="flex flex-row items-center xl:hidden z-[99]">
-              {/* <Link
+              <Link
                 href='/shop/cart'
                 className="p-[14px] lg:p-[16px] rounded-full bg-primary hover:scale-105 transition-all -mr-2 lg:-mr-0"
               >
@@ -104,7 +104,7 @@ const Header = () => {
                     </div>
                   }
                 </div>
-              </Link> */}
+              </Link>
               <input aria-hidden="true" type="checkbox" name="toggle_nav" id="toggle_nav" className="hidden peer" checked={toggle} onChange={() => setToggle(!toggle) }></input>
               <div 
                 className="relative flex items-center xl:hidden max-h-10"
@@ -166,36 +166,36 @@ const Header = () => {
                   blog
                 </Link>
               </li>
-              {/* <li
+              <li
                 className={`w-full xl:w-auto p-2 pl-16 border-b-[1px] border-white xl:pl-18 xl:pl-0 xl:p-0 xl:border-0`}
               >
                 <Link href="/shop" className="font-semibold text-white text-[16px] hover:text-primary transition-all">
                   shop
                 </Link>
-              </li> */}
-              <li
+              </li>
+              {/* <li
                 className={`w-full lg:w-auto p-2 pl-16 md:pl-18 lg:pl-0 lg:p-0 lg:border-0 lg:hover:scale-[1.05] lg:transition-all`}
               >
                 <Link href="/contact" className="lg:font-semibold lg:bg-[#7000FF] lg:p-[14px] lg:px-8 lg:rounded-full lg:text-[#fff] font-semibold text-tertiary text-[16px]">
                   contactează-ne
                 </Link>
-              </li>
-              {/* <li
+              </li> */}
+              <li
                 className={`w-full xl:w-auto p-2 pl-16 border-b-[1px] border-white xl:pl-18 xl:pl-0 xl:p-0 xl:border-0`}
               >
                 <Link href="/contact" className="font-semibold text-white text-[16px] hover:text-primary transition-all">
                   contact
                 </Link>
-              </li> */}
+              </li>
               
-              {/* <li
+              <li
                 className={`xl:hidden w-full xl:w-auto p-2 pl-16`}
               >
                 <Link href={ currentUser ? '/cont' : '/login' } className="font-semibold text-tertiary text-[16px] transition-all">
                   { currentUser ? 'cont' : 'login' }
                 </Link>
-              </li> */}
-              {/* <li
+              </li>
+              <li
                 className='relative hidden xl:block'
               >
                 <Link href={ currentUser ? '/cont' : '/login' } className="py-[14px] pl-8 pr-16 bg-primary rounded-full text-onPrimary font-semibold hover:scale-105 transition-all">
@@ -218,7 +218,7 @@ const Header = () => {
                       </div>
                     }
                 </Link>
-              </li> */}
+              </li>
               {/* <li
                 className={`${
                   toggle

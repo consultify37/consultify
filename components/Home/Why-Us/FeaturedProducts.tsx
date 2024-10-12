@@ -11,7 +11,7 @@ type Props = {
   title?: string
 }
 
-const FeaturedProducts = ({ products, title="Consultify vine în ajutorul tău cu produse digitale pentru scalarea afacerii tale" }: Props) => {
+const FeaturedProducts = ({ products, title="Consultify și Inspirely vine în ajutorul tău cu produse digitale pentru scalarea afacerii tale" }: Props) => {
   const [scrollAmount, setScrollAmount] = useState(0)
   const [cardRef, setCardRef] = useState< any >([])
   const carouselRef = useRef<HTMLDivElement | null>(null)

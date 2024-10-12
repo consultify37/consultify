@@ -7,18 +7,20 @@ import reactHtmlParser from 'react-html-parser'
 import { formatter } from "../../../utils/formatter"
 import { collection, doc, getDoc, getDocs, limit, orderBy, query, where } from "firebase/firestore"
 import { db } from "../../../firebase"
-import { Article } from "../../../types"
+import { Article, Product } from "../../../types"
 import { formatDate } from "../../../utils/formatDate"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import FeaturedProducts from "../../../components/Home/Why-Us/FeaturedProducts"
 
 type Props = {
     article: Article
     articles: Article[]
+    products: Product[]
 }
 
 
-const BlogPost = ({ article, articles }: Props) => {
+const BlogPost = ({ article, articles, products }: Props) => {
     const [shareButton, setShareButton] = useState('/images/link.svg')
     const [shareButtonText, setShareButtonText] = useState('')
     const pathName = usePathname()
@@ -128,6 +130,9 @@ const BlogPost = ({ article, articles }: Props) => {
                 </p> */}
             </section>
             <News articles={articles}/>
+            <FeaturedProducts 
+                products={products}
+            />
             <NewsLetter headingText={'Alătură-te comunității noastre și fii la curent cu cele mai noi oportunități de finanțare!'} />
         </>
     )
@@ -170,8 +175,17 @@ export const getStaticProps = async (context: any) => {
         articles = articles.filter((item) => item.id != article.id )
     }
 
+    const collectionRef = query(collection(db, 'products'), where('active', '==', true), where('featured', '==', true), orderBy('lastUpdated', 'desc'), limit(8))
+    const collectionSnap = await getDocs(collectionRef)
+    
+    const products: Product[] = collectionSnap.docs.map((doc) => {
+      const { lastUpdated, ...data } = doc.data()
+  
+      return ({ id: doc.id, ...data } as Product)
+    })
+
     return { 
-        props: { article, articles }, 
+        props: { article, articles, products }, 
         revalidate: Number(process.env.REVALIDATE )
     }
 }
