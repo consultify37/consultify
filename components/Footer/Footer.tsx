@@ -70,7 +70,7 @@ const Footer = () => {
                             <p className='font-semibold text-[#8717F8] text-[16px]'>Adresa: Strada Crișul Alb, Numărul 6, Sector 4, București.</p>
                         </li>
                         <li>
-                            <Link href='tel:+40727153317' className='font-semibold text-[#8717F8] text-[16px]'>Număr de telefon: (0727) 153 317</Link>
+                            <Link href='tel:+40773395400' className='font-semibold text-[#8717F8] text-[16px]'>Număr de telefon: (0773) 395 400</Link>
                         </li>
                         <li>
                             <Link href='mailto:contact@consultify.ro' className='font-semibold text-[#8717F8] text-[16px]'>Email: contact@consultify.ro</Link>

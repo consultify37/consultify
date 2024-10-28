@@ -123,7 +123,7 @@ export default function Contact() {
                         </div>
                         <div className="flex flex-col justify-center">
                             <h5 className="text-xl text-white font-bold">Telefon:</h5>
-                            <span className="text-lg md:text-xl text-white font-bold hover:text-primary transition-all"><Link href='tel:0727 153 317'>0727 153 317</Link></span>
+                            <span className="text-lg md:text-xl text-white font-bold hover:text-primary transition-all"><Link href='tel:0773395400'>(0773) 395 400</Link></span>
                         </div>
                     </div>
                     <h6 className="text-xl text-white mb-4 font-bold text-center">Sau ne poți găsi și aici:</h6>
