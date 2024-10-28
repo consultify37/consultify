@@ -3,6 +3,7 @@ import React from 'react'
 const Terms = () => {
   return (
     <div className='pt-36 md:pt-48 px-6 sm:px-7 md:px-[80px] xl:px-[140px] 2xl:px-[276px] flex flex-col gap-4'>
+        <h1 className='text-xl text-center font-bold mb-8'>TERMENI ȘI CONDIȚII </h1>
         <h2 className='font-bold'>TE RUGĂM SĂ CITEȘTI ACEST DOCUMENT CU ATENȚIE ÎNAINTE DE A UTILIZA SERVICIILE NOASTRE.</h2>
         <p className='italic'>Acceptarea Termenilor de Utilizare</p>
         
@@ -11,6 +12,7 @@ const Terms = () => {
         
         <h3 className='font-bold'>1. Cine suntem noi?</h3>
         <p>Mai jos găsești și datele noastre de identificare:</p>
+        <p>Denumire: MHC INSPERON S.R.L.</p>
         <p>Sediul social: Str. Lavandei, Nr.9, PARTER, Bloc P28, sc.3, ap. 33, Sector 6, Bucuresti</p>
         <p>Număr registrul comerțului: J40/6137/2020</p>
         <p>Cod unic identificare: RO42607998</p>

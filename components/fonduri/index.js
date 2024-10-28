@@ -20,7 +20,7 @@ export default function CarouselPrograme({ programe }){
                 disableArrowsOnEnd={false}
                 className="relative w-full carousel-fonduri md:-mb-8"
             >
-                { programe.map((program) => (
+                { programe.filter((program) => program.status != 'APEL ÎNCHIS' ).map((program) => (
                     <FonduriComponent 
                         program={program} 
                         key={program.id} 

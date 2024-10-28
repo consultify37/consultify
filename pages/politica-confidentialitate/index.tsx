@@ -9,7 +9,7 @@ const Confidentiality = () => {
         <title>{`${process.env.SITE} | Politică de confidențialitate`}</title>
       </Head>
       <div className='pt-36 md:pt-48 px-6 sm:px-7 md:px-[80px] xl:px-[140px] 2xl:px-[276px] flex flex-col gap-4'>
-        <h2 className='font-bold'>Politica de confidențialitate a website-ului</h2>
+        <h2 className='font-bold text-center text-xl mb-8'>Politica de confidențialitate a website-ului</h2>
         <p>
           Politica de confidențialitate vă informează despre informațiile pe care le colectăm de la
           dumneavoastră atunci când utilizați site-ul nostru. În colectarea acestor informații, noi

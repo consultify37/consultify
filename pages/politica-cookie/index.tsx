@@ -3,7 +3,7 @@ import React from 'react'
 const CookiePolicy = () => {
   return (  
     <div className='pt-36 md:pt-48 px-6 sm:px-7 md:px-[80px] xl:px-[140px] 2xl:px-[276px] flex flex-col gap-4'>
-      <h2 className='font-bold'>POLITICA PRIVIND COOKIE-URILE</h2>
+      <h2 className='font-bold text-xl text-center mb-8'>POLITICA PRIVIND COOKIE-URILE</h2>
       
       <h3 className='font-bold'>1. CE SUNT COOKIE-URILE?</h3>
       <p>Acest site utilizează cookie-uri și/sau tehnologii similare care stochează și recuperează informații atunci când navigați.</p>

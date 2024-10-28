@@ -88,11 +88,11 @@ const Edit = ({ categories, product }: Props) => {
 
       if ( typeof image != 'string' )  {
         try {
-          newImage = await uploadFile(image!)
-          
           try {
             oldImage?.file && await deleteFile(oldImage?.file)
           } catch (e) {}
+          
+          newImage = await uploadFile(image!)
 
         } catch (e) {
           throw e
