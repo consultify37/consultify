@@ -4,7 +4,7 @@ import ReactLoading from 'react-loading'
 
 type Props = {
   categories: Category[]
-  handleDelete: (category: Category) => Promise<void>
+  handleDelete: any
   isFetching: boolean
 }
 
