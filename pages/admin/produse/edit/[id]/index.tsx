@@ -104,13 +104,13 @@ const Edit = ({ categories, product }: Props) => {
       if ( typeof file != 'string' )  {
         try {
           const reference = ref(storage, file?.name)
-          newFileSnapshot = await uploadBytes(reference, file!)
-
-          newFileUrl = await getDownloadURL(reference)
-
           try {
             oldFile && oldFile.file && await deleteObject(ref(storage, oldFile?.file.fileName))
           } catch (e) {}
+          
+          newFileSnapshot = await uploadBytes(reference, file!)
+
+          newFileUrl = await getDownloadURL(reference)
           
         } catch (e: any) {
           throw e
