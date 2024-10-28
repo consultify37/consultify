@@ -135,7 +135,9 @@ const EditProgram = ({ categories }: { categories: string[] }) => {
               values={categories}
               selectedValue={categorie}
               setSelectedValue={setCategorie}
+              id='toggle_dropdown'
             />
+            <div className='mt-4'></div>
             <Dropdown 
               placeholder='Selectează status'
               values={statuses}
@@ -143,6 +145,7 @@ const EditProgram = ({ categories }: { categories: string[] }) => {
               setSelectedValue={setStatus}
               id='toggle_dropdown0'
             />
+            <div className='mt-4'></div>
             <BulletPointsContainer 
               bulletPoints={bulletPoints}
               setBulletPoints={setBulletPoints}

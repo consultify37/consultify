@@ -152,13 +152,15 @@ const EditProgram = ({ categories, program }: Props) => {
               selectedValue={categorie}
               setSelectedValue={setCategorie}
             />
+            <div className='mt-8'></div>
             <Dropdown 
               placeholder='Selectează status'
               values={statuses}
               selectedValue={status}
               setSelectedValue={setStatus}
-              id='toggle_2'
+              id='toggle_dropdown0'
             />
+            <div className='mt-8'></div>
             <BulletPointsContainer 
               bulletPoints={bulletPoints}
               setBulletPoints={setBulletPoints}

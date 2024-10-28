@@ -337,7 +337,7 @@ const Edit = ({ categories }: Props) => {
 export default Edit
 
 export const getServerSideProps = async () => {
-  const docsRef = query(collection(db, 'product-categories'), where('site', '==', process.env.SITE))
+  const docsRef = query(collection(db, 'product-categories'))
   const docsSnap = await getDocs(docsRef)
 
   const categories = docsSnap.docs.map(doc => ( doc.data().category ))

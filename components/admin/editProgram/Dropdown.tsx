@@ -13,9 +13,9 @@ const Dropdown = ({ values, selectedValue, setSelectedValue, placeholder="Select
 
   return (
     <div className='w-full min-w-[220px] max-w-[480px]'>
-      <input aria-hidden="true" type="checkbox" name="toggle_dropdown" id="toggle_dropdown" className="hidden peer z-[11]" checked={toggle} onChange={() => setToggle(toggle => !toggle)}></input>
+      <input aria-hidden="true" type="checkbox" name={id} id={id} className="hidden peer z-[11]" checked={toggle} onChange={() => setToggle(toggle => !toggle)}></input>
       <div className='relative'>
-        <label role="button" htmlFor="toggle_dropdown" aria-label="dropdown" id="dropdown">
+        <label role="button" htmlFor={id} aria-label="dropdown" id="dropdown">
           <div className='flex flex-row w-full items-center justify-between bg-white border-primary border-2 rounded-xl p-4 px-6 shadow-md z-[11]'> 
             <p className='' style={{color: !selectedValue ? '#BCBCBC' : '#00103C'}}>{ selectedValue ? selectedValue : placeholder }</p>
             <svg width="14" height="6" viewBox="0 0 11 5" fill="none" xmlns="http://www.w3.org/2000/svg" 
