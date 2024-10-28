@@ -4,9 +4,11 @@ type Props = {
   values: string[]
   selectedValue: string | null
   setSelectedValue: React.Dispatch<React.SetStateAction<string | null>>
+  placeholder?: string
+  id?: string
 }
 
-const Dropdown = ({ values, selectedValue, setSelectedValue }: Props) => {
+const Dropdown = ({ values, selectedValue, setSelectedValue, placeholder="Selectează categoria", id="toggle_dropdown" }: Props) => {
   const [toggle, setToggle] = useState(false)
 
   return (
@@ -15,7 +17,7 @@ const Dropdown = ({ values, selectedValue, setSelectedValue }: Props) => {
       <div className='relative'>
         <label role="button" htmlFor="toggle_dropdown" aria-label="dropdown" id="dropdown">
           <div className='flex flex-row w-full items-center justify-between bg-white border-primary border-2 rounded-xl p-4 px-6 shadow-md z-[11]'> 
-            <p className='' style={{color: !selectedValue ? '#BCBCBC' : '#00103C'}}>{ selectedValue ? selectedValue : 'Selectează categoria' }</p>
+            <p className='' style={{color: !selectedValue ? '#BCBCBC' : '#00103C'}}>{ selectedValue ? selectedValue : placeholder }</p>
             <svg width="14" height="6" viewBox="0 0 11 5" fill="none" xmlns="http://www.w3.org/2000/svg" 
               aria-hidden='true' id='chevron-down'
               className='transition duration-300'
