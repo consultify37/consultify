@@ -16,6 +16,7 @@ module.exports = {
         "tertiary": "#D6A3FF",
         "admin-background": "#F6EFFF6B",
         "admin-card": "#F0E4FF",
+        "admin-header": "#cfacfa",
         "price": "#04D200"
       },
     },

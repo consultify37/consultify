@@ -21,6 +21,10 @@ export type Category = {
   category: string
   id?: string
   admin?: string
+  image?: { 
+    file: { fileName: string, fileId: string } 
+    image: string 
+  } | null
   data?: string
 }
 
@@ -60,6 +64,7 @@ export type Article = {
   title: string
   id: string
   description: string
+  index: number
   featured: boolean
   active: boolean
   mainImage: any
@@ -126,6 +131,7 @@ export type Product = {
   faqs: Faq[]
   title3: string
   lastUpdated: number
+  featured: boolean
   onSale: boolean
   file: { 
     file: { fileName: string, fileId: string } 
