@@ -233,9 +233,11 @@ export default function Testimoniale({ articles, products }: Props) {
       />
       <FeaturedProducts 
         products={products}
+        title="Crește-ți performanța prin soluțiile digitale prezentate de Consultify!"
       />
       <News
         articles={articles}
+        title="Navighează în lumea economiei și a afacerilor cu Consultify: "
       />
       <NewsLetter headingText='Abonează-te și află secretele succesului în obținerea finanțăriilor europene!' />
     </>

@@ -35,7 +35,7 @@ const Cart = ({ products: featuredProducts }: Props) => {
       </div>
       <FeaturedProducts 
         products={featuredProducts}
-        title={cart.length && cart.length != 0 ? "Clienții noștri recomandă și următoarele produse:" : "Crește eficiența și productivitatea cu serviciile și produsele digitale oferite de Consultify și Inspirely!"}
+        title={cart.length && cart.length != 0 ? "Clienții noștri recomandă și următoarele produse:" : "Optimizează-ți afacerea cu ajutorul soluțiilor digitale propuse de Consultify!"}
       />
 
       <div className="px-7 md:px-[80px] xl:px-[140px] 2xl:px-[276px]">

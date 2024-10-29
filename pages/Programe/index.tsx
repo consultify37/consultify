@@ -97,20 +97,44 @@ export default function Programe({categories, programe, articles, products }: Pr
             </div>
             <FeaturedProducts 
                 products={products}
+                title="Crește-ți performanța prin soluțiile digitale prezentate de Consultify!"
             />
             <News
                 articles={articles}
+                title="Navighează în lumea economiei și a afacerilor cu Consultify:"
             />
             <NewsLetter headingText={'Abonează-te și află secretele succesului în obținerea finanțăriilor europene!'} />
         </>
     );
 }
 
+const getPriority = (program: any) => {
+    switch (program.status) {
+        case 'PUBLICAT ÎN MONITORUL OFICIAL':
+            return 2
+            break
+        case 'LANSAT ÎN CONSULTARE PUBLICĂ':
+            return 3
+            break
+        case 'APEL DESCHIS':
+            return 1
+            break
+        case 'APEL ÎNCHIS':
+            return 4
+            break
+        default:
+            return 4
+    }
+}
+
 export const getStaticProps = async () => {
     const programeRef = query(collection(db, 'programe-fonduri'), where('site', '==', process.env.SITE))
     const programeSnap = await getDocs(programeRef)
 
-    const programe = programeSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+    var programe = programeSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+    programe = programe.sort((program1: any, program2: any) => {
+        return getPriority(program1) - getPriority(program2)
+    })
 
     const categoriesRef = query(collection(db, 'categories'), where('site', '==', process.env.SITE))
     const categoriesSnap = await getDocs(categoriesRef)

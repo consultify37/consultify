@@ -85,9 +85,11 @@ const ProgramPage = ({ program, products, articles }: Props) => {
       </section>
       <FeaturedProducts 
         products={products}
+        title='Testează ultimele servicii și produse digitale propuse de Consultify!'
       />
       <News
         articles={articles}
+        title='Ultimele noutăți politice și economice din partea Consultify:'
       />
       <NewsLetter headingText={'Fii la curent cu cele mai recente informații despre fonduri europene!'} />
     </>

@@ -11,7 +11,7 @@ type Props = {
   title?: string
 }
 
-const FeaturedProducts = ({ products, title="Crește eficiența și productivitatea cu serviciile și produsele digitale oferite de Consultify!" }: Props) => {
+const FeaturedProducts = ({ products, title="Optimizează-ți afacerea cu ajutorul soluțiilor digitale propuse de Consultify!" }: Props) => {
   const [scrollAmount, setScrollAmount] = useState(0)
   const [cardRef, setCardRef] = useState< any >([])
   const carouselRef = useRef<HTMLDivElement | null>(null)

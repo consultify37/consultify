@@ -9,7 +9,7 @@ const Item1Story = () => {
           Ne diferențiem prin:
         </h2>
         <p className="text-[#260056] font-normal text-[14px] md:text-base">
-          Abilitatea noastră de a fi un partener de încredere pentru clienții noștri, ajutându-i să obțină finanțarea necesară pentru a-și atinge obiective. La Consultify, lucrăm strâns cu clienții noștri, oferindu-le soluții personalizate pentru fiecare proiect.
+          Abilitatea noastră de a fi un partener de încredere pentru clienții noștri, ajutându-i să obțină finanțarea necesară pentru a-și atinge obiectivele. La Consultify, lucrăm strâns cu clienții noștri, oferindu-le soluții personalizate pentru fiecare proiect.
         </p>
         <br />
         <p className="text-[#260056] font-normal text-[14px] md:text-base">

@@ -129,9 +129,13 @@ const BlogPost = ({ article, articles, products }: Props) => {
                     Nullam efficitur fermentum tristique. Maecenas sed odio eu nisl semper sollicitudin nec vitae nibh. Duis rhoncus mauris sit amet risus malesuada tristique. Integer consectetur ante elit, vitae venenatis felis ullamcorper ut. Sed eget ipsum urna. Etiam tincidunt accumsan tortor et aliquam. Suspendisse vitae tempus ligula. Pellentesque vitae pulvinar ipsum, nec sodales est. Etiam eu eros faucibus, rutrum elit eu, suscipit enim. Quisque tincidunt felis sapien, et rutrum risus maximus vitae. Curabitur dictum pulvinar gravida.
                 </p> */}
             </section>
-            <News articles={articles}/>
+            <News 
+                articles={articles}
+                title="Explorează tendințele actuale din lumea antreprenoriatului și nu numai:"
+            />
             <FeaturedProducts 
                 products={products}
+                title="Testează ultimele servicii și produse digitale propuse de Consultify!"
             />
             <NewsLetter headingText={'Alătură-te comunității noastre și fii la curent cu cele mai noi oportunități de finanțare!'} />
         </>

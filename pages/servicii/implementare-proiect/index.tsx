@@ -182,6 +182,7 @@ export default function PaginaProgram({ articles, products }: Props) {
         />
         <News 
             articles={articles}
+            title="Explorează tendințele actuale din lumea antreprenoriatului și nu numai:"
         />
         <NewsLetter headingText={'Abonează-te la newsletter pentru informații actualizate despre afaceri!'} />
     </>
