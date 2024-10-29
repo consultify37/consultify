@@ -20,6 +20,26 @@ type Props = {
   articles: Article[]
 }
 
+const videos = [
+  "https://www.youtube.com/embed/q8_LM13O3lk",
+  "https://www.youtube.com/embed/mCzoPsDuKJM",
+  "https://www.youtube.com/embed/LNAaosDn608",
+  "https://www.youtube.com/embed/5WzBrZEKnfk",
+  "https://www.youtube.com/embed/K-JAgKuI_yc",
+  "https://www.youtube.com/embed/sl1cBWlLJxU",
+  "https://www.youtube.com/embed/GsO_CljU2Dg",
+  "https://www.youtube.com/embed/tZbrSDDQ_FY",
+  "https://www.youtube.com/embed/a2PU-ro6iyk",
+  "https://www.youtube.com/embed/ePzsI0e12vA",
+  "https://www.youtube.com/embed/vZsOWViAOVU",
+  "https://www.youtube.com/embed/bvnnc2jm114",
+  "https://www.youtube.com/embed/NVF_5ZgBPnI",
+  "https://www.youtube.com/embed/91bAurrGdeU",
+  "https://www.youtube.com/embed/l7vpKnaERso",
+  "https://www.youtube.com/embed/nfv_brX6H5I",
+  "https://www.youtube.com/embed/S_wTaE2DOXI"
+]
+
 const testimonials = [
   {
     title: 'Ștefan - Pasiunea pentru muzică și drumul către îndeplinirea visului antreprenorial',
@@ -124,7 +144,22 @@ export default function Testimoniale({ articles, products }: Props) {
             <h2 className="text-xl md:text-3xl font-bold text-white px-8 md:px-0 md:max-w-[80%] text-center pt-4 md:pt-20 lg:pt-0 mb-12 md:mb-24">
               Sau vizionați următoarele studii de caz!
             </h2>
-            <div className="w-full mx-auto gap-[6rem] px-7 md:px-0 flex gap-y-20 justify-between flex-wrap z-[2] items-center">
+            <div className="w-full flex justify-center items-center">
+              <div className="flex flex-col w-fit md:flex-row md:flex-wrap gap-12 xl:gap-16 2xl:gap-20">
+                { videos.map((video) => (
+                  <iframe 
+                    className="rounded-xl w-72 h-96"
+                    src={video}
+                    key={video}
+                    title="YouTube video player"
+                    allow="accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture web-share" 
+                    allowFullScreen={true}
+                ></iframe>
+                ))}
+              </div>
+            </div>
+
+            {/* <div className="w-full mx-auto gap-[6rem] px-7 md:px-0 flex gap-y-20 justify-between flex-wrap z-[2] items-center">
               <div className="w-full flex-1 z-[2]">
                 <h2 className="text-xl font-bold text-white z-[2] xl:text-[24px]">
                   { testimonials[0].title }
@@ -153,7 +188,6 @@ export default function Testimoniale({ articles, products }: Props) {
                     allow="accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture web-share" 
                     allowFullScreen={true}
                 ></iframe>
-                  {/* <Image src='/images/patrat.svg' className='absolute left-[-1.25rem] lg:left-[-4.25rem] bottom-[-2rem] rotate-2 w-[100px] lg:w-[150px]' width={150} height={150} alt='Polygon img' /> */}
               </div>
               <div className='w-full md:w-[48%]'>
                 <h2 className='text-xl font-bold text-white z-[2] xl:text-[24px]'>
@@ -186,7 +220,7 @@ export default function Testimoniale({ articles, products }: Props) {
                   allow="accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture web-share" 
                   allowFullScreen={true}
               ></iframe>
-            </div>
+            </div> */}
         </section>
         <div className="flex px-7 md:px-0 w-full flex-col lg:flex-row mt-16 md:mt-48 justify-between items-center">
           <div className='relative flex lg:hidden justify-end my-16 lg:mb-0 lg:ml-12'>
