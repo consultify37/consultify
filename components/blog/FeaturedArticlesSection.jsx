@@ -11,8 +11,8 @@ const FeaturedArticlesSection = ({ articles }) => {
             isRTL={false}
             pagination={false}
             disableArrowsOnEnd={false}
-            // autoPlaySpeed={10000}
-            // enableAutoPlay={true}
+            autoPlaySpeed={7500}
+            enableAutoPlay={true}
             className="py-12 md:py-24"
         >
             { articles.map((article) => (

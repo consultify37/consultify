@@ -49,6 +49,7 @@ export default function Home({ slides, programe, articles, products }: Props) {
       />
       <FeaturedProducts 
         products={products}
+        title="Crește eficiența și productivitatea cu serviciile și produsele digitale oferite de Consultify!"
       />
       <News 
         articles={articles}

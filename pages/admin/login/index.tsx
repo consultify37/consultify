@@ -20,7 +20,7 @@ const Login = () => {
     try{
       await signInWithEmailAndPassword(auth, email, password) 
       
-      router.replace('/admin/slide-homepage')
+      router.replace('/admin')
     } catch (e: any) {
       toast.error(e.message)
     }

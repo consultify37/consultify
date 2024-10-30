@@ -10,8 +10,12 @@ import { deleteFile } from '../../../utils/b2_storage/delete_file'
 import { Slide } from '../../../types'
 import toast from 'react-hot-toast'
 import { uploadFile } from '../../../utils/b2_storage/upload_file'
+import { useAuthContext } from '../../../context/AuthContext'
+import { useRouter } from 'next/navigation'
 
 const SlideHomepage = () => {
+  const { currentUser } = useAuthContext()
+  const router = useRouter()
   const [link, setLink] = useState("")
   const [slides, setSlides] = useState< Slide[] >([])
   const [newImage, setNewImage] = useState< File | null >(null)
@@ -33,6 +37,11 @@ const SlideHomepage = () => {
   } 
 
   useEffect(() => {
+    if ( !currentUser?.roles.includes('slide-homepage') ) {
+      toast.error('Nu aveți permisie să modificați banners.', {duration: 3000})
+      router.push('/admin')
+    }
+
     fetchSlides()
   }, [])
   
