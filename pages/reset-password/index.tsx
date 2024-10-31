@@ -37,7 +37,7 @@ const ResetPassword = () => {
 
       setIsReseted(true)
     } catch (e: any) {
-      toast.error("Nu aveți permisie pentru a reseta parola!")
+      toast.error("Nu aveți permisie pentru a reseta parola!", { duration: 3000, style: {textAlign: "center"}})
     }
 
     setisLoading(false)
