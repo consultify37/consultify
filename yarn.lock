@@ -2774,6 +2774,11 @@ normalize-range@^0.1.2:
   resolved "https://registry.npmjs.org/normalize-range/-/normalize-range-0.1.2.tgz"
   integrity sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==
 
+ntp-logo-react@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ntp-logo-react/-/ntp-logo-react-1.0.0.tgz#df86be4d85a9e5b3d8969528a7447deabf152c1d"
+  integrity sha512-TWMgcqbfGocJMlNzOdswULADNOhTv9GOzdE9u7r/qR4PgyAwmEWuLBioSKybJQOrvSMLS3Mrs8tx8rq+cl9zQA==
+
 object-assign@^4.0.1, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz"

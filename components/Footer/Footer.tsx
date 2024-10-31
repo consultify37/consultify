@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import NTPLogo from 'ntp-logo-react'
 
 const Footer = () => {
     return (
@@ -85,15 +86,7 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col lg:max-w-[20%]">
                     <h3 className='font-bold text-[#260056] text-[24px]'>Social Media</h3>
-                    <div className='flex flex-col gap-2'>
-                        <Link href='https://anpc.ro/ce-este-sal/' target="_blank">
-                            <Image src='/images/anpc.png' alt='Anpc logo' width={180} height={49} className='aspect-auto' />
-                        </Link>
-                        <Link href='https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home.chooseLanguage' target="_blank">
-                            <Image src='/images/litigii.png' alt='Litigii logo' width={180} height={49} className='aspect-auto' />
-                        </Link>
-                    </div>
-                    <div className='flex flex-row gap-6 mt-4'>
+                    <div className='flex flex-row gap-6 mt-2'>
                         <Link href='https://www.facebook.com/consultify.ro' target="_blank">
                             <Image
                                 src="/images/contact/facebook.svg"
@@ -123,6 +116,15 @@ const Footer = () => {
                                 className="z-[5] w-[30px] h-[30px]"
                             />
                         </Link>
+                    </div>
+                    <div className='flex flex-col gap-2 mt-4'>
+                        <Link href='https://anpc.ro/ce-este-sal/' target="_blank">
+                            <Image src='/images/anpc.png' alt='Anpc logo' width={180} height={49} className='aspect-auto' />
+                        </Link>
+                        <Link href='https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home.chooseLanguage' target="_blank">
+                            <Image src='/images/litigii.png' alt='Litigii logo' width={180} height={49} className='aspect-auto' />
+                        </Link>
+                        <NTPLogo color="#ffffff" version="horizontal" secret="145330" />
                     </div>
                 </div>
             </div>
