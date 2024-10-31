@@ -37,7 +37,7 @@ const SlideHomepage = () => {
   } 
 
   useEffect(() => {
-    if ( !currentUser?.roles.includes('slide-homepage') ) {
+    if ( !currentUser?.roles.includes('banner-homepage') ) {
       toast.error('Nu aveți permisie să modificați banners.', {duration: 3000})
       router.push('/admin')
     }
