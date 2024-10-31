@@ -5,6 +5,7 @@ import { sendPasswordResetEmail } from 'firebase/auth'
 import { auth } from '../../firebase'
 import toast from 'react-hot-toast'
 import Link from 'next/link'
+import axios from 'axios'
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('')
@@ -16,10 +17,18 @@ const ForgotPassword = () => {
     setisLoading(true)
 
     try {
-      await sendPasswordResetEmail(auth, email)
+      const response = await axios.post("https://sendresetmail-75cxgdbjwq-ey.a.run.app", {
+        email
+      })
+
       setIsSent(true)
     } catch (e: any) {
-      toast.error(e.message)
+      if (e.status == 404) {
+        toast.error("Adresa de email nu corespunde niciunui cont Consultify.", { duration: 3000, style: {textAlign: "center"}})
+        setisLoading(false)
+        return
+      }
+      toast.error("Ceva nu a mers bine încearcă din nou.", { duration: 3000, style: {textAlign: "center"}})
     }
 
     setisLoading(false)
