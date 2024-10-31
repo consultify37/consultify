@@ -119,7 +119,7 @@ const Form = () => {
         leadSource: 'web form'
       })
 
-      router.push('/testimoniale')
+      router.push('/thank-you')
     } catch (e: any) {
       toast.error('Ceva nu a mers bine. Încearcă din nou!')
     }
