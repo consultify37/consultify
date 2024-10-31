@@ -113,12 +113,12 @@ const Form = () => {
         website: process.env.SITE, 
         createdAt: serverTimestamp(),
         judet,
+        source: '',
         referrer,
         referrerUrl,
         leadSource: 'web form'
       })
 
-      toast.success(`Mulțumim! Un reprezentant ${process.env.SITE} te va contacta în curând. 🚀`, { duration: 5000, style: { textAlign: 'center' } })
       router.push('/testimoniale')
     } catch (e: any) {
       toast.error('Ceva nu a mers bine. Încearcă din nou!')
