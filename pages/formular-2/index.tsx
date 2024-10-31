@@ -75,8 +75,7 @@ const Form = () => {
 
   useEffect(() => {
     setReferrerUrl(document.referrer)
-    console.log(document.referrer)
-    console.log('!')
+    
     if (document.referrer.includes('facebook')) {
       setReferrer('facebook')
     } else if (document.referrer.includes('tiktok')) {
