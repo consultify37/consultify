@@ -155,7 +155,7 @@ const Form = () => {
           </div>
           <div className="flex flex-col w-full mb-6">
               <span className="text-secondary mb-2 font-semibold">
-                Descrie-ne pe scurt activitatea ta și ce ai vrea să realizezi cu fondurile:
+                Descrie-ne pe scurt activitatea ta și ce ai vrea să realizezi cu fondurile:*
               </span>
               <textarea
                   value={mesaj}
@@ -190,7 +190,7 @@ const Form = () => {
               </div>
               <div className="flex flex-col w-full mt-6">
                   <span className="text-secondary mb-2 font-semibold">
-                      Email (opțional)
+                      Email*
                   </span>
                   <input
                       required 

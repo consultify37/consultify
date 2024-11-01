@@ -10,8 +10,8 @@ const Success = () => {
         <title>{`${process.env.SITE} | Plată înregistrată`}</title>
       </Head>
       <div className='relative flex flex-col justify-center items-center min-h-screen p-7 lg:p-28 gap-2 lg:gap-4 text-center'>
-        <h1 className='text-[18px] lg:text-[32px] font-bold text-secondary mt-8 lg:mt-12'>Vă mulțumim! Plata a fost înregistrată cu succes.</h1>
-        <h1 className='text-[15px] lg:text-[24px] font-bold text-secondary lg:max-w-[75%]'>Un consultant în accesarea de Fonduri Nerambursabile va lua legătura cu dumneavoastră în curând pentru a stabili întâlnirea de consultanță (online sau fizică).</h1>
+        <h1 className='text-[18px] lg:text-[28px] font-bold text-secondary mt-8 lg:mt-12 lg:max-w-[75%] 2xl:max-w-[60%]'>Mulțumim!🚀 Un reprezentant Consultify te va contacta în cel mai scurt timp. 📞😊</h1>
+        {/* <h1 className='text-[15px] lg:text-[24px] font-bold text-secondary lg:max-w-[75%]'>Un consultant în accesarea de Fonduri Nerambursabile va lua legătura cu dumneavoastră în curând pentru a stabili întâlnirea de consultanță (online sau fizică).</h1> */}
 
         <Link
           className='w-full lg:px-16 lg:w-fit self-center rounded-full py-4 bg-primary mt-12 hover:scale-105 transition-all'
