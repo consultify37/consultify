@@ -8,6 +8,7 @@ import Cookies from "js-cookie"
 import { usePathname } from "next/navigation"
 import { useAuthContext } from "../../context/AuthContext"
 import { useCartContext } from "../../context/CartContext"
+import TiktokPixel from 'tiktok-pixel';
 
 const Header = () => {
   const { cart } = useCartContext()
@@ -16,6 +17,11 @@ const Header = () => {
   const [showCart, setShowCart] = useState<boolean>(false)
   const { currentUser } = useAuthContext()
   const router = useRouter()
+
+  useEffect(() => {
+    TiktokPixel.init('CSIBFVRC77U91IC6MTO0')
+  }, [])
+  
   useEffect(() => {
     router.events.on("routeChangeStart", () => setToggle(false))
   }, [router.events])

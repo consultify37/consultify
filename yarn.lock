@@ -3596,6 +3596,11 @@ thenify-all@^1.0.0:
   dependencies:
     any-promise "^1.0.0"
 
+tiktok-pixel@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/tiktok-pixel/-/tiktok-pixel-2.0.3.tgz#12edd1b1b7587f5be2657250714b735e230e7d29"
+  integrity sha512-OL55YB/GK7cjqD0vMeIy9WDasQik2kxEE83hb5v6a1STD8dNx47llMScLjXhZ+0B7lNdbxy9kFfCv8S807xgaQ==
+
 to-fast-properties@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-2.0.0.tgz"
