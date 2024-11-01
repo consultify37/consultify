@@ -138,7 +138,7 @@ export default function Testimoniale({ articles, products }: Props) {
             <h2 className="text-xl md:text-3xl font-bold text-white md:max-w-[80%] text-center pt-0 md:pt-20 lg:pt-0 mb-5">
               Încă nu te-am convins? Descarcă lista completă cu rezultate:
             </h2>
-            <Link href='/files/Rezultate Consultify.pdf' download={true} target="_blank" className="bg-[#8717F8] mb-16 mt-4 font-semibold px-12 py-3 text-white transition-all hover:scale-[1.05] rounded-[28.5px]">
+            <Link href='/files/Rezultate Consultify (5).pdf' download={true} target="_blank" className="bg-[#8717F8] mb-16 mt-4 font-semibold px-12 py-3 text-white transition-all hover:scale-[1.05] rounded-[28.5px]">
               Descarcă lista aici!
             </Link>
             <h2 className="text-xl md:text-3xl font-bold text-white px-8 md:px-0 md:max-w-[80%] text-center pt-4 md:pt-20 lg:pt-0 mb-12 md:mb-24">
