@@ -7,7 +7,7 @@ const Success = () => {
   return (
     <>
       <Head>
-        <title>{`${process.env.SITE} | Plată înregistrată`}</title>
+        <title>{`${process.env.SITE} | Formular transmis cu succes`}</title>
       </Head>
       <div className='relative flex flex-col justify-center items-center min-h-screen p-7 lg:p-28 gap-2 lg:gap-4 text-center'>
         <h1 className='text-[18px] lg:text-[28px] font-bold text-secondary mt-8 lg:mt-12 lg:max-w-[75%] 2xl:max-w-[60%]'>Mulțumim!🚀 Un reprezentant Consultify te va contacta în cel mai scurt timp. 📞😊</h1>

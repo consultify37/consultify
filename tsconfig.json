@@ -13,7 +13,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "@next/third-parties/google": [ "./node_modules/@next/third-parties/dist/google" ]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", ".d.ts", "**/*.tsx", "components/Home/Why-Us/FeaturedProducts.tsx", "components/Home/OurClients/OurClients.js", "components/Home/carousel-home.js", "components/fonduri/index.js", "pages/despre/index.tsx", "pages/contact/index.jsx", "components/blog/FeaturedArticlesSection.jsx"],
   "exclude": ["node_modules"]

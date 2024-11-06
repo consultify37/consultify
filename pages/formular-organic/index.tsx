@@ -7,6 +7,7 @@ import toast from 'react-hot-toast'
 import { useRouter } from 'next/router'
 import { PhoneInput } from 'react-international-phone'
 import ReactLoading from 'react-loading'
+import Head from 'next/head'
 
 const counties = [
   { code: 'noJudet', name: 'Alege județul' },
@@ -113,13 +114,12 @@ const Form = () => {
         website: process.env.SITE, 
         createdAt: serverTimestamp(),
         judet,
-        source: '',
         referrer,
         referrerUrl,
         leadSource: 'web form'
       })
 
-      router.push('/thank-you')
+      router.push('/thank-you-organic')
     } catch (e: any) {
       toast.error('Ceva nu a mers bine. Încearcă din nou!')
     }
@@ -129,6 +129,9 @@ const Form = () => {
 
   return (
     <div className="flex flex-row justify-center lg:justify-start items-strech h-full">
+      <Head>
+        <title>{`${process.env.SITE} | Formular`}</title>
+      </Head>
       <form 
         onSubmit={onSubmit}
         className="w-full md:w-[768px] md:min-w-[768px] max-w-[768px] p-6 py-16 sm:p-8 md:p-16 flex flex-col"
