@@ -144,7 +144,7 @@ const Products = ({ products }: Props) => {
                 href='/shop/detali-comanda'
                 className='py-3 lg:py-4 w-full bg-primary flex items-center justify-center rounded-full hover:scale-105 transition-all mt-6'
               >
-                <p className='text-onPrimary font-semibold text-[14px]'>Plasează comanda</p>
+                <p className='text-onPrimary font-semibold text-[14px]'>Inițiază comanda</p>
               </Link> :
               <ReactLoading type="spin" color="#8717F8" width={32} height={32} className='mt-6' />
             }
