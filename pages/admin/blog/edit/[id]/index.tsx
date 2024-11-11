@@ -276,7 +276,7 @@ export const getServerSideProps = async (context: NextPageContext) => {
     return {
       notFound: true
     }
-}
+  }
 
   const { lastUpdated, createdAt, ...data } = articleSnap.data()
   const article = { id: articleSnap.id, formattedCreatedAt: formatDate(new Date(createdAt.seconds*1000)), ...data }

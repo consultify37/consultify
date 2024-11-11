@@ -28,6 +28,21 @@ export type Category = {
   data?: string
 }
 
+export type PressRealease = {
+  id: string
+  formattedCreatedAt?: string
+  category: string
+  title: string
+  smallLogos: { 
+    fileName: string 
+    url: string 
+  }[]
+  file: { 
+    fileName: string 
+    url: string 
+  }
+}
+
 export type Program = {
   id: string
   bulletPoints: string[]

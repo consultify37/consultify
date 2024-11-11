@@ -17,7 +17,7 @@ const nextConfig = {
     defaultLocale: "ro",
   },
   images: {
-    domains: ["api.inspiredconsulting.ro", "f005.backblazeb2.com"],
+    domains: ["api.inspiredconsulting.ro", "f005.backblazeb2.com", "firebasestorage.googleapis.com"],
     remotePatterns: [
       {
         protocol: "https",
@@ -26,6 +26,10 @@ const nextConfig = {
       {
         protocol: 'https', 
         hostname: 'f005.backblazeb2.com',
+      },
+      {
+        protocol: 'https', 
+        hostname: 'firebasestorage.googleapis.com',
       },
     ],
   },

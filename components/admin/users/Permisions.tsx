@@ -8,7 +8,8 @@ const Permisiuni = [
   { name: 'Produse', value: 'produse' },
   { name: 'Consultify', value: 'consultify' },
   { name: 'Socialy', value: 'socialy' },
-  { name: 'Creditfy', value: 'creditfy' }
+  { name: 'Creditfy', value: 'creditfy' },
+  { name: 'Comunicate de presă', value: 'press'}
 ]
 
 type Props = {

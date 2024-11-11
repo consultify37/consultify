@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import AdminLayout from '../../../components/admin-nav/AdminLayout'
 import Categories from '../../../components/admin/Categories'
 import { Category } from '../../../types'
-import { addDoc, collection, deleteDoc, doc, getDocs, query, where } from 'firebase/firestore'
+import { addDoc, collection, deleteDoc, doc, getDocs, query } from 'firebase/firestore'
 import { db } from '../../../firebase'
 import ReactLoading from 'react-loading'
 import toast from 'react-hot-toast'
@@ -15,7 +15,7 @@ const CategoriiPrograme = () => {
 
   const fetchCategories = async () => {
     setIsFetching(true)
-    const docsRef = query(collection(db, 'categories'), where('site', '==', process.env.SITE))
+    const docsRef = query(collection(db, 'press-categories'))
     const docsSnap = await getDocs(docsRef)
 
     const data = docsSnap.docs.map((doc) => (
@@ -35,7 +35,7 @@ const CategoriiPrograme = () => {
     setIsLoading(true)
 
     try {
-      const doc = await addDoc(collection(db, 'categories'), { category: newCategory, site: process.env.SITE })
+      const doc = await addDoc(collection(db, 'press-categories'), { category: newCategory, site: process.env.SITE })
       setCategories((categories) => [{ id: doc.id, category: newCategory }, ...categories ])
       setNewCategory('')
     } catch (e) {
@@ -54,7 +54,7 @@ const CategoriiPrograme = () => {
     }
 
     try {
-      const docRef = doc(db, 'categories', category.id!)
+      const docRef = doc(db, 'press-categories', category.id!)
       await deleteDoc(docRef)
 
       setCategories((categories) => categories.filter((item) => category.id != item.id))
@@ -67,7 +67,7 @@ const CategoriiPrograme = () => {
 
   return (
     <AdminLayout>
-      <h1 className='text-[28px] text-secondary font-bold '>Categorii programe</h1>
+      <h1 className='text-[28px] text-secondary font-bold '>Categorii comunicate de presă</h1>
       <div className='flex flex-row mt-8'>
         <form 
           className='relative mr-16 w-[calc(50%-32px)] min-w-[220px] max-w-[480px]'

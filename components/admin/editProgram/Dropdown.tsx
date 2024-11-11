@@ -28,7 +28,7 @@ const Dropdown = ({ values, selectedValue, setSelectedValue, placeholder="Select
         </label>
 
         <div 
-          className='absolute top-11 pt-2 flex-col z-10 w-full bg-white border-primary border-t-transparent border-2 rounded-b-xl shadow-md pb-1'
+          className='absolute top-11 pt-2 flex-col z-10 w-full bg-white border-primary border-t-transparent border-2 rounded-b-xl rounded-t-none shadow-md pb-1'
           id='dropdown-container'
           style={{visibility: toggle ? 'visible' : 'hidden'}}
         >
