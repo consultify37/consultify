@@ -33,7 +33,6 @@ export default function Testimoniale({ articles, categories, products, releases:
   
     const [selectedCategory, setSelectedCategory] = useState<string>('toate')
     const [releases, setReleases] = useState< any[] >(initialReleases)
-    console.log(releases)
 
     const next = async () => {
         setIsLoading(true)
@@ -99,7 +98,7 @@ export default function Testimoniale({ articles, categories, products, releases:
 
         let ref
         let lastArticleRef
-        console.log(selectedCategory)
+
         if ( selectedCategory == 'toate' ) {
             ref = query(collection(db, 'press-releases'), orderBy('createdAt', 'desc'), limit(articlesPerPage))
             lastArticleRef = query(collection(db, 'press-releases'), orderBy('index', 'asc'), limit(1))
@@ -119,8 +118,10 @@ export default function Testimoniale({ articles, categories, products, releases:
 
         if ( articles.length != 0 && !lastArticle.empty ) {
             setIsLastPage(lastArticle.docs[0].id == newArticles[newArticles.length-1].id)
+        } else if ( lastArticle.empty ) {
+            setIsLastPage(true)
         }
-        console.log(newArticles)
+
         setReleases(newArticles)
     } 
 
