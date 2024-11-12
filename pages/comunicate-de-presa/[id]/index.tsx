@@ -23,21 +23,21 @@ const Comunicat = ({ release, articles, products }: Props) => {
       <Head>
           <title>{`${process.env.SITE} | ${release.title}`}</title>
       </Head>
-      <section className="flex flex-col w-full pt-[156px] md:pt-44 md:pb-10 items-center px-7 md:px-[110px] xl:px-[160px] 2xl:px-[276px]">
-        <div className='flex flex-col gap-2 items-center'>
+      <section className="flex flex-col w-full pt-[156px] md:pt-44 md:pb-10 items-center md:px-[110px] xl:px-[160px] 2xl:px-[276px]">
+        <div className='flex flex-col gap-2 items-center px-7'>
           <p className='text-secondary lg:text-2xl font-semibold'>Comunicate de presă</p>
           <p className='text-primary text-sm lg:text-base font-semibold'>{ release.category }</p>
           <p className='text-secondary text-lg lg:text-4xl text-center font-semibold'>{ release.title }</p>
         </div>
-
+        
         <iframe 
           src={release.file.url}
           width="100%" 
           height="100%"
-          className='w-full h-[600px] sm:h-[700px] md:h-800px lg:h-[900px] xl:h-[1000px] 2xl:h-[1100px] mt-10 lg:mt-16'
+          className='w-full h-[645px] sm:h-[700px] md:h-800px lg:h-[900px] xl:h-[1000px] 2xl:h-[1100px] mt-10 lg:mt-16'
         />
 
-        <div className='flex flex-col sm:flex-row sm:items-center justify-between mt-4 md:mt-8 w-full'>
+        <div className='flex flex-col sm:flex-row sm:items-center justify-between mt-4 md:mt-8 w-full px-7'>
           <div className='flex flex-row gap-4'>
             <Link 
               href={release.file.url}
