@@ -46,8 +46,8 @@ const Comunicat = ({ release, articles, products }: Props) => {
         </div> */}
         
         <iframe 
-          src={release.file.url}
-          width="80%" 
+          src={`https://docs.google.com/gview?url=${release.file.url}&embedded=true`}
+          width="100%" 
           height="100%"
           className='w-full h-[645px] sm:h-[700px] md:h-800px lg:h-[900px] xl:h-[1000px] 2xl:h-[1100px] mt-10 lg:mt-16'
         />
