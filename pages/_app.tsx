@@ -14,8 +14,6 @@ import { FavoritesContext } from '../context/FavoritesContext'
 import Cookies from 'js-cookie'
 import { Analytics } from "@vercel/analytics/react"
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
-import '@react-pdf-viewer/core/lib/styles/index.css';
-import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 function useNormalScrollRoutes() {
   const router = useRouter()
