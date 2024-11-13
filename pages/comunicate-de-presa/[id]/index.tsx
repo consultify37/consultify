@@ -10,10 +10,6 @@ import CTA from '../../../components/CTA'
 import FeaturedProducts from '../../../components/Home/Why-Us/FeaturedProducts'
 import News from '../../../components/Home/News/News'
 import NewsLetter from '../../../components/global/newsletter'
-// import '@react-pdf-viewer/core/lib/styles/index.css';
-// import '@react-pdf-viewer/default-layout/lib/styles/index.css'
-// import { Viewer, Worker } from '@react-pdf-viewer/core'
-// import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'
 
 type Props = {
   release: PressRealease
@@ -22,28 +18,17 @@ type Props = {
 }
 
 const Comunicat = ({ release, articles, products }: Props) => {
-  // const defaultLayoutPluginInstance = defaultLayoutPlugin()
   return (
     <>
       <Head>
           <title>{`${process.env.SITE} | ${release.title}`}</title>
       </Head>
-      {/* <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.js"> */}
       <section className="flex flex-col w-full pt-[156px] md:pt-44 md:pb-10 items-center md:px-[110px] xl:px-[160px] 2xl:px-[276px]">
         <div className='flex flex-col gap-2 items-center px-7'>
           <p className='text-secondary lg:text-2xl font-semibold'>Comunicate de presă</p>
           <p className='text-primary text-sm lg:text-base font-semibold'>{ release.category }</p>
           <p className='text-secondary text-lg lg:text-4xl text-center font-semibold'>{ release.title }</p>
         </div>
-
-        {/* <div className='w-full h-[645px] sm:h-[700px] md:h-800px lg:h-[900px] xl:h-[1000px] 2xl:h-[1100px] mt-10 lg:mt-16'>
-          <Viewer
-            fileUrl='/files/Politica de confidentialitate.pdf'
-            plugins={[
-                defaultLayoutPluginInstance,
-            ]}
-          />
-        </div> */}
         
         <iframe 
           src={`https://docs.google.com/gview?url=${release.file.url}&embedded=true`}
@@ -103,8 +88,7 @@ const Comunicat = ({ release, articles, products }: Props) => {
         </div>
         </div>
       </section>
-      {/* </Worker> */}
-
+      
       <CTA
         title="Acțiunea ta contează - Începe-ți <purple>proiectul<purple> de succes acum!"
         linkText="Completează formularul!"
