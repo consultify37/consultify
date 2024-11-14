@@ -196,9 +196,9 @@ export default function Testimoniale({ articles, categories, products, releases:
         </section>
         <div className="mt-20"></div>
         <CTA
-          title="Acțiunea ta contează - Începe-ți <purple>proiectul<purple> de succes acum!"
-          linkText="Completează formularul!"
-          linkHref="/contact"
+          title="Ai nevoie și tu de un <purple>comunicat de presă<purple> asemănător?"
+          linkText="Creează unul acum!"
+          linkHref="https://wa.link/0a4lnx"
         />
         <FeaturedProducts 
             products={products}

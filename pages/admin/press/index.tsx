@@ -74,7 +74,13 @@ const Press = () => {
           className='rounded-xl bg-primary max-w-[480px] flex items-center justify-center hover:scale-[1.05] transition-all p-4'
           href='/admin/press/edit'
         >
-          <p  className='text-onPrimary text-base font-semibold'>Adaugă</p>
+          <p  className='text-onPrimary text-base font-semibold'>Adaugă comunicat</p>
+        </Link>
+        <Link 
+          className='rounded-xl bg-primary max-w-[480px] flex items-center justify-center hover:scale-[1.05] transition-all p-4'
+          href='/admin/press-categories'
+        >
+          <p  className='text-onPrimary text-base font-semibold'>Categorii comunicate</p>
         </Link>
 
         {

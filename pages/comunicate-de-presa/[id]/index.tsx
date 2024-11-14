@@ -10,6 +10,8 @@ import CTA from '../../../components/CTA'
 import FeaturedProducts from '../../../components/Home/Why-Us/FeaturedProducts'
 import News from '../../../components/Home/News/News'
 import NewsLetter from '../../../components/global/newsletter'
+import ReactLoading from 'react-loading'
+import { theme } from '../../../utils/theme'
 
 type Props = {
   release: PressRealease
@@ -30,14 +32,7 @@ const Comunicat = ({ release, articles, products }: Props) => {
           <p className='text-secondary text-lg lg:text-4xl text-center font-semibold'>{ release.title }</p>
         </div>
         
-        <iframe 
-          src={`https://docs.google.com/gview?url=${release.file.url}&embedded=true`}
-          width="100%" 
-          height="100%"
-          className='w-full h-[645px] sm:h-[700px] md:h-800px lg:h-[900px] xl:h-[1000px] 2xl:h-[1100px] mt-10 lg:mt-16'
-        />
-
-        <div className='flex flex-col sm:flex-row sm:items-center justify-between mt-4 md:mt-8 w-full px-7'>
+        <div className='flex flex-col sm:flex-row items-center justify-between mt-10 md:mt-16 mb-4 w-full'>
           <div className='flex flex-row gap-4'>
             <Link 
               href={release.file.url}
@@ -48,14 +43,14 @@ const Comunicat = ({ release, articles, products }: Props) => {
               Descarcă
             </Link>
             <Link 
-              href='https://wa.link/h3wlra'
+              href='https://wa.link/0a4lnx'
               className='text-sm lg:text-base p-2 px-8 text-white rounded-full font-semibold bg-primary border-primary border-2 hover:scale-105 transition-all'
             >
               Vreau și eu
             </Link>
           </div>
 
-          <div className='flex flex-row gap-4 mt-4 sm:mt-0'>
+          <div className='hidden md:flex flex-row gap-4 mt-4 sm:mt-0'>
             <Link href='https://www.facebook.com/consultify.ro' target="_blank">
                 <Image
                     src="/images/contact/facebook.svg"
@@ -87,21 +82,43 @@ const Comunicat = ({ release, articles, products }: Props) => {
             </Link>
         </div>
         </div>
+        <iframe 
+          src={release.file.url}
+          width="100%" 
+          height="100%"
+          loading='eager'
+          className='hidden sm:block w-full h-[645px] sm:h-[700px] md:h-800px lg:h-[900px] xl:h-[1000px] 2xl:h-[1100px]'
+        />
+
+        <div className='relative sm:hidden w-full h-[645px] sm:h-[700px] md:h-800px lg:h-[900px] xl:h-[1000px] 2xl:h-[1100px]'>
+          <div className='absolute my-auto top-[25%] bottom-[50%] -z-10 flex flex-col items-center'>
+            <ReactLoading width={22} height={22} type="spin" color={theme.primary} />
+            <p className='text-center px-7 p-2 text-[15px] text-black text-opacity-[67%]'>Dacă timpul de încărcare depașește 3 secunde, utilizați butonul {`"Descarcă"`}.</p>
+          </div>
+          <iframe 
+            src={`https://docs.google.com/gview?url=${release.file.url}&embedded=true`}
+            width="100%" 
+            height="100%"
+            className='w-full'
+            onLoad={() => console.log('loaded')}
+          />
+        </div>
       </section>
       
       <CTA
-        title="Acțiunea ta contează - Începe-ți <purple>proiectul<purple> de succes acum!"
+        title="Aplică acum și transformă-ți proiectele în <purple>realitate<purple> cu Consultify!"
         linkText="Completează formularul!"
         linkHref="/contact"
       />
       <FeaturedProducts 
           products={products}
-          title="Crește eficiența și productivitatea cu serviciile și produsele digitale oferite de Consultify!"
+          title="Optimizează-ți afacerea cu ajutorul soluțiilor digitale propuse de Consultify!"
       />
       <News
         articles={articles}
+        title='Explorează tendințele actuale din lumea antreprenoriatului și nu numai:'
       />
-      <NewsLetter headingText={'Alătură-te comunității noastre și fii la curent cu cele mai noi oportunități de finanțare!'} />
+      <NewsLetter headingText={'Abonează-te la newsletter pentru informații actualizate despre afaceri!'} />
     </>
   )
 }
