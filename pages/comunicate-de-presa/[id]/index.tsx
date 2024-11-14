@@ -93,7 +93,7 @@ const Comunicat = ({ release, articles, products }: Props) => {
         <div className='relative sm:hidden w-full h-[645px] sm:h-[700px] md:h-800px lg:h-[900px] xl:h-[1000px] 2xl:h-[1100px]'>
           <div className='absolute my-auto top-[25%] bottom-[50%] -z-10 flex flex-col items-center'>
             <ReactLoading width={22} height={22} type="spin" color={theme.primary} />
-            <p className='text-center px-7 p-2 text-[15px] text-black text-opacity-[67%]'>Dacă timpul de încărcare depașește 3 secunde, reîncarcați pagina sau utilizați butonul {`"Descarcă"`}.</p>
+            <p className='text-center px-7 p-2 text-[15px] text-black text-opacity-[67%]'>Dacă timpul de încărcare depășește 3 secunde, reîncarcați pagina sau utilizați butonul {`"Descarcă"`}.</p>
           </div>
           <iframe 
             src={`https://docs.google.com/gview?url=${release.file.url}&embedded=true`}
