@@ -8,7 +8,7 @@ const FeaturedArticlesSection = ({ releases }) => {
   return (
     <section className="relative pt-[132px] md:pt-24 sm:px-[80px] xl:px-[140px] 2xl:px-[376px] -mt-44">
         <div className='absolute w-full h-full bg-[#fbf8ff] inset-0 -z-10'></div>
-        <div className='bg-admin-card rounded-[36px] my-6 md:my-8 p-4 md:p-6 md:px-8 flex flex-col md:flex-row mx-7 justify-between items-center'>
+        <div className='bg-admin-card rounded-[36px] shadow-lg my-6 md:my-8 p-4 md:p-6 md:px-8 flex flex-col md:flex-row mx-7 justify-between items-center'>
           <p className='font-semibold md:text-xl text-center mb-4 sm:mb-0'>Ai nevoie și tu de un comunicat asemănător?</p>
           <Link
             href='https://wa.link/0a4lnx'
