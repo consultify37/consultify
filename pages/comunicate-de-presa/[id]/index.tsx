@@ -1,6 +1,6 @@
 import { collection, doc, getDoc, getDocs, limit, orderBy, query, where } from 'firebase/firestore'
 import Head from 'next/head'
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { db } from '../../../firebase'
 import { formatDate } from '../../../utils/formatDate'
 import { Article, PressRealease, Product } from '../../../types'
@@ -12,6 +12,10 @@ import News from '../../../components/Home/News/News'
 import NewsLetter from '../../../components/global/newsletter'
 import ReactLoading from 'react-loading'
 import { theme } from '../../../utils/theme'
+import axios from 'axios'
+import { Viewer, Worker } from '@react-pdf-viewer/core'
+import '@react-pdf-viewer/core/lib/styles/index.css'
+import '@react-pdf-viewer/default-layout/lib/styles/index.css'
 
 type Props = {
   release: PressRealease
@@ -19,12 +23,44 @@ type Props = {
   products: Product[]
 }
 
+const base64toBlob = (data: string) => {
+  const bytes = window.atob(data);
+  let length = bytes.length;
+  let out = new Uint8Array(length);
+
+  while (length--) {
+      out[length] = bytes.charCodeAt(length);
+  }
+
+  return new Blob([out], { type: 'application/pdf' });
+};
+
+
 const Comunicat = ({ release, articles, products }: Props) => {
+  const [pdf, setPdf] = useState< any >(null)
+  
+  const fetchPDF = useCallback(async () => {
+    try {
+      const response = await axios.post('/api/fetchPDF', { url: release.file.url })
+      const blob = base64toBlob(response.data)
+      const url = URL.createObjectURL(blob)
+      setPdf(url)
+    } catch {}
+
+  }, [release])
+
+  useEffect(() => {
+    fetchPDF()
+  }, [fetchPDF])
+
   return (
     <>
       <Head>
           <title>{`${process.env.SITE} | ${release.title}`}</title>
       </Head>
+      
+      
+      <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
       <section className="flex flex-col w-full pt-[156px] md:pt-44 md:pb-10 items-center md:px-[110px] xl:px-[160px] 2xl:px-[276px]">
         <div className='flex flex-col gap-2 items-center px-7'>
           <p className='text-secondary lg:text-2xl font-semibold'>Comunicate de presă</p>
@@ -32,7 +68,24 @@ const Comunicat = ({ release, articles, products }: Props) => {
           <p className='text-secondary text-lg lg:text-4xl text-center font-semibold'>{ release.title }</p>
         </div>
         
-        <div className='flex flex-col sm:flex-row items-center justify-between mt-10 md:mt-16 mb-4 w-full'>
+        <iframe 
+          src={release.file.url}
+          width="100%" 
+          height="100%"
+          loading='eager'
+          className='hidden sm:block w-full h-[645px] sm:h-[700px] md:h-800px lg:h-[900px] xl:h-[1000px] 2xl:h-[1100px] mt-10 md:mt-16'
+        />
+
+        <div className='relative sm:hidden w-full pb-2 min-h-[500px] max-h-[600px] overflow-scroll sm:h-[700px] md:h-800px lg:h-[900px] xl:h-[1000px] 2xl:h-[1100px] mt-10 md:mt-16'>
+          <div className='absolute my-auto top-[25%] bottom-[50%] -z-10 flex flex-col items-center'>
+            <ReactLoading width={22} height={22} type="spin" color={theme.primary} />
+            <p className='text-center px-7 p-2 text-[15px] text-black text-opacity-[67%]'>Dacă timpul de încărcare depășește 3 secunde, reîncarcați pagina sau utilizați butonul {`"Descarcă"`}.</p>
+          </div>
+          
+          {pdf && <Viewer fileUrl={pdf} />}
+        </div>
+
+        <div className='flex flex-col sm:flex-row items-center justify-between w-full mt-4 lg:mt-6'>
           <div className='flex flex-row gap-4'>
             <Link 
               href={release.file.url}
@@ -80,30 +133,10 @@ const Comunicat = ({ release, articles, products }: Props) => {
                     className="z-[5] w-[30px] h-[30px]"
                 />
             </Link>
-        </div>
-        </div>
-        <iframe 
-          src={release.file.url}
-          width="100%" 
-          height="100%"
-          loading='eager'
-          className='hidden sm:block w-full h-[645px] sm:h-[700px] md:h-800px lg:h-[900px] xl:h-[1000px] 2xl:h-[1100px]'
-        />
-
-        <div className='relative sm:hidden w-full h-[645px] sm:h-[700px] md:h-800px lg:h-[900px] xl:h-[1000px] 2xl:h-[1100px]'>
-          <div className='absolute my-auto top-[25%] bottom-[50%] -z-10 flex flex-col items-center'>
-            <ReactLoading width={22} height={22} type="spin" color={theme.primary} />
-            <p className='text-center px-7 p-2 text-[15px] text-black text-opacity-[67%]'>Dacă timpul de încărcare depășește 3 secunde, reîncarcați pagina sau utilizați butonul {`"Descarcă"`}.</p>
           </div>
-          <iframe 
-            src={`https://docs.google.com/gview?url=${release.file.url}&embedded=true`}
-            width="100%" 
-            height="100%"
-            className='w-full'
-            onLoad={() => console.log('loaded')}
-          />
         </div>
       </section>
+      </Worker>
       
       <CTA
         title="Aplică acum și transformă-ți proiectele în <purple>realitate<purple> cu Consultify!"
