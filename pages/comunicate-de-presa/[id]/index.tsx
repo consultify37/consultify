@@ -77,7 +77,7 @@ const Comunicat = ({ release, articles, products }: Props) => {
         />
 
         <div className='relative sm:hidden w-full pb-2 min-h-[500px] max-h-[600px] overflow-scroll sm:h-[700px] md:h-800px lg:h-[900px] xl:h-[1000px] 2xl:h-[1100px] mt-10 md:mt-16'>
-          <div className='absolute my-auto top-[45%] bottom-[50%] -z-10 flex flex-col items-center'>
+          <div className='absolute my-auto top-[45%] bottom-[50%] mx-auto right-[50%] left-[50%] -z-10 flex flex-col items-center'>
             <ReactLoading width={22} height={22} type="spin" color={theme.primary} />
           </div>
           
