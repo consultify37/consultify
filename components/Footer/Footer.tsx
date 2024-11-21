@@ -37,6 +37,9 @@ const Footer = () => {
                             <Link href='/shop' className='font-semibold text-[#8717F8] text-[16px]'>Shop</Link>
                         </li>
                         <li>
+                            <Link href='/comunicate-de-presa' className='font-semibold text-[#8717F8] text-[16px]'>Comunicate de Presă</Link>
+                        </li>
+                        <li>
                             <Link href='/contact' className='font-semibold text-[#8717F8] text-[16px]'>Contact</Link>
                         </li>
                     </ul>

@@ -79,7 +79,7 @@ const Header = () => {
         {/* <FixedLeft /> */}
         <nav
           role="main"
-          className="fixed z-[999] top-14 w-[calc(100%-12px*2)] lg:w-[calc(100%-60px*2)] xl:w-[calc(100%-40px*2)] 2xl:w-[calc(100%-166px*2)] mx-3 lg:mx-[60px] xl:mx-[40px] 2xl:mx-[166px]"
+          className="fixed z-[999] top-14 w-[calc(100%-12px*2)] lg:w-[calc(100%-60px*2)] xl:w-[calc(100%-40px*2)] 2xl:w-[calc(100%-136px*2)] mx-3 lg:mx-[60px] xl:mx-[40px] 2xl:mx-[166px]"
         >
           <div className={"rounded-full flex flex-row justify-between items-center px-8 xl:px-[60px] py-2 xl:py-4 duration-300 transition-all " + ((!pathname?.includes('/blog/')) || (scrollPosition != 0) ? "bg-secondary" : "bg-transparent")}>
             <Link href="/" className="flex items-center justify-center z-[99]">
@@ -177,6 +177,13 @@ const Header = () => {
               >
                 <Link href="/shop" className="font-semibold text-white text-[16px] hover:text-primary transition-all">
                   shop
+                </Link>
+              </li>
+              <li
+                className={`w-full xl:w-auto p-2 pl-16 border-b-[1px] border-white xl:pl-18 xl:pl-0 xl:p-0 xl:border-0`}
+              >
+                <Link href="/comunicate-de-presa" className="font-semibold text-white text-[16px] hover:text-primary transition-all">
+                  comunicate
                 </Link>
               </li>
               {/* <li
