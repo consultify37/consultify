@@ -55,7 +55,7 @@ const UpdateRealease = ({ categories, realease }: Props) => {
           await deleteObject(ref(storage, realease.file.fileName))
         } catch {}
 
-        const reference = ref(storage, file?.name)
+        const reference = ref(storage, Math.random().toString().replace("0.", "")+'.pdf')
         newFileSnapshot = await uploadBytes(reference, file!)
 
         newFileUrl = await getDownloadURL(reference)
@@ -138,7 +138,7 @@ const UpdateRealease = ({ categories, realease }: Props) => {
   return (
     <AdminLayout>
       <div className='flex flex-row justify-between w-full max-w-[1000px] items-center'>
-        <h1 className='text-[28px] text-secondary font-bold '>Adaugă un comunicat de presă</h1>
+        <h1 className='text-[28px] text-secondary font-bold '>Editează comunicatul de presă</h1>
 
         <button onClick={leavePage}>
           <svg 
@@ -220,7 +220,7 @@ const UpdateRealease = ({ categories, realease }: Props) => {
               type='submit'
               className='bg-primary p-4 px-8 rounded-[10px] cursor-pointer hover:scale-105 transition-all mr-4'
             >
-              <p className='text-[14px] font-semibold text-onPrimary'>Adaugă comunicatul</p>
+              <p className='text-[14px] font-semibold text-onPrimary'>Salvează comunicatul</p>
             </button> 
           }
         </div>   

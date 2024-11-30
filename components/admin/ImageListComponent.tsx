@@ -8,7 +8,6 @@ type Props = {
 }
 
 const ImageListComponent = ({ images, setImages, setImagesToBeDeleted }: Props) => {
-  console.log(images)
     const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     if ( e.target.files && e.target.files[0] ) {
       setImages([...images, e.target.files[0]])

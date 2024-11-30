@@ -36,9 +36,9 @@ const Edit = ({ categories }: Props) => {
     try {
       var fileSnapshot
       var fileUrl
-      
+
       if ( typeof file != 'string') {
-        const reference = ref(storage, file?.name)
+        const reference = ref(storage, Math.random().toString().replace("0.", "")+'.pdf')
         fileSnapshot = await uploadBytes(reference, file!)
 
         fileUrl = await getDownloadURL(reference)

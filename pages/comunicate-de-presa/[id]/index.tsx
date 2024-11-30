@@ -157,24 +157,25 @@ const Comunicat = ({ release, articles, products }: Props) => {
 
 export default Comunicat
 
-export const getStaticPaths = async () => {
-  const articlesRef = collection(db, 'press-releases')
-  const articlesSnap = await getDocs(articlesRef)
+// export const getStaticPaths = async () => {
+//   const articlesRef = collection(db, 'press-releases')
+//   const articlesSnap = await getDocs(articlesRef)
 
-  const paths = articlesSnap.docs.map((doc) => ({ params: { id: doc.id }}))
-  return {
-      paths,
-      fallback: 'blocking'
-  }
-}
+//   const paths = articlesSnap.docs.map((doc) => ({ params: { id: doc.id }}))
+//   return {
+//       paths,
+//       fallback: 'blocking'
+//   }
+// }
 
-export const getStaticProps = async (context: any) => {
+export const getServerSideProps = async (context: any) => {
   const id = context.params.id
   const releaseSnap = await  getDoc(doc(db, 'press-releases', id))
+  console.log(id)
   if ( !releaseSnap.exists() ) {
     return { notFound: true }
   }
-
+  console.log('!')
   const { createdAt, ...data } = releaseSnap.data()
   const release = { id: releaseSnap.id, formattedCreatedAt: formatDate(new Date(createdAt.seconds*1000)), ...data }
 
@@ -195,6 +196,6 @@ export const getStaticProps = async (context: any) => {
 
   return { 
     props: { release, articles, products }, 
-    revalidate: Number(process.env.REVALIDATE )
+    // revalidate: Number(process.env.REVALIDATE )
   }
 }
