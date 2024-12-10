@@ -19,7 +19,7 @@ const Header = () => {
   const router = useRouter()
 
   useEffect(() => {
-    TiktokPixel.init('CSIBFVRC77U91IC6MTO0')
+    TiktokPixel.init('CSIBFVRC77U91IC6MTO0')    
   }, [])
   
   useEffect(() => {
