@@ -82,7 +82,7 @@ export const CartContext = ({ children }: Props) => {
 
     Cookies.set('cart', JSON.stringify(cartIds))
 
-    setSelectedProduct(product)
+    setSelectedProduct(product) //
 
     TiktokPixel.track('AddToCart', {
       contents: [{
