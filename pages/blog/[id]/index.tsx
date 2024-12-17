@@ -1,11 +1,11 @@
 import Head from "next/head"
 import Image from "next/image"
-import { useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import NewsLetter from "../../../components/global/newsletter"
 import News from "../../../components/Home/News/News"
 import reactHtmlParser from 'react-html-parser'
 import { formatter } from "../../../utils/formatter"
-import { collection, doc, getDoc, getDocs, limit, orderBy, query, where } from "firebase/firestore"
+import { collection, doc, getDoc, getDocs, limit, orderBy, query, updateDoc, where } from "firebase/firestore"
 import { db } from "../../../firebase"
 import { Article, Product } from "../../../types"
 import { formatDate } from "../../../utils/formatDate"
@@ -24,6 +24,17 @@ const BlogPost = ({ article, articles, products }: Props) => {
     const [shareButton, setShareButton] = useState('/images/link.svg')
     const [shareButtonText, setShareButtonText] = useState('')
     const pathName = usePathname()
+
+    const addView = useCallback(async () => {
+        try {
+            const ref = doc(collection(db, 'articles'), article.id)
+            await updateDoc(ref, { views: article.views ? article.views + 1 : 1 })
+        } catch (e) {}
+    }, [article])
+
+    useEffect(() => {
+        addView()
+    }, [addView])
 
     // const content = `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam congue augue ac mattis venenatis. Curabitur eu semper augue. Donec semper, elit hendrerit aliquet volutpat, orci eros vehicula nulla, et auctor magna ipsum ac metus. Nam ex dui, vestibulum vel gravida in, vehicula a enim.</p><p><br></p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ac fermentum massa. Nullam quis cursus sem. Aliquam purus dui, finibus sit amet diam eget, venenatis rutrum velit. In vehicula purus ac malesuada fermentum. Aenean a congue sapien, nec eleifend metus. Nullam faucibus ipsum congue nunc dapibus, sed ultrices erat rhoncus. Phasellus et sagittis erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur ligula elit, porttitor eget aliquam ut, ornare eu est.</p><p><br></p><p>Nullam efficitur fermentum tristique. Maecenas sed odio eu nisl semper sollicitudin nec vitae nibh. Duis rhoncus mauris sit amet risus malesuada tristique. Integer consectetur ante elit, vitae venenatis felis ullamcorper ut. Sed eget ipsum urna. Etiam tincidunt accumsan tortor et aliquam. Suspendisse vitae tempus ligula. Pellentesque vitae pulvinar ipsum, nec sodales est. Etiam eu eros faucibus, rutrum elit eu, suscipit enim. Quisque tincidunt felis sapien, et rutrum risus maximus vitae. Curabitur dictum pulvinar gravida.</p><p><br></p><p><img src="https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/df650838f54e192527d09ff01.png" /></p><p><br></p><h2>Lorem lipsum dolor sit</h2><p><br></p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam congue augue ac mattis venenatis. Curabitur eu semper augue. Donec semper, elit hendrerit aliquet volutpat, orci eros vehicula nulla, et auctor magna ipsum ac metus. Nam ex dui, vestibulum vel gravida in, vehicula a enim.</p><p><br></p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ac fermentum massa. Nullam quis cursus sem. Aliquam purus dui, finibus sit amet diam eget, venenatis rutrum velit. In vehicula purus ac malesuada fermentum. Aenean a congue sapien, nec eleifend metus. Nullam faucibus ipsum congue nunc dapibus, sed ultrices erat rhoncus. Phasellus et sagittis erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur ligula elit, porttitor eget aliquam ut, ornare eu est.</p><p><br></p><p>Nullam efficitur fermentum tristique. Maecenas sed odio eu nisl semper sollicitudin nec vitae nibh. Duis rhoncus mauris sit amet risus malesuada tristique. Integer consectetur ante elit, vitae venenatis felis ullamcorper ut. Sed eget ipsum urna. Etiam tincidunt accumsan tortor et aliquam. Suspendisse vitae tempus ligula. Pellentesque vitae pulvinar ipsum, nec sodales est. Etiam eu eros faucibus, rutrum elit eu, suscipit enim. Quisque tincidunt felis sapien, et rutrum risus maximus vitae. Curabitur dictum pulvinar gravida.</p><p><br></p><p><img src="https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/df650838f54e192527d09ff02.jpeg" /></p>`
     return(

@@ -13,6 +13,9 @@ import Email from '../../../components/shop/Email'
 import NewsLetter from '../../../components/global/newsletter'
 import Steps from '../../../components/shop/Steps'
 import Summary from '../../../components/shop/Summary'
+import TiktokPixel from 'tiktok-pixel'
+import { calculateCouponValue } from '../../../utils/calculateCouponValue'
+import { calculateCartTotal } from '../../../utils/calculateCartTotal'
 
 const OrderDetails = () => {
   const router = useRouter()
@@ -55,6 +58,20 @@ const OrderDetails = () => {
   const handleCheckout = async (e: any) => {
     e.preventDefault()
     setIsLoading(true)
+
+    try {
+      TiktokPixel.track('PlaceAnOrder', {
+        contents: products.map((product) => ({
+          content_id: product.id,
+          content_name: product.name,
+          quantity: 1,
+          price: product.price
+        })),
+        content_type: 'product',
+        value: coupon ? calculateCouponValue(calculateCartTotal(products), coupon).coupon : calculateCartTotal(products),
+        currency: 'RON'
+      })
+    } catch (e) {}
 
     if (!acceptTerms) {
       toast.error('Acceptă termenii și condițiile mai întăi.')

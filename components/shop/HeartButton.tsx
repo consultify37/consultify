@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { useFavoritesContext } from '../../context/FavoritesContext'
 import { Product } from '../../types'
+import TiktokPixel from 'tiktok-pixel'
 
 type Props = {
   product: Product
@@ -12,8 +13,19 @@ const HeartButton = ({ product, size='big' }: Props) => {
   const { favorites, handleRemoveProductFromFavorites, handleAddProductToFavorites } = useFavoritesContext()
   const [isLiked, setIsLiked] = useState( favorites.findIndex((item) => item.id == product.id ) != -1 ? true : false )
 
-  const handleButtonClicked = () => {
+  const handleButtonClicked =() => {
     if ( !isLiked ) {
+      TiktokPixel.track('AddToWishlist', {
+        contents: [{
+          content_id: product.id,
+          content_name: product.name,
+          quantity: 1,
+          price: product.price
+        }],
+        content_type: 'product',
+        value: product.price,
+        currency: 'RON'
+      })
       handleAddProductToFavorites(product)
       setIsLiked(!isLiked)
     } else {

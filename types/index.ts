@@ -78,6 +78,7 @@ export type Faq2 = {
 export type Article = {
   title: string
   id: string
+  views: number
   description: string
   index: number
   featured: boolean

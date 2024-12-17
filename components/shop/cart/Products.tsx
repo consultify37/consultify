@@ -10,6 +10,8 @@ import Link from 'next/link'
 import VoucherForm from './VoucherForm'
 import { calculateCouponValue } from '../../../utils/calculateCouponValue'
 import { calculateTotal } from '../../../utils/calculateTotal'
+import TiktokPixel from 'tiktok-pixel'
+import { useRouter } from 'next/navigation'
 
 type Props = {
   products: Product[]
@@ -17,6 +19,7 @@ type Props = {
 
 const Products = ({ products }: Props) => {
   const { currentUser } = useAuthContext()
+  const router = useRouter()
   const { handleRemoveProduct, coupon } = useCartContext()
   const [isLoading, setIsLoading] = useState(false)
   const [showInput, setShowInput] = useState(false)
@@ -25,6 +28,22 @@ const Products = ({ products }: Props) => {
   useEffect(() => {
     setEmail(currentUser?.email ? currentUser.email : '')
   }, [currentUser])
+
+  const initiateOrder = () => {
+    TiktokPixel.track('InitiateCheckout', {
+      contents: products.map((product) => ({
+        content_id: product.id,
+        content_name: product.name,
+        quantity: 1,
+        price: product.price
+      })),
+      content_type: 'product',
+      value: coupon ? calculateCouponValue(calculateCartTotal(products), coupon).coupon : calculateCartTotal(products),
+      currency: 'RON'
+    })
+
+    router.push("/shop/detali-comanda")
+  }
 
   return (
     <div className="flex flex-col lg:flex-row">
@@ -140,12 +159,12 @@ const Products = ({ products }: Props) => {
             }
 
             { !isLoading ?
-              <Link
-                href='/shop/detali-comanda'
+              <button
+                onClick={initiateOrder}
                 className='py-3 lg:py-4 w-full bg-primary flex items-center justify-center rounded-full hover:scale-105 transition-all mt-6'
               >
                 <p className='text-onPrimary font-semibold text-[14px]'>Inițiază comanda</p>
-              </Link> :
+              </button> :
               <ReactLoading type="spin" color="#8717F8" width={32} height={32} className='mt-6' />
             }
           </div>

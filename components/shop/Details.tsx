@@ -7,6 +7,7 @@ import { calculateCartTotal } from '../../utils/calculateCartTotal'
 import toast from 'react-hot-toast'
 import { useCartContext } from '../../context/CartContext'
 import { calculateCouponValue } from '../../utils/calculateCouponValue'
+import TiktokPixel from 'tiktok-pixel'
 
 type Props = {
   products: Product[]
@@ -42,6 +43,18 @@ const Details = ({ city, companyIdentityNumber, companyName, county, email, setS
       toast.error('Alege modalitatea de plată înainte să continui.')
       return
     }
+
+    TiktokPixel.track('AddPaymentInfo', {
+      contents: products.map((product) => ({
+        content_id: product.id,
+        content_name: product.name,
+        quantity: 1,
+        price: product.price
+      })),
+      content_type: 'product',
+      value: coupon ? calculateCouponValue(calculateCartTotal(products), coupon).coupon : calculateCartTotal(products),
+      currency: 'RON'
+    })
 
     setStep(3)
   }

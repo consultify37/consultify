@@ -5,6 +5,7 @@ import toast from "react-hot-toast"
 import { collection, documentId, getDocs, query, where } from "firebase/firestore"
 import { db } from "../firebase"
 import Modal from "../components/shop/Modal"
+import TiktokPixel from "tiktok-pixel"
 
 
 type CartContextType = {
@@ -81,21 +82,21 @@ export const CartContext = ({ children }: Props) => {
 
     Cookies.set('cart', JSON.stringify(cartIds))
 
-    setSelectedProduct(product) //
+    setSelectedProduct(product)
 
-    // TiktokPixel.track('AddToCart', {
-    //   contents: [{
-    //     content_id: product.id,
-    //     content_name: product.name,
-    //     quantity: 1,
-    //     price: product.price
-    //   }],
-    //   content_type: 'product',
-    //   value: product.price,
-    //   currency: 'RON'
-    // })
+    TiktokPixel.track('AddToCart', {
+      contents: [{
+        content_id: product.id,
+        content_name: product.name,
+        quantity: 1,
+        price: product.price
+      }],
+      content_type: 'product',
+      value: product.price,
+      currency: 'RON'
+    })
 
-    // toast.success('Produs adăugat în coșul de cumpărături.')
+    toast.success('Produs adăugat în coșul de cumpărături.')
   }
 
   const handleRemoveProduct = ( product: Product ) => {

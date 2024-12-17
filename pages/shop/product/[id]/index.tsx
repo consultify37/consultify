@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Product } from '../../../../types'
 import { NextPageContext } from 'next'
 import { collection, doc, getDoc, getDocs, limit, orderBy, query, where } from 'firebase/firestore'
@@ -16,6 +16,7 @@ import HeartButton from '../../../../components/shop/HeartButton'
 import Button from '../../../../components/shop/Button'
 import { useCartContext } from '../../../../context/CartContext'
 import FormatText2 from '../../../../utils/FormatText2'
+import TiktokPixel from 'tiktok-pixel'
 
 const items = [
   {
@@ -39,6 +40,20 @@ type Props = {
 
 const ProductPage = ({ product, featuredProducts }: Props) => {
   const { handleAddProduct } = useCartContext()
+
+  useEffect(() => {
+    TiktokPixel.track('ViewContent', {
+      contents: [{
+        content_id: product.id,
+        content_name: product.name,
+        quantity: 1,
+        price: product.price
+      }],
+      content_type: 'product',
+      value: product.price,
+      currency: 'RON'
+    })
+  }, [product])
 
   return (
     <>

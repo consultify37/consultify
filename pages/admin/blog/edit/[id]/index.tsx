@@ -186,7 +186,8 @@ const Edit = ({ initialCategories, article }: Props) => {
             </button>
           }
 
-          <p className='text-secondary text-[15px] font-semibold mb-2 mt-8'>Articol activ</p>
+          <p className='text-secondary text-[15px] font-semibold mt-8'>Vizualizări: {article.views ? article.views : 0}</p>
+          <p className='text-secondary text-[15px] font-semibold mb-2 mt-6'>Articol activ</p>
           <div
             className='flex flex-row items-center cursor-pointer w-fit'
             onClick={() => setActive(!active) }

@@ -8,6 +8,7 @@ import { addDoc, collection, doc, serverTimestamp, setDoc } from 'firebase/fires
 import Image from 'next/image'
 import ReactLoading from 'react-loading'
 import { useRouter } from 'next/navigation'
+import TiktokPixel from 'tiktok-pixel'
 
 const RegisterForm = () => {
   const router = useRouter()
@@ -46,6 +47,8 @@ const RegisterForm = () => {
       })
 
       subscribe && await addDoc(collection(db, 'newsletter'), { website: process.env.SITE, email })
+
+      TiktokPixel.track('CompleteRegistration', {})
 
       router.replace('/cont/comenzi')
     } catch (e: any) {
