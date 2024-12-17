@@ -5,7 +5,7 @@ import NewsLetter from "../../../components/global/newsletter"
 import News from "../../../components/Home/News/News"
 import reactHtmlParser from 'react-html-parser'
 import { formatter } from "../../../utils/formatter"
-import { collection, doc, getDoc, getDocs, limit, orderBy, query, updateDoc, where } from "firebase/firestore"
+import { collection, doc, getDoc, getDocs, increment, limit, orderBy, query, updateDoc, where } from "firebase/firestore"
 import { db } from "../../../firebase"
 import { Article, Product } from "../../../types"
 import { formatDate } from "../../../utils/formatDate"
@@ -26,9 +26,10 @@ const BlogPost = ({ article, articles, products }: Props) => {
     const pathName = usePathname()
 
     const addView = useCallback(async () => {
+        console.log(article.views)
         try {
             const ref = doc(collection(db, 'articles'), article.id)
-            await updateDoc(ref, { views: article.views ? article.views + 1 : 1 })
+            await updateDoc(ref, { views: increment(1) })
         } catch (e) {}
     }, [article])
 
