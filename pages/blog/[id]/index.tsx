@@ -26,7 +26,6 @@ const BlogPost = ({ article, articles, products }: Props) => {
     const pathName = usePathname()
 
     const addView = useCallback(async () => {
-        console.log(article.views)
         try {
             const ref = doc(collection(db, 'articles'), article.id)
             await updateDoc(ref, { views: increment(1) })
