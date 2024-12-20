@@ -8,7 +8,7 @@ import Cookies from "js-cookie"
 import { usePathname } from "next/navigation"
 import { useAuthContext } from "../../context/AuthContext"
 import { useCartContext } from "../../context/CartContext"
-import TiktokPixel from 'tiktok-pixel';
+import TiktokPixel from 'tiktok-pixel'
 
 const Header = () => {
   const { cart } = useCartContext()
