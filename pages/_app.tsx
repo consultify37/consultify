@@ -49,10 +49,9 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router.events])
 
   useEffect(() => {
-    const channel = Cookies.get('channel') 
-
-    if (!channel) {
       const referrer = document.referrer
+
+      Cookies.set('referrer', document.referrer )
 
       if ( referrer.includes('facebook.com') || referrer.includes('instagram.com') || referrer.includes('tiktok.com') ) {
         Cookies.set('channel', 'social-media')
@@ -69,7 +68,7 @@ export default function App({ Component, pageProps }: AppProps) {
       if ( referrer.includes('google.com') ) {
         Cookies.set('channel', 'google')
       }
-    }
+
   }, [])
 
   return (
