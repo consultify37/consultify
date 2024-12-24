@@ -23,7 +23,7 @@ const Success = () => {
           <p className='text-onPrimary font-semibold text-[14px] lg:text-16px'>Intră în cont</p>
         </Link>
 
-        <p className='text-[#959595] text-[14px] text-center max-w-[420px] mt-8'>Dacă până acum nu ai avut cont pe platforma Inspirely, ți-am creat unul nou, iar datele de logare le găsești pe mail.</p>
+        <p className='text-[#959595] text-[14px] text-center max-w-[420px] mt-8'>Dacă până acum nu ai avut cont pe platforma Consultify, ți-am creat unul nou, iar datele de logare le găsești pe mail.</p>
 
         <Image
           src='/images/success/Polygon 3 (5).svg'
