@@ -142,6 +142,8 @@ const Ecommerce = ({ products }: Props) => {
     fetchOrders()
   }, [month, year, fetchOrders])
 
+  console.log(year)
+
   return (
     <AdminLayout color='white'>
       <div className='flex flex-row'>
@@ -153,7 +155,7 @@ const Ecommerce = ({ products }: Props) => {
                 <div className='flex flex-row justify-between items-center'>
                   <p className='text-secondary'>Stadiu vânzări</p>
                   <div className='flex flex-row items-center'>
-                    { isLoadingChart && <ReactLoading type="spin" color="#0F52FF" width={20} height={20} /> }
+                    { isLoadingChart && <ReactLoading type="spin" color="#8717F8" width={20} height={20} /> }
                     <select 
                       className="bg-transparent text-[#8B8B8B] text-[14px] outline-none border-[#CCCCCC] border-[1px] rounded-[4px] p-2 cursor-pointer mx-2" 
                       name="luna"
@@ -175,10 +177,10 @@ const Ecommerce = ({ products }: Props) => {
                       onChange={(e) => setYear(Number(e.target.value))}
                       value={year}
                     >
-                        {years.map((category, index) => (
+                        {years.map((category) => (
                           <option 
                             key={category}
-                            value={'' + index} 
+                            value={category} 
                           >
                             {category}
                           </option>

@@ -152,10 +152,10 @@ const Admin = ({ article, users, banners }: Props) => {
                         onChange={(e) => setYear(Number(e.target.value))}
                         value={year}
                       >
-                          {years.map((category, index) => (
+                          {years.map((category) => (
                             <option 
                               key={category}
-                              value={'' + index} 
+                              value={category} 
                             >
                               {category}
                             </option>
