@@ -114,7 +114,7 @@ const Form = () => {
         cui, 
         telefon, 
         email, 
-        subscribe: false, 
+        subscribe: true, 
         nevoie: 'Consultanță Fonduri Europene', 
         mesaj, 
         website: process.env.SITE, 
