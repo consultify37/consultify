@@ -73,6 +73,7 @@ const Form = () => {
   const [referrer, setReferrer] = useState('')
   const [referrerUrl, setReferrerUrl] = useState('')
   const [leadSource, setLeadSource] = useState('7079')
+  const [subscribe, setSubscribe] = useState(true)
 
   useEffect(() => {
     setReferrerUrl(document.referrer)
@@ -114,7 +115,7 @@ const Form = () => {
         cui, 
         telefon, 
         email, 
-        subscribe: true, 
+        subscribe, 
         nevoie: 'Consultanță Fonduri Europene', 
         mesaj, 
         website: process.env.SITE, 
@@ -305,8 +306,13 @@ const Form = () => {
               Altă Variantă
           </option>
         </select>
+        <div className="flex self-start justify-center mb-6 ml-1">
+            <input 
+                checked={subscribe} onChange={(e) => setSubscribe(!subscribe) }
+                id="checkbox-newsletter" type="checkbox" className="w-4 min-w-[16px] cursor-pointer h-4 text-[#260056] rounded border-[2px] bg-[#F2F4FF] border-[#8717F8] outline-none" />
+            <label htmlFor="checkbox-newsletter" className="ml-2 -mt-[3px] text-md font-bold text-[#260056]">Aboneaza-te la newsletter-ul nostru pentru a primi cele mai bune oferte!</label>
+        </div>
         <p className="text-[12px] mb-4 text-secondary"> *Prin transmiterea acestui formular esti de acord cu <Link target="_blank" href="https://consultify.ro/termeni" className="underline">termenii și condițiile</Link> din site, precum și cu <Link target="_blank" className="underline" href="https://www.consultify.ro/politica-cookie">folosirea cookie-urilor</Link> și folosirea datelor tale personale conform <Link target="_blank" className="underline" href="https://www.consultify.ro/politica-confidentialitate">GDPR</Link> pentru a fi stocate, prelucrate și a fi contactat.</p>
-        
         <div className='flex items-center justify-center w-full h-[56px]'>
           { !isLoading ?
             <button    
