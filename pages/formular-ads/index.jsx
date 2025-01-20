@@ -174,8 +174,8 @@ const Form = () => {
                   className="rounded-xl w-full bg-[#fff] h-48 border-[#8717F8] text-ms border-2 p-[14px] outline-none" 
                   placeholder="Scrie aici mesajul tău"
                   required
-                  name="Detalii"
-                  data-field="DescriereProiect" data-table="Project" data-type id="Project_DescriereProiect_3235"
+                  // name="Detalii"
+                  data-field="DescriereProiect" data-table="Project" data-type name="Project[3235][DescriereProiect]" id="Project_DescriereProiect_3235"
               ></textarea>
           </div>
           <div className="flex w-full flex-col items-center justify-between mb-6">
