@@ -40,7 +40,7 @@ const Footer = () => {
                             <Link href='/comunicate-de-presa' className='font-semibold text-[#8717F8] text-[16px]'>Comunicate de Presă</Link>
                         </li>
                         <li>
-                            <Link href='/contact' className='font-semibold text-[#8717F8] text-[16px]'>Contact</Link>
+                            <button onClick={() => window.location.replace('/contact')} className='font-semibold text-[#8717F8] text-[16px]'>Contact</button>
                         </li>
                     </ul>
                 </div>
