@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react'
 import { db } from '../../firebase'
 import toast from 'react-hot-toast'
 import { useRouter } from 'next/router'
-import { PhoneInput } from 'react-international-phone'
 import ReactLoading from 'react-loading'
 import Head from 'next/head'
 
@@ -73,28 +72,35 @@ const Form = () => {
   const [judet, setJudet] = useState('')
   const [referrer, setReferrer] = useState('')
   const [referrerUrl, setReferrerUrl] = useState('')
+  const [leadSource, setLeadSource] = useState('7079')
 
   useEffect(() => {
     setReferrerUrl(document.referrer)
     
     if (document.referrer.includes('facebook')) {
+      setLeadSource('7002')
       setReferrer('facebook')
     } else if (document.referrer.includes('tiktok')) {
+      setLeadSource('7004')
       setReferrer('tiktok')
     } else if ( document.referrer.includes('instagram')) {
+      setLeadSource('7003')
       setReferrer('instagram')
     } else if ( document.referrer.includes('youtube')) {
       setReferrer('youtube')
     } else if ( document.referrer.includes('google')) {
+      setLeadSource('7073')
       setReferrer('google')
     } else if ( document.referrer.includes('whatsapp')) {
+      setLeadSource('7005')
       setReferrer('whatsapp')
     } else if ( document.referrer.includes('mail.google.com') || document.referrer.includes('mail.yahoo.com')) {
+      setLeadSource('7075')
       setReferrer('email')
     }
   }, [])
 
-  const onSubmit = async (e: any) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
     setIsLoading(true)
 
@@ -113,14 +119,13 @@ const Form = () => {
         mesaj, 
         website: process.env.SITE, 
         createdAt: serverTimestamp(),
-        judet,
         referrer,
         referrerUrl,
         leadSource: 'web form'
       })
 
       router.push('/thank-you-organic')
-    } catch (e: any) {
+    } catch (e) {
       toast.error('Ceva nu a mers bine. Încearcă din nou!')
     }
     
@@ -132,9 +137,11 @@ const Form = () => {
       <Head>
         <title>{`${process.env.SITE} | Formular`}</title>
       </Head>
+      <script async src="https://r3.minicrm.io/api/minicrm.js?t=1736945255"></script>
       <form 
         onSubmit={onSubmit}
         className="w-full md:w-[768px] md:min-w-[768px] max-w-[768px] p-6 py-16 sm:p-8 md:p-16 flex flex-col"
+        formhash="76959-0tmoj4ber60eocon8xd011vdct8xlk" action="https://r3.minicrm.io/Api/Signup" method="post" id="Web"
       >
           <h2 className="text-secondary font-bold mb-6 text-2xl md:text-3xl">Hai să lucrăm împreună!</h2>
           <p className="text-secondary text-[14px] md:text-[16px] mb-6">
@@ -150,9 +157,10 @@ const Form = () => {
                       value={nume}
                       onChange={(e) => setNume(e.target.value)}
                       type="text"
-                      name="Nume"
+                      // name="Nume"
                       className="rounded-xl w-full border-[#8717F8] text-ms leading-6 border-2 p-[14px] outline-none" 
                       placeholder="ex: Popescu Andrei"
+                      data-field="FirstName" data-table="Contact" data-type="Person" name="Contact[3237][FirstName]" id="Contact_FirstName_3237"
                   />
               </div>
           </div>
@@ -167,6 +175,7 @@ const Form = () => {
                   placeholder="Scrie aici mesajul tău"
                   required
                   name="Detalii"
+                  data-field="DescriereProiect" data-table="Project" data-type id="Project_DescriereProiect_3235"
               ></textarea>
           </div>
           <div className="flex w-full flex-col items-center justify-between mb-6">
@@ -187,8 +196,9 @@ const Form = () => {
                       onChange={(e) => setTelefon(e.target.value)}
                       type="tel"
                       placeholder="ex: 0700000000"
-                      name="Telefon"
+                      // name="Telefon"
                       className="rounded-xl w-full border-[#8717F8] text-ms leading-6 border-2 p-[14px] outline-none" 
+                      data-field="Phone" data-table="Contact" data-type="Person" name="Contact[3237][Phone]" id="Contact_Phone_3237"
                   />
               </div>
               <div className="flex flex-col w-full mt-6">
@@ -200,13 +210,14 @@ const Form = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       type="email"
-                      name="Email"
+                      // name="Email"
                       className="rounded-xl w-full border-[#8717F8] text-ms leading-6 border-2 p-[14px] outline-none" 
                       placeholder="ex: exemplu@email.com"
+                      data-field="Email" data-table="Contact" data-type="Person" name="Contact[3237][Email]" id="Contact_Email_3237"
                   />
               </div>
 
-              <div className="flex flex-col w-full mt-6">
+              {/* <div className="flex flex-col w-full mt-6">
                 <span className="text-secondary mb-2 font-semibold">
                     Județ / Sector (opțional)
                 </span>
@@ -220,15 +231,7 @@ const Form = () => {
                     <option value={item.name} key={item.code}>{item.name}</option>
                   ))}
                 </select>
-                {/* <input 
-                    type="text"
-                    name="Județ"
-                    value={judet}
-                    onChange={(e) => setJudet(e.target.value)}
-                    className="rounded-xl w-full border-[#8717F8] text-ms leading-6 border-2 p-[14px] outline-none" 
-                    placeholder="Județ"
-                /> */}
-            </div>
+            </div> */}
           </div>
           <div className="flex flex-col w-full mb-6">
             <span className="text-secondary mb-2 font-semibold">
@@ -236,11 +239,12 @@ const Form = () => {
             </span>
             <input
                 type="text"
-                name="Nume Firma"
+                // name="Nume Firma"
                 value={firma}
                 onChange={(e) => setFirma(e.target.value)}
                 className="rounded-xl w-full border-[#8717F8] text-ms leading-6 border-2 p-[14px] outline-none" 
                 placeholder="Nume firmă"
+                data-field="Name" data-table="Contact" data-type="Business" name="Contact[3236][Name]" id="Contact_Name_3236"
             />
         </div>
         <div className="flex flex-col w-full mb-8">
@@ -249,13 +253,58 @@ const Form = () => {
             </span>
             <input
                 type="text"
-                name="CUI"
+                // name="CUI"
                 value={cui}
                 onChange={(e) => setCui(e.target.value)}
                 className="rounded-xl w-full border-[#8717F8] text-ms leading-6 border-2 p-[14px] outline-none" 
                 placeholder="CUI"
+                data-field="VatNumber" data-table="Contact" data-type="Business" name="Contact[3236][VatNumber]" id="Contact_VatNumber_3236"
             />
         </div>
+        <select hidden data-field="Sursa2" data-table="Project" data-type name="Project[3235][Sursa2]" id="Project_Sursa2_3235" onChange={(e) => setLeadSource(e.target.value)} value={leadSource}>
+          <option value="7072">
+              Site Web
+          </option>
+          <option value="7073">
+              Google Ads
+          </option>
+          <option value="7002">
+              Facebook
+          </option>
+          <option value="7003">
+              Instagram
+          </option>
+          <option value="7004">
+              TikTok
+          </option>
+          <option value="7074">
+              Telefon
+          </option>
+          <option value="7075">
+              Email
+          </option>
+          <option value="7005">
+              WhatsApp
+          </option>
+          <option value="7018">
+              Recomandare
+          </option>
+          <option value="7019">
+              Parteneri
+          </option>
+          <option value="7076">
+              Cercetare Proprie Operator
+          </option>
+          <option value="7077">
+              Relație Proprie Operator
+          </option>
+          <option value="7078">
+              Baza de Date Rece
+          </option>
+          <option value="7079">
+              Altă Variantă
+          </option>
+        </select>
         <p className="text-[12px] mb-4 text-secondary"> *Prin transmiterea acestui formular esti de acord cu <Link target="_blank" href="https://consultify.ro/termeni" className="underline">termenii și condițiile</Link> din site, precum și cu <Link target="_blank" className="underline" href="https://www.consultify.ro/politica-cookie">folosirea cookie-urilor</Link> și folosirea datelor tale personale conform <Link target="_blank" className="underline" href="https://www.consultify.ro/politica-confidentialitate">GDPR</Link> pentru a fi stocate, prelucrate și a fi contactat.</p>
         
         <div className='flex items-center justify-center w-full h-[56px]'>

@@ -51,7 +51,7 @@ export default function Contact() {
 
             const collectionRef = collection(db, 'contactForms')
 
-            await addDoc(collectionRef, { nume, prenume, firma, cui, telefon, email, subscribe: newsletter, nevoie, mesaj, leadSource: 'Site Web: Form Contact', website: process.env.SITE, createdAt: serverTimestamp(), referrer: "consultify", referrerUrl: "" } )
+            await addDoc(collectionRef, { nume, prenume, firma, cui, telefon, email, subscribe: newsletter, nevoie, mesaj, leadSource: 'Site Web: Form Contact', website: process.env.SITE, createdAt: serverTimestamp(), referrer: "site web", referrerUrl: "" } )
             newsletter && await addDoc(collection(db, 'newsletter'), { website: process.env.SITE, email: email })
 
             toast.success(`Mulțumim! Un reprezentant ${process.env.SITE} te va contacta în curând. 🚀`, { duration: 5000, style: { textAlign: 'center' } })
@@ -295,10 +295,10 @@ export default function Contact() {
                             data-field="DescriereProiect" data-table="Project" data-type name="Project[3235][DescriereProiect]" id="Project_DescriereProiect_3235"
                         ></textarea>
                     </div>
-                    <select hidden data-field="Sursa2" data-table="Project" defaultValue='7072' data-type name="Project[3235][Sursa2]" id="Project_Sursa2_3235">
-                        {/* <option value="7072" selected>
+                    <select hidden data-field="Sursa2" data-table="Project" data-type name="Project[3235][Sursa2]" id="Project_Sursa2_3235">
+                        <option value="7072">
                             Site Web
-                        </option> */}
+                        </option>
                     </select>
                     <div className="flex items-center self-start justify-center mb-6 ml-1">
                         <input 
