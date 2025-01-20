@@ -28,13 +28,11 @@ export default function Contact() {
 
     const [isChecked, setIsChecked] = useState(false)
     const [newsletter, setNewsletter] = useState(true)
-    const [captchaVerified, setCaptchaVerified] = useState(false)
+    const [captchaVerified, setCaptchaVerified] = useState(true)
 
     const upload = async (e) => {
         e.preventDefault()
         setIsLoading(false)
-        const form = e.target // The form element that triggered the event
-        const formData = new FormData(form)
 
         if (!isChecked) {
             toast.error('Acceptă termenii și condițiile mai întăi.')
@@ -49,7 +47,7 @@ export default function Contact() {
         }
 
         try {
-            await axios.post("https://r3.minicrm.io/Api/Signup", formData)
+            // await axios.post("https://r3.minicrm.io/Api/Signup", formData)
 
             const collectionRef = collection(db, 'contactForms')
 
@@ -169,8 +167,8 @@ export default function Contact() {
                     className="mt-12 lg:mt-0 lg:ml-12 rounded-3xl shadow-box bg-[#fff] w-full max-w-[1000px] p-8 px-4 md:px-8 flex flex-col"
                     onSubmit={upload}
                     formhash="76959-0tmoj4ber60eocon8xd011vdct8xlk" 
-                    // action="https://r3.minicrm.io/Api/Signup"
-                    // method="post" 
+                    action="https://r3.minicrm.io/Api/Signup"
+                    method="post" 
                     id="Web"
                 >
                     <h2 className="text-xl font-bold mb-10 md:text-2xl text-center">Hai să lucrăm împreună!</h2>
@@ -308,24 +306,25 @@ export default function Contact() {
                             id="link-checkbox" type="checkbox" className="w-4 min-w-[16px] cursor-pointer h-4 text-[#260056] rounded border-[2px] bg-[#F2F4FF] border-[#8717F8] outline-none" />
                         <label htmlFor="link-checkbox" className="ml-2 text-md font-bold text-[#260056]">Accept <Link href="/termeni" target="_blank" className="text-[#260056] underline">Termenii și Condițiile.</Link></label>
                     </div>
-                    {/* <div className="flex self-start justify-center mb-6 ml-1">
+                    <div className="flex self-start justify-center mb-6 ml-1">
                         <input 
                             checked={newsletter} onChange={(e) => setNewsletter(!newsletter) }
                             id="checkbox-newsletter" type="checkbox" className="w-4 min-w-[16px] cursor-pointer h-4 text-[#260056] rounded border-[2px] bg-[#F2F4FF] border-[#8717F8] outline-none" />
                         <label htmlFor="checkbox-newsletter" className="ml-2 -mt-[3px] text-md font-bold text-[#260056]">Aboneaza-te la newsletter-ul nostru pentru a primi cele mai bune oferte!</label>
-                    </div> */}
+                    </div>
                     {/* <div hidden id="Response_76959-0tmoj4ber60eocon8xd011vdct8xlk" style={{display: 'none'}}></div> */}
                     <div className="flex flex-col md:flex-row justify-center w-full items-center">
-                        <ReCAPTCHA
+                        {/* <ReCAPTCHA
                             sitekey="6LdWV_AoAAAAAMMdYLnmy_NUtbetbPGYWHOOhery"
                             onChange={(e) => setCaptchaVerified(!captchaVerified)}
-                        />
+                        /> */}
                         { isLoading ? 
                             <div className='w-full flex items-center justify-center px-16 mt-4 md:mt-0'>
                                 <ReactLoading type="spin" color="#8717F8" width={32} height={32} />
                             </div> :
                             <button                      
-                                className='py-3 md:py-4 mt-4 md:mt-0 md:ml-4 bg-[#8717F8] h-fit text-white rounded-[28px] font-semibold px-14 text-center text-md md:text-[16px] hover:scale-[1.05] transition-all'
+                                disabled={!captchaVerified || !isChecked}
+                                className='py-3 md:py-4 mt-4 md:mt-0 md:ml-4 w-full bg-[#8717F8] disabled:bg-slate-300 h-fit text-white rounded-[28px] font-semibold px-14 text-center text-md md:text-[16px] hover:scale-[1.05] disabled:hover:scale-100 transition-all'
                                 type="submit"
                                 id="Submit_76959-0tmoj4ber60eocon8xd011vdct8xlk"
                             >
