@@ -138,11 +138,11 @@ const Form = () => {
       <Head>
         <title>{`${process.env.SITE} | Formular`}</title>
       </Head>
-      <script async src="https://r3.minicrm.io/api/minicrm.js?t=1736945255"></script>
+      <script async src="https://r3.minicrm.io/api/minicrm.js?t=1737382653"></script>
       <form 
-        onSubmit={onSubmit}
+        // onSubmit={onSubmit}
         className="w-full md:w-[768px] md:min-w-[768px] max-w-[768px] p-6 py-16 sm:p-8 md:p-16 flex flex-col"
-        formhash="76959-0tmoj4ber60eocon8xd011vdct8xlk" action="https://r3.minicrm.io/Api/Signup" method="post" id="Web"
+        formhash="76959-0cms2254ht0sqd5vymlt2nujnskyka" action="https://r3.minicrm.io/Api/Signup" method="post" id="Web"
       >
           <h2 className="text-secondary font-bold mb-6 text-2xl md:text-3xl">Hai să lucrăm împreună!</h2>
           <p className="text-secondary text-[14px] md:text-[16px] mb-6">
@@ -161,7 +161,7 @@ const Form = () => {
                       // name="Nume"
                       className="rounded-xl w-full border-[#8717F8] text-ms leading-6 border-2 p-[14px] outline-none" 
                       placeholder="ex: Popescu Andrei"
-                      data-field="FirstName" data-table="Contact" data-type="Person" name="Contact[3237][FirstName]" id="Contact_FirstName_3237"
+                      data-field="FirstName" data-table="Contact" data-type="Person" name="Contact[3279][FirstName]" id="Contact_FirstName_3279"
                   />
               </div>
           </div>
@@ -176,7 +176,7 @@ const Form = () => {
                   placeholder="Scrie aici mesajul tău"
                   required
                   // name="Detalii"
-                  data-field="DescriereProiect" data-table="Project" data-type name="Project[3235][DescriereProiect]" id="Project_DescriereProiect_3235"
+                  data-field="DescriereProiect" data-table="Project" data-type name="Project[3277][DescriereProiect]" id="Project_DescriereProiect_3277"
               ></textarea>
           </div>
           <div className="flex w-full flex-col items-center justify-between mb-6">
@@ -199,7 +199,7 @@ const Form = () => {
                       placeholder="ex: 0700000000"
                       // name="Telefon"
                       className="rounded-xl w-full border-[#8717F8] text-ms leading-6 border-2 p-[14px] outline-none" 
-                      data-field="Phone" data-table="Contact" data-type="Person" name="Contact[3237][Phone]" id="Contact_Phone_3237"
+                      data-field="Phone" data-table="Contact" data-type="Person" name="Contact[3279][Phone]" id="Contact_Phone_3279"
                   />
               </div>
               <div className="flex flex-col w-full mt-6">
@@ -214,7 +214,7 @@ const Form = () => {
                       // name="Email"
                       className="rounded-xl w-full border-[#8717F8] text-ms leading-6 border-2 p-[14px] outline-none" 
                       placeholder="ex: exemplu@email.com"
-                      data-field="Email" data-table="Contact" data-type="Person" name="Contact[3237][Email]" id="Contact_Email_3237"
+                      data-field="Email" data-table="Contact" data-type="Person" name="Contact[3279][Email]" id="Contact_Email_3279"
                   />
               </div>
 
@@ -245,7 +245,7 @@ const Form = () => {
                 onChange={(e) => setFirma(e.target.value)}
                 className="rounded-xl w-full border-[#8717F8] text-ms leading-6 border-2 p-[14px] outline-none" 
                 placeholder="Nume firmă"
-                data-field="Name" data-table="Contact" data-type="Business" name="Contact[3236][Name]" id="Contact_Name_3236"
+                data-field="Name" data-table="Contact" data-type="Business" name="Contact[3278][Name]" id="Contact_Name_3278"
             />
         </div>
         <div className="flex flex-col w-full mb-8">
@@ -259,10 +259,10 @@ const Form = () => {
                 onChange={(e) => setCui(e.target.value)}
                 className="rounded-xl w-full border-[#8717F8] text-ms leading-6 border-2 p-[14px] outline-none" 
                 placeholder="CUI"
-                data-field="VatNumber" data-table="Contact" data-type="Business" name="Contact[3236][VatNumber]" id="Contact_VatNumber_3236"
+                data-field="VatNumber" data-table="Contact" data-type="Business" name="Contact[3278][VatNumber]" id="Contact_VatNumber_3278"
             />
         </div>
-        <select hidden data-field="Sursa2" data-table="Project" data-type name="Project[3235][Sursa2]" id="Project_Sursa2_3235" onChange={(e) => setLeadSource(e.target.value)} value={leadSource}>
+        <select hidden data-field="Sursa2" data-table="Project" data-type name="Project[3277][Sursa2]" id="Project_Sursa2_3277" onChange={(e) => setLeadSource(e.target.value)} value={leadSource}>
           <option value="7072">
               Site Web
           </option>
@@ -306,17 +306,29 @@ const Form = () => {
               Altă Variantă
           </option>
         </select>
-        <div className="flex self-start justify-center mb-6 ml-1">
+        <input 
+            data-field="NumeleFormularului" 
+            data-table="Project" 
+            data-type 
+            name="Project[3277][NumeleFormularului]" 
+            id="Project_NumeleFormularului_3277" 
+            type="text" 
+            hidden
+            defaultValue="Formular organic"
+        />
+        {/* <div className="flex self-start justify-center mb-6 ml-1">
             <input 
                 checked={subscribe} onChange={(e) => setSubscribe(!subscribe) }
                 id="checkbox-newsletter" type="checkbox" className="w-4 min-w-[16px] cursor-pointer h-4 text-[#260056] rounded border-[2px] bg-[#F2F4FF] border-[#8717F8] outline-none" />
             <label htmlFor="checkbox-newsletter" className="ml-2 -mt-[3px] text-md font-bold text-[#260056]">Aboneaza-te la newsletter-ul nostru pentru a primi cele mai bune oferte!</label>
-        </div>
+        </div> */}
         <p className="text-[12px] mb-4 text-secondary"> *Prin transmiterea acestui formular esti de acord cu <Link target="_blank" href="https://consultify.ro/termeni" className="underline">termenii și condițiile</Link> din site, precum și cu <Link target="_blank" className="underline" href="https://www.consultify.ro/politica-cookie">folosirea cookie-urilor</Link> și folosirea datelor tale personale conform <Link target="_blank" className="underline" href="https://www.consultify.ro/politica-confidentialitate">GDPR</Link> pentru a fi stocate, prelucrate și a fi contactat.</p>
+        <div id="Response_76959-0cms2254ht0sqd5vymlt2nujnskyka" style={{display: 'none'}} className='mb-4 self-center text-center text-secondary'></div>
         <div className='flex items-center justify-center w-full h-[56px]'>
           { !isLoading ?
             <button    
-              type='submit'                  
+              type='submit'   
+              id="Submit_76959-0cms2254ht0sqd5vymlt2nujnskyka"               
               className='py-3 md:py-4 mt-4 md:mt-0 bg-[#8717F8] w-full h-fit text-white rounded-xl font-semibold px-14 text-center text-md md:text-[16px] hover:scale-[1.05] transition-all'
             >
                 Trimite!

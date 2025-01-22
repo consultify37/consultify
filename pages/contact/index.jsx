@@ -7,13 +7,11 @@ import toast from "react-hot-toast"
 import Rezultate from "../../components/Rezultate"
 import { PhoneInput } from 'react-international-phone'
 import 'react-international-phone/style.css'
-import ReCAPTCHA from "react-google-recaptcha"
 import PageHeader from "../../components/Header/PageHeader"
 import WhyUsItem1 from "../../components/Home/Why-Us/Item1"
 import ReactLoading from 'react-loading'
 import { addDoc, collection, serverTimestamp } from "firebase/firestore"
 import { db } from "../../firebase"
-import axios from "axios"
  
 export default function Contact() {
     const [nume, setNume] = useState('')
@@ -174,10 +172,10 @@ export default function Contact() {
                         </Link>
                     </div>
                 </div>
-                {/* <script async src="https://r3.minicrm.io/api/minicrm.js?t=1736945255"></script> */}
+                <script async src="https://r3.minicrm.io/api/minicrm.js?t=1737382653"></script>
                 <form 
                     className="mt-12 lg:mt-0 lg:ml-12 rounded-3xl shadow-box bg-[#fff] w-full max-w-[1000px] p-8 px-4 md:px-8 flex flex-col"
-                    onSubmit={upload}
+                    // onSubmit={upload}
                     formhash="76959-0tmoj4ber60eocon8xd011vdct8xlk" 
                     action="https://r3.minicrm.io/Api/Signup"
                     method="post" 
@@ -308,23 +306,33 @@ export default function Contact() {
                         ></textarea>
                     </div>
                     <select hidden data-field="Sursa2" data-table="Project" data-type name="Project[3235][Sursa2]" id="Project_Sursa2_3235">
-                        <option value="7072">
+                        <option value="7072" checked>
                             Site Web
                         </option>
                     </select>
+                    <input 
+                        data-field="NumeleFormularului" 
+                        data-table="Project" 
+                        data-type 
+                        name="Project[3235][NumeleFormularului]" 
+                        id="Project_NumeleFormularului_3235" 
+                        type="text" 
+                        hidden
+                        defaultValue="Pagina de contact"
+                    />
                     <div className="flex items-center self-start justify-center mb-6 ml-1">
                         <input 
                             checked={isChecked} onChange={(e) => setIsChecked(!isChecked) }
                             id="link-checkbox" type="checkbox" className="w-4 min-w-[16px] cursor-pointer h-4 text-[#260056] rounded border-[2px] bg-[#F2F4FF] border-[#8717F8] outline-none" />
                         <label htmlFor="link-checkbox" className="ml-2 text-md font-bold text-[#260056]">Accept <Link href="/termeni" target="_blank" className="text-[#260056] underline">Termenii și Condițiile.</Link></label>
                     </div>
-                    <div className="flex self-start justify-center mb-6 ml-1">
+                    {/* <div className="flex self-start justify-center mb-6 ml-1">
                         <input 
                             checked={newsletter} onChange={(e) => setNewsletter(!newsletter) }
                             id="checkbox-newsletter" type="checkbox" className="w-4 min-w-[16px] cursor-pointer h-4 text-[#260056] rounded border-[2px] bg-[#F2F4FF] border-[#8717F8] outline-none" />
                         <label htmlFor="checkbox-newsletter" className="ml-2 -mt-[3px] text-md font-bold text-[#260056]">Aboneaza-te la newsletter-ul nostru pentru a primi cele mai bune oferte!</label>
-                    </div>
-                    {/* <div hidden id="Response_76959-0tmoj4ber60eocon8xd011vdct8xlk" style={{display: 'none'}}></div> */}
+                    </div> */}
+                    <div hidden id="Response_76959-0tmoj4ber60eocon8xd011vdct8xlk" style={{display: 'none'}} className="mb-4 self-center text-center text-secondary"></div>
                     <div className="flex flex-col md:flex-row justify-center w-full items-center">
                         {/* <ReCAPTCHA
                             sitekey="6LdWV_AoAAAAAMMdYLnmy_NUtbetbPGYWHOOhery"
