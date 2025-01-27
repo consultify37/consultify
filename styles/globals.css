@@ -121,6 +121,23 @@ html.normal-scroll {
   .carousel-fonduri .rec-dot { margin-top: 180px !important; }
 }
 
+.carousel-landing .rec-dot {
+  width: 6px;
+  height: 6px;
+  box-shadow: none !important;
+  background-color: #fff !important;
+  opacity: 22%;
+}
+.carousel-landing .rec-dot_active {
+  background-color: #fff !important;
+  opacity: 100%;
+}
+
+
+.carousel-landing .rec-item-wrapper {
+  height: 100% !important;
+}
+
 .rec-dot_active {background-color: #8717F8 !important; box-shadow: 0 0 1px 2px #8717F8 !important;}
 .rec-item-wrapper {overflow: inherit !important; }
 .rec-pagination {align-items: center !important;}

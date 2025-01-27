@@ -78,7 +78,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <div className="flex flex-col">
             <GoogleAnalytics gaId='G-4C611TDECB'/>
             <GoogleTagManager gtmId='GTM-TNQ5NR9B' />
-            { !pathname?.includes('/admin') && !pathname?.includes('/formular') ?
+            { !pathname?.includes('/admin') && !pathname?.includes('/formular') && !pathname?.includes('/landing-page') ?
               <>
                 <Analytics />
                 <TopBar />
@@ -90,7 +90,7 @@ export default function App({ Component, pageProps }: AppProps) {
               <Toaster />
               <CookiePolicy />
             </main>
-            { !pathname?.includes('/admin') && !pathname?.includes('/formular') ?
+            { !pathname?.includes('/admin') && !pathname?.includes('/formular') && !pathname?.includes('/landing-page') ?
               <Footer /> : null
             }
           </div>

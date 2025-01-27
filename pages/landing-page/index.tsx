@@ -1,0 +1,88 @@
+import React from 'react'
+import LandingTopbar from '../../components/landing-page/LandingTopbar'
+import Head from 'next/head'
+import LandingPageImages from '../../components/landing-page/LandingPageImages'
+import MainInfo from '../../components/landing-page/MainInfo'
+import FeatureBadges from '../../components/landing-page/FeatureBadges'
+import Info from '../../components/landing-page/Info'
+import PrimaryFeatures from '../../components/landing-page/PrimaryFeatures'
+import Timer from '../../components/landing-page/Timer'
+import ContentComponent from '../../components/landing-page/ContentComponent'
+import HeaderLandingTestimonials from '../../components/landing-page/HeaderLandingTestimonials'
+import LandingTestimonials from '../../components/landing-page/LandingTestimonials'
+import MoreInfo from '../../components/landing-page/MoreInfo'
+import CTAButton from '../../components/landing-page/CTAButton'
+import Image from 'next/image'
+import FeaturesTable from '../../components/landing-page/FeaturesTable'
+import FAQ from '../../components/landing-page/FAQ'
+import LandingFooter from '../../components/landing-page/LandingFooter'
+
+const LandingPage = () => {
+  return (
+    <div className=''>
+      <Head>
+        <title>{`Cumpără acum!`}</title>
+      </Head>
+      <LandingTopbar />
+      <div className='max-w-lg px-8 mx-auto w-full'>
+        <LandingPageImages />
+        <FeatureBadges />
+        <MainInfo />
+      </div>
+
+      <Info />
+
+      <div className='max-w-lg px-8 mx-auto w-full mt-6'>
+        <PrimaryFeatures />
+        <Timer />
+        <ContentComponent 
+          title='Cea mai eficientă metoda de a atrage fonduri europene pentru afacerea ta!'
+          image='/landing-page/images/Group 720.png'
+          text1='Transformă-ți visul de a deveni antreprenor <b>în realitate!<b> 🏆 Acest pachet unic conține flashcards educative și intuitive, concepute să îți ofere <b>toate informațiile esențiale<b> despre programul Start Up Nation.'
+          text2='În plus, beneficiezi de un bonus exclusiv: o sesiune <b>GRATUITĂ<b> de consultanță în fonduri europene cu un <b>expert dedicat!<b> Află cum să obții finanțare 💰 pentru afacerea ta și <b>fă primii pași spre succes<b>, fără riscuri și fără stres.'
+        />
+      </div>
+
+      <div className='w-full mt-8 bg-secondary'>
+        <div className='max-w-lg mx-auto py-10'>
+          <HeaderLandingTestimonials />
+          <LandingTestimonials />
+        </div>
+      </div>
+
+      <div className='max-w-lg px-8 mx-auto w-full mt-8'>
+        <Timer />
+        <ContentComponent 
+          title='FLASHCARDS - cum sa înveți eficient despre programul Start Up Nation'
+          image='/landing-page/images/Group 720.png'
+          text1='Perfecte pentru oricine dorește să acceseze <b>fonduri europene<b> sau să își deschidă o afacere, aceste flashcards sunt ideale ✅ atât pentru începători, cât și pentru cei care vor să fie <b>mereu organizați și informați.<b>'
+        />
+        <MoreInfo />
+        <CTAButton />
+        <Image 
+          src='/landing-page/images/Group 720.png'
+          width={1024}
+          height={1024}
+          alt='imagine'
+          className='w-full h-auto mt-8 rounded-lg'
+        />
+        <FeaturesTable />
+        <Timer />
+        <ContentComponent 
+          title='Ședința de consultanță care poate atrage fonduri pentru afacerea ta!'
+          image='/landing-page/images/Group 720.png'
+          text1='Profită de o ședință <b>complet gratuită<b> cu un expert în accesarea fondurilor europene! Această sesiune este creată special <b>pentru a răspunde întrebărilor<b> tale 🤩 și pentru a te ghida pe drumul obținerii finanțării prin programul <b>Start Up Nation.<b>'
+          text2='Nu contează <b>dacă ești la început de drum<b> sau deja ai o idee bine conturată, această sesiune te va ajuta să <b>câștigi încredere<b> și să iei decizii informate.'
+          text3='Comandă acum și vei avea parte de <b>ședința gratuită<b> prin care poți descoperi cum să transformi visul tău antreprenorial în realitate!'
+        />
+        <div className='mt-8'>
+          <CTAButton />
+        </div>
+        <FAQ />
+        <LandingFooter />
+      </div>
+    </div>
+  )
+}
+
+export default LandingPage

@@ -17,9 +17,14 @@ module.exports = {
         "admin-background": "#F6EFFF6B",
         "admin-card": "#F0E4FF",
         "admin-header": "#cfacfa",
-        "price": "#04D200"
+        "price": "#04D200",
+        "landing-green-400": "#04D200",
+        "landing-green-700": "#3A9301"
       },
     },
   },
-  plugins: [require("tailwind-scrollbar")],
+  plugins: [
+    require("tailwind-scrollbar"),
+    require('daisyui')
+  ],
 };
