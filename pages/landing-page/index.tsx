@@ -16,6 +16,7 @@ import Image from 'next/image'
 import FeaturesTable from '../../components/landing-page/FeaturesTable'
 import FAQ from '../../components/landing-page/FAQ'
 import LandingFooter from '../../components/landing-page/LandingFooter'
+import FixedCTAButton from '../../components/landing-page/FixedCTAButton'
 
 const LandingPage = () => {
   return (
@@ -23,6 +24,7 @@ const LandingPage = () => {
       <Head>
         <title>{`Cumpără acum!`}</title>
       </Head>
+      <FixedCTAButton />
       <LandingTopbar />
       <div className='max-w-lg px-8 mx-auto w-full'>
         <LandingPageImages />
@@ -58,7 +60,7 @@ const LandingPage = () => {
           text1='Perfecte pentru oricine dorește să acceseze <b>fonduri europene<b> sau să își deschidă o afacere, aceste flashcards sunt ideale ✅ atât pentru începători, cât și pentru cei care vor să fie <b>mereu organizați și informați.<b>'
         />
         <MoreInfo />
-        <CTAButton />
+        {/* <CTAButton /> */}
         <Image 
           src='/landing-page/images/Group 720.png'
           width={1024}
@@ -75,9 +77,9 @@ const LandingPage = () => {
           text2='Nu contează <b>dacă ești la început de drum<b> sau deja ai o idee bine conturată, această sesiune te va ajuta să <b>câștigi încredere<b> și să iei decizii informate.'
           text3='Comandă acum și vei avea parte de <b>ședința gratuită<b> prin care poți descoperi cum să transformi visul tău antreprenorial în realitate!'
         />
-        <div className='mt-8'>
+        {/* <div className='mt-8'>
           <CTAButton />
-        </div>
+        </div> */}
         <FAQ />
         <LandingFooter />
       </div>
