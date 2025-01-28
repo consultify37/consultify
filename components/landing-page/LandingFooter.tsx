@@ -4,7 +4,7 @@ import React from 'react'
 
 const LandingFooter = () => {
   return (
-    <footer className='mt-20 mb-8 w-full'>
+    <footer className='mt-20 mb-36 w-full'>
       <div className='flex flex-row gap-2 mt-4 w-full'>
         <Link href='https://anpc.ro/ce-este-sal/' target="_blank">
           <Image src='/images/anpc.png' alt='Anpc logo' width={180} height={49} className='w-full aspect-auto' />
