@@ -1,7 +1,11 @@
 import React from 'react'
 import CTAButton from './CTAButton'
 
-const MainInfo = () => {
+type Props = {
+  availableForSale: boolean
+}
+
+const MainInfo = ({ availableForSale }: Props) => {
   return (
     <div className='mt-6'>
       <h1 className='font-semibold text-xl'>FLASHCARDS START UP NATION + SEDINTA CONSULTANTA</h1>

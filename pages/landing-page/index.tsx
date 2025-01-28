@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import LandingTopbar from '../../components/landing-page/LandingTopbar'
 import Head from 'next/head'
 import LandingPageImages from '../../components/landing-page/LandingPageImages'
@@ -11,25 +11,55 @@ import ContentComponent from '../../components/landing-page/ContentComponent'
 import HeaderLandingTestimonials from '../../components/landing-page/HeaderLandingTestimonials'
 import LandingTestimonials from '../../components/landing-page/LandingTestimonials'
 import MoreInfo from '../../components/landing-page/MoreInfo'
-import CTAButton from '../../components/landing-page/CTAButton'
 import Image from 'next/image'
 import FeaturesTable from '../../components/landing-page/FeaturesTable'
 import FAQ from '../../components/landing-page/FAQ'
 import LandingFooter from '../../components/landing-page/LandingFooter'
 import FixedCTAButton from '../../components/landing-page/FixedCTAButton'
+import { storefrontApiClient } from '../../utils/shopify/storeFrontApiClient'
 
 const LandingPage = () => {
+  const [availableForSale, setAvailableForSale] = useState(true)
+
+  const fetchProduct = async () => {
+    try {
+      const query = `{
+        product(id: "gid://shopify/Product/9850857980225") {
+          title
+          id
+          availableForSale
+          variants(first: 1) {
+            nodes {
+              id
+            }
+          }
+        }
+      }`
+
+      const response: any = await storefrontApiClient(query)
+      if ( !response.data.product.availableForSale ) {
+        setAvailableForSale(false)
+      }
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  useEffect(() => {
+    fetchProduct()
+  }, [])
+
   return (
     <div className=''>
       <Head>
         <title>{`Cumpără acum!`}</title>
       </Head>
-      <FixedCTAButton />
+      <FixedCTAButton availableForSale={availableForSale} />
       <LandingTopbar />
       <div className='max-w-lg px-8 mx-auto w-full'>
         <LandingPageImages />
         <FeatureBadges />
-        <MainInfo />
+        <MainInfo availableForSale={availableForSale} />
       </div>
 
       <Info />

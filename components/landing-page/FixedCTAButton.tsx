@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import CTAButton from './CTAButton'
 
-const FixedCTAButton = () => {
+type Props = {
+  availableForSale: boolean
+}
+
+const FixedCTAButton = ({ availableForSale }: Props) => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
 
   const handleScroll = () => {
