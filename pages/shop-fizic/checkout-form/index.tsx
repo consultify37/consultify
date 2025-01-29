@@ -9,7 +9,7 @@ const Page = () => {
       <Head>
         <title>{`FLASHCARDS START UP NATION + SEDINTA CONSULTANTA`}</title>
       </Head>
-      <CheckoutForm />
+      <CheckoutForm discountCode={'none'} />
     </div>
   )
 }

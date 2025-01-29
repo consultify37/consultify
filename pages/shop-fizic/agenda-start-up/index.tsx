@@ -18,9 +18,11 @@ import LandingFooter from '../../../components/landing-page/LandingFooter'
 import FixedCTAButton from '../../../components/landing-page/FixedCTAButton'
 import { storefrontApiClient } from '../../../utils/shopify/storeFrontApiClient'
 import CheckoutForm from '../../../components/landing-page/CheckoutForm'
+import Offer from '../../../components/landing-page/Offer'
 
 const LandingPage = () => {
   const [availableForSale, setAvailableForSale] = useState(true)
+  const [discountCode, setDiscountCode] = useState< string |  null >(null)
 
   const fetchProduct = async () => {
     try {
@@ -57,8 +59,11 @@ const LandingPage = () => {
       </Head>
       <dialog id="my_modal_1" className="modal">
         <div className='modal-box'>
-          <CheckoutForm />
+          <CheckoutForm discountCode={discountCode} />
         </div>
+      </dialog>
+      <dialog id="my_modal_2" className='modal'>
+        <Offer setDiscountCode={setDiscountCode} />
       </dialog>
       <FixedCTAButton availableForSale={availableForSale} />
       <LandingTopbar />

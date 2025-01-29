@@ -10,9 +10,12 @@ import ExtraProducts from './form/ExtraProducts'
 import ContinueButton from './form/ContinueButton'
 import Link from 'next/link'
 
-const CheckoutForm = () => {
+type Props = {
+  discountCode: string | null
+}
+
+const CheckoutForm = ({ discountCode }: Props) => {
   const router = useRouter()
-  const [totalPrice, setTotalPrice] = useState(199)
   const [loading, setLoading] = useState(false)
   const [items, setItems] = useState<{
     handle?: string
@@ -64,6 +67,7 @@ const CheckoutForm = () => {
       const variables = {
         input: { 
           lines: items.map((item) => ({ merchandiseId: item.merchandiseId, quantity: item.quantity })),
+          discountCodes: [discountCode],
           buyerIdentity: {
             email: formData.get('Email'),
             deliveryAddressPreferences: {
@@ -92,11 +96,16 @@ const CheckoutForm = () => {
     setLoading(false)
   }
 
+  const openOfferModal = () => {
+    const element = document.getElementById('my_modal_2') as any
+    element.showModal()
+  }
+
   return (
     <div className='flex flex-col pb-2 items-center'>
       <div className='flex flex-row items-center justify-between w-full'>
         <h1 className='font-bold text-[21px]'>Introdu adresa ta de livrare</h1>
-        <form method="dialog" className='translate-x-4'>
+        <form onSubmit={openOfferModal} method="dialog" className='translate-x-4'>
           <button className='btn btn-ghost'>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -238,7 +247,7 @@ const CheckoutForm = () => {
         <ProductElementForm setItems={setItems} />
         <Shipping />
         <ExtraProducts setItems={setItems} />
-        <TotalPriceContainer items={items} />
+        <TotalPriceContainer items={items} discountCode={discountCode} />
         
         <p className='font-semibold text-sm mt-6'>Plătești doar când coletul ajunge la tine sau achită cu cardul 💳 și primești un cadou din partea noastră! </p>
         <div className='mt-4 flex items-center gap-x-2'>
