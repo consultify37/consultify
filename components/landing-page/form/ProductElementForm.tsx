@@ -1,0 +1,88 @@
+import Image from 'next/image'
+import React, { useState } from 'react'
+
+type Props = {
+  setItems: React.Dispatch<React.SetStateAction<{
+    handle?: string
+    name: string
+    price: number
+    image: string
+    merchandiseId: string
+    quantity?: number
+  }[]>>
+}
+
+const ProductElementForm = ({ setItems}: Props) => {
+  const [selected, setSelected] = useState(1)
+  const handleClick = (newQuantity: number) => {
+    setSelected(newQuantity)
+    setItems((items) => {
+      return items.map((item) => {
+        if (item.handle == 'agenda-start-up') {
+          if (newQuantity == 1) {
+            return ({
+              handle: 'agenda-start-up',
+              name: 'FLASHCARDS START UP NATION + SEDINTA CONSULTANTA',
+              merchandiseId: 'gid://shopify/ProductVariant/49997034619201',
+              price: 199,
+              image: '/landing-page/images/Group 722.png',
+              quantity: 1
+            })
+          } else {
+            return ({
+              handle: 'agenda-start-up',
+              name: 'FLASHCARDS START UP NATION + SEDINTA CONSULTANTA',
+              merchandiseId: 'gid://shopify/ProductVariant/49997034619201',
+              price: 368,
+              image: '/landing-page/images/Group 722.png',
+              quantity: 2
+            })
+          }
+        } else {
+          return item
+        }
+      })
+    })
+  }
+  return (
+    <>
+      <p className='py-4 pt-8 font-bold self-center text-center text-[15px]'>Salvează 30 de lei! 🤝 Începeți afacerea cu un prieten! 🚀</p>
+      <div onClick={() => handleClick(1)} className={`flex p-4 hover:cursor-pointer border-2 rounded-md items-center gap-x-2 w-full justify-between ${selected == 1 ? 'border-secondary bg-admin-background' : 'border-[#E4E4E4]'}`}>
+        <Image 
+          src="/landing-page/images/Group 722.png"
+          width={256}
+          height={256}
+          alt='Consultanta Start-Up Nation'
+          className='w-16 h-16 rounded-md'
+        />
+        <p className='font-bold text-xs'>1x FLASHCARDS START UP NATION</p>
+        <div className='flex flex-col items-end'>
+          <p className='font-bold'>199lei</p>
+          <p className='font-bold text-[#E4E4E4] line-through text-sm'>399lei</p>
+        </div>
+      </div>
+
+      <div onClick={() => handleClick(2)} className={`flex hover:cursor-pointer p-4 mt-4 border-2 rounded-md items-center gap-x-2 w-full justify-between ${selected == 2 ? 'border-secondary bg-admin-background' : 'border-[#E4E4E4]'}`}>
+        <Image 
+          src="/landing-page/images/Group 722.png"
+          width={256}
+          height={256}
+          alt='Consultanta Start-Up Nation'
+          className='w-16 h-16 rounded-md'
+        />
+        <div>
+          <p className='font-bold text-xs'>2x FLASHCARDS START UP NATION</p>
+          <div className='p-1 px-2 rounded-md bg-green-500 text-xs text-white font-semibold w-fit'>
+            Salvezi 30lei
+          </div>
+        </div>
+        <div className='flex flex-col items-end'>
+          <p className='font-bold'>368lei</p>
+          <p className='font-bold text-[#E4E4E4] line-through text-sm'>798lei</p>
+        </div>
+      </div>
+    </>
+  )
+}
+
+export default ProductElementForm

@@ -1,59 +1,33 @@
-import React, { useState } from 'react'
-import { storefrontApiClient } from '../../utils/shopify/storeFrontApiClient'
-import { useRouter } from 'next/navigation'
+import Link from "next/link"
+import { useEffect, useState } from "react";
 
 const CTAButton = () => {
-  const router = useRouter()
-  const [loading, setLoading] = useState(false)
-  const createCart = async () => {
-    setLoading(true)
+  const [isBouncing, setIsBouncing] = useState(false)
 
-    try {
-      const query = `mutation cartCreate($input: CartInput) {
-        cartCreate(input: $input) {
-          cart {
-            id
-            checkoutUrl
-            lines(first: 10) {
-              edges {
-                node {
-                  id
-                }
-              }
-            }
-          }
-          userErrors {
-            field
-            message
-          }
-          warnings {
-            code
-            message
-            target
-          }
-        }
-      }`
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsBouncing(true)
+      // Remove the bounce class after 2.5 second (duration of the bounce)
+      setTimeout(() => setIsBouncing(false), 2500)
+    }, 10000) // 10 seconds interval
 
-      const variables = {
-        input: { 
-          lines: [{ merchandiseId: "gid://shopify/ProductVariant/49997034619201"}],
-        }
-      }
+    return () => clearInterval(interval)
+  }, [])
 
-      const response: any = await storefrontApiClient(query, variables)
-      console.log(response.data)
-      router.push(response.data.cartCreate.cart.checkoutUrl)
-    } catch (e) {
-      console.log(e)
-    }
-
-    setLoading(false)
+  const openModal = () => {
+    const element = document.getElementById('my_modal_1') as any
+    element.showModal()
   }
 
   return (
-    <button onClick={createCart} className='flex flex-col rounded-md shadow-md items-center py-[10px] active:scale-95 transition-all duration-300 w-full bg-landing-green-400 hover:bg-landing-green-700 text-white border-landing-green-700 border-2'>
+    <button 
+      onClick={openModal}
+      // href='/shop-fizic/checkout-form' 
+      className={`${isBouncing ? "animate-bounce" : ""} flex flex-col rounded-md shadow-md items-center py-[10px] active:scale-95 transition-all duration-300 w-full bg-landing-green-400 hover:bg-landing-green-700 text-white border-landing-green-700 border-2`}
+    >
       <span className='text-xl font-bold'>COMANDĂ ACUM</span>
       <span className='text-sm'>+ Ședința de consultanță gratuită</span>
+      <p className="hidden animate-bounce"></p>
     </button>
   )
 }

@@ -17,6 +17,7 @@ import FAQ from '../../../components/landing-page/FAQ'
 import LandingFooter from '../../../components/landing-page/LandingFooter'
 import FixedCTAButton from '../../../components/landing-page/FixedCTAButton'
 import { storefrontApiClient } from '../../../utils/shopify/storeFrontApiClient'
+import CheckoutForm from '../../../components/landing-page/CheckoutForm'
 
 const LandingPage = () => {
   const [availableForSale, setAvailableForSale] = useState(true)
@@ -35,7 +36,7 @@ const LandingPage = () => {
           }
         }
       }`
-
+      
       const response: any = await storefrontApiClient(query)
       if ( !response.data.product.availableForSale ) {
         setAvailableForSale(false)
@@ -52,8 +53,13 @@ const LandingPage = () => {
   return (
     <div className=''>
       <Head>
-        <title>{`Cumpără acum!`}</title>
+        <title>{`FLASHCARDS START UP NATION + SEDINTA CONSULTANTA`}</title>
       </Head>
+      <dialog id="my_modal_1" className="modal">
+        <div className='modal-box'>
+          <CheckoutForm />
+        </div>
+      </dialog>
       <FixedCTAButton availableForSale={availableForSale} />
       <LandingTopbar />
       <div className='max-w-lg px-8 mx-auto w-full'>
