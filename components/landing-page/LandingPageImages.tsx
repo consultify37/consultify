@@ -15,7 +15,7 @@ const LandingPageImages = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   return (
-    <div className='pt-8 w-full'>
+    <div className='pt-14 w-full'>
       <Image 
         src={images[currentIndex]}
         width={1024}

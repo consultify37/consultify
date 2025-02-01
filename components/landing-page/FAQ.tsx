@@ -1,22 +1,27 @@
 import React from 'react'
+import Bolder from './Bolder'
 
 const questions = [
   { 
-    question: 'Ce se întâmplă dacă pun o întrebare?',
-    answear: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultricies nibh vel massa iaculis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pretium ac orci at convallis. Vivamus a auctor sapien, sed viverra erat. Cras aliquam auctor urna. Pellentesque molestie orci quis leo ornare dapibus. Nulla auctor finibus aliquam. Etiam vitae efficitur orci, id gravida sapien. Nulla facilisis est lorem, tincidunt elementum felis bibendum eu.'
+    question: '1. Ce conțin flashcard-urile și cum mă pot ajuta?',
+    answear: 'Flashcard-urile sunt structurate astfel încât să îți ofere rapid informații esențiale despre accesarea fondurilor nerambursabile. Ai explicații clare despre eligibilitate, etapele procesului, greșeli de evitat și sfaturi practice. Practic, sunt un ghid compact care îți simplifică drumul către finanțare, fără să pierzi timp căutând informații peste tot.'
   },
   { 
-    question: 'Ce se întâmplă dacă pun o întrebare?',
-    answear: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultricies nibh vel massa iaculis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pretium ac orci at convallis. Vivamus a auctor sapien, sed viverra erat. Cras aliquam auctor urna. Pellentesque molestie orci quis leo ornare dapibus. Nulla auctor finibus aliquam. Etiam vitae efficitur orci, id gravida sapien. Nulla facilisis est lorem, tincidunt elementum felis bibendum eu.'
+    question: '2. Trebuie să am cunoștințe în domeniu ca să le înțeleg?',
+    answear: 'Nu, flashcard-urile sunt concepute pentru oricine vrea să acceseze fonduri, indiferent de experiență. Explicațiile sunt simple, fără termeni complicați, astfel încât să înțelegi totul ușor, chiar dacă nu ai mai avut contact cu acest domeniu.'
   },
   { 
-    question: 'Ce se întâmplă dacă pun o întrebare?',
-    answear: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultricies nibh vel massa iaculis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pretium ac orci at convallis. Vivamus a auctor sapien, sed viverra erat. Cras aliquam auctor urna. Pellentesque molestie orci quis leo ornare dapibus. Nulla auctor finibus aliquam. Etiam vitae efficitur orci, id gravida sapien. Nulla facilisis est lorem, tincidunt elementum felis bibendum eu.'
+    question: '3. După ce le parcurg, ce ar trebui să fac mai departe?',
+    answear: 'Odată ce ai parcurs flashcard-urile și ai înțeles pașii esențiali, următorul pas este să aplici ceea ce ai învățat. Poți începe să pregătești documentele de bază și să îți consolidezi planul de afaceri. De asemenea, ai la dispoziție <b>sesiunea de consultanță gratuită<b>, unde poți pune întrebări specifice și primi îndrumări personalizate pentru proiectul tău.'
   },
   { 
-    question: 'Ce se întâmplă dacă pun o întrebare?',
-    answear: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultricies nibh vel massa iaculis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pretium ac orci at convallis. Vivamus a auctor sapien, sed viverra erat. Cras aliquam auctor urna. Pellentesque molestie orci quis leo ornare dapibus. Nulla auctor finibus aliquam. Etiam vitae efficitur orci, id gravida sapien. Nulla facilisis est lorem, tincidunt elementum felis bibendum eu.'
-  }
+    question: '4. Sunt utile și dacă încă nu am o firmă?',
+    answear: 'Da, sunt chiar ideale dacă ești la început și vrei să îți clarifici pașii înainte de a lua decizii importante. Îți explică ce tipuri de afaceri pot primi finanțare și cum să îți pregătești terenul pentru a obține fondurile mai ușor.'
+  },
+  { 
+    question: '5. Cât durează să învăț din ele și să înțeleg procesul?',
+    answear: 'Depinde de tine! Flashcard-urile sunt concepute să fie ușor de parcurs și să îți ofere informațiile rapid. În câteva ore poți avea o imagine clară despre cum funcționează procesul și ce ai de făcut mai departe.'
+  },
 ]
 
 const FAQ = () => {
@@ -29,7 +34,7 @@ const FAQ = () => {
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title text-sm font-bold">{question.question}</div>
             <div className="collapse-content">
-              <p className='text-xs text-[#3F3F3F]'>{question.answear}</p>
+              <p className='text-xs text-[#3F3F3F]'><Bolder text={question.answear} /></p>
             </div>
           </div>
         ))}

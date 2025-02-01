@@ -46,8 +46,7 @@ const ProductElementForm = ({ setItems}: Props) => {
   }
   return (
     <>
-      <p className='py-4 pt-8 font-bold self-center text-center text-[15px]'>Salvează 30 de lei! 🤝 Începeți afacerea cu un prieten! 🚀</p>
-      <div onClick={() => handleClick(1)} className={`flex p-4 hover:cursor-pointer border-2 rounded-md items-center gap-x-2 w-full justify-between ${selected == 1 ? 'border-secondary bg-admin-background' : 'border-[#E4E4E4]'}`}>
+      <div onClick={() => handleClick(1)} className={`flex mt-8 p-4 hover:cursor-pointer border-2 rounded-md items-center gap-x-2 w-full justify-between ${selected == 1 ? 'border-secondary bg-admin-background' : 'border-[#E4E4E4]'}`}>
         <Image 
           src="/landing-page/images/Group 722.png"
           width={256}
@@ -61,8 +60,8 @@ const ProductElementForm = ({ setItems}: Props) => {
           <p className='font-bold text-[#E4E4E4] line-through text-sm'>399lei</p>
         </div>
       </div>
-
-      <div onClick={() => handleClick(2)} className={`flex hover:cursor-pointer p-4 mt-4 border-2 rounded-md items-center gap-x-2 w-full justify-between ${selected == 2 ? 'border-secondary bg-admin-background' : 'border-[#E4E4E4]'}`}>
+      <p className='py-4 font-bold self-center text-center text-[15px]'>Salvează 30 de lei! 🤝 Începeți afacerea cu un prieten! 🚀</p>
+      <div onClick={() => handleClick(2)} className={`flex hover:cursor-pointer p-4 border-2 rounded-md items-center gap-x-2 w-full justify-between ${selected == 2 ? 'border-secondary bg-admin-background' : 'border-[#E4E4E4]'}`}>
         <Image 
           src="/landing-page/images/Group 722.png"
           width={256}

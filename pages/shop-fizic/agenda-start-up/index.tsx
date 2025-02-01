@@ -55,7 +55,7 @@ const LandingPage = () => {
   return (
     <div className=''>
       <Head>
-        <title>{`FLASHCARDS START UP NATION + SEDINTA CONSULTANTA`}</title>
+        <title>{`AGENDA FLASHCARDS START UP NATION + ȘEDINȚĂ CONSULTANȚĂ`}</title>
       </Head>
       <dialog id="my_modal_1" className="modal">
         <div className='modal-box'>
@@ -79,7 +79,7 @@ const LandingPage = () => {
         <PrimaryFeatures />
         <Timer />
         <ContentComponent 
-          title='Cea mai eficientă metoda de a atrage fonduri europene pentru afacerea ta!'
+          title='Cea mai eficientă metoda de a atrage Fonduri Europene pentru afacerea ta!'
           image='/landing-page/images/Group 720.png'
           text1='Transformă-ți visul de a deveni antreprenor <b>în realitate!<b> 🏆 Acest pachet unic conține flashcards educative și intuitive, concepute să îți ofere <b>toate informațiile esențiale<b> despre programul Start Up Nation.'
           text2='În plus, beneficiezi de un bonus exclusiv: o sesiune <b>GRATUITĂ<b> de consultanță în fonduri europene cu un <b>expert dedicat!<b> Află cum să obții finanțare 💰 pentru afacerea ta și <b>fă primii pași spre succes<b>, fără riscuri și fără stres.'

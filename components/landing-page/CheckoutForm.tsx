@@ -103,25 +103,24 @@ const CheckoutForm = ({ discountCode }: Props) => {
 
   return (
     <div className='flex flex-col pb-2 items-center'>
-      <div className='flex flex-row items-center justify-between w-full'>
-        <h1 className='font-bold text-[21px]'>Introdu adresa ta de livrare</h1>
-        <form onSubmit={openOfferModal} method="dialog" className='translate-x-4'>
-          <button className='btn btn-ghost'>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </form>
-      </div>
+      <form onSubmit={openOfferModal} method="dialog" className='translate-x-4 self-end'>
+        <button className='btn btn-ghost'>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </form>
+      <h1 className='font-bold text-[21px]'>Introdu adresa ta de livrare</h1>
+      <h3 className='font-bold text-[#ff0000]'>Plătești doar când ajunge coletul la tine!</h3>
       <form onSubmit={createCart} className='flex flex-col items-start w-full mt-4 max-w-lg px-0'>
         <FormInput 
           svg={
@@ -136,7 +135,7 @@ const CheckoutForm = ({ discountCode }: Props) => {
                 d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
             </svg>
           }
-          label='Email'
+          label='Email*'
           placheholder='ex: ion.popescu@gmail.com'
           name='Email'
           type='email'
@@ -249,8 +248,8 @@ const CheckoutForm = ({ discountCode }: Props) => {
         <ExtraProducts setItems={setItems} />
         <TotalPriceContainer items={items} discountCode={discountCode} />
         
-        <p className='font-semibold text-sm mt-6'>Plătești doar când coletul ajunge la tine sau achită cu cardul 💳 și primești un cadou din partea noastră! </p>
-        <div className='mt-4 flex items-center gap-x-2'>
+        {/* <p className='font-semibold text-sm mt-6'>Plătești doar când coletul ajunge la tine sau achită cu cardul 💳 și primești un cadou din partea noastră! </p> */}
+        <div className='mt-8 flex items-center gap-x-2'>
           <input required id='terms' type="checkbox" className="checkbox checkbox-sm" />
           <label htmlFor='terms' className='hover:cursor-pointer text-sm font-semibold'>Accept <Link href='/termeni' target='_blank' className='link'>termenii si conditiile.</Link></label>
         </div>

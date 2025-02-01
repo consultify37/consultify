@@ -5,7 +5,8 @@ type Props = {
   testimonial: {
     profilePic: string
     name: string
-    image: string
+    image?: string
+    video?: string
     text: string
   }
 }
@@ -29,13 +30,19 @@ const TestimonialCard = ({ testimonial }: Props) => {
       </div>
 
       <p className='mt-2 mb-2'>{testimonial.text}</p>
-      <Image 
-        src={testimonial.image}
-        width={512}
-        height={512}
-        alt={testimonial.name}
-        className='rounded-lg mt-auto'
-      />
+      { testimonial.image ?
+        <Image 
+          src={testimonial.image}
+          width={512}
+          height={512}
+          alt={testimonial.name}
+          className='rounded-lg mt-auto object-cover'
+        /> :
+        <video width="100%" controls className='rounded-lg mt-auto'>
+          <source src={testimonial.video} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      }
     </div>
   )
 }
