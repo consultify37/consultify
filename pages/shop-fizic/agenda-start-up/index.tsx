@@ -112,7 +112,7 @@ const LandingPage = () => {
         <Timer />
         <ContentComponent 
           title='Ședința de consultanță care poate atrage fonduri pentru afacerea ta!'
-          image='/landing-page/images/Group 720.png'
+          image='/landing-page/images/testimoniale/Gif sedinta de consultanta.gif'
           text1='Profită de o ședință <b>complet gratuită<b> cu un expert în accesarea fondurilor europene! Această sesiune este creată special <b>pentru a răspunde întrebărilor<b> tale 🤩 și pentru a te ghida pe drumul obținerii finanțării prin programul <b>Start Up Nation.<b>'
           text2='Nu contează <b>dacă ești la început de drum<b> sau deja ai o idee bine conturată, această sesiune te va ajuta să <b>câștigi încredere<b> și să iei decizii informate.'
           text3='Comandă acum și vei avea parte de <b>ședința gratuită<b> prin care poți descoperi cum să transformi visul tău antreprenorial în realitate!'
