@@ -21,7 +21,7 @@ const questions = [
   { 
     question: '5. Cât durează să învăț din ele și să înțeleg procesul?',
     answear: 'Depinde de tine! Flashcard-urile sunt concepute să fie ușor de parcurs și să îți ofere informațiile rapid. În câteva ore poți avea o imagine clară despre cum funcționează procesul și ce ai de făcut mai departe.'
-  },
+  }
 ]
 
 const FAQ = () => {
@@ -34,7 +34,7 @@ const FAQ = () => {
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title text-sm font-bold">{question.question}</div>
             <div className="collapse-content">
-              <p className='text-xs text-[#3F3F3F]'><Bolder text={question.answear} /></p>
+              <p className='text-xs text-[#3F3F3F]'>{question.answear}</p>
             </div>
           </div>
         ))}
