@@ -8,6 +8,7 @@ type Props = {
     image?: string
     video?: string
     text: string
+    poster?: string
   }
 }
 
@@ -38,7 +39,7 @@ const TestimonialCard = ({ testimonial }: Props) => {
           alt={testimonial.name}
           className='rounded-lg mt-auto object-cover'
         /> :
-        <video width="100%" controls className='rounded-lg mt-auto'>
+        <video width="100%" controls poster={testimonial.poster} className='rounded-lg mt-auto'>
           <source src={testimonial.video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>

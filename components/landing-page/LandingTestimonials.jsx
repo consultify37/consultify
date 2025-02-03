@@ -46,23 +46,27 @@ const testimonials2 = [
     profilePic: '/landing-page/images/testimoniale/Matei Emanuel - poza profil.png',
     name: 'Matei Emanuel',
     video: '/landing-page/images/testimoniale/matei emanuel - clip recenzie.mp4',
+    poster: '/landing-page/images/testimoniale/Matei Emanuel Poster.png',
     text: 'Am cumpărat flashcard-urile pentru că voiam informații clare despre accesarea fondurilor nerambursabile. Materialele sunt structurate foarte bine și explică totul simplu și logic. După ce le-am parcurs, am decis să merg mai departe cu echipa Consultify, iar acum am finalizat cu succes implementarea proiectului Start-Up Nation 2022.'
   },
   {
     profilePic: '/landing-page/images/testimoniale/natalia batranu - poza profil.png',
     name: 'Natalia Bătrânu',
+    poster: '/landing-page/images/testimoniale/Natalia Batranu Poster.png',
     video: '/landing-page/images/testimoniale/Natalia Batranu - clip .mp4',
     text: 'Am cumpărat flashcard-urile pentru că îmi doream o metodă clară și organizată de a înțelege procesul de accesare a fondurilor nerambursabile. Explicațiile sunt concise, structurate perfect și m-au ajutat să îmi clarific pașii necesari. După ce le-am parcurs, am decis să colaborez cu echipa Consultify, iar acum am finalizat cu succes implementarea proiectului meu. Tot procesul a fost mult mai simplu cu sprijinul lor!'
   },
   {
     profilePic: '/landing-page/images/testimoniale/Negru Andreea - poza de profil.png',
     name: 'Negru Andreea',
+    poster: '/landing-page/images/testimoniale/Negru Andreea Poster.png',
     video: '/landing-page/images/testimoniale/negru andreea - clip .mp4',
     text: 'Am cumpărat flashcard-urile pentru că aveam nevoie de o metodă clară și structurat explicată pentru accesarea fondurilor nerambursabile. Informațiile sunt foarte bine organizate și m-au ajutat să înțeleg exact ce trebuie să fac. După ce le-am parcurs, am decis să merg mai departe și să colaborez cu echipa Consultify. Acum, am finalizat cu succes implementarea proiectului meu și mă bucur că am făcut această alegere!'
   },
   {
     profilePic: '/landing-page/images/testimoniale/Nastase Alin - Poza.png',
     name: 'Năstase Alin',
+    poster: '/landing-page/images/testimoniale/Nastase Alin Poster.png',
     video: '/landing-page/images/testimoniale/Nastase Alin - clip .mp4',
     text: 'Când am cumpărat flashcard-urile, căutam o soluție simplă și eficientă pentru a înțelege procesul de accesare a fondurilor nerambursabile. Mi-a plăcut că informațiile sunt structurate clar, fără termeni complicați sau explicații inutile. A fost exact ce aveam nevoie pentru a lua o decizie informată. După ce le-am parcurs, am decis să colaborez cu echipa Consultify pentru finanțare, iar acum, proiectul meu este implementat cu succes. Recomand tuturor celor care vor să înceapă corect acest proces!'
   }
