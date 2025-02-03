@@ -21,7 +21,7 @@ const TestimonialCard = ({ testimonial }: Props) => {
           width={256}
           height={256}
           alt={testimonial.name}
-          className='w-[52px] h-[52px] rounded-full'
+          className='w-[52px] h-[52px] rounded-full object-cover'
           unoptimized
         />
         <div className=''>
@@ -37,7 +37,7 @@ const TestimonialCard = ({ testimonial }: Props) => {
           width={512}
           height={512}
           alt={testimonial.name}
-          className='rounded-lg mt-auto object-cover'
+          className='rounded-lg mt-auto'
         /> :
         <video width="100%" controls poster={testimonial.poster} className='rounded-lg mt-auto'>
           <source src={testimonial.video} type="video/mp4" />
