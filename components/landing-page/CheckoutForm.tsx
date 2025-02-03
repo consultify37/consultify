@@ -67,7 +67,7 @@ const CheckoutForm = ({ discountCode }: Props) => {
       const variables = {
         input: { 
           lines: items.map((item) => ({ merchandiseId: item.merchandiseId, quantity: item.quantity })),
-          discountCodes: [discountCode],
+          discountCodes: discountCode ? [discountCode] : [],
           buyerIdentity: {
             email: formData.get('Email'),
             deliveryAddressPreferences: {
@@ -254,7 +254,7 @@ const CheckoutForm = ({ discountCode }: Props) => {
           <label htmlFor='terms' className='hover:cursor-pointer text-sm font-semibold'>Accept <Link href='/termeni' target='_blank' className='link'>termenii si conditiile.</Link></label>
         </div>
 
-        <ContinueButton />
+        <ContinueButton loading={loading} />
       </form>
     </div>
   )
