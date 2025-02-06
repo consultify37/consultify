@@ -46,6 +46,11 @@ const ExtraProducts = ({ setItems }: Props) => {
     }
   }
 
+  useEffect(() => {
+    const checkboxes = document.querySelectorAll("input[type='checkbox']")
+    checkboxes.forEach((checkbox: any) => (checkbox.checked = false))
+  }, [])
+
   return (
     <div className='mt-6 space-y-4 w-full'>
       { extraProducts.map((product) => (
