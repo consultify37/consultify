@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import CarouselMiniImages from './CarouselMiniImages'
 
 const images = [
-  "/landing-page/images/Group 720.png",
+  "/landing-page/images/1.png",
   "/landing-page/images/Group 720.png",
   "/landing-page/images/Group 720.png",
   "/landing-page/images/Group 720.png",

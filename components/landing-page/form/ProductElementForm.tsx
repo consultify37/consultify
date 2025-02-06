@@ -23,18 +23,18 @@ const ProductElementForm = ({ setItems}: Props) => {
             return ({
               handle: 'agenda-start-up',
               name: 'FLASHCARDS START UP NATION + SEDINTA CONSULTANTA',
-              merchandiseId: 'gid://shopify/ProductVariant/49997034619201',
+              merchandiseId: "gid://shopify/ProductVariant/54299416691032",
               price: 199,
-              image: '/landing-page/images/Group 722.png',
+              image: '/landing-page/images/1.png',
               quantity: 1
             })
           } else {
             return ({
               handle: 'agenda-start-up',
               name: 'FLASHCARDS START UP NATION + SEDINTA CONSULTANTA',
-              merchandiseId: 'gid://shopify/ProductVariant/49997034619201',
+              merchandiseId: "gid://shopify/ProductVariant/54299416691032",
               price: 368,
-              image: '/landing-page/images/Group 722.png',
+              image: '/landing-page/images/2.png',
               quantity: 2
             })
           }
@@ -48,11 +48,11 @@ const ProductElementForm = ({ setItems}: Props) => {
     <>
       <div onClick={() => handleClick(1)} className={`flex mt-8 p-4 hover:cursor-pointer border-2 rounded-md items-center gap-x-2 w-full justify-between ${selected == 1 ? 'border-secondary bg-admin-background' : 'border-[#E4E4E4]'}`}>
         <Image 
-          src="/landing-page/images/Group 722.png"
+          src="/landing-page/images/1.png"
           width={256}
           height={256}
           alt='Consultanta Start-Up Nation'
-          className='w-16 h-16 rounded-md'
+          className='w-16 h-16 rounded-md objec-cover'
         />
         <p className='font-bold text-xs'>1x FLASHCARDS START UP NATION</p>
         <div className='flex flex-col items-end'>
@@ -63,11 +63,11 @@ const ProductElementForm = ({ setItems}: Props) => {
       <p className='py-4 font-bold self-center text-center text-[15px]'>Salvează 30 de lei! 🤝 Începeți afacerea cu un prieten! 🚀</p>
       <div onClick={() => handleClick(2)} className={`flex hover:cursor-pointer p-4 border-2 rounded-md items-center gap-x-2 w-full justify-between ${selected == 2 ? 'border-secondary bg-admin-background' : 'border-[#E4E4E4]'}`}>
         <Image 
-          src="/landing-page/images/Group 722.png"
+          src="/landing-page/images/2.png"
           width={256}
           height={256}
           alt='Consultanta Start-Up Nation'
-          className='w-16 h-16 rounded-md'
+          className='w-16 h-16 rounded-md object-cover'
         />
         <div>
           <p className='font-bold text-xs'>2x FLASHCARDS START UP NATION</p>

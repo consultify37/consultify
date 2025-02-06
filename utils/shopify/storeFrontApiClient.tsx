@@ -1,10 +1,10 @@
 export const storefrontApiClient = async (query: string, variables: any | null = null) => {
-  const URL = `https://quickstart-a53af90f.myshopify.com/api/2025-01/graphql.json`
+  const URL = `https://xwgafa-qn.myshopify.com//api/2025-01/graphql.json`
   const options = {
     endpoint: URL,
     method: "POST",
     headers: {
-      "X-Shopify-Storefront-Access-Token": "f28fc11ecc54cad02f2dc912b8180b3c",
+      "X-Shopify-Storefront-Access-Token": "582218e4935dbe90cfe7726bac57bc10",
       "Accept": "application/json",
       "Content-Type": "application/json",
     },

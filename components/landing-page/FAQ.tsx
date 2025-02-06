@@ -12,7 +12,7 @@ const questions = [
   },
   { 
     question: '3. După ce le parcurg, ce ar trebui să fac mai departe?',
-    answear: 'Odată ce ai parcurs flashcard-urile și ai înțeles pașii esențiali, următorul pas este să aplici ceea ce ai învățat. Poți începe să pregătești documentele de bază și să îți consolidezi planul de afaceri. De asemenea, ai la dispoziție <b>sesiunea de consultanță gratuită<b>, unde poți pune întrebări specifice și primi îndrumări personalizate pentru proiectul tău.'
+    answear: 'Odată ce ai parcurs flashcard-urile și ai înțeles pașii esențiali, următorul pas este să aplici ceea ce ai învățat. Poți începe să pregătești documentele de bază și să îți consolidezi planul de afaceri. De asemenea, ai la dispoziție sesiunea de consultanță gratuită, unde poți pune întrebări specifice și primi îndrumări personalizate pentru proiectul tău.'
   },
   { 
     question: '4. Sunt utile și dacă încă nu am o firmă?',

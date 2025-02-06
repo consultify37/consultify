@@ -15,7 +15,7 @@ const extraProducts = [
   {
     handle: 'surprise',
     name: 'Produs surpriză ✨', 
-    merchandiseId: 'gid://shopify/ProductVariant/50000537059649',
+    merchandiseId: "gid://shopify/ProductVariant/54299423506776",
     image: '',
     price: 9.99,
     quantity: 1
@@ -23,7 +23,7 @@ const extraProducts = [
   {
     handle: 'prioritize',
     name: 'Prioritizează comanda mea 😊', 
-    merchandiseId: 'gid://shopify/ProductVariant/50000537190721',
+    merchandiseId: "gid://shopify/ProductVariant/54299425931608",
     image: '',
     price: 5,
     quantity: 1

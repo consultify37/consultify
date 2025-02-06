@@ -27,7 +27,7 @@ const LandingPage = () => {
   const fetchProduct = async () => {
     try {
       const query = `{
-        product(id: "gid://shopify/Product/9850857980225") {
+        product(id: "gid://shopify/Product/14940250964312") {
           title
           id
           availableForSale
@@ -40,6 +40,7 @@ const LandingPage = () => {
       }`
       
       const response: any = await storefrontApiClient(query)
+
       if ( !response.data.product.availableForSale ) {
         setAvailableForSale(false)
       }

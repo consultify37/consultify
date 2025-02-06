@@ -4,7 +4,7 @@ import Carousel from 'react-elastic-carousel'
 import { ArrowComponent } from './ArrowComponent'
 
 const images = [
-  "/landing-page/images/Group 722.png",
+  "/landing-page/images/1.png",
   "/landing-page/images/Group 722.png",
   "/landing-page/images/Group 722.png",
   "/landing-page/images/Group 722.png",
