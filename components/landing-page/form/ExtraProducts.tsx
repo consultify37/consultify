@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 type Props = {
   setItems: React.Dispatch<React.SetStateAction<{
@@ -36,6 +36,7 @@ const texts = {
 }
 
 const ExtraProducts = ({ setItems }: Props) => {
+  const [counter, setCounter] = useState(0)
   const handleClick = (e: any) => {
     const product = extraProducts.find((item) => item.handle == e.target.id)!
     
@@ -47,9 +48,13 @@ const ExtraProducts = ({ setItems }: Props) => {
   }
 
   useEffect(() => {
-    const checkboxes = document.querySelectorAll("input[type='checkbox']")
-    checkboxes.forEach((checkbox: any) => (checkbox.checked = false))
-  }, [])
+    if (counter != 1) {
+      const checkboxes = document.querySelectorAll("input[type='checkbox']")
+      checkboxes.forEach((checkbox: any) => (checkbox.checked = false))
+
+      setCounter(1)
+    }
+  }, [counter])
 
   return (
     <div className='mt-6 space-y-4 w-full'>
