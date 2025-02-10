@@ -1,28 +1,47 @@
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CarouselMiniImages from './CarouselMiniImages'
 
 const images = [
-  "/landing-page/images/1.png",
-  "/landing-page/images/Group 720.png",
-  "/landing-page/images/Group 720.png",
-  "/landing-page/images/Group 720.png",
-  "/landing-page/images/Group 720.png",
-  "/landing-page/images/Group 720.png",
+  "/landing-page/images/Poze produs/Poza 1.jpg",
+  "/landing-page/images/Poze produs/Clip 1.mp4",
+  "/landing-page/images/Poze produs/Poza 2.jpg",
+  "/landing-page/images/Poze produs/Poza 3.jpg",
+  "/landing-page/images/Poze produs/Poza 4.jpg",
+  "/landing-page/images/Poze produs/Poza 5.jpg",
+  "/landing-page/images/Poze produs/Poza 6.jpg",
+  "/landing-page/images/Poze produs/Poza 7.jpg",
 ]
 
 const LandingPageImages = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
+  const preloadImage = (src: string) => {
+    const img = document.createElement('img')
+    img.src = src
+  }
+
+  useEffect(() => {
+    images.forEach((src) => preloadImage(src))
+  }, [])
+
   return (
     <div className='pt-14 w-full'>
-      <Image 
-        src={images[currentIndex]}
-        width={1024}
-        height={1024}
-        alt='Produs Flash Card'
-        className='w-full rounded-lg'
-      />
+      { currentIndex != 1 ?
+        <Image 
+          src={images[currentIndex]}
+          width={1024}
+          height={1024}
+          alt='Produs Flash Card'
+          // unoptimized={true}
+          priority
+          className='w-full rounded-lg aspect-square object-cover bg-[#f0f1f3]'
+        /> :
+        <video width="100%" controls poster="/landing-page/images/Poze produs/Thumbnail.png" className='rounded-lg w-full aspect-square'>
+          <source src='/landing-page/images/Poze produs/Clip 1.mp4' type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      }
 
       <CarouselMiniImages 
         setCurrentIndex={setCurrentIndex}

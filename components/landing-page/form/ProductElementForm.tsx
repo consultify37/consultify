@@ -54,7 +54,7 @@ const ProductElementForm = ({ setItems}: Props) => {
           alt='Consultanta Start-Up Nation'
           className='w-16 h-16 rounded-md objec-cover'
         />
-        <p className='font-bold text-xs'>1x FLASHCARDS START UP NATION</p>
+        <p className='font-bold text-xs'>1x FLASHCARDS START UP NATION + Ședință de consultanță</p>
         <div className='flex flex-col items-end'>
           <p className='font-bold'>199lei</p>
           <p className='font-bold text-[#E4E4E4] line-through text-sm'>399lei</p>
@@ -70,7 +70,7 @@ const ProductElementForm = ({ setItems}: Props) => {
           className='w-16 h-16 rounded-md object-cover'
         />
         <div>
-          <p className='font-bold text-xs'>2x FLASHCARDS START UP NATION</p>
+          <p className='font-bold text-xs'>2x FLASHCARDS START UP NATION + 2x Ședință</p>
           <div className='p-1 px-2 rounded-md bg-green-500 text-xs text-white font-semibold w-fit'>
             Salvezi 30lei
           </div>

@@ -4,12 +4,14 @@ import Carousel from 'react-elastic-carousel'
 import { ArrowComponent } from './ArrowComponent'
 
 const images = [
-  "/landing-page/images/1.png",
-  "/landing-page/images/Group 722.png",
-  "/landing-page/images/Group 722.png",
-  "/landing-page/images/Group 722.png",
-  "/landing-page/images/Group 722.png",
-  "/landing-page/images/Group 722.png"
+  "/landing-page/images/Poze produs/Poza 1.jpg",
+  "/landing-page/images/Poze produs/Thumbnail Play.png",
+  "/landing-page/images/Poze produs/Poza 2.jpg",
+  "/landing-page/images/Poze produs/Poza 3.jpg",
+  "/landing-page/images/Poze produs/Poza 4.jpg",
+  "/landing-page/images/Poze produs/Poza 5.jpg",
+  "/landing-page/images/Poze produs/Poza 6.jpg",
+  "/landing-page/images/Poze produs/Poza 7.jpg",
 ]
 
 const CarouselMiniImages = ({ currentIndex, setCurrentIndex }) => {
@@ -32,7 +34,7 @@ const CarouselMiniImages = ({ currentIndex, setCurrentIndex }) => {
             width={512}
             height={512}
             alt={image}
-            className={`w-[calc(100%-16px)] cursor-pointer h-auto rounded-md ${index == currentIndex ? 'border-black border' : ''}`}
+            className={`w-[calc(100%-16px)] cursor-pointer aspect-square object-cover h-auto rounded-md ${index == currentIndex ? 'border-black border' : ''}`}
           />
         ))}
       </Carousel>

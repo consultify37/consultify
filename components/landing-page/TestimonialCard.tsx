@@ -30,14 +30,17 @@ const TestimonialCard = ({ testimonial }: Props) => {
         </div>
       </div>
 
-      <p className='mt-2 mb-2'>{testimonial.text}</p>
+      { testimonial.text ?
+        <p className='mt-2 mb-2'>{testimonial.text}</p> :
+        <div className='h-8'></div>
+      }
       { testimonial.image ?
         <Image 
           src={testimonial.image}
           width={512}
           height={512}
           alt={testimonial.name}
-          className='rounded-lg mt-auto'
+          className='rounded-lg mt-auto aspect-[11/16] object-cover'
         /> :
         <video width="100%" controls poster={testimonial.poster} className='rounded-lg mt-auto'>
           <source src={testimonial.video} type="video/mp4" />

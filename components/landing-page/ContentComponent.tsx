@@ -20,7 +20,7 @@ const ContentComponent = ({ text1, text2, text3 , image, title}: Props) => {
         width={1024}
         height={1024}
         alt={title}
-        className='w-full h-auto rounded-lg'
+        className='w-full h-auto rounded-lg bg-[#f0f1f3]'
       />
       { text2 && <Bolder text={text2} />}
       { text3 && <Bolder text={text3} />}
