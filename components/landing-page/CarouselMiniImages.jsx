@@ -34,7 +34,7 @@ const CarouselMiniImages = ({ currentIndex, setCurrentIndex }) => {
             width={512}
             height={512}
             alt={image}
-            className={`w-[calc(100%-16px)] cursor-pointer aspect-square object-cover h-auto rounded-md ${index == currentIndex ? 'border-black border' : ''}`}
+            className={`w-[calc(100%-16px)] cursor-pointer bg-[#f0f1f3] aspect-square object-cover h-auto rounded-md ${index == currentIndex ? 'border-black border' : ''}`}
           />
         ))}
       </Carousel>

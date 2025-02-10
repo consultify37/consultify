@@ -21,7 +21,7 @@ const TestimonialCard = ({ testimonial }: Props) => {
           width={256}
           height={256}
           alt={testimonial.name}
-          className='w-[52px] h-[52px] rounded-full object-cover'
+          className='w-[52px] h-[52px] rounded-full object-cover bg-[#f0f1f3]'
           unoptimized
         />
         <div className=''>
@@ -40,9 +40,9 @@ const TestimonialCard = ({ testimonial }: Props) => {
           width={512}
           height={512}
           alt={testimonial.name}
-          className='rounded-lg mt-auto aspect-[11/16] object-cover'
+          className='rounded-lg mt-auto aspect-[11/16] object-cover bg-[#f0f1f3]'
         /> :
-        <video width="100%" controls poster={testimonial.poster} className='rounded-lg mt-auto'>
+        <video width="100%" controls poster={testimonial.poster} className='rounded-lg mt-auto bg-[#f0f1f3]'>
           <source src={testimonial.video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
