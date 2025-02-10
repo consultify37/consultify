@@ -107,7 +107,7 @@ const LandingPage = () => {
           width={1024}
           height={1024}
           alt='imagine'
-          className='w-full h-auto mt-8 rounded-lg'
+          className='w-full h-auto mt-8 rounded-lg bg-[#f0f1f3]'
         />
         <FeaturesTable />
         <Timer />
