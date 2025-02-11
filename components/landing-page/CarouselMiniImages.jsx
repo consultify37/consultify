@@ -4,14 +4,14 @@ import Carousel from 'react-elastic-carousel'
 import { ArrowComponent } from './ArrowComponent'
 
 const images = [
-  "/landing-page/images/Poze produs/Poza 1.jpg",
+  "/landing-page/images/Poze produs/Poza 1-min.jpg",
   "/landing-page/images/Poze produs/Thumbnail Play.png",
-  "/landing-page/images/Poze produs/Poza 2.jpg",
-  "/landing-page/images/Poze produs/Poza 3.jpg",
-  "/landing-page/images/Poze produs/Poza 4.jpg",
-  "/landing-page/images/Poze produs/Poza 5.jpg",
-  "/landing-page/images/Poze produs/Poza 6.jpg",
-  "/landing-page/images/Poze produs/Poza 7.jpg",
+  "/landing-page/images/Poze produs/Poza 2-min.jpg",
+  "/landing-page/images/Poze produs/Poza 3-min.jpg",
+  "/landing-page/images/Poze produs/Poza 4-min.jpg",
+  "/landing-page/images/Poze produs/Poza 5-min.jpg",
+  "/landing-page/images/Poze produs/Poza 6-min.jpg",
+  "/landing-page/images/Poze produs/Poza 7-min.jpg",
 ]
 
 const CarouselMiniImages = ({ currentIndex, setCurrentIndex }) => {

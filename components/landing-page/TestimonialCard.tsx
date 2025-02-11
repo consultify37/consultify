@@ -18,11 +18,10 @@ const TestimonialCard = ({ testimonial }: Props) => {
       <div className='flex flex-row items-center gap-x-2'>
         <Image 
           src={testimonial.profilePic}
-          width={256}
-          height={256}
+          width={128}
+          height={128}
           alt={testimonial.name}
           className='w-[52px] h-[52px] rounded-full object-cover bg-[#f0f1f3]'
-          unoptimized
         />
         <div className=''>
           <p className='text-yellow-500'>★★★★★</p>
