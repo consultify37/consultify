@@ -19,6 +19,7 @@ import FixedCTAButton from '../../../components/landing-page/FixedCTAButton'
 import { storefrontApiClient } from '../../../utils/shopify/storeFrontApiClient'
 import CheckoutForm from '../../../components/landing-page/CheckoutForm'
 import Offer from '../../../components/landing-page/Offer'
+import TiktokPixel from 'tiktok-pixel'
 
 const LandingPage = () => {
   const [availableForSale, setAvailableForSale] = useState(true)
@@ -50,6 +51,8 @@ const LandingPage = () => {
   }
 
   useEffect(() => {
+    TiktokPixel.init('CSIBFVRC77U91IC6MTO0') 
+    TiktokPixel.pageView()
     fetchProduct()
   }, [])
 
