@@ -38,7 +38,7 @@ const LandingPageImages = () => {
           className='w-full rounded-lg aspect-square object-cover bg-[#f0f1f3]'
         /> :
         <video width="100%" controls poster="/landing-page/images/Poze produs/Thumbnail.png" className='rounded-lg w-full aspect-square'>
-          <source src='/landing-page/images/Poze produs/Clip 1.mp4' type="video/mp4" />
+          <source src='/landing-page/images/Poze produs/Clip 1-min.mp4' type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       }
