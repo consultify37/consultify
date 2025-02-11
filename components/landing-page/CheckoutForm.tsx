@@ -9,6 +9,7 @@ import TotalPriceContainer from './form/TotalPriceContainer'
 import ExtraProducts from './form/ExtraProducts'
 import ContinueButton from './form/ContinueButton'
 import Link from 'next/link'
+import TiktokPixel from 'tiktok-pixel'
 
 type Props = {
   discountCode: string | null
@@ -87,7 +88,23 @@ const CheckoutForm = ({ discountCode }: Props) => {
       }
 
       const response: any = await storefrontApiClient(query, variables)
-      console.log(response)
+
+      try {
+        TiktokPixel.track('AddToCart', {
+          contents: [{
+            content_id: items[0].merchandiseId,
+            content_name: items[0].name,
+            quantity: items[0].quantity || 1,
+            price: items[0].price
+          }],
+          content_type: 'product',
+          value: items[0].price,
+          currency: 'RON'
+        })
+      } catch (e) {
+        console.log(e)
+      }
+
       router.push(response.data.cartCreate.cart.checkoutUrl)
     } catch (e) {
       console.log(e)
