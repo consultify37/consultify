@@ -53,58 +53,58 @@ const testimonials2 = [
     profilePic: '/landing-page/images/testimoniale/natalia batranu - poza profil.png',
     name: 'Natalia Bătrânu',
     poster: '/landing-page/images/testimoniale/Natalia Batranu Poster.png',
-    video: 'https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/landing-page/Natalia+Batranu+-+clip+.mp4',
+    video: 'https://utxj18o7d5h4mplf.public.blob.vercel-storage.com/Natalia%20Batranu%20-%20clip%20-jVuQmKBwBQFoWTilgCKH0d5McxOsEd.mp4',
     // text: 'Am cumpărat flashcard-urile pentru că îmi doream o metodă clară și organizată de a înțelege procesul de accesare a fondurilor nerambursabile. Explicațiile sunt concise, structurate perfect și m-au ajutat să îmi clarific pașii necesari. După ce le-am parcurs, am decis să colaborez cu echipa Consultify, iar acum am finalizat cu succes implementarea proiectului meu. Tot procesul a fost mult mai simplu cu sprijinul lor!'
   },
   {
     profilePic: '/landing-page/images/testimoniale/Negru Andreea - poza de profil.png',
     name: 'Negru Andreea',
     poster: '/landing-page/images/testimoniale/Negru Andreea Poster.png',
-    video: 'https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/landing-page/negru+andreea+-+clip+.mp4',
+    video: 'https://utxj18o7d5h4mplf.public.blob.vercel-storage.com/negru%20andreea%20-%20clip%20-ialVws1wuWsXkpPol0W1PkgTF9YWyM.mp4',
     // text: 'Am cumpărat flashcard-urile pentru că aveam nevoie de o metodă clară și structurat explicată pentru accesarea fondurilor nerambursabile. Informațiile sunt foarte bine organizate și m-au ajutat să înțeleg exact ce trebuie să fac. După ce le-am parcurs, am decis să merg mai departe și să colaborez cu echipa Consultify. Acum, am finalizat cu succes implementarea proiectului meu și mă bucur că am făcut această alegere!'
   },
   {
     profilePic: '/landing-page/images/testimoniale/Nastase Alin - Poza.png',
     name: 'Năstase Alin',
     poster: '/landing-page/images/testimoniale/Nastase Alin Poster.png',
-    video: 'https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/landing-page/Nastase+Alin+-+clip+.mp4',
+    video: 'https://utxj18o7d5h4mplf.public.blob.vercel-storage.com/Nastase%20Alin%20-%20clip%20-WsjI4rgegXlHfZHjOxzKHv8oyHuYvN.mp4',
     // text: 'Când am cumpărat flashcard-urile, căutam o soluție simplă și eficientă pentru a înțelege procesul de accesare a fondurilor nerambursabile. Mi-a plăcut că informațiile sunt structurate clar, fără termeni complicați sau explicații inutile. A fost exact ce aveam nevoie pentru a lua o decizie informată. După ce le-am parcurs, am decis să colaborez cu echipa Consultify pentru finanțare, iar acum, proiectul meu este implementat cu succes. Recomand tuturor celor care vor să înceapă corect acest proces!'
   },
   {
     profilePic: '/landing-page/images/testimoniale/Dragoș Precup - profil.png',
     name: 'Dragoș Precup',
     poster: '/landing-page/images/testimoniale/Dragoș Precup Poster.png',
-    video: 'https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/landing-page/Dragos%CC%A6+Precup+-+clip.mp4'
+    video: 'https://utxj18o7d5h4mplf.public.blob.vercel-storage.com/Dragos%CC%A6%20Precup%20-%20clip-yJvClT9Aa2k3S0na5ky6x8wncx7Ift.mp4'
   },
   {
     profilePic: '/landing-page/images/testimoniale/Lavinia MIliche - profil.png',
     name: 'Lavinia Miliche',
     poster: '/landing-page/images/testimoniale/Lavinia Miliche Poster.png',
-    video: 'https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/landing-page/Lavinia+Miliche+-+clip+.mp4'
+    video: 'https://utxj18o7d5h4mplf.public.blob.vercel-storage.com/Lavinia%20Miliche%20-%20clip%20-2PXqbdZ7d1vMKVKOUhIgoRMvCbqJO6.mp4'
   },
   {
     profilePic: '/landing-page/images/testimoniale/Ligia Oltean - Profil.png',
     name: 'Ligia Oltean',
     poster: '/landing-page/images/testimoniale/Ligia Oltean Poster.png',
-    video: 'https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/landing-page/Ligia+Oltean+-+clip+.mp4'
+    video: 'https://utxj18o7d5h4mplf.public.blob.vercel-storage.com/Ligia%20Oltean%20-%20clip%20-Q5CDoLlgFHv9ALISR0I1lbXg8SNT1R.mp4'
   },
   {
     profilePic: '/landing-page/images/testimoniale/Marian Ionescu - profil.png',
     name: 'Marian Ionescu',
     poster: '/landing-page/images/testimoniale/Marian Ionescu Poster.png',
-    video: 'https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/landing-page/Marian+Ionescu+-+clip+.mp4'
+    video: 'https://utxj18o7d5h4mplf.public.blob.vercel-storage.com/Marian%20Ionescu%20-%20clip%20-EhaCz3ly3e6cR1JDe62ihksyHLF61C.mp4'
   },
   {
     profilePic: '/landing-page/images/testimoniale/Mario Diculescu - profil.png',
     name: 'Mario Diculescu',
     poster: '/landing-page/images/testimoniale/Mario Diculescu Poster.png',
-    video: 'https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/landing-page/Mario+Diculescu+-+clip.mp4'
+    video: 'https://utxj18o7d5h4mplf.public.blob.vercel-storage.com/Mario%20Diculescu%20-%20clip-XPS5g9l4BoY6gH3Gd8And3iksFVEPL.mp4'
   },
   {
     profilePic: '/landing-page/images/testimoniale/Radu Dorobant - profil.png',
     name: 'Radu Dorobanț',
     poster: '/landing-page/images/testimoniale/Radu Dorobanț Poster.png',
-    video: 'https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/landing-page/Radu+Dorobant%CC%A6+-+clip.mp4'
+    video: 'https://utxj18o7d5h4mplf.public.blob.vercel-storage.com/Radu%20Dorobant%CC%A6%20-%20clip-1ZGEq5M7cyBRfL8lCOj09LMLt45gMz.mp4'
   },
 ]
 
