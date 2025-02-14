@@ -84,7 +84,7 @@ const LandingPage = () => {
         {/* <Timer /> */}
         <ContentComponent 
           title='Cea mai eficientă metoda de a atrage Fonduri Europene pentru afacerea ta!'
-          image='https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/landing-page/Gif+1-min.gif'
+          image='/landing-page/images/Gif-uri/Gif 1-min.gif'
           text1='Transformă-ți visul de a deveni antreprenor <b>în realitate!<b> 🏆 Acest pachet unic conține flashcards educative și intuitive, concepute să îți ofere <b>toate informațiile esențiale<b> despre programul Start Up Nation.'
           text2='În plus, beneficiezi de un bonus exclusiv: o sesiune <b>GRATUITĂ<b> de consultanță în fonduri europene cu un <b>expert dedicat!<b> Află cum să obții finanțare 💰 pentru afacerea ta și <b>fă primii pași spre succes<b>, fără riscuri și fără stres.'
         />
@@ -101,7 +101,7 @@ const LandingPage = () => {
         {/* <Timer /> */}
         <ContentComponent 
           title='FLASHCARDS - cum sa înveți eficient despre programul Start Up Nation'
-          image='https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/landing-page/Gif2-min.gif'
+          image='/landing-page/images/Poze produs/Poza 2-min.jpg'
           text1='Perfecte pentru oricine dorește să acceseze <b>fonduri europene<b> sau să își deschidă o afacere, aceste flashcards sunt ideale ✅ atât pentru începători, cât și pentru cei care vor să fie <b>mereu organizați și informați.<b>'
         />
         <MoreInfo />
