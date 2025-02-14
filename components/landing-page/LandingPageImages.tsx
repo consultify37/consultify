@@ -38,7 +38,7 @@ const LandingPageImages = () => {
           className='w-full rounded-lg aspect-square object-cover bg-[#f0f1f3]'
         /> :
         <video width="100%" controls poster="/landing-page/images/Poze produs/Thumbnail.png" className='rounded-lg w-full aspect-square'>
-          <source src='https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/landing-page/Clip+1-min.mp4' type="video/mp4" />
+          <source src={images[currentIndex]} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       }
