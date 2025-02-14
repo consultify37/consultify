@@ -84,7 +84,7 @@ const LandingPage = () => {
         {/* <Timer /> */}
         <ContentComponent 
           title='Cea mai eficientă metoda de a atrage Fonduri Europene pentru afacerea ta!'
-          image='/landing-page/images/Gif-uri/Gif 1-min.gif'
+          image='https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/landing-page/Gif+1-min.gif'
           text1='Transformă-ți visul de a deveni antreprenor <b>în realitate!<b> 🏆 Acest pachet unic conține flashcards educative și intuitive, concepute să îți ofere <b>toate informațiile esențiale<b> despre programul Start Up Nation.'
           text2='În plus, beneficiezi de un bonus exclusiv: o sesiune <b>GRATUITĂ<b> de consultanță în fonduri europene cu un <b>expert dedicat!<b> Află cum să obții finanțare 💰 pentru afacerea ta și <b>fă primii pași spre succes<b>, fără riscuri și fără stres.'
         />
@@ -101,7 +101,7 @@ const LandingPage = () => {
         {/* <Timer /> */}
         <ContentComponent 
           title='FLASHCARDS - cum sa înveți eficient despre programul Start Up Nation'
-          image='/landing-page/images/Poze produs/Poza 2-min.jpg'
+          image='https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/landing-page/Gif2-min.gif'
           text1='Perfecte pentru oricine dorește să acceseze <b>fonduri europene<b> sau să își deschidă o afacere, aceste flashcards sunt ideale ✅ atât pentru începători, cât și pentru cei care vor să fie <b>mereu organizați și informați.<b>'
         />
         <MoreInfo />
@@ -116,7 +116,7 @@ const LandingPage = () => {
         {/* <Timer /> */}
         <ContentComponent 
           title='Ședința de consultanță care poate atrage fonduri pentru afacerea ta!'
-          image='/landing-page/images/testimoniale/Gif sedinta de consultanta.gif'
+          image='https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/landing-page/Gif+sedinta+de+consultanta.gif'
           text1='Profită de o ședință <b>complet gratuită<b> cu un expert în accesarea fondurilor europene! Această sesiune este creată special <b>pentru a răspunde întrebărilor<b> tale 🤩 și pentru a te ghida pe drumul obținerii finanțării prin programul <b>Start Up Nation.<b>'
           text2='Nu contează <b>dacă ești la început de drum<b> sau deja ai o idee bine conturată, această sesiune te va ajuta să <b>câștigi încredere<b> și să iei decizii informate.'
           text3='Comandă acum și vei avea parte de <b>ședința gratuită<b> prin care poți descoperi cum să transformi visul tău antreprenorial în realitate!'

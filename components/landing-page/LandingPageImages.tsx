@@ -4,7 +4,7 @@ import CarouselMiniImages from './CarouselMiniImages'
 
 const images = [
   "/landing-page/images/Poze produs/Poza 1-min.jpg",
-  "/landing-page/images/Poze produs/Clip 1-min.mp4",
+  "https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/landing-page/Clip+1-min.mp4",
   "/landing-page/images/Poze produs/Poza 2-min.jpg",
   "/landing-page/images/Poze produs/Poza 3-min.jpg",
   "/landing-page/images/Poze produs/Poza 4-min.jpg",
@@ -38,7 +38,7 @@ const LandingPageImages = () => {
           className='w-full rounded-lg aspect-square object-cover bg-[#f0f1f3]'
         /> :
         <video width="100%" controls poster="/landing-page/images/Poze produs/Thumbnail.png" className='rounded-lg w-full aspect-square'>
-          <source src='/landing-page/images/Poze produs/Clip 1-min.mp4' type="video/mp4" />
+          <source src='https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/landing-page/Clip+1-min.mp4' type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       }
