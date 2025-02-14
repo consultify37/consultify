@@ -45,7 +45,7 @@ const testimonials2 = [
   {
     profilePic: '/landing-page/images/testimoniale/Matei Emanuel - poza profil.png',
     name: 'Matei Emanuel',
-    video: 'https://f005.backblazeb2.com/file/inspirely-consultify-socialy-creditfy/landing-page/matei+emanuel+-+clip+recenzie.mp4',
+    video: 'https://utxj18o7d5h4mplf.public.blob.vercel-storage.com/matei%20emanuel%20-%20clip%20recenzie-i6ARwEpCmRsg2sBc6qOFB4T0D1s7Wj.mp4',
     poster: '/landing-page/images/testimoniale/Matei Emanuel Poster.png',
     // text: 'Am cumpărat flashcard-urile pentru că voiam informații clare despre accesarea fondurilor nerambursabile. Materialele sunt structurate foarte bine și explică totul simplu și logic. După ce le-am parcurs, am decis să merg mai departe cu echipa Consultify, iar acum am finalizat cu succes implementarea proiectului Start-Up Nation 2022.'
   },
