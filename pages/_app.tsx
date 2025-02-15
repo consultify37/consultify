@@ -14,6 +14,7 @@ import { FavoritesContext } from '../context/FavoritesContext'
 import Cookies from 'js-cookie'
 import { Analytics } from "@vercel/analytics/react"
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
+import StartUp2024PopUp from '../components/pop-ups/StartUp2024PopUp'
 
 function useNormalScrollRoutes() {
   const router = useRouter()
@@ -83,6 +84,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 <Analytics />
                 <TopBar />
                 <Header />
+                <StartUp2024PopUp />
               </> : null
             }
             <main className="flex-1 relative">
