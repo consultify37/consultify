@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react'
 import CarouselMiniImages from './CarouselMiniImages'
 
 const images = [
-  "/landing-page/images/Poze produs/Poza 1-min.jpg",
   "https://utxj18o7d5h4mplf.public.blob.vercel-storage.com/Clip%201-min-iYfp44XrXKKaCYWxAz3t9BcVUAvmXn.mp4",
+  "/landing-page/images/Poze produs/Poza 1-min.jpg",
   "/landing-page/images/Poze produs/Poza 2-min.jpg",
   "/landing-page/images/Poze produs/Poza 3-min.jpg",
   "/landing-page/images/Poze produs/Poza 4-min.jpg",
@@ -27,7 +27,7 @@ const LandingPageImages = () => {
 
   return (
     <div className='pt-14 w-full'>
-      { currentIndex != 1 ?
+      { currentIndex != 0 ?
         <Image 
           src={images[currentIndex]}
           width={1024}

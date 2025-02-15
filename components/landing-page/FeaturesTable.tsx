@@ -5,7 +5,7 @@ const FeaturesTable = () => {
   return (
     <div className='mt-10 flex flex-col items-center mb-8'>
       <h2 className='text-[27px] font-bold text-center'>COMANDĂ ACUM!</h2>
-      <p className='mt-1 text-sm font-base'><span className='text-yellow-500'>★★★★★</span> 1283 de clienți mulțumiți</p>
+      <p className='mt-1 text-sm font-base'><span className='text-yellow-500'>★★★★★</span> Peste 850 de clienți mulțumiți</p>
 
       <table className='mt-6 w-full text-xs font-bold border-separate border-spacing-0'>
         <thead>

@@ -1,9 +1,9 @@
 import React from 'react'
 const features = [
-  "💸 Informare despre cum sa atragi fonduri",
-  "🕰️ Scurt și la obiect",
-  "🎯 Cel mai eficient ghid din România",
-  "🌟 Ședință de consultanță GRATUITĂ"
+  "💡 Accesează fonduri europene fără FIRME DE CONSULTANȚĂ",
+  "📘 Ghid complet pentru redactarea oricărui proiect",
+  "⚡ Rezultate rapide și pași simpli de urmat",
+  "🎯 Ședință de consultanță GRATUITĂ – pentru întrebări"
 ]
 
 const PrimaryFeatures = () => {

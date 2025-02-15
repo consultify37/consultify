@@ -37,7 +37,7 @@ const testimonials = [
     profilePic: '/landing-page/images/testimoniale/Cristian Munteanu.png',
     name: 'Cristian Munteanu',
     image: '/landing-page/images/testimoniale/Cristian Munteanu - poza recenzie.jpg',
-    text: 'Dacă ești ca mine și nu ai chef să sapi prin 100 de pagini de legislație ca să înțelegi cum funcționează fondurile europene, flashcard-urile astea sunt aur. Le parcurgi rapid, îți faci o idee clară și nu pierzi timp cu detalii inutile. Eu le-am luat și am reușit să îmi clarific exact ce trebuie să fac ca să aplic. Mi-a prins bine și sesiunea de consultanță, pentru că aveam câteva întrebări mai specifice. '
+    text: 'Dacă ești ca mine și nu ai chef să sapi prin 100 de pagini de legislație ca să înțelegi cum funcționează fondurile europene, flashcard-urile astea sunt foarte bune. Le parcurgi rapid, îți faci o idee clară și nu pierzi timp cu detalii inutile. Eu le-am luat și am reușit să îmi clarific exact ce trebuie să fac ca să aplic. Mi-a prins bine și sesiunea de consultanță, pentru că aveam câteva întrebări mai specifice. '
   }
 ]
 

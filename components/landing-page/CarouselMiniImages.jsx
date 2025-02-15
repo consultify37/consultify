@@ -4,8 +4,8 @@ import Carousel from 'react-elastic-carousel'
 import { ArrowComponent } from './ArrowComponent'
 
 const images = [
-  "/landing-page/images/Poze produs/Poza 1-min.jpg",
   "/landing-page/images/Poze produs/Thumbnail Play.png",
+  "/landing-page/images/Poze produs/Poza 1-min.jpg",
   "/landing-page/images/Poze produs/Poza 2-min.jpg",
   "/landing-page/images/Poze produs/Poza 3-min.jpg",
   "/landing-page/images/Poze produs/Poza 4-min.jpg",

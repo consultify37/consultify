@@ -75,19 +75,34 @@ const LandingPage = () => {
         <LandingPageImages />
         <FeatureBadges />
         <MainInfo availableForSale={availableForSale} />
-      </div>
+      </div> 
 
       <Info />
 
       <div className='max-w-lg px-8 mx-auto w-full mt-6'>
         <PrimaryFeatures />
         {/* <Timer /> */}
-        <ContentComponent 
-          title='Cea mai eficientă metoda de a atrage Fonduri Europene pentru afacerea ta!'
-          image='https://utxj18o7d5h4mplf.public.blob.vercel-storage.com/Gif%201-min-p0BT0h3i0Q1izDYwSsb8k3sp140PVH.gif'
-          text1='Transformă-ți visul de a deveni antreprenor <b>în realitate!<b> 🏆 Acest pachet unic conține flashcards educative și intuitive, concepute să îți ofere <b>toate informațiile esențiale<b> despre programul Start Up Nation.'
-          text2='În plus, beneficiezi de un bonus exclusiv: o sesiune <b>GRATUITĂ<b> de consultanță în fonduri europene cu un <b>expert dedicat!<b> Află cum să obții finanțare 💰 pentru afacerea ta și <b>fă primii pași spre succes<b>, fără riscuri și fără stres.'
+        <Image 
+          src='/landing-page/images/urgency.png'
+          alt='urgency'
+          width={1024}
+          height={1024}
+          unoptimized={true}
+          className='w-full h-auto mt-8 rounded-lg'
         />
+        <ContentComponent 
+          title='Pregătește-ți proiectul și atrage finanțare nerambursabilă de peste 50.000 €!'
+          image='/landing-page/images/G-2-min-min.jpg'
+          text1='Cu toții avem momente în care ne întrebăm: <i>Ce-ar fi fost dacă porneam afacerea aia?<i> Dar, din păcate, ne putem <b>doar imagina<b>. De aceea, în situația de față, nu mai lăsa <b>visul<b> de a deveni antreprenor să rămână doar un gând. Acest <b>pachet complet<b> îți oferă toate informațiile necesare despre Start-Up Nation și îți pune bazele scrierii oricărui proiect prin fonduri europene. 📚<br><b>Nu ezita!<b> Fă primul pas spre afacerea ta și transformă-ți visul în realitate prin fonduri europene!” 🚀'
+        />
+        <p className='font-bold mt-8'>Ok, cumpăr flashcard-urile și particip la sesiunea de consultanță, dar e suficient pentru a obține finanțarea?</p>
+        <p className='mt-4'><span className='font-bold'>✅ Răspunsul este DA!</span> În sesiunea de consultanță te vom ghida pas cu pas:</p>
+        <ul className='list-disc mt-4 ml-4'>
+          <li>Alegerea ideii de afacere potrivite pentru tine </li>
+          <li>Stabilirea echipamentelor necesare pentru activitatea ta</li>
+          <li>Structurarea proiectului astfel încât să aibe șanse reale de reușită</li>
+        </ul>
+        <p className='mt-4'>🎯 Nu ești singur în acest proces! <span className='font-bold'>Noi suntem aici să te sprijinim,</span> așa cum i-am sprijinit și pe restul clienților noștri. Dar nu trebuie să ne crezi pe cuvânt! <span className='font-bold'>Urmărește mai jos recenziile și poveștile lor.👇🏻</span></p>
       </div>
 
       <div className='w-full mt-8 bg-secondary'>
@@ -99,14 +114,22 @@ const LandingPage = () => {
 
       <div className='max-w-lg px-8 mx-auto w-full mt-8'>
         {/* <Timer /> */}
+        <Image 
+          src='/landing-page/images/urgency.png'
+          alt='urgency'
+          width={1024}
+          height={1024}
+          unoptimized={true}
+          className='w-full h-auto mt-8 rounded-lg'
+        />
         <ContentComponent 
-          title='FLASHCARDS - cum sa înveți eficient despre programul Start Up Nation'
-          image='/landing-page/images/Poze produs/Poza 2-min.jpg'
-          text1='Perfecte pentru oricine dorește să acceseze <b>fonduri europene<b> sau să își deschidă o afacere, aceste flashcards sunt ideale ✅ atât pentru începători, cât și pentru cei care vor să fie <b>mereu organizați și informați.<b>'
+          title='FLASHCARDS -  Învață cum să obții rapid finanțare nerambursabilă de 50.000 €!'
+          image='/landing-page/images/G-6-min-min.jpg'
+          text1='Perfecte pentru oricine vrea <b>să acceseze<b> fonduri europene, aceste flashcards te <b>învață<b> pas cu pas, începând de la explicarea ghidului în <b>termeni simpli<b>, până la exerciții practice. Vei descoperi exemple de afaceri care au <b>obținut finanțarea<b>, cu detalii despre firmă, cod CAEN și echipamentele achiziționate prin proiect.<br>În plus, demontăm mituri și îți prezentăm <b>trucuri și artificii<b> care te pot ajuta să îți maximizezi șansele de <b>succes<b>. 💡'
         />
         <MoreInfo />
         <Image 
-          src='https://utxj18o7d5h4mplf.public.blob.vercel-storage.com/Gif2-min-Z2sX4y2XmuMrxqIAjGvSnRJCrcaivZ.gif'
+          src='/landing-page/images/G-3-min-min.jpg'
           width={1024}
           height={1024}
           alt='imagine'
@@ -114,12 +137,20 @@ const LandingPage = () => {
         />
         <FeaturesTable />
         {/* <Timer /> */}
+        <Image 
+          src='/landing-page/images/urgency.png'
+          alt='urgency'
+          width={1024}
+          height={1024}
+          unoptimized={true}
+          className='w-full h-auto mt-8 rounded-lg'
+        />
         <ContentComponent 
-          title='Ședința de consultanță care poate atrage fonduri pentru afacerea ta!'
+          title='Consultanță GRATUITĂ: Fă primii pași spre finanțare!'
           image='https://utxj18o7d5h4mplf.public.blob.vercel-storage.com/Gif%20sedinta%20de%20consultanta-M5V3FXpa3pA93dKgG8LaGsX8lAUZ30.gif'
-          text1='Profită de o ședință <b>complet gratuită<b> cu un expert în accesarea fondurilor europene! Această sesiune este creată special <b>pentru a răspunde întrebărilor<b> tale 🤩 și pentru a te ghida pe drumul obținerii finanțării prin programul <b>Start Up Nation.<b>'
-          text2='Nu contează <b>dacă ești la început de drum<b> sau deja ai o idee bine conturată, această sesiune te va ajuta să <b>câștigi încredere<b> și să iei decizii informate.'
-          text3='Comandă acum și vei avea parte de <b>ședința gratuită<b> prin care poți descoperi cum să transformi visul tău antreprenorial în realitate!'
+          text1='După parcurgerea flashcard-urilor, urmează <b>ședința de consultanță<b>, unde vei primi răspunsuri la toate întrebările adunate pe parcurs. Expertul te va ghida <b>pas cu pas<b>: vei afla cum să începi redactarea proiectului, ce achiziții să incluzi în planul de afaceri și cum <b>să gestionezi finanțarea<b> după aprobarea proiectului. La finalul ședinței, vei pleca cu răspunsuri clare și un plan bine structurat, pregătit să te ducă mai aproape de succes 😊<br>📈 <b>Investește<b> în viitorul tău chiar acum!'
+          text2='Indiferent dacă ai deja <b>o afacere<b> deschisă sau ești la început de drum, acest pachet te va ajuta să iei decizia corectă în ceea ce privește <b>obținerea finanțării<b> pentru afacerea ta. Chiar dacă alegi să nu aplici, vei înțelege clar cum să obții o finanțare <b>de 50.000 €<b> pentru aproape orice tip de afacere. <b>Alegerea este a ta!<b> Dacă simți că acum e momentul să începi, nu doar o afacere, ci să o pornești cu un avantaj real – 50.000 € prin <b>fonduri nerambursabile<b>. Comandă acum și nu te vei mai întreba niciodată: <i>„Ce-ar fi fost dacă?”<i>.'
+          // text3='Comandă acum și vei avea parte de <b>ședința gratuită<b> prin care poți descoperi cum să transformi visul tău antreprenorial în realitate!'
         />
         <FAQ />
         <LandingFooter />
