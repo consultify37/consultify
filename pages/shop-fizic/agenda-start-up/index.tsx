@@ -83,7 +83,7 @@ const LandingPage = () => {
         <PrimaryFeatures />
         {/* <Timer /> */}
         <Image 
-          src='/landing-page/images/urgency.png'
+          src='/landing-page/images/perioada.png'
           alt='urgency'
           width={1024}
           height={1024}
@@ -93,10 +93,10 @@ const LandingPage = () => {
         <ContentComponent 
           title='Pregătește-ți proiectul și atrage finanțare nerambursabilă de peste 50.000 €!'
           image='/landing-page/images/G-2-min-min.jpg'
-          text1='Cu toții avem momente în care ne întrebăm: <i>Ce-ar fi fost dacă porneam afacerea aia?<i> Dar, din păcate, ne putem <b>doar imagina<b>. De aceea, în situația de față, nu mai lăsa <b>visul<b> de a deveni antreprenor să rămână doar un gând. Acest <b>pachet complet<b> îți oferă toate informațiile necesare despre Start-Up Nation și îți pune bazele scrierii oricărui proiect prin fonduri europene. 📚<br><b>Nu ezita!<b> Fă primul pas spre afacerea ta și transformă-ți visul în realitate prin fonduri europene!” 🚀'
+          text1='Cu toții avem momente în care ne întrebăm: <i>Ce-ar fi fost dacă porneam afacerea aia?<i> Dar, din păcate, ne putem <b>doar imagina<b>. De aceea, în situația de față, nu mai lăsa <b>visul<b> de a deveni antreprenor să rămână doar un gând. Acest <b>pachet complet<b> îți oferă toate informațiile necesare despre Start-Up Nation și îți pune bazele scrierii oricărui proiect prin fonduri europene. 📚<br><b>Nu ezita!<b> Fă primul pas spre afacerea ta și transformă-ți visul în realitate prin fonduri europene! 🚀'
         />
         <p className='font-bold mt-8'>Ok, cumpăr flashcard-urile și particip la sesiunea de consultanță, dar e suficient pentru a obține finanțarea?</p>
-        <p className='mt-4'><span className='font-bold'>✅ Răspunsul este DA!</span> În sesiunea de consultanță te vom ghida pas cu pas:</p>
+        <p className='mt-4'><span className='font-bold'>✅ Răspunsul este DA!</span> În sesiunea de consultanță te vom ghida pas cu pas în:</p>
         <ul className='list-disc mt-4 ml-4'>
           <li>Alegerea ideii de afacere potrivite pentru tine </li>
           <li>Stabilirea echipamentelor necesare pentru activitatea ta</li>
@@ -115,7 +115,7 @@ const LandingPage = () => {
       <div className='max-w-lg px-8 mx-auto w-full mt-8'>
         {/* <Timer /> */}
         <Image 
-          src='/landing-page/images/urgency.png'
+          src='/landing-page/images/perioada.png'
           alt='urgency'
           width={1024}
           height={1024}
@@ -138,7 +138,7 @@ const LandingPage = () => {
         <FeaturesTable />
         {/* <Timer /> */}
         <Image 
-          src='/landing-page/images/urgency.png'
+          src='/landing-page/images/perioada.png'
           alt='urgency'
           width={1024}
           height={1024}
@@ -149,7 +149,7 @@ const LandingPage = () => {
           title='Consultanță GRATUITĂ: Fă primii pași spre finanțare!'
           image='https://utxj18o7d5h4mplf.public.blob.vercel-storage.com/Gif%20sedinta%20de%20consultanta-M5V3FXpa3pA93dKgG8LaGsX8lAUZ30.gif'
           text1='După parcurgerea flashcard-urilor, urmează <b>ședința de consultanță<b>, unde vei primi răspunsuri la toate întrebările adunate pe parcurs. Expertul te va ghida <b>pas cu pas<b>: vei afla cum să începi redactarea proiectului, ce achiziții să incluzi în planul de afaceri și cum <b>să gestionezi finanțarea<b> după aprobarea proiectului. La finalul ședinței, vei pleca cu răspunsuri clare și un plan bine structurat, pregătit să te ducă mai aproape de succes 😊<br>📈 <b>Investește<b> în viitorul tău chiar acum!'
-          text2='Indiferent dacă ai deja <b>o afacere<b> deschisă sau ești la început de drum, acest pachet te va ajuta să iei decizia corectă în ceea ce privește <b>obținerea finanțării<b> pentru afacerea ta. Chiar dacă alegi să nu aplici, vei înțelege clar cum să obții o finanțare <b>de 50.000 €<b> pentru aproape orice tip de afacere. <b>Alegerea este a ta!<b> Dacă simți că acum e momentul să începi, nu doar o afacere, ci să o pornești cu un avantaj real – 50.000 € prin <b>fonduri nerambursabile<b>. Comandă acum și nu te vei mai întreba niciodată: <i>„Ce-ar fi fost dacă?”<i>.'
+          text2='Indiferent dacă ai deja <b>o afacere<b> deschisă sau ești la început de drum, acest pachet te va ajuta să iei decizia corectă în ceea ce privește <b>obținerea finanțării<b> pentru afacerea ta. Chiar dacă alegi să nu aplici, vei înțelege clar cum să obții o finanțare <b>de 50.000 €<b> pentru aproape orice tip de afacere.<br> <b>Alegerea este a ta!<b> Dacă simți că acum e momentul să începi, nu doar o afacere, ci să o pornești cu un avantaj real – 50.000 € prin <b>fonduri nerambursabile<b>. Comandă acum și nu te vei mai întreba niciodată: <i>„Ce-ar fi fost dacă?”<i>.'
           // text3='Comandă acum și vei avea parte de <b>ședința gratuită<b> prin care poți descoperi cum să transformi visul tău antreprenorial în realitate!'
         />
         <FAQ />
