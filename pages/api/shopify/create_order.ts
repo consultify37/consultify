@@ -14,7 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       {
         headers: {
           'Content-Type': 'application/json',
-          'X-Shopify-Access-Token': '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'
+          'X-Shopify-Access-Token': process.env.SHOPIFY_ADMIN_API_KEY
         }
       }
     )
