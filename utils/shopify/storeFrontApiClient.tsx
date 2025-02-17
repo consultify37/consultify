@@ -1,5 +1,5 @@
 export const storefrontApiClient = async (query: string, variables: any | null = null) => {
-  const URL = `https://xwgafa-qn.myshopify.com//api/2025-01/graphql.json`
+  const URL = `https://xwgafa-qn.myshopify.com/api/2025-01/graphql.json`
   const options = {
     endpoint: URL,
     method: "POST",

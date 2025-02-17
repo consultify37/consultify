@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { useEffect, useState } from "react";
+import TiktokPixel from "tiktok-pixel";
 
 const CTAButton = () => {
   const [isBouncing, setIsBouncing] = useState(false)
@@ -14,7 +15,24 @@ const CTAButton = () => {
     return () => clearInterval(interval)
   }, [])
 
+
   const openModal = () => {
+    try {
+      TiktokPixel.track('InitiateCheckout', {
+        contents: [{
+          content_id: "gid://shopify/ProductVariant/54299416691032",
+          content_name: 'FLASHCARDS START UP NATION + SEDINTA CONSULTANTA',
+          quantity: 1,
+          price: 79
+        }],
+        content_type: 'product',
+        value: 79,
+        currency: 'RON'
+      })
+    } catch (e) {
+      console.log(e)
+    }
+
     const element = document.getElementById('my_modal_1') as any
     element.showModal()
   }

@@ -126,8 +126,6 @@ const LandingTestimonials = () => {
         showDots={true}
         className='flex h-full items-stretch'
         arrows={false}
-        partialVisbile={true}
-        partialVisible={true}
         itemClass='px-8'
       >
         { testimonials.map((testimonial, index) => (

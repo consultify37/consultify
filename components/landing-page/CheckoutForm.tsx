@@ -10,6 +10,7 @@ import ExtraProducts from './form/ExtraProducts'
 import ContinueButton from './form/ContinueButton'
 import Link from 'next/link'
 import TiktokPixel from 'tiktok-pixel'
+import axios from 'axios'
 
 type Props = {
   discountCode: string | null
@@ -29,7 +30,7 @@ const CheckoutForm = ({ discountCode }: Props) => {
     handle: 'agenda-start-up',
     merchandiseId: "gid://shopify/ProductVariant/54299416691032",
     name: 'FLASHCARDS START UP NATION + SEDINTA CONSULTANTA',
-    price: 199,
+    price: 79,
     image: '/landing-page/images/1.png',
     quantity: 1
   }])
@@ -118,9 +119,90 @@ const CheckoutForm = ({ discountCode }: Props) => {
     element.showModal()
   }
 
+  const createOrder = async (e: any) => {
+    e.preventDefault()
+    setLoading(true)
+
+    const formData = new FormData(e.target)
+
+    const discount_codes = []
+
+    if ( items.find((item) => item.handle == 'agenda-start-up')!.quantity == 2 ) {
+      discount_codes.push({ code: '15OFF', amount: '15.00', type: 'fixed_amount' })
+    }
+
+    if (discountCode) {
+      discount_codes.push({ code: discountCode, amount: '5.00', type: 'percentage' })
+    }
+
+    try {
+      const response = await axios.post('/api/shopify/create_order', {
+        send_receipt: true,
+        order: {
+          send_receipt: true,
+          line_items: items.map((item) => ({ variant_id: item.merchandiseId.replace('gid://shopify/ProductVariant/', ''), quantity: item.quantity })),
+          customer: {
+            first_name: formData.get('FirstName'),
+            last_name: formData.get('LastName'),
+            email: formData.get('Email')
+          },
+          billing_address: {
+            first_name: formData.get('FirstName'),
+            last_name: formData.get('LastName'),
+            address1: formData.get('Adress'),
+            phone: formData.get('Phone'),
+            city: formData.get('City'),
+            province: formData.get('Province'),
+            country: 'Romania',
+            zip: formData.get('ZIP')
+          },
+          shipping_address: {
+            first_name: formData.get('FirstName'),
+            last_name: formData.get('LastName'),
+            address1: formData.get('Adress'),
+            phone: formData.get('Phone'),
+            city: formData.get('City'),
+            province: formData.get('Province'),
+            country: 'Romania',
+            zip: formData.get('ZIP')
+          },
+          email: formData.get('Email'),
+          financial_status: 'pending',
+          discount_codes: discount_codes,
+        }
+      })
+
+      try {
+        TiktokPixel.track('PlaceAnOrder', {
+          contents: [{
+            content_id: items[0].merchandiseId,
+            content_name: items[0].name,
+            quantity: items[0].quantity || 1,
+            price: items[0].price
+          }],
+          content_type: 'product',
+          value: items[0].price,
+          currency: 'RON'
+        })
+      } catch (e) {
+        console.log(e)
+      }
+
+      router.push('/thank-you?order_id=' + response.data.order.id)
+    } catch (error) {
+      console.error('Error creating order:', error);
+    }
+
+    setLoading(false)
+  }
+
   return (
     <div className='flex flex-col pb-2 items-center'>
-      <form onSubmit={openOfferModal} method="dialog" className='translate-x-4 self-end'>
+      <form 
+        // onSubmit={openOfferModal} 
+        method="dialog" 
+        className='translate-x-4 self-end'
+      >
         <button className='btn btn-ghost'>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +220,7 @@ const CheckoutForm = ({ discountCode }: Props) => {
       </form>
       <h1 className='font-bold text-[21px]'>Introdu adresa ta de livrare</h1>
       <h3 className='font-bold text-[#ff0000]'>Plătești doar când ajunge coletul la tine!</h3>
-      <form onSubmit={createCart} className='flex flex-col items-start w-full mt-4 max-w-lg px-0'>
+      <form onSubmit={createOrder} className='flex flex-col items-start w-full mt-4 max-w-lg px-0'>
         <FormInput 
           svg={
             <svg
