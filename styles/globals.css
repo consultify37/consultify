@@ -134,6 +134,13 @@ html.normal-scroll {
 }
 
 
+
+.react-multi-carousel-dot--active button {
+  box-shadow: none !important;
+  background-color: #fff !important; /* Change this to your desired active color */
+}
+
+
 .carousel-landing .rec-item-wrapper {
   height: 100% !important;
 }

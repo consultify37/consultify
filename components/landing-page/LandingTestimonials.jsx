@@ -1,6 +1,8 @@
 import React from 'react'
-import Carousel from 'react-elastic-carousel'
+// import Carousel from 'react-elastic-carousel'
 import TestimonialCard from './TestimonialCard'
+import Carousel from "react-multi-carousel"
+import "react-multi-carousel/lib/styles.css"
 
 const testimonials = [
   {
@@ -111,7 +113,49 @@ const testimonials2 = [
 const LandingTestimonials = () => {
   return (
     <div className='flex flex-col mt-8 carousel-landing'>
-      <Carousel 
+      <Carousel
+        responsive={{
+          desktop: {
+            breakpoint: { max: 3000, min: 0 },
+            items: 1,
+            slidesToSlide: 1
+          }
+        }}
+        autoPlay={true}
+        autoPlaySpeed={12000}
+        showDots={true}
+        className='flex h-full items-stretch'
+        arrows={false}
+        partialVisbile={true}
+        partialVisible={true}
+        itemClass='px-8'
+      >
+        { testimonials.map((testimonial, index) => (
+          <div key={index} className='h-full pb-10'>
+            <TestimonialCard key={index} testimonial={testimonial} />
+          </div>
+        ))}
+      </Carousel>
+
+      <Carousel
+        responsive={{
+          desktop: {
+            breakpoint: { max: 3000, min: 0 },
+            items: 1,
+            slidesToSlide: 1
+          }
+        }}
+        showDots={true}
+        className='flex h-full items-stretch mt-8'
+        arrows={false}
+      >
+        { testimonials2.map((testimonial, index) => (
+          <div key={index} className='px-8 h-full pb-10'>
+            <TestimonialCard key={index} testimonial={testimonial} />
+          </div>
+        ))}
+      </Carousel>
+      {/* <Carousel 
         showArrows={false}
         className='flex h-full items-stretch'
         enableAutoPlay={true}
@@ -121,7 +165,7 @@ const LandingTestimonials = () => {
           <TestimonialCard key={index} testimonial={testimonial} />
         ))}
       </Carousel>
-
+      
       <Carousel 
         showArrows={false}
         className='flex h-full items-stretch mt-8'
@@ -131,7 +175,7 @@ const LandingTestimonials = () => {
         { testimonials2.map((testimonial, index) => (
           <TestimonialCard key={index} testimonial={testimonial} />
         ))}
-      </Carousel>
+      </Carousel> */}
     </div>
   )
 }

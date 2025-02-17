@@ -14,7 +14,7 @@ type Props = {
 
 const TestimonialCard = ({ testimonial }: Props) => {
   return (
-    <div className='bg-white rounded-lg p-4 w-full mx-6 text-[13px] flex flex-col h-full'>
+    <div className='bg-white rounded-lg p-4 w-full text-[13px] flex flex-col h-full'>
       <div className='flex flex-row items-center gap-x-2'>
         <Image 
           src={testimonial.profilePic}

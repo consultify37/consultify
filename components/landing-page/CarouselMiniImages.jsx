@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
-import Carousel from 'react-elastic-carousel'
+// import Carousel from 'react-elastic-carousel'
+import Carousel from "react-multi-carousel"
+import "react-multi-carousel/lib/styles.css"
 import { ArrowComponent } from './ArrowComponent'
 
 const images = [
@@ -17,7 +19,7 @@ const images = [
 const CarouselMiniImages = ({ currentIndex, setCurrentIndex }) => {
   return (
     <div className='carousel-mini mt-6'>
-      <Carousel
+      {/* <Carousel
         disableArrowsOnEnd={true}
         showArrows={true}
         renderArrow={({type, isEdge, onClick}) => ( <ArrowComponent isEdge={isEdge} type={type} onClick={onClick} />)}
@@ -36,6 +38,31 @@ const CarouselMiniImages = ({ currentIndex, setCurrentIndex }) => {
             alt={image}
             className={`w-[calc(100%-16px)] cursor-pointer bg-[#f0f1f3] aspect-square object-cover h-auto rounded-md ${index == currentIndex ? 'border-black border' : ''}`}
           />
+        ))}
+      </Carousel> */}
+      <Carousel
+        responsive={{
+          desktop: {
+            breakpoint: { max: 3000, min: 0 },
+            items: 4,
+            slidesToSlide: 1
+          },
+        }}
+      >
+        { images.map((image, index) => (
+          <div
+            key={index}
+            className='pr-2'
+          >
+            <Image 
+              onClick={() => setCurrentIndex(index)}
+              src={image}
+              width={512}
+              height={512}
+              alt={image}
+              className={`cursor-pointer bg-[#f0f1f3] aspect-square object-cover h-auto rounded-md ${index == currentIndex ? 'border-black border' : ''}`}
+            />
+          </div>
         ))}
       </Carousel>
     </div>
