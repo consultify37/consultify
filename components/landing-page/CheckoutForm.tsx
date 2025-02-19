@@ -199,7 +199,7 @@ const CheckoutForm = ({ discountCode }: Props) => {
   return (
     <div className='flex flex-col pb-2 items-center'>
       <form 
-        // onSubmit={openOfferModal} 
+        onSubmit={openOfferModal} 
         method="dialog" 
         className='translate-x-4 self-end'
       >
