@@ -84,7 +84,9 @@ export default function App({ Component, pageProps }: AppProps) {
                 <Analytics />
                 <TopBar />
                 <Header />
-                <StartUp2024PopUp />
+                { !pathname?.includes('/thank-you') &&
+                  <StartUp2024PopUp />
+                }
               </> : null
             }
             <main className="flex-1 relative">
