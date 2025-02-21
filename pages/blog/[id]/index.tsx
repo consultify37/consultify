@@ -112,7 +112,7 @@ const BlogPost = ({ article, articles, products }: Props) => {
                 </div>
                 { reactHtmlParser(article.formattedContent.replaceAll('<p><br></p>', ''), { transform: formatter }) }
 
-                {/* <p className="self-end text-[14px] md:text-[16px] py-4 italic text-black text-opacity-80">Vizualizări: {article.views ? article.views : 0}</p> */}
+                <p className="self-end text-[14px] md:text-[16px] py-4 italic text-black text-opacity-0">Vizualizări: {article.views ? article.views : 0}</p>
             </section>
             <News 
                 articles={articles}
