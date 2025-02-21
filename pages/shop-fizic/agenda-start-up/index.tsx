@@ -60,6 +60,8 @@ const LandingPage = () => {
     <div className=''>
       <Head>
         <title>{`AGENDA FLASHCARDS START UP NATION + ȘEDINȚĂ CONSULTANȚĂ`}</title>
+        <meta name="description" content="Descoperă AGENDA FLASHCARDS START UP NATION + ȘEDINȚĂ CONSULTANȚĂ pentru a învăța cum să obții finanțare nerambursabilă de peste 50.000 €. Participă la sesiunea de consultanță și primește ghidare pas cu pas pentru a-ți transforma visul antreprenorial în realitate." />
+        <meta name="keywords" content="AGENDA FLASHCARDS, START UP NATION, ȘEDINȚĂ CONSULTANȚĂ, finanțare nerambursabilă, fonduri europene, proiecte antreprenoriale, ghidare pas cu pas, consultanță gratuită, afaceri, finanțare 50.000 €, fonduri nerambursabile" />
       </Head>
       <dialog id="my_modal_1" className="modal">
         <div className='modal-box'>
@@ -83,7 +85,7 @@ const LandingPage = () => {
         <PrimaryFeatures />
         {/* <Timer /> */}
         <Image 
-          src='/landing-page/images/perioada.png'
+          src='/landing-page/images/perioada propusa.png'
           alt='urgency'
           width={1024}
           height={1024}
@@ -96,7 +98,7 @@ const LandingPage = () => {
           text1='Cu toții avem momente în care ne întrebăm: <i>Ce-ar fi fost dacă porneam afacerea aia?<i> Dar, din păcate, ne putem <b>doar imagina<b>. De aceea, în situația de față, nu mai lăsa <b>visul<b> de a deveni antreprenor să rămână doar un gând. Acest <b>pachet complet<b> îți oferă toate informațiile necesare despre Start-Up Nation și îți pune bazele scrierii oricărui proiect prin fonduri europene. 📚<br><b>Nu ezita!<b> Fă primul pas spre afacerea ta și transformă-ți visul în realitate prin fonduri europene! 🚀'
         />
         <p className='font-bold mt-8'>Ok, cumpăr flashcard-urile și particip la sesiunea de consultanță, dar e suficient pentru a obține finanțarea?</p>
-        <p className='mt-4'><span className='font-bold'>✅ Răspunsul este DA!</span> În sesiunea de consultanță te vom ghida pas cu pas în:</p>
+        <p className='mt-4'><span className='font-bold'>✅ Răspunsul este DA, ai putea!</span> În sesiunea de consultanță te vom ghida pas cu pas în:</p>
         <ul className='list-disc mt-4 ml-4'>
           <li>Alegerea ideii de afacere potrivite pentru tine </li>
           <li>Stabilirea echipamentelor necesare pentru activitatea ta</li>
@@ -115,7 +117,7 @@ const LandingPage = () => {
       <div className='max-w-lg px-8 mx-auto w-full mt-8'>
         {/* <Timer /> */}
         <Image 
-          src='/landing-page/images/perioada.png'
+          src='/landing-page/images/perioada propusa.png'
           alt='urgency'
           width={1024}
           height={1024}
@@ -138,7 +140,7 @@ const LandingPage = () => {
         <FeaturesTable />
         {/* <Timer /> */}
         <Image 
-          src='/landing-page/images/perioada.png'
+          src='/landing-page/images/perioada propusa.png'
           alt='urgency'
           width={1024}
           height={1024}

@@ -96,6 +96,11 @@ export default function Testimoniale({ articles, products }: Props) {
     <>
       <Head>
         <title>{`${process.env.SITE} | Testimoniale`}</title>
+        <>
+  <meta name="description" content="Testimoniale Consultify - Descoperă poveștile de succes ale clienților noștri care au accesat fonduri europene cu ajutorul nostru." />
+  <meta name="keywords" content="testimoniale, fonduri europene, consultanță afaceri, finanțare IMM, granturi, accesare fonduri, succes afaceri" />
+</>
+
       </Head>
       <PageHeader
         title="Experiențe de succes prin fonduri europene!"

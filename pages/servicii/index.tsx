@@ -66,6 +66,11 @@ export default function Servicii({ articles, products }: Props) {
     <>
         <Head>
             <title>Consultify | Servicii</title>
+            <>
+  <meta name="description" content="Consultify - Servicii profesionale de consultanță pentru accesarea fondurilor europene și dezvoltarea afacerilor. Oferim soluții personalizate pentru IMM-uri și startup-uri." />
+  <meta name="keywords" content="consultanță fonduri, fonduri europene, IMM, startup, granturi, finanțare nerambursabilă, dezvoltare afaceri, accesare fonduri, digitalizare IMM" />
+</>
+
         </Head>
         <PageHeader
           title="Împreună pentru succesul tău: servicii și produse de calitate"

@@ -49,6 +49,11 @@ export default function Programe({categories, programe, articles, products }: Pr
         <>
             <Head>
                 <title>Consultify | Programe</title>
+                <>
+  <meta name="description" content="Consultify - Programe de finanțare pentru IMM-uri și startup-uri. Oferim consultanță pentru accesarea fondurilor europene și dezvoltarea afacerilor." />
+  <meta name="keywords" content="programe de finanțare, fonduri europene, IMM, startup, granturi, consultanță afaceri, finanțare nerambursabilă, digitalizare, accesare fonduri" />
+</>
+
             </Head>
             <PageHeader 
                 title="Alege programul potrivit pentru tine:"

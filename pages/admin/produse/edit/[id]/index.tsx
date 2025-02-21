@@ -28,6 +28,7 @@ const Edit = ({ categories, product }: Props) => {
   const router = useRouter()
   const [name, setName] = useState(product.name ? product.name : '')
   const [category, setCategory] = useState< string | null >(product.category ? product.category : null)
+  const [keywords, setKeywords] = useState( product.keywords ? product.keywords : '')
   const [description, setDescription] = useState( product.description ? product.description : '' )
   const [description2, setDescription2] = useState( product.description2 ? product.description2 : '')
   const [reasons, setReasons] = useState< string[] >( product.reasons ? product.reasons : [] )
@@ -149,6 +150,7 @@ const Edit = ({ categories, product }: Props) => {
           name,
           category,
           description,
+          keywords,
           description3,
           description2,
           reasons,
@@ -217,6 +219,13 @@ const Edit = ({ categories, product }: Props) => {
               setValue={setName}
               placeholder='ex: Ghid fonduri 2022'
               required={true}
+            />
+
+            <h2 className='text-[14px] font-semibold text-secondary mt-8 mb-2 ml-1'>Cuvinte cheie</h2>
+            <FormInput
+              value={keywords}
+              setValue={setKeywords}
+              placeholder='ex: fonduri, 2022, ghid'
             />
 
             <h2 className='text-[14px] font-semibold text-secondary mt-8 mb-2 ml-1'>Descriere 1</h2>

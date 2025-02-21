@@ -133,6 +133,11 @@ export default function Testimoniale({ articles, categories, products, releases:
     <>
         <Head>
             <title>{`${process.env.SITE} | Comunicate de presă`}</title>
+            <>
+  <meta name="description" content="Consultify - Vezi cele mai recente comunicate de presă despre finanțare, digitalizare și proiecte pentru IMM-uri și startup-uri." />
+  <meta name="keywords" content="comunicate de presă, finanțare IMM, digitalizare, proiecte europene, fonduri nerambursabile, granturi, startup-uri, consultanță afaceri" />
+</>
+
         </Head>
         <PageHeader 
             title="Comunicate de presă"

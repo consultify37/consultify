@@ -1,7 +1,7 @@
 import React from 'react'
 const features = [
   "💡 Accesează fonduri europene fără FIRME DE CONSULTANȚĂ",
-  "📘 Ghid complet pentru redactarea oricărui proiect",
+  "📘 Ghid complet pentru redactarea proiectului",
   "⚡ Rezultate rapide și pași simpli de urmat",
   "🎯 Ședință de consultanță GRATUITĂ – pentru întrebări"
 ]

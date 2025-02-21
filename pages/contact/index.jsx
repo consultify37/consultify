@@ -88,6 +88,11 @@ export default function Contact() {
         <>
             <Head>
                 <title>Consultify | Contact</title>
+                <>
+  <meta name="description" content="Contactează echipa Consultify pentru informații despre serviciile noastre. Suntem aici să te ajutăm cu consultanță și soluții personalizate." />
+  <meta name="keywords" content="contact Consultify, consultanță afaceri, suport clienți, informații, servicii Consultify, ajutor afaceri, asistență clienți" />
+</>
+
             </Head>
             <PageHeader
                 title="Suntem aici pentru tine!"

@@ -128,6 +128,11 @@ export default function Testimoniale({ articles: initialArticles, categories, pr
     <>
         <Head>
             <title>{`${process.env.SITE} | Blog`}</title>
+            <>
+  <meta name="description" content="Consultify Blog - Descoperă cele mai noi articole despre fonduri europene, finanțare pentru afaceri și digitalizare. Ghiduri și sfaturi pentru IMM-uri și startup-uri." />
+  <meta name="keywords" content="fonduri europene, finanțare IMM, granturi, digitalizare afaceri, consultanță business, proiecte europene, startup nation, accesare fonduri" />
+</>
+
         </Head>
         <PageHeader 
             title="Ultimele tendințe în Fonduri Europene și nu numai:"

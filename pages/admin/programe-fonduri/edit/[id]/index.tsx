@@ -26,6 +26,7 @@ const EditProgram = ({ categories, program }: Props) => {
   const router = useRouter()
   const [bulletPoints, setBulletPoints] = useState< string[] >(program.bulletPoints ? program.bulletPoints : [])
   const [categorie, setCategorie] = useState< string | null >(program.categorie ? program.categorie : null)
+  const [keywords, setKeywords] = useState(program.keywords ? program.keywords : '')
   const [status, setStatus] = useState< string | null >(program.status ? program.status : null)
   const [title, setTitle] = useState(program.title ? program.title : '')
   const [text1, setText1] = useState(program.text1 ? program.text1 : '')
@@ -88,6 +89,7 @@ const EditProgram = ({ categories, program }: Props) => {
       const newData = {
         site: process.env.SITE,
         bulletPoints,
+        keywords,
         categorie,
         status: status != 'NULL' ? status : null,
         title,
@@ -197,6 +199,14 @@ const EditProgram = ({ categories, program }: Props) => {
               placeholder='Suma de finanțare'
               styleProps='mt-8'
               required={true}
+            />
+
+            <FormInput
+              value={keywords}
+              setValue={setKeywords}
+              placeholder='Cuvinete cheie'
+              styleProps='mt-8'
+              // required={true}
             />
           </div>
         </div>

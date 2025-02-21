@@ -59,6 +59,8 @@ const ProductPage = ({ product, featuredProducts }: Props) => {
     <>
       <Head>
 				<title>{`Consultify | ${product.name}`}</title>
+        <meta name='description' content={product.description ? product.description : ''} />
+        <meta name='keywords' content={product.keywords ? product.keywords : ''} />
 			</Head>
 
       <div className='pt-[140px] lg:pt-40 px-7 md:px-[80px] xl:px-[180px] 2xl:px-[276px] flex flex-col lg:flex-row items-center'>

@@ -45,6 +45,7 @@ export type PressRealease = {
 
 export type Program = {
   id: string
+  keywords?: string
   bulletPoints: string[]
   categorie: string 
   status: string | null
@@ -129,6 +130,7 @@ export type User = {
 
 export type Product = {
   stripe_price_id: string
+  keywords?: string
   active: boolean
   id?: string
   name: string

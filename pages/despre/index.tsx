@@ -24,6 +24,8 @@ const About = ({ articles, products }: Props) => {
             {/* PageSettings */}
             <Head>
                 <title>Consultify | Despre</title>
+                <meta name="description" content="Consultify - Descoperă serviciile noastre de consultanță pentru fonduri europene și dezvoltare de afaceri. Oferim soluții personalizate pentru IMM-uri și startup-uri." />
+                <meta name="keywords" content="consultanță fonduri, fonduri europene, granturi IMM, finanțare startup, accesare fonduri, dezvoltare afaceri, proiecte europene, digitalizare IMM, finanțare nerambursabilă" />
             </Head>
             <AboutHeader /> 
             <OurStory />

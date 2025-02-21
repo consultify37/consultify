@@ -45,6 +45,11 @@ export default function PaginaProgram({ articles, products }: Props) {
     <>
         <Head>
             <title>{`${process.env.SITE} | Implementare Proiect`}</title>
+            <>
+  <meta name="description" content="Consultify - Implementarea proiectelor cu succes. Oferim consultanță specializată pentru achiziții, cereri de plată și rambursări eficiente." />
+  <meta name="keywords" content="implementare proiect, achiziții strategice, cereri de plată, rambursări, consultanță afaceri, proiecte europene, finanțare IMM" />
+</>
+
         </Head>
         <PageHeader
             title="De la concept la realitate: Implementarea proiectelor cu succes"

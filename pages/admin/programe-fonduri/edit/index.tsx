@@ -19,6 +19,7 @@ const EditProgram = ({ categories }: { categories: string[] }) => {
   const router = useRouter()
   const [bulletPoints, setBulletPoints] = useState< string[] >([])
   const [categorie, setCategorie] = useState< string | null >(null)
+  const [keywords, setKeywords] = useState('')
   const [status, setStatus] = useState< string | null >(null)
   const [title, setTitle] = useState('')
   const [text1, setText1] = useState('')
@@ -79,6 +80,7 @@ const EditProgram = ({ categories }: { categories: string[] }) => {
         text2,
         suma, 
         descriere,
+        keywords,
         title2,
         title3,
         suma2,
@@ -180,6 +182,14 @@ const EditProgram = ({ categories }: { categories: string[] }) => {
               value={suma}
               setValue={setSuma}
               placeholder='Suma de finanțare'
+              styleProps='mt-8'
+              required={true}
+            />
+
+            <FormInput
+              value={keywords}
+              setValue={setKeywords}
+              placeholder='Cuvinte cheie'
               styleProps='mt-8'
               required={true}
             />

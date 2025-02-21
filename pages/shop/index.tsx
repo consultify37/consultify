@@ -16,6 +16,11 @@ const Shop = ({ categories, products }: Props) => {
 		<>
 			<Head>
 				<title>Consultify | Shop</title>
+				<>
+  <meta name="description" content="Consultify Shop - Descoperă produse digitale ready-made pentru antreprenori și profesioniști. Alege pachete pentru marketing, web design, programare și consultanță." />
+  <meta name="keywords" content="produse digitale, pachete ready-made, marketing online, web design, programare, consultanță, documente business, ecommerce, freelancing" />
+</>
+
 			</Head>
 			<ShopHeader />
 			<ShopItems 

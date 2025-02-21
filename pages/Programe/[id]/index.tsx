@@ -45,6 +45,8 @@ const ProgramPage = ({ program, products, articles }: Props) => {
     <>
       <Head>
           <title>{`${process.env.SITE} | ${program.title2}`}</title>
+          <meta name="description" content={program.descriere} />
+          <meta name="keywords" content={program.keywords ? program.keywords : ''} />
       </Head>
       <section className="flex flex-col w-full pt-[140px] md:pt-40 pb-20 items-center px-7 md:px-[110px] xl:px-[160px] 2xl:px-[276px]">
         <div className='relative overflow-hidden'>

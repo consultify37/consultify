@@ -23,6 +23,7 @@ type Props = {
 const Edit = ({ categories }: Props) => {
   const router = useRouter()
   const [name, setName] = useState('')
+  const [keywords, setKeywords] = useState('')
   const [category, setCategory] = useState< string | null >(null)
   const [description, setDescription] = useState('')
   const [description2, setDescription2] = useState('')
@@ -102,6 +103,7 @@ const Edit = ({ categories }: Props) => {
         active,
         featured,
         name,
+        keywords,
         category,
         description,
         description3,
@@ -173,6 +175,13 @@ const Edit = ({ categories }: Props) => {
               setValue={setName}
               placeholder='ex: Ghid fonduri 2022'
               required={true}
+            />
+
+            <h2 className='text-[14px] font-semibold text-secondary mt-8 mb-2 ml-1'>Cuvinte cheie</h2>
+            <FormInput
+              value={keywords}
+              setValue={setKeywords}
+              placeholder='ex: fonduri, ghid, 2022'
             />
 
             <h2 className='text-[14px] font-semibold text-secondary mt-8 mb-2 ml-1'>Descriere 1</h2>
