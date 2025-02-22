@@ -32,6 +32,7 @@ export default function Home({ slides, programe, articles, products }: Props) {
         <title>Consultify | Acasă</title>
         <meta name="description" content="Consultify - Soluții de consultanță pentru accesarea fondurilor europene și dezvoltarea afacerilor. Descoperă oportunități de finanțare pentru IMM-uri și startup-uri." />
         <meta name="keywords" content="fonduri europene, finanțare IMM, granturi, digitalizare IMM, consultanță fonduri, proiecte europene, start-up nation, finanțare nerambursabilă, dezvoltare afaceri, accesare fonduri" />
+        <meta name="facebook-domain-verification" content="jv8esfqikdi3q9dzrh1vvw14bs9ylk" />
       </Head>
       <HomeHeader slides={slides} />
       <TrustSRL />
