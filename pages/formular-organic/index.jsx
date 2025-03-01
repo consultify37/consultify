@@ -179,7 +179,7 @@ const Form = () => {
                   data-field="DescriereProiect" data-table="Project" data-type name="Project[3277][DescriereProiect]" id="Project_DescriereProiect_3277"
               ></textarea>
           </div>
-          <div className="flex w-full flex-col items-center md:flex-row justify-between mb-6">
+          {/* <div className="flex w-full flex-col items-center md:flex-row justify-between mb-6">
               <div className="flex flex-col w-full">
                   <span className="text-secondary mb-2 font-semibold">
                     Ce buget ați alocat pentru acest proiect? (Introduceți valoarea în euro)*
@@ -188,14 +188,14 @@ const Form = () => {
                       required 
                       // value={nume}
                       // onChange={(e) => setNume(e.target.value)}
-                      type="text"
+                      type="number"
                       // name="Nume"
                       className="rounded-xl w-full border-[#8717F8] text-ms leading-6 border-2 p-[14px] outline-none" 
                       placeholder="ex: 10000"
                       data-field="Int2831" data-table="Project" data-type name="Project[3277][Int2831]" id="Project_Int2831_3277"
                   />
               </div>
-          </div>
+          </div> */}
           <div className="flex w-full flex-col items-center justify-between mb-6">
               <div className="flex flex-col w-full md:mr-2">
                   <span className="text-secondary mb-2 font-semibold">
