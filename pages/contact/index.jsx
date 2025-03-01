@@ -310,7 +310,7 @@ export default function Contact() {
                             data-field="DescriereProiect" data-table="Project" data-type name="Project[3235][DescriereProiect]" id="Project_DescriereProiect_3235"
                         ></textarea>
                     </div>
-                    {/* <div className="flex flex-col w-full mb-6">
+                    <div className="flex flex-col w-full mb-6">
                         <span className="text-md mb-2 font-semibold">
                         Ce buget ați alocat pentru acest proiect? (Introduceți valoarea în euro)*
                         </span>
@@ -322,9 +322,9 @@ export default function Contact() {
                             placeholder="ex: 10000"
                             // onChange={(e) => setEmail(e.target.value)}
                             // value={email}
-                            data-field="Int2831" data-table="Project" name="Project[3235][Int2831]" id="Project_Int2831_3235" language="RO"
+                            data-field="CapacitateInvestitieformularSite" data-table="Project" data-type name="Project[3235][CapacitateInvestitieformularSite]" id="Project_CapacitateInvestitieformularSite_3235" language="RO"
                         />
-                    </div> */}
+                    </div>
                     <select hidden data-field="Sursa2" data-table="Project" data-type name="Project[3235][Sursa2]" id="Project_Sursa2_3235">
                         <option value="7072" checked>
                             Site Web
