@@ -168,6 +168,7 @@ const CheckoutForm = ({ discountCode }: Props) => {
           },
           email: formData.get('Email'),
           financial_status: 'pending',
+          payment_gateway_names: ['Cash on Delivery (COD)'],
           discount_codes: discount_codes,
           note_attributes: { 
             'CUI': formData.get('CUI'),

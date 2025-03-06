@@ -20,6 +20,7 @@ import { storefrontApiClient } from '../../../utils/shopify/storeFrontApiClient'
 import CheckoutForm from '../../../components/landing-page/CheckoutForm'
 import Offer from '../../../components/landing-page/Offer'
 import TiktokPixel from 'tiktok-pixel'
+import axios from 'axios'
 
 const LandingPage = () => {
   const [availableForSale, setAvailableForSale] = useState(true)
