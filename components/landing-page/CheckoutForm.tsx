@@ -138,9 +138,10 @@ const CheckoutForm = ({ discountCode }: Props) => {
     try {
       const response = await axios.post('/api/shopify/create_order', {
         send_receipt: true,
+        inventory_behaviour: 'decrement_obeying_policy',
         order: {
           send_receipt: true,
-          line_items: items.map((item) => ({ variant_id: item.merchandiseId.replace('gid://shopify/ProductVariant/', ''), quantity: item.quantity })),
+          line_items: items.map((item) => ({ variant_id: item.merchandiseId.replace('gid://shopify/ProductVariant/', ''), quantity: item.quantity, fulfillable_quantity: item.quantity })),
           customer: {
             first_name: formData.get('FirstName'),
             last_name: formData.get('LastName'),
@@ -168,7 +169,6 @@ const CheckoutForm = ({ discountCode }: Props) => {
           },
           email: formData.get('Email'),
           financial_status: 'pending',
-          payment_gateway_names: ['Cash on Delivery (COD)'],
           discount_codes: discount_codes,
           note_attributes: { 
             'CUI': formData.get('CUI'),

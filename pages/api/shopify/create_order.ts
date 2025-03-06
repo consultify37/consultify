@@ -3,13 +3,14 @@ import { NextApiRequest, NextApiResponse } from "next"
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const { order, send_receipt } = req.body
+    const { order, send_receipt, inventory_behaviour } = req.body
 
     const response = await axios.post(
       'https://xwgafa-qn.myshopify.com/admin/api/2025-01/orders.json',
       {
         order,
-        send_receipt
+        send_receipt,
+        inventory_behaviour
       },
       {
         headers: {
