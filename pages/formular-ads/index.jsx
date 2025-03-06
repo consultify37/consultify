@@ -179,7 +179,7 @@ const Form = () => {
                   data-field="DescriereProiect" data-table="Project" data-type name="Project[3283][DescriereProiect]" id="Project_DescriereProiect_3283"
               ></textarea>
           </div>
-          <div className="flex w-full flex-col items-center md:flex-row justify-between mb-6">
+          {/* <div className="flex w-full flex-col items-center md:flex-row justify-between mb-6">
               <div className="flex flex-col w-full">
                   <span className="text-secondary mb-2 font-semibold">
                     Ce buget ați alocat pentru acest proiect? (Introduceți valoarea în euro)*
@@ -195,7 +195,7 @@ const Form = () => {
                       data-field="CapacitateInvestitieformularSite" data-table="Project" data-type name="Project[3283][CapacitateInvestitieformularSite]" id="Project_CapacitateInvestitieformularSite_3283"
                   />
               </div>
-          </div>
+          </div> */}
           <div className="flex w-full flex-col items-center justify-between mb-6">
               <div className="flex flex-col w-full md:mr-2">
                   <span className="text-secondary mb-2 font-semibold">
