@@ -310,7 +310,7 @@ export default function Contact() {
                             data-field="DescriereProiect" data-table="Project" data-type name="Project[3235][DescriereProiect]" id="Project_DescriereProiect_3235"
                         ></textarea>
                     </div>
-                    <div className="flex flex-col w-full mb-6">
+                    <div className="hidden flex-col w-full mb-6">
                         <span className="text-md mb-2 font-semibold">
                         Ce buget ați alocat pentru acest proiect? (Introduceți valoarea în euro)*
                         </span>
