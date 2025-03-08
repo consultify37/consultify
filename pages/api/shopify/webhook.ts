@@ -105,7 +105,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           attachments: [{ content: base64, name: `Factura ${smartBillResponse.data.series}-${smartBillResponse.data.number}.pdf`}],
           text: null
         })
-      } catch (e) {}
+      } catch (e) {
+        console.log(e)
+      }
       return res.status(200).json({ success: true })
     }
 
