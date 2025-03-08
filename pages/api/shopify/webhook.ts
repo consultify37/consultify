@@ -79,11 +79,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     console.log(`No action taken. ${financial_status}`)
     res.status(200).json({ message: "No action taken" })
   } catch (e: any) {
-    console.log(e.response?.data?.errors || e.message)
-    if (e.response?.data?.errors) {
+    if (e.response && e.response.data && e.response.data.errors) {
+      console.log(e.response?.data?.errors)
       return res.status(500).json({ error: e.response.data.errors })
     }
     if (e.message) {
+      console.log(e.message)
       return res.status(500).json({ error: e.message })
     }
     res.status(500).json({ error: "Internal Server Error" })
