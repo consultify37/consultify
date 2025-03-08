@@ -76,6 +76,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(200).json({ success: true })
     }
 
+    console.log(`No action taken. ${financial_status}`)
     res.status(200).json({ message: "No action taken" })
   } catch (e: any) {
     console.log(e.response?.data?.errors || e.message)
