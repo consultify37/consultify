@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   try {
     const { id, financial_status, total_price, name, email, billing_address, note_attributes } = req.body
-
+    console.log({ id, financial_status, total_price, name, email, billing_address, note_attributes })
     const billingData = {
       name: billing_address?.name || "N/A",
       country: billing_address?.country || "Romania",
@@ -33,7 +33,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         'https://ws.smartbill.ro/SBORO/api/invoice', 
         {
           companyVatCode: 'RO42607998',
-          seriesName: "SHOP",
+          seriesName: "CONS",
           client: { 
             name: company,
             cui: cui,
