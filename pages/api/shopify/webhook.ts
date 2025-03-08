@@ -25,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const company = note_attributes?.find((attr: any) => attr.name === "Company")?.value || billingData.name
 
     // Check if financial_status is 'authorized'
-    if (financial_status === "authorized") {
+    if (financial_status === "paid") {
       console.log(`Order ${id} is authorized. Generating invoice...`)
 
       // Send invoice request to SmartBill
