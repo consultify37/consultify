@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import axios from "axios"
-import { collection, doc, getDoc, getDocs, query, updateDoc, where } from "firebase/firestore"
+import { addDoc, collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../../../firebase"
 import { sendMail } from "../../../utils/sendMail"
 import { generateInvoiceTemplate } from "../../../utils/templates"
@@ -34,7 +34,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Check if financial_status is 'authorized'
     if (financial_status === "paid" && invoiceSnapshot.empty) {
       console.log(`Order ${id} is authorized. Generating invoice...`)
-      console.log(process.env.SMARTBILL_API_KEY)
       // Send invoice request to SmartBill
       const smartBillResponse = await axios.post(
         'https://ws.smartbill.ro/SBORO/api/invoice', 
@@ -94,7 +93,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       const base64 = Buffer.from(response1.data).toString("base64")
       
-      await updateDoc(doc(db, "invoices"), { shopifyOrderId: id, series: smartBillResponse.data.series, number: smartBillResponse.data.number })
+      await addDoc(collection(db, "invoices"), { shopifyOrderId: id, series: smartBillResponse.data.series, number: smartBillResponse.data.number })
 
       try {
         await sendMail({
@@ -110,7 +109,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(200).json({ success: true })
     }
 
-    console.log(`No action taken. ${financial_status}`)
     res.status(200).json({ message: "No action taken" })
   } catch (e: any) {
     if (e.response && e.response.data && e.response.data.errors) {
