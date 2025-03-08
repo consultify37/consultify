@@ -36,12 +36,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           seriesName: "CONS",
           client: { 
             name: company,
-            cui: cui,
             country: billingData.country,
             county: billingData.province,
             city: billingData.city,
             address: billingData.address,
-            email: billingData.email
+            email: billingData.email,
+            vatCode: cui,
+            isTaxPayer: cui && cui.length != 0 ? true : null,
+            saveToDb: true
            },
           payment: {
             value: Number(total_price),
