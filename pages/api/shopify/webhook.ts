@@ -10,7 +10,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const { id, financial_status, total_price, name, email, billing_address, note_attributes } = req.body
     console.log({ id, financial_status, total_price, name, email, billing_address, note_attributes })
     const billingData = {
-      name: billing_address?.name || "N/A",
+      name: `${billing_address?.first_name} ${billing_address?.last_name}`,
       country: billing_address?.country || "Romania",
       countryCode: billing_address?.country_code || "RO",
       province: billing_address?.province || "",
@@ -27,7 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Check if financial_status is 'authorized'
     if (financial_status === "paid") {
       console.log(`Order ${id} is authorized. Generating invoice...`)
-
+      console.log(process.env.SMARTBILL_API_KEY)
       // Send invoice request to SmartBill
       const smartBillResponse = await axios.post(
         'https://ws.smartbill.ro/SBORO/api/invoice', 
@@ -44,14 +44,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             email: billingData.email
            },
           payment: {
-            value: total_price,
+            value: Number(total_price),
             type: 'Card',
             isCash: false
           },
           products: [
             {
               name: `Comanda ${name}`,
-              price: total_price,
+              price: Number(total_price),
               currency: "RON",
               isDiscount: false,
               measuringUnitName: 'buc',
