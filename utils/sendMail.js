@@ -1,21 +1,20 @@
 export const sendMail = async ({ from, to, subject, text, html, attachments, website }) => {
-  const { TransactionalEmailsApi, SendSmtpEmail } = require('@getbrevo/brevo')
-
   var p = new Promise(async (resolve, reject) => {
-    var apiInstance = new TransactionalEmailsApi()
-    var apiKey = apiInstance.authentications['apiKey']
-    apiKey.apiKey = process.env.BREVO_API_KEY
-    
-    var sendSmtpEmail = new SendSmtpEmail()
-
-    sendSmtpEmail.subject = subject
-    sendSmtpEmail.htmlContent = html || null
-    sendSmtpEmail.textContent = text || null
-    sendSmtpEmail.sender = { "name": website, "email": from }
-    sendSmtpEmail.to = [ { "email": to } ]
-    sendSmtpEmail.attachment = attachments
-
     try {
+      const { TransactionalEmailsApi, SendSmtpEmail } = require('@getbrevo/brevo')
+      var apiInstance = new TransactionalEmailsApi()
+      var apiKey = apiInstance.authentications['apiKey']
+      apiKey.apiKey = process.env.BREVO_API_KEY
+      
+      var sendSmtpEmail = new SendSmtpEmail()
+
+      sendSmtpEmail.subject = subject
+      sendSmtpEmail.htmlContent = html || null
+      sendSmtpEmail.textContent = text || null
+      sendSmtpEmail.sender = { "name": website, "email": from }
+      sendSmtpEmail.to = [ { "email": to } ]
+      sendSmtpEmail.attachment = attachments
+
       const response = await apiInstance.sendTransacEmail(sendSmtpEmail)
 
       //console.log('API called successfully. Returned data: ' + JSON.stringify(response))
