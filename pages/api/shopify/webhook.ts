@@ -1,5 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import axios from "axios"
+import { collection, doc, getDoc, getDocs, query, updateDoc, where } from "firebase/firestore"
+import { db } from "../../../firebase"
+import { sendMail } from "../../../utils/sendMail"
+import { generateInvoiceTemplate } from "../../../utils/templates"
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
@@ -8,7 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   try {
     const { id, financial_status, total_price, name, email, billing_address, note_attributes } = req.body
-    console.log({ id, financial_status, total_price, name, email, billing_address, note_attributes })
+
     const billingData = {
       name: `${billing_address?.first_name} ${billing_address?.last_name}`,
       country: billing_address?.country || "Romania",
@@ -24,8 +28,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const cui = note_attributes?.find((attr: any) => attr.name === "CUI")?.value || null
     const company = note_attributes?.find((attr: any) => attr.name === "Company")?.value || billingData.name
 
+    const invoiceRef = query(collection(db, 'invoices'), where("shopifyOrderId", "==", id))
+    const invoiceSnapshot = await getDocs(invoiceRef)
+
     // Check if financial_status is 'authorized'
-    if (financial_status === "paid") {
+    if (financial_status === "paid" && invoiceSnapshot.empty) {
       console.log(`Order ${id} is authorized. Generating invoice...`)
       console.log(process.env.SMARTBILL_API_KEY)
       // Send invoice request to SmartBill
@@ -74,7 +81,32 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }
       )
 
-      console.log("SmartBill response:", smartBillResponse.data)
+      const response1 = await axios.get(`https://ws.smartbill.ro/SBORO/api/invoice/pdf?cif=RO42607998&seriesname=${smartBillResponse.data.series}&number=${smartBillResponse.data.number}`, {
+        responseType: 'arraybuffer',
+        responseEncoding: 'binary',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/octet-stream',
+          'authorization': `Basic ${process.env.SMARTBILL_API_KEY}`,
+          'Content-Disposition': 'attachment; filename=new.pdf'
+        }
+      })
+
+      const base64 = Buffer.from(response1.data).toString("base64")
+      
+      await updateDoc(doc(db, "invoices"), { shopifyOrderId: id, series: smartBillResponse.data.series, number: smartBillResponse.data.number })
+
+      try {
+        await sendMail({
+          website: 'Consultify',
+          from: `noreply@consultify.ro`,
+          to: email,
+          subject: `✅ Factura ${smartBillResponse.data.series}-${smartBillResponse.data.number} de la Consultify`, 
+          html: generateInvoiceTemplate(),
+          attachments: [{ content: base64, name: `Factura ${smartBillResponse.data.series}-${smartBillResponse.data.number}.pdf`}],
+          text: null
+        })
+      } catch (e) {}
       return res.status(200).json({ success: true })
     }
 
