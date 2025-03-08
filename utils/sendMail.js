@@ -16,7 +16,7 @@ export const sendMail = async ({ from, to, subject, text, html, attachments, web
       sendSmtpEmail.attachment = attachments
 
       const response = await apiInstance.sendTransacEmail(sendSmtpEmail)
-      console.log(email)
+      console.log(to)
       console.log('BREVO API called successfully. Returned data: ' + JSON.stringify(response))
       resolve(response)
     } catch (e) {
