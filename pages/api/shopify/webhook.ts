@@ -3,7 +3,16 @@ import axios from "axios"
 import { addDoc, collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../../../firebase"
 import { sendMail } from "../../../utils/sendMail"
-import { generateInvoiceTemplate } from "../../../utils/templates"
+
+const invoiceTemplate =  `<html>Bună ziua,
+<br><br>
+Vă transmitem atașată factura cu detaliile serviciilor/produselor furnizate.
+<br><br>
+Vă mulțumim și vă dorim o zi excelentă!
+<br><br>
+Cu stimă,<br>
+Consultify</html>
+`
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
@@ -101,7 +110,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           from: `noreply@consultify.ro`,
           to: email,
           subject: `✅ Factura ${smartBillResponse.data.series}-${smartBillResponse.data.number} de la Consultify`, 
-          html: generateInvoiceTemplate(),
+          html: invoiceTemplate,
           attachments: [{ content: base64, name: `Factura ${smartBillResponse.data.series}-${smartBillResponse.data.number}.pdf`}],
           text: null
         })
