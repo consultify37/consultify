@@ -53,8 +53,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
            },
           payment: {
             value: Number(total_price),
-            type: 'Card',
-            isCash: false
+            type: 'Alta incasare',
+            isCash: true
           },
           products: [
             {
