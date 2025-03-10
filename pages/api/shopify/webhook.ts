@@ -4,14 +4,14 @@ import { addDoc, collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../../../firebase"
 import { sendMail } from "../../../utils/sendMail"
 
-const invoiceTemplate =  `<html>Bună ziua,
+const invoiceTemplate =  `<div style="max-width:600px;">Bună ziua,
 <br><br>
 Vă transmitem atașată factura cu detaliile serviciilor/produselor furnizate.
 <br><br>
 Vă mulțumim și vă dorim o zi excelentă!
 <br><br>
 Cu stimă,<br>
-Consultify</html>
+Consultify</div>
 `
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
