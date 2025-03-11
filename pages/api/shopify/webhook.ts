@@ -15,7 +15,7 @@ Vă mulțumim pentru achiziția flashcard-urilor 📚 cu informații despre Star
 Dacă aveți întrebări, nu ezitați să ne contactați. 💬<br><br>
 🌐 <a href="https://consultify.ro" target="_blank">www.consultify.ro</a><br>
 📧 <a href="mailto:contact@consultify.ro" target="_blank">contact@consultify.ro</a><br>
-📞 <a href="tel:0773 395 400 (Vânzări)" target="_blank">0773 395 400</a>
+📞 <a href="tel:0773 395 400" target="_blank">0773 395 400</a>
 <br><br>
 Vă dorim mult succes! 🚀
 <br><br>
