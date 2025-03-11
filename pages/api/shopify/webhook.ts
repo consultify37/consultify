@@ -52,7 +52,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const invoiceSnapshot = await getDocs(invoiceRef)
 
     // Process only if financial_status is 'authorized' and invoice does not exist
-    if (financial_status === "authorized" && invoiceSnapshot.empty) {
+    if (financial_status === "paid" && invoiceSnapshot.empty) {
       console.log(`Order ${id} is authorized. Generating invoice...`)
 
       // Calculate total discount
