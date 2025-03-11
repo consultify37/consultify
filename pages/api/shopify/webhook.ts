@@ -10,12 +10,7 @@ Vă mulțumim pentru achiziția flashcard-urilor 📚 cu informații despre Star
 <br><br>
 📎 Atașat acestui email găsiți factura aferentă comenzii dumneavoastră:
 <br><br>
-🎁 <strong>Bonus</strong>: În cadrul pachetului beneficiați de <strong>o ședință gratuită de consultanță</strong>! 🤝 Un consultant <strong>Consultify</strong> vă va contacta în curând pentru a stabili detaliile.
-<br><br>
-Dacă aveți întrebări, nu ezitați să ne contactați. 💬<br><br>
-🌐 <a href="https://consultify.ro" target="_blank">www.consultify.ro</a><br>
-📧 <a href="mailto:contact@consultify.ro" target="_blank">contact@consultify.ro</a><br>
-📞 <a href="tel:0773 395 400" target="_blank">0773 395 400</a>
+Dacă aveți întrebări, nu ezitați să ne contactați. 💬
 <br><br>
 Vă dorim mult succes! 🚀
 <br><br>
@@ -23,6 +18,14 @@ Vă dorim mult succes! 🚀
 Echipa Consultify</strong><br>
 </div>
 `
+
+// 🎁 <strong>Bonus</strong>: În cadrul pachetului beneficiați de <strong>o ședință gratuită de consultanță</strong>! 🤝 Un consultant <strong>Consultify</strong> vă va contacta în curând pentru a stabili detaliile.
+// <br><br>
+
+// 🌐 <a href="https://consultify.ro" target="_blank">www.consultify.ro</a><br>
+// 📧 <a href="mailto:contact@consultify.ro" target="_blank">contact@consultify.ro</a><br>
+// 📞 <a href="tel:0773 395 400" target="_blank">0773 395 400</a>
+// <br><br>
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
