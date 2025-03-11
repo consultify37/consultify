@@ -78,15 +78,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       if (totalDiscount > 0) {
         products.push({
           name: "Discount aplicat",
-          price: -totalDiscount, // Negative value for discount
+          discountValue: -totalDiscount, // Negative value for discount
+          numberOfItems: products.length,
           currency: "RON",
           isDiscount: true,
           measuringUnitName: 'buc',
-          quantity: 1,
+          discountType: 1,
           isTaxIncluded: true,
           taxName: 'Normala',
-          taxPercentage: 19,
-          saveToDb: false
+          taxPercentage: 19
         })
       }
 
