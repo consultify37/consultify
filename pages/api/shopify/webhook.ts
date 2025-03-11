@@ -6,7 +6,7 @@ import { sendMail } from "../../../utils/sendMail"
 
 const invoiceTemplate =  `<div style="max-width:600px;"><strong>Bună ziua</strong>,
 <br><br>
-Vă mulțumim pentru achiziția flashcard-urilor 📚 cu informații despre Start-Up Nation 2024!
+Vă mulțumim pentru achiziția flashcard-urilor 📚 cu informații despre <strong>Start-Up Nation 2024</strong>!
 <br><br>
 📎 Atașat acestui email găsiți factura aferentă comenzii dumneavoastră:
 <br><br>
