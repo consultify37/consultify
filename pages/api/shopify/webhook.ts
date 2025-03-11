@@ -33,7 +33,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const { id, financial_status, total_price, name, email, billing_address, note_attributes } = req.body
+    const { id, financial_status, total_price, name, email, billing_address, note_attributes, line_items, discount_codes } = req.body
 
     const billingData = {
       name: `${billing_address?.first_name} ${billing_address?.last_name}`,
@@ -53,9 +53,43 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const invoiceRef = query(collection(db, 'invoices'), where("shopifyOrderId", "==", id))
     const invoiceSnapshot = await getDocs(invoiceRef)
 
-    // Check if financial_status is 'authorized'
-    if (financial_status === "paid" && invoiceSnapshot.empty) {
+    // Process only if financial_status is 'authorized' and invoice does not exist
+    if (financial_status === "authorized" && invoiceSnapshot.empty) {
       console.log(`Order ${id} is authorized. Generating invoice...`)
+
+      // Calculate total discount
+      const totalDiscount = discount_codes?.reduce((acc: number, discount: any) => acc + Number(discount.amount), 0) || 0
+
+      // Generate product list
+      const products = line_items.map((item: any) => ({
+        name: item.name,
+        price: Number(item.price), // Price per unit
+        currency: "RON",
+        isDiscount: false,
+        measuringUnitName: 'buc',
+        quantity: item.quantity,
+        isTaxIncluded: true,
+        taxName: 'Normala',
+        taxPercentage: 19,
+        saveToDb: false
+      }))
+
+      // If there’s a discount, add it as a separate negative item
+      if (totalDiscount > 0) {
+        products.push({
+          name: "Discount aplicat",
+          price: -totalDiscount, // Negative value for discount
+          currency: "RON",
+          isDiscount: true,
+          measuringUnitName: 'buc',
+          quantity: 1,
+          isTaxIncluded: true,
+          taxName: 'Normala',
+          taxPercentage: 19,
+          saveToDb: false
+        })
+      }
+
       // Send invoice request to SmartBill
       const smartBillResponse = await axios.post(
         'https://ws.smartbill.ro/SBORO/api/invoice', 
@@ -72,26 +106,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             vatCode: cui,
             isTaxPayer: cui && cui.length != 0 ? true : null,
             saveToDb: true
-           },
+          },
           payment: {
             value: Number(total_price),
             type: 'Alta incasare',
             isCash: true
           },
-          products: [
-            {
-              name: `Comanda ${name}`,
-              price: Number(total_price),
-              currency: "RON",
-              isDiscount: false,
-              measuringUnitName: 'buc',
-              quantity: 1,
-              isTaxIncluded: true,
-              taxName: 'Normala',
-              taxPercentage: 19,
-              saveToDb: false,
-            },
-          ],
+          products: products, // Use generated product list
         },
         {
           headers: {
