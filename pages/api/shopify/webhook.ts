@@ -4,14 +4,24 @@ import { addDoc, collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../../../firebase"
 import { sendMail } from "../../../utils/sendMail"
 
-const invoiceTemplate =  `<div style="max-width:600px;">Bună ziua,
+const invoiceTemplate =  `<div style="max-width:600px;"><strong>Bună ziua</strong>,
 <br><br>
-Vă transmitem atașată factura cu detaliile serviciilor/produselor furnizate.
+Vă mulțumim pentru achiziția flashcard-urilor 📚 cu informații despre Start-Up Nation 2024!
 <br><br>
-Vă mulțumim și vă dorim o zi excelentă!
+📎 Atașat acestui email găsiți factura aferentă comenzii dumneavoastră:
 <br><br>
-Cu stimă,<br>
-Consultify</div>
+🎁 <strong>Bonus</strong>: În cadrul pachetului beneficiați de <strong>o ședință gratuită de consultanță</strong>! 🤝 Un consultant <strong>Consultify</strong> vă va contacta în curând pentru a stabili detaliile.
+<br><br>
+Dacă aveți întrebări, nu ezitați să ne contactați. 💬<br><br>
+🌐 <a href="https://consultify.ro" target="_blank">www.consultify.ro</a><br>
+📧 <a href="mailto:contact@consultify.ro" target="_blank">contact@consultify.ro</a><br>
+📞 <a href="tel:0773 395 400 (Vânzări)" target="_blank">0773 395 400</a>
+<br><br>
+Vă dorim mult succes! 🚀
+<br><br>
+<strong>Cu stimă,<br>
+Echipa Consultify</strong><br>
+</div>
 `
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
