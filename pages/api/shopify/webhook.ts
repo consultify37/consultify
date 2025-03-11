@@ -4,20 +4,18 @@ import { addDoc, collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../../../firebase"
 import { sendMail } from "../../../utils/sendMail"
 
-const invoiceTemplate =  `<div style="max-width:600px;"><strong>Bună ziua</strong>,
+const generateInvoiceTemplate = ( name: string) => (
+  `<div style="max-width:600px;"><strong>Salut, ${name}</strong>,
 <br><br>
-Vă mulțumim pentru achiziția flashcard-urilor 📚 cu informații despre <strong>Start-Up Nation 2024</strong>!
+Îți mulțumim pentru comanda ta! 📦 Factura este atașată acestui email.
 <br><br>
-📎 Atașat acestui email găsiți factura aferentă comenzii dumneavoastră:
+💡 Nu uita! Ai inclusă o ședință GRATUITĂ de consultanță – te contactăm curând pentru programare! 📅
 <br><br>
-Dacă aveți întrebări, nu ezitați să ne contactați. 💬
-<br><br>
-Vă dorim mult succes! 🚀
-<br><br>
-<strong>Cu stimă,<br>
-Echipa Consultify</strong><br>
+Mulțumim și mult succes! 🚀
+<strong>Echipa Consultify</strong>
 </div>
 `
+)
 
 // 🎁 <strong>Bonus</strong>: În cadrul pachetului beneficiați de <strong>o ședință gratuită de consultanță</strong>! 🤝 Un consultant <strong>Consultify</strong> vă va contacta în curând pentru a stabili detaliile.
 // <br><br>
@@ -144,7 +142,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           from: `noreply@consultify.ro`,
           to: email,
           subject: `✅ Factura ${smartBillResponse.data.series}-${smartBillResponse.data.number} de la Consultify`, 
-          html: invoiceTemplate,
+          html: generateInvoiceTemplate(billing_address.first_name || ''),
           attachments: [{ content: base64, name: `Factura ${smartBillResponse.data.series}-${smartBillResponse.data.number}.pdf`}],
           text: null
         })
