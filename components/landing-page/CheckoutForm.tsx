@@ -127,9 +127,9 @@ const CheckoutForm = ({ discountCode }: Props) => {
 
     const discount_codes = []
 
-    if ( items.find((item) => item.handle == 'agenda-start-up')!.quantity == 2 ) {
-      discount_codes.push({ code: '15OFF', amount: '15.00', type: 'fixed_amount' })
-    }
+    // if ( items.find((item) => item.handle == 'agenda-start-up')!.quantity == 2 ) {
+    //   discount_codes.push({ code: '15OFF', amount: '15.00', type: 'fixed_amount' })
+    // }
 
     if (discountCode) {
       discount_codes.push({ code: discountCode, amount: '5.00', type: 'percentage' })
