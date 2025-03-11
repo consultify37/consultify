@@ -72,6 +72,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         saveToDb: false
       }))
 
+      console.log(products)
+
       // If there’s a discount, add it as a separate negative item
       if (totalDiscount > 0) {
         products.push({
@@ -87,6 +89,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           saveToDb: false
         })
       }
+
+      console.log(products)
 
       // Send invoice request to SmartBill
       const smartBillResponse = await axios.post(
@@ -154,9 +158,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     res.status(200).json({ message: "No action taken" })
   } catch (e: any) {
-    if (e.response && e.response.data && e.response.data.errors) {
-      console.log(e.response?.data?.errors)
-      return res.status(500).json({ error: e.response.data.errors })
+    if (e.response && e.response.data && e.response.data.errorText) {
+      console.log(e.response?.data?.errorText)
+      return res.status(500).json({ error: e.response.data.errorText })
     }
     if (e.message) {
       console.log(e.message)
