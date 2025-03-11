@@ -5,7 +5,7 @@ import { db } from "../../../firebase"
 import { sendMail } from "../../../utils/sendMail"
 
 const generateInvoiceTemplate = ( name: string) => (
-  `<div style="max-width:600px;"><strong>Salut, ${name}</strong>,
+  `<div style="max-width:650px;"><strong>Salut, ${name}</strong>,
 <br><br>
 Îți mulțumim pentru comanda ta! 📦 Factura este atașată acestui email.
 <br><br>
@@ -72,8 +72,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         saveToDb: false
       }))
 
-      console.log(products)
-
       // If there’s a discount, add it as a separate negative item
       if (totalDiscount > 0) {
         products.push({
@@ -89,8 +87,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           taxPercentage: 19
         })
       }
-
-      console.log(products)
 
       // Send invoice request to SmartBill
       const smartBillResponse = await axios.post(
