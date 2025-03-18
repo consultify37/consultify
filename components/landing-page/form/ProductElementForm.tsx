@@ -72,7 +72,7 @@ const ProductElementForm = ({ setItems}: Props) => {
         <div>
           <p className='font-bold text-xs'>2x FLASHCARDS START UP NATION + 2x Ședințe de consultanță</p>
           {/* <div className='p-1 px-2 rounded-md bg-green-500 text-xs text-white font-semibold w-fit'>
-            Salvezi 15lei
+            Salvezi 15lei //
           </div> */}
         </div>
         <div className='flex flex-col items-end'>
