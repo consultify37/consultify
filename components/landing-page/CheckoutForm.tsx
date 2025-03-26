@@ -30,7 +30,7 @@ const CheckoutForm = ({ discountCode }: Props) => {
     handle: 'agenda-start-up',
     merchandiseId: "gid://shopify/ProductVariant/54299416691032",
     name: 'FLASHCARDS START UP NATION + SEDINTA CONSULTANTA',
-    price: 89,
+    price: 109,
     image: '/landing-page/images/1.png',
     quantity: 1
   }])

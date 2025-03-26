@@ -24,7 +24,7 @@ const ProductElementForm = ({ setItems}: Props) => {
               handle: 'agenda-start-up',
               name: 'FLASHCARDS START UP NATION + SEDINTA CONSULTANTA',
               merchandiseId: "gid://shopify/ProductVariant/54299416691032",
-              price: 89,
+              price: 109,
               image: '/landing-page/images/1.png',
               quantity: 1
             })
@@ -33,7 +33,7 @@ const ProductElementForm = ({ setItems}: Props) => {
               handle: 'agenda-start-up',
               name: 'FLASHCARDS START UP NATION + SEDINTA CONSULTANTA',
               merchandiseId: "gid://shopify/ProductVariant/54299416691032",
-              price: 178,
+              price: 218,
               image: '/landing-page/images/2.png',
               quantity: 2
             })
@@ -56,7 +56,7 @@ const ProductElementForm = ({ setItems}: Props) => {
         />
         <p className='font-bold text-xs'>1x FLASHCARDS START UP NATION + Ședință de consultanță</p>
         <div className='flex flex-col items-end'>
-          <p className='font-bold'>89lei</p>
+          <p className='font-bold'>109lei</p>
           <p className='font-bold text-[#E4E4E4] line-through text-sm'>199lei</p>
         </div>
       </div>
@@ -76,7 +76,7 @@ const ProductElementForm = ({ setItems}: Props) => {
           </div> */}
         </div>
         <div className='flex flex-col items-end'>
-          <p className='font-bold'>178lei</p>
+          <p className='font-bold'>218lei</p>
           <p className='font-bold text-[#E4E4E4] line-through text-sm'>398lei</p>
         </div>
       </div>
