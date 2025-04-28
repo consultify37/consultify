@@ -84,9 +84,9 @@ const Header = () => {
           <div className={"rounded-full flex flex-row justify-between items-center px-8 xl:px-[60px] py-2 xl:py-4 duration-300 transition-all " + ((!pathname?.includes('/blog/')) || (scrollPosition != 0) ? "bg-secondary" : "bg-transparent")}>
             <Link href="/" className="flex items-center justify-center z-[99]">
               <Image
-                src="/images/logo.svg"
-                width={120}
-                height={38}
+                src="/images/logos/1.png"
+                width={1514}
+                height={397}
                 className="align-middle w-[130px] lg:w-[180px] h-auto"
                 alt="Consultify logo"
               />

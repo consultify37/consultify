@@ -7,8 +7,8 @@ const Footer = () => {
         <footer className='w-full mt-12 md:mt-24'>
             <div className='flex flex-wrap flex-col justify-between md:flex-row gap-10 px-7 md:px-12'>
                 <div className='flex flex-col gap-2 w-full lg:max-w-[20%]'>
-                    <Image src='/images/logo-invert.svg' alt='Footer logo' width={200} height={53} className='aspect-auto w-[177px] md:w-[200px]' />
-                    <p className='text-[#260056] text-[14px] md:text-[16px] mt-4'>
+                    <Image src='/images/logos/2.png' alt='Footer logo' width={1514} height={397} className='aspect-auto w-[177px] md:w-[200px]' />
+                    <p className='text-[#260056] text-[14px] md:text-[16px] mt-4 pl-2'>
                         Consultify este partenerul tău de încredere în obținerea finanțărilor nerambursabile, oferind soluții personalizate pentru dezvoltarea afacerii tale.
                     </p>
                 </div>
@@ -134,7 +134,7 @@ const Footer = () => {
 
             <div className='w-full mt-5 text-center px-7 md:px-12'>
                 <p className='text-[#8717F8] text-[16px] font-normal border-t-[3px] border-[#260056] py-4 px-4 md:px-0'>
-                    Copyright © 2020-2024 Consultify | Toate drepturile sunt rezervate.
+                    Copyright © 2020-2025 Consultify | Toate drepturile sunt rezervate.
                     {/* | Made with love by &nbsp; */}
                     {/* <Link href='https://marize.io' className="hover:text-[#8817f89b]" target='_blank'>Marize</Link> */}
                 </p>
