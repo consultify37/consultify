@@ -37,7 +37,9 @@ const videos = [
   "https://www.youtube.com/embed/91bAurrGdeU",
   "https://www.youtube.com/embed/l7vpKnaERso",
   "https://www.youtube.com/embed/nfv_brX6H5I",
-  "https://www.youtube.com/embed/S_wTaE2DOXI"
+  "https://www.youtube.com/embed/S_wTaE2DOXI",
+  "https://www.youtube.com/embed/BflwiZxPftg",
+  "https://www.youtube.com/embed/F6e_3Jk0lBg"
 ]
 
 const testimonials = [
@@ -150,7 +152,7 @@ export default function Testimoniale({ articles, products }: Props) {
               Sau vizionați următoarele studii de caz!
             </h2>
             <div className="w-full flex justify-center items-center">
-              <div className="flex flex-col w-fit md:flex-row md:flex-wrap gap-12 xl:gap-16 2xl:gap-20">
+              <div className="flex flex-col w-fit md:flex-row md:flex-wrap gap-y-12 xl:gap-y-20 justify-between">
                 { videos.map((video) => (
                   <iframe 
                     className="rounded-xl w-72 h-96"
