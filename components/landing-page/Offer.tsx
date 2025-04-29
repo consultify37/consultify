@@ -7,7 +7,7 @@ type Props= {
 
 const Offer = ({ setDiscountCode }: Props) => {
   const openCheckoutModal = () => {
-    setDiscountCode('5OFF')
+    setDiscountCode('CONS5')
     const element = document.getElementById('my_modal_1') as any
     element.showModal()
   }
@@ -15,7 +15,7 @@ const Offer = ({ setDiscountCode }: Props) => {
     <div className='modal-box py-6 text-center flex flex-col items-center'>
       <h2 className='font-bold text-2xl'>STAI!</h2>
       <p className='text-[#afafaf] font-semibold mt-4'>Avem o ofertă valabilă doar azi!</p>
-      <p className='font-bold text-lg mt-4'>FINALIZEAZĂ COMANDA ȘI PRIMEȘTI O EXTRA REDUCERE DE 5%</p>
+      <p className='font-bold text-lg mt-4'>FOLOSEȘTE CODUL {`"CONS5"`} PENTRU EXTRA 5% REDUCERE</p>
       <Image 
         src="/landing-page/images/5off.png"
         width={256}

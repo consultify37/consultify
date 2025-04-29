@@ -19,6 +19,8 @@ type Props = {
 const CheckoutForm = ({ discountCode }: Props) => {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
+  const [hasSurpriseProduct, setHasSurpriseProduct] = useState(false)
+  const [hasPrioritizeProduct, setHasPrioritizeProduct] = useState(false)
   const [items, setItems] = useState<{
     handle?: string
     name: string
@@ -201,6 +203,21 @@ const CheckoutForm = ({ discountCode }: Props) => {
     setLoading(false)
   }
 
+  const handleSubmit = (e: any) => {
+    e.preventDefault()
+    let stripeLink = "https://buy.stripe.com/14k2al0Jx9Qa880eV3"
+
+    if ( hasPrioritizeProduct && hasSurpriseProduct ) {
+      stripeLink = "https://buy.stripe.com/8wMcOZ77V6DYbkc4gs"
+    } else if ( hasPrioritizeProduct ) {
+      stripeLink = "https://buy.stripe.com/3cs7uF4ZN7I2bkc9AL"
+    } else if ( hasSurpriseProduct ) {
+      stripeLink = "https://buy.stripe.com/14k2al0Jx9Qa880eV3"
+    }
+
+    router.push(`${stripeLink}${discountCode ? `?prefilled_promo_code=${discountCode}` : ''}`)
+   }
+
   return (
     <div className='flex flex-col pb-2 items-center'>
       <form 
@@ -223,10 +240,10 @@ const CheckoutForm = ({ discountCode }: Props) => {
           </svg>
         </button>
       </form>
-      <h1 className='font-bold text-[21px]'>Introdu adresa ta de livrare</h1>
-      <h3 className='font-bold text-[#ff0000]'>Plătești doar când ajunge coletul la tine!</h3>
-      <form onSubmit={createOrder} className='flex flex-col items-start w-full mt-4 max-w-lg px-0'>
-        <FormInput 
+      {/* <h1 className='font-bold text-[21px]'>Introdu adresa ta de livrare</h1>
+      <h3 className='font-bold text-[#ff0000]'>Plătești doar când ajunge coletul la tine!</h3> */}
+      <form onSubmit={handleSubmit} className='flex flex-col items-start w-full max-w-lg px-0'>
+        {/* <FormInput 
           svg={
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -352,15 +369,6 @@ const CheckoutForm = ({ discountCode }: Props) => {
           label='Nume Firmă (opțional)'
           name='Company'
           placheholder="Nume firmă"
-          // svg={<svg className='opacity-70' fill="currentColor" height="14px" width="14px" version="1.1" id="Filled_Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" enableBackground="new 0 0 24 24" >
-          //   <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-          //   <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
-          //   <g id="SVGRepo_iconCarrier"> 
-          //     <g id="Location-Pin-Filled"> 
-          //       <path d="M12,1c-4.97,0-9,4.03-9,9c0,6.75,9,13,9,13s9-6.25,9-13C21,5.03,16.97,1,12,1z M12,13c-1.66,0-3-1.34-3-3s1.34-3,3-3 s3,1.34,3,3S13.66,13,12,13z"></path> 
-          //     </g> 
-          //   </g>
-          // </svg>}
           type='text'
           className='mt-2'
           required={false}
@@ -370,23 +378,20 @@ const CheckoutForm = ({ discountCode }: Props) => {
           label='CUI Firmă (opțional)'
           name='CUI'
           placheholder="CUI Firmă"
-          // svg={<svg className='opacity-70' fill="currentColor" height="14px" width="14px" version="1.1" id="Filled_Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" enableBackground="new 0 0 24 24" >
-          //   <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-          //   <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
-          //   <g id="SVGRepo_iconCarrier"> 
-          //     <g id="Location-Pin-Filled"> 
-          //       <path d="M12,1c-4.97,0-9,4.03-9,9c0,6.75,9,13,9,13s9-6.25,9-13C21,5.03,16.97,1,12,1z M12,13c-1.66,0-3-1.34-3-3s1.34-3,3-3 s3,1.34,3,3S13.66,13,12,13z"></path> 
-          //     </g> 
-          //   </g>
-          // </svg>}
           type='text'
           className='mt-2'
           required={false}
-        />
+        /> */}
 
-        <ProductElementForm setItems={setItems} />
+        <ProductElementForm setItems={setItems} /> 
+        <p className='font-semibold mt-4'>Alege metoda de livrare: </p>
         <Shipping />
-        <ExtraProducts setItems={setItems} />
+        <p className='font-semibold mt-4'>Adaugă produse la comandă </p>
+        <ExtraProducts 
+          setItems={setItems} 
+          setHasPrioritizeProduct={setHasPrioritizeProduct}
+          setHasSurpriseProduct={setHasSurpriseProduct}
+        />
         <TotalPriceContainer items={items} discountCode={discountCode} />
         
         {/* <p className='font-semibold text-sm mt-6'>Plătești doar când coletul ajunge la tine sau achită cu cardul 💳 și primești un cadou din partea noastră! </p> */}

@@ -54,7 +54,7 @@ const LandingPage = () => {
   useEffect(() => {
     TiktokPixel.init('CUQVTSBC77U38KO2EQQG') 
     TiktokPixel.pageView()
-    fetchProduct()
+    // fetchProduct()
   }, [])
 
   return (

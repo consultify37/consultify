@@ -9,6 +9,8 @@ type Props = {
     merchandiseId: string
     quantity?: number
   }[]>>
+  setHasSurpriseProduct: React.Dispatch<React.SetStateAction<boolean>>
+  setHasPrioritizeProduct: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const extraProducts = [
@@ -35,8 +37,9 @@ const texts = {
   "prioritize": 'Prioritizează comanda mea pentru 5 lei 😊'
 }
 
-const ExtraProducts = ({ setItems }: Props) => {
+const ExtraProducts = ({ setItems, setHasPrioritizeProduct, setHasSurpriseProduct }: Props) => {
   const [counter, setCounter] = useState(0)
+  
   const handleClick = (e: any) => {
     const product = extraProducts.find((item) => item.handle == e.target.id)!
     
@@ -45,19 +48,16 @@ const ExtraProducts = ({ setItems }: Props) => {
     } else {
       setItems((items) => items.filter((item) => item.handle != product.handle))
     }
+
+    if (e.target.id === 'surprise') {
+      setHasSurpriseProduct(e.target.checked)
+    } else if (e.target.id === 'prioritize') {
+      setHasPrioritizeProduct(e.target.checked)
+    }
   }
 
-  useEffect(() => {
-    if (counter != 1) {
-      const checkboxes = document.querySelectorAll("input[type='checkbox']")
-      checkboxes.forEach((checkbox: any) => (checkbox.checked = false))
-
-      setCounter(1)
-    }
-  }, [counter])
-
   return (
-    <div className='mt-6 space-y-4 w-full'>
+    <div className='mt-4 space-y-4 w-full'>
       { extraProducts.map((product) => (
         <div key={product.merchandiseId} className='border-2 border-secondary bg-admin-background p-4 rounded-lg w-full flex items-center gap-x-2'>
           <input onChange={handleClick} id={product.handle} type="checkbox" className="checkbox checkbox-sm" />

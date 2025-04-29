@@ -10,6 +10,7 @@ type Props = {
     merchandiseId: string
     quantity?: number
   }[]>>
+
 }
 
 const ProductElementForm = ({ setItems}: Props) => {
@@ -46,7 +47,7 @@ const ProductElementForm = ({ setItems}: Props) => {
   }
   return (
     <>
-      <div onClick={() => handleClick(1)} className={`flex mt-8 p-4 hover:cursor-pointer border-2 rounded-md items-center gap-x-2 w-full justify-between ${selected == 1 ? 'border-secondary bg-admin-background' : 'border-[#E4E4E4]'}`}>
+      <div onClick={() => handleClick(1)} className={`flex mt-4 p-4 hover:cursor-pointer border-2 rounded-md items-center gap-x-2 w-full justify-between ${selected == 1 ? 'border-secondary bg-admin-background' : 'border-[#E4E4E4]'}`}>
         <Image 
           src="/landing-page/images/1.png"
           width={256}
@@ -54,13 +55,13 @@ const ProductElementForm = ({ setItems}: Props) => {
           alt='Consultanta Start-Up Nation'
           className='w-16 h-16 rounded-md objec-cover'
         />
-        <p className='font-bold text-xs'>1x FLASHCARDS START UP NATION + Ședință de consultanță</p>
+        <p className='font-bold text-xs'>FLASHCARDS START UP NATION + Ședință de consultanță</p>
         <div className='flex flex-col items-end'>
           <p className='font-bold'>109lei</p>
           <p className='font-bold text-[#E4E4E4] line-through text-sm'>199lei</p>
         </div>
       </div>
-      <p className='py-4 font-bold self-center text-center text-[15px]'> 🤝 Începeți afacerea cu un prieten! 🚀</p>
+      {/* <p className='py-4 font-bold self-center text-center text-[15px]'> 🤝 Începeți afacerea cu un prieten! 🚀</p>
       <div onClick={() => handleClick(2)} className={`flex hover:cursor-pointer p-4 border-2 rounded-md items-center gap-x-2 w-full justify-between ${selected == 2 ? 'border-secondary bg-admin-background' : 'border-[#E4E4E4]'}`}>
         <Image 
           src="/landing-page/images/2.png"
@@ -71,15 +72,12 @@ const ProductElementForm = ({ setItems}: Props) => {
         />
         <div>
           <p className='font-bold text-xs'>2x FLASHCARDS START UP NATION + 2x Ședințe de consultanță</p>
-          {/* <div className='p-1 px-2 rounded-md bg-green-500 text-xs text-white font-semibold w-fit'>
-            Salvezi 15lei //
-          </div> */}
         </div>
         <div className='flex flex-col items-end'>
           <p className='font-bold'>218lei</p>
           <p className='font-bold text-[#E4E4E4] line-through text-sm'>398lei</p>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }
