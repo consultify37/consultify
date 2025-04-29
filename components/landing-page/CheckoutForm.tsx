@@ -205,6 +205,22 @@ const CheckoutForm = ({ discountCode }: Props) => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
+    try {
+      TiktokPixel.track('InitiateCheckout', {
+        contents: [{
+          content_id: "agenda-start-up",
+          content_name: 'FLASHCARDS START UP NATION + SEDINTA CONSULTANTA',
+          quantity: 1,
+          price: 109
+        }],
+        content_type: 'product',
+        value: 109,
+        currency: 'RON'
+      })
+    } catch (e) {
+      console.log(e)
+    }
+
     let stripeLink = "https://buy.stripe.com/14k2al0Jx9Qa880eV3" 
 
     if ( hasPrioritizeProduct && hasSurpriseProduct ) {
