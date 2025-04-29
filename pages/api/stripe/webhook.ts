@@ -117,8 +117,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         })
       }
 
-    } catch (e) {
+    } catch (e: any) {
       console.error('Eroare trimitere email sau preluare produse:', e)
+      return res.status(500).json({ error: 'Eroare trimitere email sau preluare produse', message: e?.message })
     }
   }
   
