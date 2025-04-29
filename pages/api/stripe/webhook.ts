@@ -98,7 +98,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           from: 'noreply@consultify.ro',
           to: customerEmail,
           subject: '🎉 Mulțumim pentru comandă!',
-          text: 'Comanda ta a fost confirmată!',
+          text: null,
           html: `
             <div style="max-width:600px;margin:0 auto;font-family:Arial,sans-serif;">
               <h1>🎉 Mulțumim pentru achiziție!</h1>
