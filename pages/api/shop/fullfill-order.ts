@@ -30,11 +30,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       subject: "📦 Comanda ta a fost expediată!",
       text: null,
       html: `
-        <div style="max-width:600px">
+        <div style="max-width:600px;font-family:Arial,sans-serif;">
           <h1>📦 Comanda ta a fost expediată!</h1>
           <p>Salut!</p>
           <p>Comanda ta ${productName ? `pentru <strong>${productName}</strong>` : ''} este pe drum. 🚚</p>
-          <p>Îți mulțumim că ai comandat de la noi!</p>
+          <p><strong>Îți mulțumim că ai comandat de la noi!</strong></p>
         </div>
       `,
       website: "Consultify",
