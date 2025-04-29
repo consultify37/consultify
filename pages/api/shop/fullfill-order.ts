@@ -38,7 +38,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         </div>
       `,
       website: "Consultify",
-      attachments: [],
+      attachments: null,
     })
 
     res.status(200).json({ success: true })
