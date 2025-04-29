@@ -124,6 +124,21 @@ const AdminLayout = ({ children, color='admin-background' }: Props) => {
                 </Link>
               }
 
+              { currentUser?.roles && (currentUser.roles.includes('admin') || currentUser.roles.includes('comenzi-shop-fizic')) && 
+                <Link href='/admin/comenzi-shop-fizic' className='flex flex-row items-center'>
+                  <Image 
+                    src='/images/admin/e-commerce.svg'
+                    width={32}
+                    height={32}
+                    alt='window'
+                    className='w-4 h-4 mr-[10px]'
+                  />
+                  <p className='text-lg font-bold text-onSecondary'>
+                    comenzi shop fizic
+                  </p>
+                </Link>
+              }
+
               { currentUser?.roles && (currentUser.roles.includes('admin') || currentUser.roles.includes('produse')) && 
                 <Link href='/admin/e-commerce' className='flex flex-row items-center'>
                   <Image 

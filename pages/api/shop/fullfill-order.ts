@@ -9,14 +9,10 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" })
 
-  const { paymentIntentId } = req.body
-
-  if (!paymentIntentId) return res.status(400).json({ error: "Missing paymentIntentId" })
+  const { email } = req.body
 
   try {
-    const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId)
-    const metadata = paymentIntent.metadata
-    const customerEmail = metadata?.email
+    const customerEmail = email
     const productName = 'Agenda Start-up Nation'
 
     if (!customerEmail) {

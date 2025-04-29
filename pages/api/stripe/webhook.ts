@@ -61,6 +61,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       await setDoc(doc(collection(db, 'physicalOrders'), session.id), { 
         email: customerEmail,
         name: session.collected_information?.shipping_details?.name,
+        phone: session.customer_details?.phone,
         paymentIntentId,
         shipping: session.collected_information?.shipping_details?.address,
         products,
