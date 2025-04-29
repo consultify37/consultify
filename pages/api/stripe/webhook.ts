@@ -85,7 +85,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             🏠 <strong>Adresa de livrare:</strong><br/>
             ${name || ''}<br/>
             ${address.line1 || ''}<br/>
-            ${address.line2 || ''}<br/>
+            ${`${address.line2}<br/>`|| ''}
             ${address.city || ''}, ${address.postal_code || ''}<br/>
             ${address.country || ''}
           </p>
