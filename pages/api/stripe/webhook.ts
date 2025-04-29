@@ -86,8 +86,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             ${name || ''}<br/>
             ${address.line1 || ''}<br/>
             ${`${address.line2}<br/>`|| ''}
-            ${address.city || ''}, ${address.postal_code || ''}<br/>
-            ${address.country || ''}
+            ${address.city || ''}, ${address.postal_code || ''}
           </p>
         `
         : '<p>⚠️ <strong>Nu a fost specificată o adresă de livrare.</strong></p>'
@@ -100,16 +99,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           subject: '🎉 Mulțumim pentru comandă!',
           text: null,
           html: `
-            <div style="max-width:600px;margin:0 auto;font-family:Arial,sans-serif;">
+            <div style="max-width:600px;font-family:Arial,sans-serif;">
               <h1>🎉 Mulțumim pentru achiziție!</h1>
               <p>Comanda ta a fost confirmată și urmează să fie procesată.</p>
 
-              <h2>📦 Produse comandate:</h2>
+              <p><strong>📦 Produse comandate:</strong></>
               <ul>${productsHtml}</ul>
 
               ${shippingAddress}
 
-              <p>✉️ Vei primi un alt email când comanda ta va fi expediată.</p>
+              <p><strong>✉️ Vei primi un alt email când comanda ta va fi expediată.</strong></p>
             </div>
           `,
           website: 'Consultify',
