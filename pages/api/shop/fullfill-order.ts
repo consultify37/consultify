@@ -41,14 +41,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       attachments: [],
     })
 
-    // Optionally: mark as fulfilled in metadata (optional)
-    await stripe.paymentIntents.update(paymentIntentId, {
-      metadata: {
-        ...metadata,
-        fulfilled: "true",
-      },
-    })
-
     res.status(200).json({ success: true })
   } catch (e) {
     console.error(e)

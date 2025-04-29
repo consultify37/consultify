@@ -205,7 +205,7 @@ const CheckoutForm = ({ discountCode }: Props) => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
-    let stripeLink = "https://buy.stripe.com/14k2al0Jx9Qa880eV3"
+    let stripeLink = "https://buy.stripe.com/test_8wM7vj9sx2r135efYY" //https://buy.stripe.com/14k2al0Jx9Qa880eV3
 
     if ( hasPrioritizeProduct && hasSurpriseProduct ) {
       stripeLink = "https://buy.stripe.com/8wMcOZ77V6DYbkc4gs"

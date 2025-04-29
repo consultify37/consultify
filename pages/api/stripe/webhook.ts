@@ -117,13 +117,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         })
       }
 
-      await stripe.paymentIntents.update(paymentIntentId, {
-        metadata: {
-          email: customerEmail || '',
-          fulfilled: 'false'
-        },
-      })
-
     } catch (e) {
       console.error('Eroare trimitere email sau preluare produse:', e)
     }
