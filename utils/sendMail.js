@@ -13,7 +13,10 @@ export const sendMail = async ({ from, to, subject, text, html, attachments, web
       sendSmtpEmail.textContent = text || null
       sendSmtpEmail.sender = { "name": website, "email": from }
       sendSmtpEmail.to = [ { "email": to } ]
-      sendSmtpEmail.attachment = attachments
+      
+      if (attachments) {
+        sendSmtpEmail.attachment = attachments
+      }
 
       const response = await apiInstance.sendTransacEmail(sendSmtpEmail)
       console.log(to)

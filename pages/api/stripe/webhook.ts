@@ -113,7 +113,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             </div>
           `,
           website: 'Consultify',
-          attachments: [],
+          attachments: null,
         })
       }
 
