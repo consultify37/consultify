@@ -27,7 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const rawBody = await buffer(req)
     const sig = req.headers['stripe-signature'] as string
-
+    console.log(endpointSecret)
     event = stripe.webhooks.constructEvent(rawBody, sig, endpointSecret)
   } catch (err) {
     console.error('Eroare validare semnătură Stripe:', err)
