@@ -119,6 +119,14 @@ const Details = ({ order }: Props) => {
               placeholder=''
               required={true}
             />
+
+            <h2 className='text-[14px] font-semibold text-secondary mb-2 ml-1 mt-4'>Email</h2>
+            <input 
+              className='text-base p-4 rounded-2xl border-2 border-primary outline-none w-full '
+              placeholder=''
+              defaultValue={order.email}
+              disabled
+            />
             
             <h2 className='text-[14px] font-semibold text-secondary mb-2 ml-1 mt-4'>Adresă linia 1</h2>
             <FormInput

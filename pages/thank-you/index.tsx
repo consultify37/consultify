@@ -1,13 +1,31 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/image'
+import TiktokPixel from 'tiktok-pixel'
 
 const Success = () => {
+  useEffect(() => {
+    try {
+      TiktokPixel.track('CompletePayment', {
+        contents: [{
+          content_id: "agenda-start-up",
+          content_name: 'FLASHCARDS START UP NATION + SEDINTA CONSULTANTA',
+          quantity: 1,
+          price: 109
+        }],
+        content_type: 'product',
+        value: 109,
+        currency: 'RON'
+      })
+    } catch (e) {
+      console.log(e)
+    }
+  }, [])
   return (
     <>
       <Head>
-        <title>{`${process.env.SITE} | Formular transmis cu succes`}</title>
+        <title>{`${process.env.SITE} | Mulțumim pentru comanda făcută! 🚀`}</title>
       </Head>
       <div className='relative flex flex-col justify-center items-center min-h-screen p-7 lg:p-28 gap-2 lg:gap-4 text-center'>
         <h1 className='text-[18px] lg:text-[28px] font-bold text-secondary mt-8 lg:mt-12 lg:max-w-[75%] 2xl:max-w-[60%]'>Mulțumim pentru comanda făcută!🚀 Agenda va ajunge la tine în cel mai scurt timp. 😊</h1>

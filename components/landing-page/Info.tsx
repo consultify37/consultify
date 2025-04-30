@@ -16,7 +16,7 @@ const Info = () => {
           className='w-full mt-4'
         />
         <span className='text-lg font-semibold mt-4'>🎁 SURPRIZĂ din partea noastră la plata cu cardul</span> */}
-        <span className='text-lg font-semibold mt-4'>PLĂTEȘTI DOAR LA LIVRARE! 📦</span>
+        <span className='text-lg font-semibold mt-4'>🔒 PLATĂ 100% SECURIZATĂ PRIN STRIPE!</span>
       </div>
     </div>
   )

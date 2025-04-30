@@ -206,7 +206,7 @@ const CheckoutForm = ({ discountCode }: Props) => {
   const handleSubmit = (e: any) => {
     e.preventDefault()
     try {
-      TiktokPixel.track('InitiateCheckout', {
+      TiktokPixel.track('AddToCart', {
         contents: [{
           content_id: "agenda-start-up",
           content_name: 'FLASHCARDS START UP NATION + SEDINTA CONSULTANTA',
@@ -226,9 +226,9 @@ const CheckoutForm = ({ discountCode }: Props) => {
     if ( hasPrioritizeProduct && hasSurpriseProduct ) {
       stripeLink = "https://buy.stripe.com/8wMcOZ77V6DYbkc4gs"
     } else if ( hasPrioritizeProduct ) {
-      stripeLink = "https://buy.stripe.com/3cs7uF4ZN7I2bkc9AL"
+      stripeLink = "https://buy.stripe.com/3cs6qBfEr0fAcogdR0"
     } else if ( hasSurpriseProduct ) {
-      stripeLink = "https://buy.stripe.com/14k2al0Jx9Qa880eV3"
+      stripeLink = "https://buy.stripe.com/3cs7uF4ZN7I2bkc9AL"
     }
 
     router.push(`${stripeLink}${discountCode ? `?prefilled_promo_code=${discountCode}` : ''}`)

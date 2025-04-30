@@ -86,7 +86,7 @@ const LandingPage = () => {
         <PrimaryFeatures />
         {/* <Timer /> */}
         <Image 
-          src='/landing-page/images/urgency-april.png'
+          src='/landing-page/images/reamintire.png'
           alt='urgency'
           width={1024}
           height={1024}
@@ -118,7 +118,7 @@ const LandingPage = () => {
       <div className='max-w-lg px-8 mx-auto w-full mt-8'>
         {/* <Timer /> */}
         <Image 
-          src='/landing-page/images/urgency-april.png'
+          src='/landing-page/images/reamintire.png'
           alt='urgency'
           width={1024}
           height={1024}
@@ -141,7 +141,7 @@ const LandingPage = () => {
         <FeaturesTable />
         {/* <Timer /> */}
         <Image 
-          src='/landing-page/images/urgency-april.png'
+          src='/landing-page/images/reamintire.png'
           alt='urgency'
           width={1024}
           height={1024}
