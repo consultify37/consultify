@@ -12,6 +12,7 @@ import WhyUsItem1 from "../../components/Home/Why-Us/Item1"
 import ReactLoading from 'react-loading'
 import { addDoc, collection, serverTimestamp } from "firebase/firestore"
 import { db } from "../../firebase"
+import TiktokPixel from "tiktok-pixel"
  
 export default function Contact() {
     const [nume, setNume] = useState('')
@@ -83,6 +84,16 @@ export default function Contact() {
           document.body.removeChild(script)
         };
       }, [])
+
+    const handlePixel = () => {
+        try {
+            TiktokPixel.track('SubmitApplication', {
+                
+            })
+        } catch (e) {
+            console.log(e)
+        }
+    }
   
     return (
         <>
@@ -364,6 +375,7 @@ export default function Contact() {
                             </div> :
                             <button                      
                                 disabled={!captchaVerified || !isChecked}
+                                onClick={handlePixel}
                                 className='py-3 md:py-4 mt-4 md:mt-0 md:ml-4 w-full bg-[#8717F8] disabled:bg-slate-300 h-fit text-white rounded-[28px] font-semibold px-14 text-center text-md md:text-[16px] hover:scale-[1.05] disabled:hover:scale-100 transition-all'
                                 type="submit"
                                 id="Submit_76959-0tmoj4ber60eocon8xd011vdct8xlk"
