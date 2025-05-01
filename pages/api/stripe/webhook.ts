@@ -83,7 +83,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const shippingAddress = address
         ? `
           <p>
-            🏠 <strong>Adresa de livrare:</strong><br/>
+            <strong>Adresa de livrare:</strong><br/>
             ${name || ''}<br/>
             ${address.line1 || ''}<br/>
             ${`${address.line2}<br/>`|| ''}
@@ -99,19 +99,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           to: customerEmail,
           subject: '🎉 Mulțumim pentru comandă!',
           text: null,
-          html: `
-            <div style="max-width:600px;font-family:Arial,sans-serif;">
-              <h1>🎉 Mulțumim pentru achiziție!</h1>
-              <p>Comanda ta a fost confirmată și urmează să fie procesată.</p>
-
-              <p><strong>📦 Produse comandate:</strong></>
-              <ul>${productsHtml}</ul>
-
-              ${shippingAddress}
-
-              <p><strong>✉️ Vei primi un alt email când comanda ta va fi expediată.</strong></p>
-            </div>
-          `,
+          html: orderConfirmTemplate(productsHtml, shippingAddress),
           website: 'Consultify',
           attachments: null,
         })
