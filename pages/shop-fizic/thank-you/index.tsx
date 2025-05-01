@@ -7,6 +7,7 @@ import TiktokPixel from 'tiktok-pixel'
 const Success = () => {
   useEffect(() => {
     try {
+      TiktokPixel.init('CUQVTSBC77U38KO2EQQG') 
       TiktokPixel.track('CompletePayment', {
         contents: [{
           content_id: "agenda-start-up",
