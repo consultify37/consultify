@@ -4,6 +4,7 @@ import Stripe from 'stripe'
 import { sendMail } from '../../../utils/sendMail'
 import { collection, doc, setDoc } from 'firebase/firestore'
 import { db } from '../../../firebase'
+import { orderConfirmTemplate } from '../../../templates'
 
 export const config = {
   api: {
@@ -73,7 +74,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         .map(item => {
           const productName = item.description
           const quantity = item.quantity
-          return `<li>📚 <strong>${productName}</strong> – Cantitate: ${quantity}</li>`
+          return `<li><strong>${productName}</strong> – Cantitate: ${quantity}</li>`
         })
         .join('')
 
@@ -97,7 +98,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         await sendMail({
           from: 'noreply@consultify.ro',
           to: customerEmail,
-          subject: '🎉 Mulțumim pentru comandă!',
+          subject: '🎉 Mulțumim pentru achiziție! – Consultify.ro',
           text: null,
           html: orderConfirmTemplate(productsHtml, shippingAddress),
           website: 'Consultify',

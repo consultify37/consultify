@@ -1,4 +1,4 @@
-const orderConfirmTemplate = (productsHtml: string, shippingAddress: string) => (
+export const orderConfirmTemplate = (productsHtml: string, shippingAddress: string) => (
   `<div style="max-width:600px;">
   <p><strong>Bună ziua!</strong></p>
 
@@ -19,6 +19,31 @@ const orderConfirmTemplate = (productsHtml: string, shippingAddress: string) => 
 
   <p>
     ✉️ Vei primi un alt email când comanda ta va fi expediată.
+  </p>
+
+  <p>
+    Îți mulțumim că ai ales <strong>Consultify</strong>!
+  </p>
+
+  <p>
+    Cu stimă,<br><strong>Echipa Consultify</strong>
+  </p>
+</div>
+`
+)
+
+export const fulfillementConfirmed = () => (
+  `<div style="max-width:600px;">
+  <p><strong>Bună ziua!</strong></p>
+
+  <p><strong>Veste bună! 🎉</strong></p>
+
+  <p>
+    Comanda ta a fost expediată și se află acum pe drum către tine. 📦
+  </p>
+
+  <p>
+    Curierul va livra coletul în perioada următoare. Te rugăm să fii atent(ă) la apelurile de confirmare din partea firmei de curierat.
   </p>
 
   <p>
