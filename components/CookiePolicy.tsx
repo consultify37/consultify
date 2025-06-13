@@ -36,7 +36,7 @@ const CookiePolicy = () => {
         </>
       }
       {
-        consentRequested ?
+        consentRequested != null ?
         <div className="bg-white fixed bottom-6 md:bottom-8 right-0 rounded-xl shadow-2xl p-8 flex flex-col items-center z-[9999] mx-4 w-[calc(100%-32px)] max-w-[440px]">
           <div className="flex flex-row justify-between items-center w-full">
             <div className="flex flex-row items-center">
