@@ -13,7 +13,6 @@ import { CartContext } from '../context/CartContext'
 import { FavoritesContext } from '../context/FavoritesContext'
 import Cookies from 'js-cookie'
 import { Analytics } from "@vercel/analytics/react"
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 function useNormalScrollRoutes() {
   const router = useRouter()
@@ -76,8 +75,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <CartContext>
         <FavoritesContext>
           <div className="flex flex-col">
-            <GoogleAnalytics gaId='G-4C611TDECB'/>
-            <GoogleTagManager gtmId='GTM-TNQ5NR9B' />
             { !pathname?.includes('/admin') && !pathname?.includes('/formular') && !pathname?.includes('/shop-fizic') ?
               <>
                 <Analytics />
