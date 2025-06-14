@@ -6,37 +6,40 @@ import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 const CookiePolicy = () => {
   const [consentRequested, setConsentRequested] = useState<any>(null)
+  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
     const response = Cookies.get('policy-accepted') 
 
     if (response == 'true') {
-      setConsentRequested('true')
+      setConsentRequested(true)
     } else {
-      setConsentRequested('false')
+      setConsentRequested(false)
     }
+
+    setLoaded(true)
   }, [])
 
   const handleAccept = () => {
     Cookies.set('policy-accepted', 'true')
-    setConsentRequested('true')
+    setConsentRequested(true)
   }
 
   const handleRefuse = () => {
     Cookies.set('policy-accepted', 'false')
-    setConsentRequested('false')
+    setConsentRequested(false)
   }
 
   return (
     <>
-      { consentRequested == 'true' &&
+      { consentRequested &&
         <>
           <GoogleAnalytics gaId='G-4C611TDECB'/>
           <GoogleTagManager gtmId='GTM-TNQ5NR9B' />
         </>
       }
       {
-        consentRequested != null ?
+        (!consentRequested && loaded) ?
         <div className="bg-white fixed bottom-6 md:bottom-8 right-0 rounded-xl shadow-2xl p-8 flex flex-col items-center z-[9999] mx-4 w-[calc(100%-32px)] max-w-[440px]">
           <div className="flex flex-row justify-between items-center w-full">
             <div className="flex flex-row items-center">
