@@ -5,16 +5,16 @@ import { useEffect, useState } from "react"
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 const CookiePolicy = () => {
-  const [consentRequested, setConsentRequested] = useState<any>(null)
+  const [consent, setConsent] = useState<any>(null)
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
     const response = Cookies.get('policy-accepted') 
 
-    if (response == 'true') {
-      setConsentRequested(true)
+    if (response === 'true') {
+      setConsent(true)
     } else {
-      setConsentRequested(false)
+      setConsent(false)
     }
 
     setLoaded(true)
@@ -22,24 +22,26 @@ const CookiePolicy = () => {
 
   const handleAccept = () => {
     Cookies.set('policy-accepted', 'true')
-    setConsentRequested(true)
+    setConsent(true)
   }
 
   const handleRefuse = () => {
     Cookies.set('policy-accepted', 'false')
-    setConsentRequested(false)
+    setConsent(false)
   }
+
+  console.log(consent)
 
   return (
     <>
-      { consentRequested &&
+      { consent &&
         <>
           <GoogleAnalytics gaId='G-4C611TDECB'/>
           <GoogleTagManager gtmId='GTM-TNQ5NR9B' />
         </>
       }
       {
-        (consentRequested == null && loaded) ?
+        ((consent === null) && loaded) ?
         <div className="bg-white fixed bottom-6 md:bottom-8 right-0 rounded-xl shadow-2xl p-8 flex flex-col items-center z-[9999] mx-4 w-[calc(100%-32px)] max-w-[440px]">
           <div className="flex flex-row justify-between items-center w-full">
             <div className="flex flex-row items-center">
