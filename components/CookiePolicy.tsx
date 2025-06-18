@@ -10,10 +10,10 @@ const CookiePolicy = () => {
 
   useEffect(() => {
     const response = Cookies.get('policy-accepted') 
-
+    
     if (response === 'true') {
       setConsent(true)
-    } else {
+    } else if ( response === 'false' ) {
       setConsent(false)
     }
 
@@ -29,8 +29,6 @@ const CookiePolicy = () => {
     Cookies.set('policy-accepted', 'false')
     setConsent(false)
   }
-
-  console.log(consent)
 
   return (
     <>
