@@ -22,6 +22,7 @@ type Props = {
 const UpdateRealease = ({ categories, realease }: Props) => {
   const router = useRouter()
   const [title, setTitle] = useState("")
+  const [date, setDate] = useState("")
   const [category, setCategory] = useState< string | null >(null)
   const [file, setFile] = useState< string | File | null >(null)
   const [isLoading, setIsLoading] = useState(false)
@@ -32,6 +33,7 @@ const UpdateRealease = ({ categories, realease }: Props) => {
     setTitle(realease.title)
     setCategory(realease.category)
     setFile(realease.file.fileName)
+    setDate(realease.date || "")
     setImages(realease.smallLogos)
   }, [realease])
 
@@ -102,6 +104,7 @@ const UpdateRealease = ({ categories, realease }: Props) => {
         await updateDoc(doc(db, 'press-releases', realease.id), {
           title,
           category,
+          date,
           createdAt: serverTimestamp(),
           smallLogos,
           file: {
@@ -113,6 +116,7 @@ const UpdateRealease = ({ categories, realease }: Props) => {
         await updateDoc(doc(db, 'press-releases', realease.id), {
           title,
           category,
+          date,
           createdAt: serverTimestamp(),
           smallLogos
         })
@@ -164,6 +168,13 @@ const UpdateRealease = ({ categories, realease }: Props) => {
               value={title}
               setValue={setTitle}
               placeholder='Titlu'
+              required={true}
+              styleProps='mb-4'
+            />
+            <FormInput 
+              value={date}
+              setValue={setDate}
+              placeholder='Data'
               required={true}
               styleProps='mb-4'
             />

@@ -20,6 +20,7 @@ const Edit = ({ categories }: Props) => {
   const [title, setTitle] = useState("")
   const [category, setCategory] = useState< string | null >(null)
   const [file, setFile] = useState< string | File | null >(null)
+  const [date, setDate] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [images, setImages] = useState< any[] >([])
 
@@ -68,6 +69,7 @@ const Edit = ({ categories }: Props) => {
       await addDoc(collection(db, 'press-releases'), {
         title,
         category,
+        date,
         createdAt: serverTimestamp(),
         smallLogos,
         file: {
@@ -121,6 +123,13 @@ const Edit = ({ categories }: Props) => {
               value={title}
               setValue={setTitle}
               placeholder='Titlu'
+              required={true}
+              styleProps='mb-4'
+            />
+            <FormInput 
+              value={date}
+              setValue={setDate}
+              placeholder='Data'
               required={true}
               styleProps='mb-4'
             />

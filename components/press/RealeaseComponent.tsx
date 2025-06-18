@@ -24,7 +24,7 @@ const ReleaseComponent = ({release}: Props) => {
         
       </div>
       <p className='font-semibold text-secondary text-center'>{release.title}</p>
-      <p className='text-sm font-semibold text-primary text-center'>{release.formattedCreatedAt}</p>
+      <p className='text-sm font-semibold text-primary text-center'>{release.date}</p>
       <div className='flex flex-row gap-4 mt-auto'>
         <Link 
           href={`/comunicate-de-presa/${release.id}`}

@@ -31,6 +31,7 @@ export type Category = {
 export type PressRealease = {
   id: string
   formattedCreatedAt?: string
+  date?: string
   category: string
   title: string
   smallLogos: { 

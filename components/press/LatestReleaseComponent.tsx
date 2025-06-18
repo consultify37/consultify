@@ -24,7 +24,7 @@ const LatestReleaseComponent = ({release}: Props) => {
         
       </div>
       <p className='lg:text-2xl font-semibold text-secondary text-center lg:px-8'>{release.title}</p>
-      <p className='text-sm lg:text-lg font-semibold text-primary text-center'>{release.formattedCreatedAt} <span className='text-2xl'>·</span> {release.category}</p>
+      <p className='text-sm lg:text-lg font-semibold text-primary text-center'>{release.date} <span className='text-2xl'>·</span> {release.category}</p>
       <div className='flex flex-row gap-4'>
         <Link 
           href={`/comunicate-de-presa/${release.id}`}
