@@ -140,9 +140,12 @@ const Form = () => {
       </Head>
       <script async src="https://r3.minicrm.io/api/minicrm.js?t=1737382653"></script>
       <form 
-        // onSubmit={onSubmit}
+        onSubmit={onSubmit}
         className="w-full md:w-[768px] md:min-w-[768px] max-w-[768px] p-6 py-16 sm:p-8 md:p-16 flex flex-col"
-        formhash="76959-0qyz7121eb2hyb1kapm020q70nsuj5" action="https://r3.minicrm.io/Api/Signup" method="post" id="Web"
+        formhash="76959-0qyz7121eb2hyb1kapm020q70nsuj5" 
+        // action="https://r3.minicrm.io/Api/Signup" 
+        // method="post" 
+        // id="Web"
       >
           <h2 className="text-secondary font-bold mb-6 text-2xl md:text-3xl">Hai să lucrăm împreună!</h2>
           <p className="text-secondary text-[14px] md:text-[16px] mb-6">

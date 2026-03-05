@@ -73,17 +73,17 @@ export default function Contact() {
         setIsLoading(false)
     }
 
-    useEffect(() => {
-        const script = document.createElement('script')
-        script.src = 'https://r3.minicrm.io/api/minicrm.js?t=1736945255' // Replace with your script URL
-        script.async = true; // Optional, load asynchronously
-        document.body.appendChild(script)
+    // useEffect(() => {
+    //     const script = document.createElement('script')
+    //     script.src = 'https://r3.minicrm.io/api/minicrm.js?t=1736945255' // Replace with your script URL
+    //     script.async = true; // Optional, load asynchronously
+    //     document.body.appendChild(script)
     
-        return () => {
-          // Clean up script when the component unmounts
-          document.body.removeChild(script)
-        };
-      }, [])
+    //     return () => {
+    //       // Clean up script when the component unmounts
+    //       document.body.removeChild(script)
+    //     };
+    //   }, [])
 
     const handlePixel = () => {
         try {
@@ -188,12 +188,12 @@ export default function Contact() {
                         </Link>
                     </div>
                 </div>
-                <script async src="https://r3.minicrm.io/api/minicrm.js?t=1737382653"></script>
+                {/* <script async src="https://r3.minicrm.io/api/minicrm.js?t=1737382653"></script> */}
                 <form 
                     className="mt-12 lg:mt-0 lg:ml-12 rounded-3xl shadow-box bg-[#fff] w-full max-w-[1000px] p-8 px-4 md:px-8 flex flex-col"
-                    // onSubmit={upload}
+                    onSubmit={upload}
                     formhash="76959-0tmoj4ber60eocon8xd011vdct8xlk" 
-                    action="https://r3.minicrm.io/Api/Signup"
+                    // action="https://r3.minicrm.io/Api/Signup"
                     method="post" 
                     id="Web"
                 >
