@@ -13,9 +13,9 @@ const VoucherForm = () => {
   const applyCode = async (e: any) => {
     e.preventDefault()
     setIsLoading(true)
-    // https://getdiscountcode-75cxgdbjwq-ey.a.run.app
+    
     try {
-      const response = await axios.post('/api/stripe/discount-code', {
+      const response = await axios.post('https://getdiscountcode-75cxgdbjwq-ey.a.run.app', {
         code: userCode
       })
 
