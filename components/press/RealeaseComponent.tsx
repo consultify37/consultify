@@ -14,8 +14,8 @@ const ReleaseComponent = ({release}: Props) => {
         { release.smallLogos.map((logo) => (
           <Image 
             src={logo.url}
-            width={64}
-            height={64}
+            width={512}
+            height={512}
             alt='.'
             key={logo.fileName}
             className='h-10 w-auto'

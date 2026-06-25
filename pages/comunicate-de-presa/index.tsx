@@ -39,9 +39,9 @@ export default function Testimoniale({ articles, categories, products, releases:
 
         let collectionRef
         if (selectedCategory == 'toate') {
-            collectionRef = query(collection(db, 'press-releases'), orderBy('index', 'desc'), startAfter(articles[articles.length-1].index), limit(articlesPerPage))
+            collectionRef = query(collection(db, 'press-releases'), orderBy('index', 'desc'), startAfter(releases[releases.length-1].index), limit(articlesPerPage))
         } else {
-            collectionRef = query(collection(db, 'press-releases'), orderBy('index', 'desc'), startAfter(articles[articles.length-1].index), where('category', '==', selectedCategory), limit(articlesPerPage))
+            collectionRef = query(collection(db, 'press-releases'), orderBy('index', 'desc'), startAfter(releases[releases.length-1].index), where('category', '==', selectedCategory), limit(articlesPerPage))
         }
 
         const collectionSnap = await getDocs(collectionRef)
@@ -68,9 +68,9 @@ export default function Testimoniale({ articles, categories, products, releases:
 
         let collectionRef
         if (selectedCategory == 'toate' ) {
-            collectionRef = query(collection(db, 'press-releases'), orderBy('index', 'asc'), startAfter(articles[0].index), limit(articlesPerPage))
+            collectionRef = query(collection(db, 'press-releases'), orderBy('index', 'asc'), startAfter(releases[0].index), limit(articlesPerPage))
         } else {
-            collectionRef = query(collection(db, 'press-releases'), orderBy('index', 'asc'), startAfter(articles[0].index), where('category', '==', selectedCategory), limit(articlesPerPage))
+            collectionRef = query(collection(db, 'press-releases'), orderBy('index', 'asc'), startAfter(releases[0].index), where('category', '==', selectedCategory), limit(articlesPerPage))
         }
     
         const collectionSnap = await getDocs(collectionRef)
